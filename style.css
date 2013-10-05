@@ -5,18 +5,25 @@ body {
     margin: 0 auto;
     max-width: 700px;
     font-family: Arial;
-    height: 100%;
+}
+
+#audio {
+    background-color: red;
 }
 
 #textbox {
     width: 100%;
-    height: 80%;
+    height: 400px;
     margin-top: 20px;
     resize: none; 
     
     font-size: 10pt;
     font-family: Arial;
     padding: 5px;
+}
+
+.controls {
+    display: none;
 }
 
 .controls div {

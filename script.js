@@ -8,9 +8,10 @@ $('#attach').change(function() {
     reader.onloadend = function(evt) {
         if (evt.target.readyState == FileReader.DONE) {
             $('#audio').remove();
-             $('body').append('<audio id="audio" src="' + evt.target.result + '" controls></audio>');
+             $('#player-hook').append('<audio id="audio" src="' + evt.target.result + '" controls></audio>');
              document.getElementById('audio').addEventListener('loadedmetadata', function(){
-                 console.log('Loading complete.')            
+                 console.log('Loading complete.')    
+                 toggleControls();        
              });
         }
     };
@@ -118,6 +119,10 @@ Mousetrap.bind('mod+i', function(e) {
     insertTimestamp();
     return false;
 });
+Mousetrap.bind('mod+s', function(e) {
+    alert("No need to manually save - your transcript is automatically backed up continuously.")
+    return false;
+});
 
 $('.play-pause').click(function(){
     playPause();    
@@ -180,13 +185,31 @@ function detectFormats(format){
 }
 
 function listSupportedFormats(){
+    var supportedFormats = [];
     var formats = ['mp3', 'ogg', 'webm', 'wav'];
-    formats.forEach(function(format) {
-        console.log(format);
+    var i = 0;
+    formats.forEach(function(format, index) {
+        if (detectFormats(format) == true){
+            supportedFormats[i] = format;
+            i++;
+        }
     });
-    
-    
+    return supportedFormats.join(', ');
 }
+document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";
+
+var controls = false;
+function toggleControls(){
+    if (controls == false){
+        $('.input').hide();
+        $('.controls').show();
+    } else {
+        $('.controls').hide();
+        $('.input').show();
+    };
+    controls = !controls;
+};
+
 
 console.log( detectFormats() );
 
