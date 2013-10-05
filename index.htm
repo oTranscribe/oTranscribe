@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Transcriber</title>
+	<link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+
+    <div class="file-input-wrapper">
+      <button class="btn-file-input">Upload File</button>
+      <input id="attach" type="file" name="file" accept="audio/*"  />
+    </div>
+
+    
+    <div id="lastfile"></div>
+
+<div class="controls">
+    <div class="play-pause">>/||</div>
+    <div class="skip-backwards"><<</div>
+  <div class="skip-forwards">>></div>
+  <div class="speed-down">slower</div>
+  <div class="speed-up">faster</div>
+  <div class="speed-reset">reset</div>
+
+</div>
+    
+<textarea id="textbox"  class="mousetrap">
+Enter your comments here...
+</textarea>
+
+<script src="http://cdn.craig.is/js/mousetrap/mousetrap.js?0b092"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>

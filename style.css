@@ -1,0 +1,51 @@
+#textbox {
+    width: 80%;
+    height: 300px;
+    margin-top: 20px;
+}
+
+.controls div {
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 3px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.file-input-wrapper {
+  width: 200px;
+  height: 40px;
+  overflow: hidden;
+  position: relative;
+}
+.file-input-wrapper > input[type="file"] {
+  font-size: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.file-input-wrapper > .btn-file-input {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+}
+
+.btn-file-input::-moz-focus-inner {
+        border:0;
+        padding:0
+}
+.btn-file-input {
+        width:auto;
+        border:0 none;
+        margin:0;
+        padding:0;
+        background:transparent;
+        overflow:visible;
+        /* Stupid IE */
+        font:14px arial, sans-serif;
+        #vertical-align:middle; /* IE6,IE7 */
+        
+        border: 1px solid black;
+}
