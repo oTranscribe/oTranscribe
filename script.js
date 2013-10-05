@@ -38,7 +38,7 @@ if ( localStorage.getItem("lastfile") ) {
 
 // play/pause
 var playing = false;
-function pauseResume(){
+function playPause(){
     if (playing == true){
         document.getElementById('audio').pause();
     } else {
@@ -95,7 +95,7 @@ Mousetrap.bind('escape', function(e) {
         // internet explorer
         e.returnValue = false;
     }
-    pauseResume();
+    playPause();
     return false;
 });
 Mousetrap.bind('f1', function(e) {
