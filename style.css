@@ -26,12 +26,15 @@ body {
     display: none;
 }
 
-.controls div {
-    padding: 5px;
-    border: 1px solid grey;
-    border-radius: 3px;
-    margin-right: 10px;
+.controls .button {
     display: inline-block;
+    vertical-align: top;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    border-right: 1px solid #CCC;
+    background: black;
+    color: white;
 }
 
 .file-input-wrapper {
@@ -70,4 +73,24 @@ body {
         #vertical-align:middle; /* IE6,IE7 */
         
         border: 1px solid black;
+}
+
+/* custom player */
+
+.audiojs {
+    font-family: inherit;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background: black;
+    display: inline-block;
+    width: auto;
+}
+
+.scrubber .progress {
+    background: white;
+}
+
+
+.scrubber .loaded {
+    background: #333;
 }
