@@ -8,9 +8,10 @@ $('#attach').change(function() {
     reader.onloadend = function(evt) {
         if (evt.target.readyState == FileReader.DONE) {
             $('#audio').remove();
-             $('#player-hook').append('<audio id="audio" src="' + evt.target.result + '" controls></audio>');
+             $('#player-hook').append('<audio id="audio" src="' + evt.target.result + '"></audio>');
              document.getElementById('audio').addEventListener('loadedmetadata', function(){
                  console.log('Loading complete.')    
+                 initAudioJS();
                  toggleControls();        
              });
         }
@@ -42,8 +43,10 @@ var playing = false;
 function playPause(){
     if (playing == true){
         document.getElementById('audio').pause();
+        $('.audiojs').removeClass('playing');
     } else {
         document.getElementById('audio').play();
+        $('.audiojs').addClass('playing');
     };
     playing = !playing;
 };
@@ -197,6 +200,13 @@ function listSupportedFormats(){
     return supportedFormats.join(', ');
 }
 document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";
+
+function initAudioJS(){
+    audiojs.events.ready(function() {
+      audiojs.createAll();
+    });
+}
+
 
 var controls = false;
 function toggleControls(){
