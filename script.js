@@ -12,6 +12,7 @@ $('#attach').change(function() {
              document.getElementById('audio').addEventListener('loadedmetadata', function(){
                  console.log('Loading complete.')    
                  initAudioJS();
+                 adjustPlayerWidth();
                  toggleControls();        
              });
         }
@@ -22,6 +23,14 @@ $('#attach').change(function() {
     };
     reader.readAsDataURL(file);
 });
+
+function adjustPlayerWidth(){
+    var cntrls = $('.controls');
+   var gap = $(window).width() - (cntrls.offset().left + cntrls.width());
+    $('.scrubber').width( $('.scrubber').width()+gap );
+   console.log(gap);
+}
+
 
 // autosave every second
 var field = document.getElementById("textbox");
