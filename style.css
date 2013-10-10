@@ -11,15 +11,33 @@ body {
 
 #textbox {
     height: 400px;
-    resize: none; 
+    resize: none;
     
-    font-size: 10pt;
+    font-size: 12pt;
     font-family: Arial;
     padding: 5px;
     margin: 20px auto 0 auto;
-    width: 700px;
+    width: 50%;
     display: block;
+    border: none;
+    padding: 5px 25%;
+    outline: none;
 }
+
+.input {
+    width: 100%;
+    margin: 0 auto 240px auto;
+    height: 0;
+}
+
+.blankbar {
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
 
 .controls {
     display: none;
@@ -36,12 +54,46 @@ body {
     color: white;
 }
 
+#lastfile, #formats {
+    color: #BBB;
+    font-size: 12px;
+    margin: 0 auto 4px auto;
+    width: 20%;
+}
+
+#lastfile a, #formats a {
+    color: inherit;
+}
+
+
 .file-input-wrapper {
   width: 200px;
   height: 40px;
   overflow: hidden;
   position: relative;
+  margin: 20px auto;
+  background: #33B3F4;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+  
+    box-shadow: inset 0px 1px 2px 1px #2b9fd9;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #33b4f4), color-stop(1, #2b9fd9) );
+    background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
+    background-color:#33b4f4;
+    text-indent:0;
+    border:1px solid #33b4f4;
 }
+
+.file-input-wrapper:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7FCEF5), color-stop(1, #58AFDB) );
+    background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
+	background-color:#58AFDB;
+    
+}
+
+
+
 .file-input-wrapper > input[type="file"] {
   font-size: 200px;
   position: absolute;
@@ -71,7 +123,13 @@ body {
         font:14px arial, sans-serif;
         #vertical-align:middle; /* IE6,IE7 */
         
-        border: 1px solid black;
+    	text-decoration:none;
+    	text-align:center;
+    	text-shadow:1px 1px 0px #2b6e8f;
+        color:#ffffff;
+        font-family:arial;
+        font-size:15px;
+        font-style:normal;
 }
 
 /* custom player */
