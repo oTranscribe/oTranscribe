@@ -3,25 +3,16 @@
 var audioPlayer;
 
 $('#attach').change(function() {
-    var file = this.files[0];
-    var reader = new FileReader();
-    reader.onloadend = function(evt) {
-        if (evt.target.readyState == FileReader.DONE) {
-            $('#audio').remove();
-             $('#player-hook').append('<audio id="audio" src="' + evt.target.result + '"></audio>');
-             document.getElementById('audio').addEventListener('loadedmetadata', function(){
-                 console.log('Loading complete.')    
-                 initAudioJS();
-                 adjustPlayerWidth();
-                 toggleControls();        
-             });
-        }
-    };
-    reader.onloadstart = function(evt) {
-        console.log('loading file '+file.name+'...');
-        localStorage.setItem("lastfile", file.name);
-    };
-    reader.readAsDataURL(file);
+  var file = this.files[0];
+  $('#audio').remove();
+  $('#player-hook').append('<audio id="audio" src=""></audio>');
+  var url = window.URL.createObjectURL(file);
+  $('#audio')[0].src = url;
+  initAudioJS();
+  adjustPlayerWidth();
+  toggleControls();        
+  localStorage.setItem("lastfile", file.name);
+  console.log('Loading complete.')    ;
 });
 
 function adjustPlayerWidth(){
