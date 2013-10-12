@@ -51,10 +51,10 @@ var playing = false;
 function playPause(){
     if (playing == true){
         document.getElementById('audio').pause();
-        $('.audiojs').removeClass('playing');
+        $('.play-pause').removeClass('playing');
     } else {
         document.getElementById('audio').play();
-        $('.audiojs').addClass('playing');
+        $('.play-pause').addClass('playing');
     };
     playing = !playing;
 };

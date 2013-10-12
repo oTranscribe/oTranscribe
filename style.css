@@ -49,10 +49,62 @@ body {
     height: 36px;
     width: 36px;
     text-align: center;
-    border-right: 1px solid #CCC;
+    border-right: 1px solid #3F3F3F;
     background: black;
     color: white;
+    
+    padding: 10px 0;
+    height: 16px;
 }
+
+.controls .button:hover {
+    background-color: #3F3F3F;
+    cursor: pointer;
+}
+
+.play-pause.playing .icon-pause {
+    display: inline;
+}
+.play-pause.playing .icon-play {
+    display: none;
+}
+
+.play-pause .icon-pause {
+    display: none;
+}
+.play-pause .icon-play {
+    display: inline;
+}
+
+.audiojs .play-pause {
+    display: none;
+}
+
+.button:after {
+    display: none;
+    padding-top: 1.4em;
+    color: #000;
+    font-size: 9px;
+    cusor: default;
+}
+
+.controls:hover .button:after {
+    display: block;
+}
+
+.button.play-pause:after {
+  content: 'ESC';
+}
+
+.button.skip-backwards:after {
+  content: 'F1';
+}
+
+.button.skip-forwards:after {
+  content: 'F2';
+}
+
+
 
 #lastfile, #formats {
     color: #BBB;
