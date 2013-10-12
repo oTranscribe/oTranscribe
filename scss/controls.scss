@@ -42,7 +42,7 @@
 
 .button:after {
     display: none;
-    padding-top: 1.4em;
+    padding-top: 2em;
     color: #000;
     font-size: 9px;
     cusor: default;
@@ -53,36 +53,15 @@
 }
 
 .button {
-    .play-pause:after {
+    &.play-pause:after {
       content: 'ESC';
     }
-    .skip-backwards:after {
+    &.skip-backwards:after {
       content: 'F1';
     }
-    .skip-forwards:after {
+    &.skip-forwards:after {
       content: 'F2';
     }
 }
 
-
-
-
-.speed-box {
-    background: red;
-    width: 100px;
-    height: 100px;
-    margin-top: 10px;
-    z-index: 100;
-    position: relative;
-    cursor: default;
-    
-	display: none;
-    &:hover {
-        display: block;
-    };
-}
-
-.speed:hover > .speed-box {
-	display: block;
-}
 

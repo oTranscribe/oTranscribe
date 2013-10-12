@@ -165,7 +165,7 @@ body {
 
 .button:after {
   display: none;
-  padding-top: 1.4em;
+  padding-top: 2em;
   color: #000;
   font-size: 9px;
   cusor: default; }
@@ -173,27 +173,53 @@ body {
 .controls:hover .button:after {
   display: block; }
 
-.button .play-pause:after {
+.button.play-pause:after {
   content: 'ESC'; }
-.button .skip-backwards:after {
+.button.skip-backwards:after {
   content: 'F1'; }
-.button .skip-forwards:after {
+.button.skip-forwards:after {
   content: 'F2'; }
 
+.button.speed {
+  width: 85px; }
+  .button.speed.fixed {
+    background: white;
+    color: black; }
+    .button.speed.fixed .speed-box {
+      display: block; }
+
 .speed-box {
-  background: red;
-  width: 100px;
-  height: 100px;
-  margin-top: 10px;
-  z-index: 100;
+  background: black;
+  color: white;
+  width: 190px;
+  padding: 8px 0px 5px 0px;
+  z-index: -50;
   position: relative;
+  top: 6px;
   cursor: default;
+  vertical-align: middle;
+  font-size: 13px;
+  box-shadow: 0px 0px 10px #666;
+  -webkit-box-shadow: 0px 0px 10px #666;
   display: none; }
   .speed-box:hover {
     display: block; }
+  .speed-box #slider3 {
+    display: inline;
+    vertical-align: middle;
+    width: 100px; }
 
 .speed:hover > .speed-box {
   display: block; }
+
+.slider-origin {
+  height: 25px;
+  border-right: 1px solid grey;
+  position: relative;
+  left: 39px;
+  z-index: -50;
+  display: inline-block;
+  vertical-align: middle; }
 
 /* custom player */
 .audiojs {
@@ -202,7 +228,8 @@ body {
   -webkit-box-shadow: none;
   background: black;
   display: inline-block;
-  width: auto; }
+  width: auto;
+  height: 33px; }
   .audiojs .play-pause {
     display: none; }
 

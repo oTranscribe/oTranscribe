@@ -1,0 +1,54 @@
+
+.button.speed {
+    width: 85px;
+    &.fixed {
+        background: white;
+        color: black;
+        .speed-box {
+            display: block;
+        }
+    }
+}
+
+.speed-box {
+    background: black;
+    color: white;
+    width: 190px;
+    padding: 8px 0px 5px 0px;
+    z-index: -50;
+    position: relative;
+    top: 6px;
+    cursor: default;
+    vertical-align: middle;
+    font-size: 13px;
+    box-shadow: 0px 0px 10px #666;
+    -webkit-box-shadow: 0px 0px 10px #666;
+    
+    display: none;
+    &:hover {
+        display: block;
+    };
+        
+    #slider3 {
+        display: inline;
+        vertical-align: middle;
+        width: 100px;
+    }    
+    
+}
+
+.speed:hover > .speed-box {
+    display: block;
+}
+
+.slider-origin {
+    height: 25px;
+    border-right: 1px solid grey;
+    position: relative;
+    left: 39px;
+    z-index: -50;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+

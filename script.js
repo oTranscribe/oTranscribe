@@ -93,7 +93,9 @@ function speed(newSpeed){
         newSpeedNumber = currentSpeed-0.1;
     } else if (newSpeed == "reset"){
         newSpeedNumber = 1;
-    };
+    } else {
+        newSpeedNumber = newSpeed;
+    }
     document.getElementById('audio').playbackRate = newSpeedNumber;
 }
 
@@ -118,14 +120,14 @@ Mousetrap.bind('f2', function(e) {
     skip('forwards');
     return false;
 });
-Mousetrap.bind('f3', function(e) {
-    speed('down');
-    return false;
-});
-Mousetrap.bind('f4', function(e) {
-    speed('up');
-    return false;
-});
+// Mousetrap.bind('f3', function(e) {
+//     speed('down');
+//     return false;
+// });
+// Mousetrap.bind('f4', function(e) {
+//     speed('up');
+//     return false;
+// });
 Mousetrap.bind('mod+i', function(e) {
     insertTimestamp();
     return false;
@@ -227,6 +229,18 @@ function toggleControls(){
     $('.input').toggleClass('active');
     controls = !controls;
 };
+
+$( ".speed" ).click(function() {
+    if ($('.speed-box').not(':hover').length) {
+        $(this).toggleClass('fixed');
+        console.log ($('.speed-box').not(':hover').length);
+    }    
+});
+
+$( "#slider3" ).mousemove(function() {
+  speed(this.value);
+});
+
 
 
 console.log( detectFormats() );
