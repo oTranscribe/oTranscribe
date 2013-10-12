@@ -35,24 +35,25 @@ body {
   font-size: 12pt;
   font-family: Arial;
   padding: 5px;
-  margin: 20px auto 0 auto;
+  margin: 0 auto;
   width: 50%;
   display: block;
   border: none;
-  padding: 5px 25%;
+  padding: 50px 25% 5px 25%;
   outline: none; }
 
 .input {
   width: 100%;
-  margin: 0 auto 240px auto;
-  height: 0; }
+  margin: 0 auto;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 1s, margin 1s;
+  -moz-transition: max-height 1s, margin 1s;
+  transition: max-height 1s, margin 1; }
 
-.blankbar {
-  background: black;
-  color: white;
-  text-align: center;
-  font-size: 16px;
-  padding: 10px 0; }
+.input.active {
+  max-height: 200px;
+  margin: 25px auto; }
 
 #lastfile, #formats {
   color: #BBB;
@@ -118,6 +119,23 @@ body {
     border: 0;
     padding: 0; }
 
+.topbar {
+  background: black;
+  color: white;
+  box-shadow: 0px 0px 10px #666;
+  -webkit-box-shadow: 0px 0px 10px #666;
+  z-index: 50;
+  position: relative;
+  text-align: center;
+  font-size: 16px; }
+  .topbar.inputting {
+    padding: 10px 0; }
+    .topbar.inputting .title {
+      display: block; }
+
+.title {
+  display: none; }
+
 .controls {
   display: none; }
   .controls .button {
@@ -162,49 +180,20 @@ body {
 .button .skip-forwards:after {
   content: 'F2'; }
 
-.controls {
+.speed-box {
+  background: red;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  z-index: 100;
+  position: relative;
+  cursor: default;
   display: none; }
-  .controls .button {
-    display: inline-block;
-    vertical-align: top;
-    height: 36px;
-    width: 36px;
-    text-align: center;
-    border-right: 1px solid #3F3F3F;
-    background: black;
-    color: white;
-    padding: 10px 0;
-    height: 16px; }
-    .controls .button:hover {
-      background-color: #3F3F3F;
-      cursor: pointer; }
+  .speed-box:hover {
+    display: block; }
 
-.play-pause.playing .icon-pause {
-  display: inline; }
-.play-pause.playing .icon-play {
-  display: none; }
-
-.play-pause .icon-pause {
-  display: none; }
-.play-pause .icon-play {
-  display: inline; }
-
-.button:after {
-  display: none;
-  padding-top: 1.4em;
-  color: #000;
-  font-size: 9px;
-  cusor: default; }
-
-.controls:hover .button:after {
+.speed:hover > .speed-box {
   display: block; }
-
-.button .play-pause:after {
-  content: 'ESC'; }
-.button .skip-backwards:after {
-  content: 'F1'; }
-.button .skip-forwards:after {
-  content: 'F2'; }
 
 /* custom player */
 .audiojs {

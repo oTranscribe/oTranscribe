@@ -1,18 +1,19 @@
 .input {
     width: 100%;
-    margin: 0 auto 240px auto;
-    height: 0;
+    margin: 0 auto;
+	max-height: 0;
+	overflow: hidden;
+    
+	-webkit-transition: max-height 1s, margin 1s;
+	-moz-transition: max-height 1s, margin 1s;
+	transition: max-height 1s, margin 1;
+    
 }
 
-.blankbar {
-    background: black;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px 0;
+.input.active {
+	max-height: 200px;
+    margin: 25px auto;
 }
-
-
 
 #lastfile, #formats {
     color: #BBB;
@@ -20,7 +21,7 @@
     margin: 0 auto 4px auto;
     width: 20%;
     a {
-        color: inherit;
+        color: inherit; 
     }
 }
 

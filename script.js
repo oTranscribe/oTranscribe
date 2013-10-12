@@ -219,12 +219,12 @@ function initAudioJS(){
 var controls = false;
 function toggleControls(){
     if (controls == false){
-        $('.input').hide();
         $('.controls').show();
     } else {
         $('.controls').hide();
-        $('.input').show();
     };
+    $('.topbar').toggleClass('inputting');
+    $('.input').toggleClass('active');
     controls = !controls;
 };
 
