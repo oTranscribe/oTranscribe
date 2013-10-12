@@ -1,0 +1,65 @@
+
+.controls {
+    display: none; // default state
+    
+    .button {
+        display: inline-block;
+        vertical-align: top;
+        height: 36px;
+        width: 36px;
+        text-align: center;
+        border-right: 1px solid #3F3F3F;
+        background: black;
+        color: white;
+    
+        padding: 10px 0;
+        height: 16px;
+        
+        &:hover {
+            background-color: #3F3F3F;
+            cursor: pointer;
+        };
+    }
+}
+
+.play-pause.playing {
+    .icon-pause {
+        display: inline;
+    }
+    .icon-play {
+        display: none;
+    }
+}
+.play-pause {
+    .icon-pause {
+        display: none;
+    }
+    .icon-play {
+        display: inline;
+    }
+}
+
+
+.button:after {
+    display: none;
+    padding-top: 1.4em;
+    color: #000;
+    font-size: 9px;
+    cusor: default;
+}
+
+.controls:hover .button:after {
+    display: block;
+}
+
+.button {
+    .play-pause:after {
+      content: 'ESC';
+    }
+    .skip-backwards:after {
+      content: 'F1';
+    }
+    .skip-forwards:after {
+      content: 'F2';
+    }
+}

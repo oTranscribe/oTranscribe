@@ -1,0 +1,23 @@
+@import "reset";
+
+body {
+    font-family: Arial;
+}
+
+
+#textbox {
+    height: 400px;
+    resize: none;
+    
+    font-size: 12pt;
+    font-family: Arial;
+    padding: 5px;
+    margin: 20px auto 0 auto;
+    width: 50%;
+    display: block;
+    border: none;
+    padding: 5px 25%;
+    outline: none;
+}
+
+@import "input", "controls", "controls", "audiojs";

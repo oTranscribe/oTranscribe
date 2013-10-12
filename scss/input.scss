@@ -1,0 +1,92 @@
+.input {
+    width: 100%;
+    margin: 0 auto 240px auto;
+    height: 0;
+}
+
+.blankbar {
+    background: black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+
+
+#lastfile, #formats {
+    color: #BBB;
+    font-size: 12px;
+    margin: 0 auto 4px auto;
+    width: 20%;
+    a {
+        color: inherit;
+    }
+}
+
+
+.file-input-wrapper {
+    width: 200px;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    margin: 20px auto;
+    background: #33B3F4;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+
+    box-shadow: inset 0px 1px 2px 1px #2b9fd9;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #33b4f4), color-stop(1, #2b9fd9) );
+    background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
+    background-color:#33b4f4;
+    text-indent:0;
+    border:1px solid #33b4f4;
+
+    &:hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7FCEF5), color-stop(1, #58AFDB) );
+        background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
+    	background-color:#58AFDB;
+    }    
+}
+
+
+
+.file-input-wrapper > input[type="file"] {
+  font-size: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.file-input-wrapper > .btn-file-input {
+  display: inline-block;
+  width: 200px;
+  height: 40px;
+}
+
+.btn-file-input {
+        width:auto;
+        border:0 none;
+        margin:0;
+        padding:0;
+        background:transparent;
+        overflow:visible;
+        /* Stupid IE */
+        font:14px arial, sans-serif;
+        #vertical-align:middle; /* IE6,IE7 */
+        
+    	text-decoration:none;
+    	text-align:center;
+    	text-shadow:1px 1px 0px #2b6e8f;
+        color:#ffffff;
+        font-family:arial;
+        font-size:15px;
+        font-style:normal;
+        
+        &::-moz-focus-inner {
+            border:0;
+            padding:0
+        }
+}

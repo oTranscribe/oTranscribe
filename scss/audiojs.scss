@@ -1,0 +1,23 @@
+
+/* custom player */
+
+.audiojs {
+    font-family: inherit;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    background: black;
+    display: inline-block;
+    width: auto;
+    .play-pause {
+        display: none;
+    }
+}
+
+.scrubber .progress {
+    background: white;
+}
+
+
+.scrubber .loaded {
+    background: #333;
+}

@@ -1,122 +1,66 @@
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
 
 body {
-    font-family: Arial;
-}
+  line-height: 1; }
 
-#audio {
-    background-color: red;
-}
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: Arial; }
 
 #textbox {
-    height: 400px;
-    resize: none;
-    
-    font-size: 12pt;
-    font-family: Arial;
-    padding: 5px;
-    margin: 20px auto 0 auto;
-    width: 50%;
-    display: block;
-    border: none;
-    padding: 5px 25%;
-    outline: none;
-}
+  height: 400px;
+  resize: none;
+  font-size: 12pt;
+  font-family: Arial;
+  padding: 5px;
+  margin: 20px auto 0 auto;
+  width: 50%;
+  display: block;
+  border: none;
+  padding: 5px 25%;
+  outline: none; }
 
 .input {
-    width: 100%;
-    margin: 0 auto 240px auto;
-    height: 0;
-}
+  width: 100%;
+  margin: 0 auto 240px auto;
+  height: 0; }
 
 .blankbar {
-    background: black;
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px 0;
-}
-
-
-.controls {
-    display: none;
-}
-
-.controls .button {
-    display: inline-block;
-    vertical-align: top;
-    height: 36px;
-    width: 36px;
-    text-align: center;
-    border-right: 1px solid #3F3F3F;
-    background: black;
-    color: white;
-    
-    padding: 10px 0;
-    height: 16px;
-}
-
-.controls .button:hover {
-    background-color: #3F3F3F;
-    cursor: pointer;
-}
-
-.play-pause.playing .icon-pause {
-    display: inline;
-}
-.play-pause.playing .icon-play {
-    display: none;
-}
-
-.play-pause .icon-pause {
-    display: none;
-}
-.play-pause .icon-play {
-    display: inline;
-}
-
-.audiojs .play-pause {
-    display: none;
-}
-
-.button:after {
-    display: none;
-    padding-top: 1.4em;
-    color: #000;
-    font-size: 9px;
-    cusor: default;
-}
-
-.controls:hover .button:after {
-    display: block;
-}
-
-.button.play-pause:after {
-  content: 'ESC';
-}
-
-.button.skip-backwards:after {
-  content: 'F1';
-}
-
-.button.skip-forwards:after {
-  content: 'F2';
-}
-
-
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0; }
 
 #lastfile, #formats {
-    color: #BBB;
-    font-size: 12px;
-    margin: 0 auto 4px auto;
-    width: 20%;
-}
-
-#lastfile a, #formats a {
-    color: inherit;
-}
-
+  color: #BBB;
+  font-size: 12px;
+  margin: 0 auto 4px auto;
+  width: 20%; }
+  #lastfile a, #formats a {
+    color: inherit; }
 
 .file-input-wrapper {
   width: 200px;
@@ -128,23 +72,16 @@ body {
   border-radius: 5px;
   border: 0;
   color: white;
-  
-    box-shadow: inset 0px 1px 2px 1px #2b9fd9;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #33b4f4), color-stop(1, #2b9fd9) );
-    background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
-    background-color:#33b4f4;
-    text-indent:0;
-    border:1px solid #33b4f4;
-}
-
-.file-input-wrapper:hover {
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7FCEF5), color-stop(1, #58AFDB) );
-    background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
-	background-color:#58AFDB;
-    
-}
-
-
+  box-shadow: inset 0px 1px 2px 1px #2b9fd9;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #33b4f4), color-stop(1, #2b9fd9));
+  background: -moz-linear-gradient(center top, #33b4f4 5%, #2b9fd9 100%);
+  background-color: #33b4f4;
+  text-indent: 0;
+  border: 1px solid #33b4f4; }
+  .file-input-wrapper:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7fcef5), color-stop(1, #58afdb));
+    background: -moz-linear-gradient(center top, #33b4f4 5%, #2b9fd9 100%);
+    background-color: #58AFDB; }
 
 .file-input-wrapper > input[type="file"] {
   font-size: 200px;
@@ -152,54 +89,136 @@ body {
   top: 0;
   right: 0;
   opacity: 0;
-  cursor: pointer;
-}
+  cursor: pointer; }
+
 .file-input-wrapper > .btn-file-input {
   display: inline-block;
   width: 200px;
-  height: 40px;
-}
+  height: 40px; }
 
-.btn-file-input::-moz-focus-inner {
-        border:0;
-        padding:0
-}
 .btn-file-input {
-        width:auto;
-        border:0 none;
-        margin:0;
-        padding:0;
-        background:transparent;
-        overflow:visible;
-        /* Stupid IE */
-        font:14px arial, sans-serif;
-        #vertical-align:middle; /* IE6,IE7 */
-        
-    	text-decoration:none;
-    	text-align:center;
-    	text-shadow:1px 1px 0px #2b6e8f;
-        color:#ffffff;
-        font-family:arial;
-        font-size:15px;
-        font-style:normal;
-}
+  width: auto;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow: visible;
+  /* Stupid IE */
+  font: 14px arial, sans-serif;
+  #vertical-align: middle;
+  /* IE6,IE7 */
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #2b6e8f;
+  color: #ffffff;
+  font-family: arial;
+  font-size: 15px;
+  font-style: normal; }
+  .btn-file-input::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+
+.controls {
+  display: none; }
+  .controls .button {
+    display: inline-block;
+    vertical-align: top;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    border-right: 1px solid #3F3F3F;
+    background: black;
+    color: white;
+    padding: 10px 0;
+    height: 16px; }
+    .controls .button:hover {
+      background-color: #3F3F3F;
+      cursor: pointer; }
+
+.play-pause.playing .icon-pause {
+  display: inline; }
+.play-pause.playing .icon-play {
+  display: none; }
+
+.play-pause .icon-pause {
+  display: none; }
+.play-pause .icon-play {
+  display: inline; }
+
+.button:after {
+  display: none;
+  padding-top: 1.4em;
+  color: #000;
+  font-size: 9px;
+  cusor: default; }
+
+.controls:hover .button:after {
+  display: block; }
+
+.button .play-pause:after {
+  content: 'ESC'; }
+.button .skip-backwards:after {
+  content: 'F1'; }
+.button .skip-forwards:after {
+  content: 'F2'; }
+
+.controls {
+  display: none; }
+  .controls .button {
+    display: inline-block;
+    vertical-align: top;
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    border-right: 1px solid #3F3F3F;
+    background: black;
+    color: white;
+    padding: 10px 0;
+    height: 16px; }
+    .controls .button:hover {
+      background-color: #3F3F3F;
+      cursor: pointer; }
+
+.play-pause.playing .icon-pause {
+  display: inline; }
+.play-pause.playing .icon-play {
+  display: none; }
+
+.play-pause .icon-pause {
+  display: none; }
+.play-pause .icon-play {
+  display: inline; }
+
+.button:after {
+  display: none;
+  padding-top: 1.4em;
+  color: #000;
+  font-size: 9px;
+  cusor: default; }
+
+.controls:hover .button:after {
+  display: block; }
+
+.button .play-pause:after {
+  content: 'ESC'; }
+.button .skip-backwards:after {
+  content: 'F1'; }
+.button .skip-forwards:after {
+  content: 'F2'; }
 
 /* custom player */
-
 .audiojs {
-    font-family: inherit;
-    box-shadow: none;
-    -webkit-box-shadow: none;
-    background: black;
-    display: inline-block;
-    width: auto;
-}
+  font-family: inherit;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  background: black;
+  display: inline-block;
+  width: auto; }
+  .audiojs .play-pause {
+    display: none; }
 
 .scrubber .progress {
-    background: white;
-}
-
+  background: white; }
 
 .scrubber .loaded {
-    background: #333;
-}
+  background: #333; }
