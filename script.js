@@ -147,15 +147,6 @@ $('.skip-backwards').click(function(){
 $('.skip-forwards').click(function(){
     skip('forwards');    
 });
-$('.speed-down').click(function(){
-    speed('down');    
-});
-$('speed-up').click(function(){
-    speed('up');    
-});
-$('.speed-reset').click(function(){
-    speed('reset');    
-});
     
 // insert text at cursor
 function insertAtCaret(areaId,text) {
