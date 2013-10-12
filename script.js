@@ -3,17 +3,25 @@
 var audioPlayer;
 
 $('#attach').change(function() {
-  var file = this.files[0];
-  $('#audio').remove();
-  $('#player-hook').append('<audio id="audio" src=""></audio>');
-  var url = window.URL.createObjectURL(file);
-  $('#audio')[0].src = url;
+  createPlayer( this.files[0] );
   initAudioJS();
   adjustPlayerWidth();
   toggleControls();        
-  localStorage.setItem("lastfile", file.name);
+  localStorage.setItem("lastfile", this.files[0].name);
   console.log('Loading complete.')    ;
 });
+
+function createPlayer(file){
+    $('#audio').remove();
+    $('#player-hook').append('<audio id="audio" src=""></audio>');
+    if (window.webkitURL) {
+        var url = window.webkitURL.createObjectURL(file);
+    } else {
+        var url = window.URL.createObjectURL(file);      
+    }
+    console.log(url);
+    $('#audio')[0].src = url;    
+}
 
 function adjustPlayerWidth(){
     var cntrls = $('.controls');
