@@ -45,6 +45,11 @@ body {
     font-weight: bold; }
   #textbox i, #textbox em {
     font-style: italic; }
+  #textbox .timestamp {
+    color: blue; }
+    #textbox .timestamp:hover {
+      background: lightblue;
+      cursor: pointer; }
 
 .input {
   width: 100%;

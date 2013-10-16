@@ -76,7 +76,7 @@ function playPause(){
 };
 
 // get timestamp
-var timestamp;
+// var timestamp;
 function getTimestamp(){
     // get timestap
     var time = document.getElementById('audio').currentTime  
@@ -88,6 +88,10 @@ function getTimestamp(){
 function insertTimestamp(){
     insertAtCaret('textbox',"["+getTimestamp()+"]" );
 }
+
+// $('.timestamp').click(function(){
+//     setFromTimestamp( $(this) );
+// });
 
 // skip forward
 function skip(direction){
@@ -144,8 +148,11 @@ Mousetrap.bind('f2', function(e) {
 //     speed('up');
 //     return false;
 // });
-Mousetrap.bind('mod+t', function(e) {
-    insertTimestamp();
+Mousetrap.bind('mod+j', function(e) {
+    document.execCommand('insertHTML',false,
+        '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>'
+    );
+    console.log(tsHTML);
     return false;
 });
 Mousetrap.bind('mod+s', function(e) {
@@ -252,9 +259,25 @@ $( "#slider3" ).mousemove(function() {
   speed(this.value);
 });
 
-
-
 console.log( detectFormats() );
 
 
 })(); // end script
+
+
+function splitTimestamp(hms){
+    var a = hms.split(':');
+    var seconds = (+a[0]) * 60 + (+a[1]); 
+    return seconds;
+}
+
+$('.timestamp *:not(:has("*"))').click(function(){
+    var clickts = $(this).data('timestamp');
+});
+
+function setFromTimestamp(clickts, element){
+    console.log(element.childNodes.length);
+    if (element.childNodes.length == 1) {
+        document.getElementById('audio').currentTime = splitTimestamp(clickts);
+    }
+}

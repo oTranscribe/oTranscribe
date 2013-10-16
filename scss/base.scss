@@ -25,6 +25,14 @@ body {
     i, em {
         font-style: italic;
     }
+    
+    .timestamp {
+        color: blue;
+        &:hover {
+            background: lightblue;
+            cursor: pointer;
+        }
+    }
 }
 
 
