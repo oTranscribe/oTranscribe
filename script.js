@@ -139,7 +139,7 @@ Mousetrap.bind('f2', function(e) {
 //     speed('up');
 //     return false;
 // });
-Mousetrap.bind('mod+i', function(e) {
+Mousetrap.bind('mod+t', function(e) {
     insertTimestamp();
     return false;
 });
@@ -147,6 +147,17 @@ Mousetrap.bind('mod+s', function(e) {
     alert("No need to manually save - your transcript is automatically backed up continuously.")
     return false;
 });
+
+Mousetrap.bind('mod+b', function(e) {
+    document.execCommand('bold',false,null);
+    return false;
+});
+
+Mousetrap.bind('mod+i', function(e) {
+    document.execCommand('italic',false,null);
+    return false;
+});
+
 
 $('.play-pause').click(function(){
     playPause();    

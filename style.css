@@ -41,6 +41,10 @@ body {
   border: none;
   padding: 50px 25% 5px 25%;
   outline: none; }
+  #textbox b, #textbox strong {
+    font-weight: bold; }
+  #textbox i, #textbox em {
+    font-style: italic; }
 
 .input {
   width: 100%;

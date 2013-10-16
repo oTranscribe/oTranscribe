@@ -19,6 +19,12 @@ body {
     padding: 50px 25% 5px 25%;
     outline: none;
     
+    b, strong {
+        font-weight: bold;
+    }
+    i, em {
+        font-style: italic;
+    }
 }
 
 
