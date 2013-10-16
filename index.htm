@@ -9,23 +9,27 @@
 
 <body>
     
-    <div class="topbar inputting"><!--
-        --><div class="title">
-            Transcriber
+<div class="topbar inputting"><!--
+    --><div class="title active">
+        Transcriber
+    </div><!--
+    --><div class="controls">
+    <div class="button play-pause"><i class="icon-play"></i><i class="icon-pause"></i></div><!--
+    --><div class="button skip-backwards"><i class="icon-backward"></i></div><!--
+    --><div class="button skip-forwards"><i class="icon-forward"></i></div><!--
+    --><div class="button speed"><i class="icon-time"></i> speed
+		<div class="speed-box">
+            F3 <i class="slider-origin"></i><input id="slider3" type ="range" min ="0.5" max="2.0" step ="0.25" value ="1"/> F4
+		</div>
         </div><!--
-        --><div class="controls">
-        <div class="button play-pause"><i class="icon-play"></i><i class="icon-pause"></i></div><!--
-        --><div class="button skip-backwards"><i class="icon-backward"></i></div><!--
-        --><div class="button skip-forwards"><i class="icon-forward"></i></div><!--
-        --><div class="button speed"><i class="icon-time"></i> speed
-			<div class="speed-box">
-                F3 <i class="slider-origin"></i><input id="slider3" type ="range" min ="0.5" max="2.0" step ="0.25" value ="1"/> F4
-			</div>
-            </div><!--
-        --><span id="player-hook"></span><!--
-        --></div><!--
-        
-    --></div>
+    --><span id="player-hook"></span><!--
+    --></div><!--
+    
+--></div>
+
+<div class="about active">
+    About text goes here...
+</div>
 
 <div class="input active">
     <div class="file-input-wrapper">

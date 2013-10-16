@@ -1,0 +1,12 @@
+.about {
+    height: 200px;
+    background: blue;
+    z-index: 200;
+    position: relative;
+    
+    display: none;
+    &.active {
+        display: block;
+    }
+    
+}

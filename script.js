@@ -32,6 +32,15 @@ function adjustPlayerWidth(){
    console.log(gap);
 }
 
+$('.title').click(function(){
+    toggleAbout();
+});
+
+function toggleAbout(){
+    $('.title').toggleClass('active');
+    $('.about').toggleClass('active');
+}
+
 
 // autosave every second
 var field = document.getElementById("textbox");
@@ -214,7 +223,7 @@ function initAudioJS(){
 function toggleControls(){
     $('.topbar').toggleClass('inputting');
     $('.input').toggleClass('active');
-    controls = !controls;
+    toggleAbout();
 };
 
 $( ".speed" ).click(function() {

@@ -41,15 +41,22 @@
 
 
 .button:after {
-    display: none;
+    opacity: 0;
     padding-top: 2em;
     color: #000;
     font-size: 9px;
     cusor: default;
+    display: block;
+    
+	-webkit-transition: opacity 0.25s;
+	-moz-transition: opacity 0.25s;
+	transition: opacity 0.25s;
+    
 }
 
-.controls:hover .button:after {
-    display: block;
+.topbar:hover .button:after {
+//    display: block;
+    opacity: 1;
 }
 
 .button {

@@ -16,10 +16,21 @@
 }
 
 .title {
+    padding: 10px;
     text-align: left;
     display: inline-block;
     vertical-align: top;
     width: auto;
-    background: blue;
-    padding: 10px;
+
+    background: black;
+    color: white;
+    border-right: 1px solid #3F3F3F;
+
+    &:hover {
+        background-color: #3F3F3F;
+        cursor: pointer;
+    };
+    &.active {
+        background: blue;
+    }
 }

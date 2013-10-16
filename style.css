@@ -49,7 +49,7 @@ body {
   overflow: hidden;
   -webkit-transition: max-height 1s, margin 1s;
   -moz-transition: max-height 1s, margin 1s;
-  transition: max-height 1s, margin 1; }
+  transition: max-height 1s, margin 1s; }
 
 .input.active {
   max-height: 200px;
@@ -119,26 +119,14 @@ body {
     border: 0;
     padding: 0; }
 
-.topbar {
-  background: black;
-  color: white;
-  box-shadow: 0px 0px 10px #666;
-  -webkit-box-shadow: 0px 0px 10px #666;
-  z-index: 50;
-  position: relative;
-  font-size: 16px; }
-  .topbar .controls {
-    display: inline-block; }
-  .topbar.inputting .controls {
-    display: none; }
-
-.title {
-  text-align: left;
-  display: inline-block;
-  vertical-align: top;
-  width: auto;
+.about {
+  height: 200px;
   background: blue;
-  padding: 10px; }
+  z-index: 200;
+  position: relative;
+  display: none; }
+  .about.active {
+    display: block; }
 
 .controls {
   display: none; }
@@ -168,14 +156,18 @@ body {
   display: inline; }
 
 .button:after {
-  display: none;
+  opacity: 0;
   padding-top: 2em;
   color: #000;
   font-size: 9px;
-  cusor: default; }
+  cusor: default;
+  display: block;
+  -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  transition: opacity 0.25s; }
 
-.controls:hover .button:after {
-  display: block; }
+.topbar:hover .button:after {
+  opacity: 1; }
 
 .button.play-pause:after {
   content: 'ESC'; }
@@ -183,6 +175,34 @@ body {
   content: 'F1'; }
 .button.skip-forwards:after {
   content: 'F2'; }
+
+.topbar {
+  background: black;
+  color: white;
+  box-shadow: 0px 0px 10px #666;
+  -webkit-box-shadow: 0px 0px 10px #666;
+  z-index: 50;
+  position: relative;
+  font-size: 16px; }
+  .topbar .controls {
+    display: inline-block; }
+  .topbar.inputting .controls {
+    display: none; }
+
+.title {
+  padding: 10px;
+  text-align: left;
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+  background: black;
+  color: white;
+  border-right: 1px solid #3F3F3F; }
+  .title:hover {
+    background-color: #3F3F3F;
+    cursor: pointer; }
+  .title.active {
+    background: blue; }
 
 .button.speed {
   width: 85px; }
