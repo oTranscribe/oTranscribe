@@ -25,7 +25,9 @@ function createPlayer(file){
 
 function adjustPlayerWidth(){
     var cntrls = $('.controls');
-   var gap = $(window).width() - (cntrls.offset().left + cntrls.width());
+    console.log ("Window width: "+$(window).width()+"\nControls offset: "+cntrls.offset().left+"\nControls width: "+cntrls.width()+"\nTitle width: "+$('.title').width() );
+    
+   var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth() );
     $('.scrubber').width( $('.scrubber').width()+gap );
    console.log(gap);
 }
@@ -209,13 +211,7 @@ function initAudioJS(){
 }
 
 
-var controls = false;
 function toggleControls(){
-    if (controls == false){
-        $('.controls').show();
-    } else {
-        $('.controls').hide();
-    };
     $('.topbar').toggleClass('inputting');
     $('.input').toggleClass('active');
     controls = !controls;
