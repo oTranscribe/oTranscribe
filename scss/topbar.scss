@@ -31,6 +31,10 @@
         cursor: pointer;
     };
     &.active {
-        background: blue;
+        color: black;
+        background: rgb(241, 241, 241);
+        &:hover {
+            background: #DDD;
+        }
     }
 }

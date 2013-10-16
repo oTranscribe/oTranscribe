@@ -36,6 +36,10 @@ $('.title').click(function(){
     toggleAbout();
 });
 
+$('.about .close').click(function(){
+    toggleAbout();
+});
+
 function toggleAbout(){
     $('.title').toggleClass('active');
     $('.about').toggleClass('active');
@@ -54,6 +58,7 @@ setInterval(function(){
 // load existing file name
 if ( localStorage.getItem("lastfile") ) {
    document.getElementById("lastfile").innerHTML = "Last file: "+localStorage.getItem("lastfile");
+   toggleAbout();
 }
 
 
@@ -234,7 +239,6 @@ function initAudioJS(){
 function toggleControls(){
     $('.topbar').toggleClass('inputting');
     $('.input').toggleClass('active');
-    toggleAbout();
 };
 
 $( ".speed" ).click(function() {

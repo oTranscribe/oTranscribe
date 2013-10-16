@@ -1,12 +1,52 @@
 .about {
-    height: 200px;
-    background: blue;
+    background: rgb(241, 241, 241);
     z-index: 200;
     position: relative;
+    padding: 40px 30%;
+    margin-bottom: -100%; // pushes editing area up
     
     display: none;
     &.active {
         display: block;
     }
+            
+    p {
+        em {
+            font-style: italic;
+        }
+        strong {
+            font-weight: bold;
+        }
+    }
+        
+        
+    p+p, ul {
+        margin: 0.8em 0;
+    }
+    
+    li {
+        list-style-type: disc;
+        margin: 0.5em 0;
+        margin-left: 1em;
+    }
+    
+    .close {
+        display: block;
+        background: grey;
+        padding: 0.7em 1em;
+        border-radius: 5px;
+        color: white;
+        font-weight: 100;
+        margin: 0 auto;
+        width: 11em;
+        text-align: center;
+        margin-top: 2em;
+        cursor: pointer;
+        
+        &:hover {
+            background: #999;
+        }
+    }
+    
     
 }

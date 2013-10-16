@@ -124,13 +124,38 @@ body {
     padding: 0; }
 
 .about {
-  height: 200px;
-  background: blue;
+  background: #f1f1f1;
   z-index: 200;
   position: relative;
+  padding: 40px 30%;
+  margin-bottom: -100%;
   display: none; }
   .about.active {
     display: block; }
+  .about p em {
+    font-style: italic; }
+  .about p strong {
+    font-weight: bold; }
+  .about p + p, .about ul {
+    margin: 0.8em 0; }
+  .about li {
+    list-style-type: disc;
+    margin: 0.5em 0;
+    margin-left: 1em; }
+  .about .close {
+    display: block;
+    background: grey;
+    padding: 0.7em 1em;
+    border-radius: 5px;
+    color: white;
+    font-weight: 100;
+    margin: 0 auto;
+    width: 11em;
+    text-align: center;
+    margin-top: 2em;
+    cursor: pointer; }
+    .about .close:hover {
+      background: #999; }
 
 .controls {
   display: none; }
@@ -206,7 +231,10 @@ body {
     background-color: #3F3F3F;
     cursor: pointer; }
   .title.active {
-    background: blue; }
+    color: black;
+    background: #f1f1f1; }
+    .title.active:hover {
+      background: #DDD; }
 
 .button.speed {
   width: 85px; }
