@@ -18,6 +18,7 @@ function createPlayer(file){
 
 // play/pause
 function playPause(){
+    var playing = !document.getElementById('audio').paused
     if (playing == true){
         document.getElementById('audio').pause();
         $('.play-pause').removeClass('playing');
@@ -25,7 +26,6 @@ function playPause(){
         document.getElementById('audio').play();
         $('.play-pause').addClass('playing');
     };
-    playing = !playing;
 };
 
 // skip forward
@@ -194,10 +194,6 @@ function setFormatsMessage(){
 ******************************************/
 
 
-// for playPause() function
-var playing = false;
-
-
 function init(){
     saveText();
     loadFileName();
@@ -306,10 +302,6 @@ init();
     
 
 // End UI
-
-
-
-
 
 
 })(); // end script
