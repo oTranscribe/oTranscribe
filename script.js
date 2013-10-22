@@ -1,15 +1,8 @@
 (function(){
 
-var audioPlayer;
-
-$('#attach').change(function() {
-  createPlayer( this.files[0] );
-  initAudioJS();
-  adjustPlayerWidth();
-  toggleControls();        
-  localStorage.setItem("lastfile", this.files[0].name);
-  console.log('Loading complete.')    ;
-});
+/******************************************
+             Audio player
+******************************************/
 
 function createPlayer(file){
     $('#audio').remove();
@@ -23,47 +16,7 @@ function createPlayer(file){
     $('#audio')[0].src = url;    
 }
 
-function adjustPlayerWidth(){
-    var cntrls = $('.controls');
-    console.log ("Window width: "+$(window).width()+"\nControls offset: "+cntrls.offset().left+"\nControls width: "+cntrls.width()+"\nTitle width: "+$('.title').width() );
-    
-   var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth() );
-    $('.scrubber').width( $('.scrubber').width()+gap );
-   console.log(gap);
-}
-
-$('.title').click(function(){
-    toggleAbout();
-});
-
-$('.about .close').click(function(){
-    toggleAbout();
-});
-
-function toggleAbout(){
-    $('.title').toggleClass('active');
-    $('.about').toggleClass('active');
-}
-
-
-// autosave every second
-var field = document.getElementById("textbox");
-if ( localStorage.getItem("autosave")) {
-   field.value = localStorage.getItem("autosave");
-}
-setInterval(function(){
-   localStorage.setItem("autosave", field.value);
-}, 1000);
-
-// load existing file name
-if ( localStorage.getItem("lastfile") ) {
-   document.getElementById("lastfile").innerHTML = "Last file: "+localStorage.getItem("lastfile");
-   toggleAbout();
-}
-
-
 // play/pause
-var playing = false;
 function playPause(){
     if (playing == true){
         document.getElementById('audio').pause();
@@ -74,24 +27,6 @@ function playPause(){
     };
     playing = !playing;
 };
-
-// get timestamp
-// var timestamp;
-function getTimestamp(){
-    // get timestap
-    var time = document.getElementById('audio').currentTime  
-    var minutes = Math.floor(time / 60);
-    var seconds = ("0" + Math.round( time - minutes * 60 ) ).slice(-2);
-    return minutes+":"+seconds;
-};
-
-function insertTimestamp(){
-    insertAtCaret('textbox',"["+getTimestamp()+"]" );
-}
-
-// $('.timestamp').click(function(){
-//     setFromTimestamp( $(this) );
-// });
 
 // skip forward
 function skip(direction){
@@ -119,68 +54,53 @@ function speed(newSpeed){
     document.getElementById('audio').playbackRate = newSpeedNumber;
 }
 
+function initAudioJS(){
+    audiojs.events.ready(function() {
+      audiojs.createAll();
+    });
+}
 
 
-// keyboard shortcuts
-Mousetrap.bind('escape', function(e) {
-    if (e.preventDefault) {
-        e.preventDefault();
-    } else {
-        // internet explorer
-        e.returnValue = false;
-    }
-    playPause();
-    return false;
-});
-Mousetrap.bind('f1', function(e) {
-    skip('backwards');
-    return false;
-});
-Mousetrap.bind('f2', function(e) {
-    skip('forwards');
-    return false;
-});
-// Mousetrap.bind('f3', function(e) {
-//     speed('down');
-//     return false;
-// });
-// Mousetrap.bind('f4', function(e) {
-//     speed('up');
-//     return false;
-// });
-Mousetrap.bind('mod+j', function(e) {
-    document.execCommand('insertHTML',false,
-        '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>'
-    );
-    console.log(tsHTML);
-    return false;
-});
-Mousetrap.bind('mod+s', function(e) {
-    alert("No need to manually save - your transcript is automatically backed up continuously.")
-    return false;
-});
 
-Mousetrap.bind('mod+b', function(e) {
-    document.execCommand('bold',false,null);
-    return false;
-});
-
-Mousetrap.bind('mod+i', function(e) {
-    document.execCommand('italic',false,null);
-    return false;
-});
+/******************************************
+               Text editor
+******************************************/
 
 
-$('.play-pause').click(function(){
-    playPause();    
-});
 
-$('.skip-backwards').click(function(){
-    skip('backwards');    
-});
-$('.skip-forwards').click(function(){
-    skip('forwards');    
-});
+
+function adjustPlayerWidth(){
+    var cntrls = $('.controls');
+    console.log ("Window width: "+$(window).width()+"\nControls offset: "+cntrls.offset().left+"\nControls width: "+cntrls.width()+"\nTitle width: "+$('.title').width() );
+    
+    var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth() );
+    $('.scrubber').width( $('.scrubber').width()+gap );
+   console.log(gap);
+}
+
+
+function toggleAbout(){
+    $('.title').toggleClass('active');
+    $('.about').toggleClass('active');
+}
+
+/******************************************
+                Timestamp
+******************************************/
+
+// get timestamp
+// var timestamp;
+function getTimestamp(){
+    // get timestap
+    var time = document.getElementById('audio').currentTime  
+    var minutes = Math.floor(time / 60);
+    var seconds = ("0" + Math.round( time - minutes * 60 ) ).slice(-2);
+    return minutes+":"+seconds;
+};
+
+function insertTimestamp(){
+    insertAtCaret('textbox',"["+getTimestamp()+"]" );
+}
     
 // insert text at cursor
 function insertAtCaret(areaId,text) {
@@ -217,6 +137,11 @@ function insertAtCaret(areaId,text) {
 	txtarea.scrollTop = scrollPos;
 }
 
+/******************************************
+                Other
+******************************************/
+
+
 function detectFormats(format){
     var a = document.createElement('audio');
     return !!(a.canPlayType && a.canPlayType('audio/'+format+';').replace(/no/, ''));
@@ -234,32 +159,144 @@ function listSupportedFormats(){
     });
     return supportedFormats.join(', ');
 }
-document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";
-
-function initAudioJS(){
-    audiojs.events.ready(function() {
-      audiojs.createAll();
-    });
-}
-
 
 function toggleControls(){
     $('.topbar').toggleClass('inputting');
     $('.input').toggleClass('active');
 };
 
-$( ".speed" ).click(function() {
-    if ($('.speed-box').not(':hover').length) {
-        $(this).toggleClass('fixed');
-        console.log ($('.speed-box').not(':hover').length);
-    }    
-});
-
-$( "#slider3" ).mousemove(function() {
-  speed(this.value);
-});
-
 console.log( detectFormats() );
+
+/******************************************
+             Initialisation
+******************************************/
+
+var audioPlayer;
+
+// for playPause() function
+var playing = false;
+
+// autosave every second
+var field = document.getElementById("textbox");
+if ( localStorage.getItem("autosave")) {
+   field.value = localStorage.getItem("autosave");
+}
+setInterval(function(){
+   localStorage.setItem("autosave", field.value);
+}, 1000);
+
+// load existing file name
+if ( localStorage.getItem("lastfile") ) {
+   document.getElementById("lastfile").innerHTML = "Last file: "+localStorage.getItem("lastfile");
+   toggleAbout();
+}
+
+document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";
+
+/******************************************
+             User Interface
+******************************************/
+
+    // keyboard shortcuts
+    Mousetrap.bind('escape', function(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            // internet explorer
+            e.returnValue = false;
+        }
+        playPause();
+        return false;
+    });
+    Mousetrap.bind('f1', function(e) {
+        skip('backwards');
+        return false;
+    });
+    Mousetrap.bind('f2', function(e) {
+        skip('forwards');
+        return false;
+    });
+    // Mousetrap.bind('f3', function(e) {
+    //     speed('down');
+    //     return false;
+    // });
+    // Mousetrap.bind('f4', function(e) {
+    //     speed('up');
+    //     return false;
+    // });
+    Mousetrap.bind('mod+j', function(e) {
+        document.execCommand('insertHTML',false,
+            '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>'
+        );
+        console.log(tsHTML);
+        return false;
+    });
+    Mousetrap.bind('mod+s', function(e) {
+        alert("No need to manually save - your transcript is automatically backed up continuously.")
+        return false;
+    });
+
+    Mousetrap.bind('mod+b', function(e) {
+        document.execCommand('bold',false,null);
+        return false;
+    });
+
+    Mousetrap.bind('mod+i', function(e) {
+        document.execCommand('italic',false,null);
+        return false;
+    });
+
+
+    $('.play-pause').click(function(){
+        playPause();    
+    });
+
+    $('.skip-backwards').click(function(){
+        skip('backwards');    
+    });
+    $('.skip-forwards').click(function(){
+        skip('forwards');    
+    });
+
+    $( ".speed" ).click(function() {
+        if ($('.speed-box').not(':hover').length) {
+            $(this).toggleClass('fixed');
+            console.log ($('.speed-box').not(':hover').length);
+        }    
+    });
+
+    $( "#slider3" ).mousemove(function() {
+      speed(this.value);
+    });
+    
+    $('.title').click(function(){
+        toggleAbout();
+    });
+
+    $('.about .close').click(function(){
+        toggleAbout();
+    });
+    
+    $('#attach').change(function() {
+      createPlayer( this.files[0] );
+      initAudioJS();
+      adjustPlayerWidth();
+      toggleControls();        
+      localStorage.setItem("lastfile", this.files[0].name);
+      console.log('Loading complete.')    ;
+    });
+    
+    // $('.timestamp').click(function(){
+    //     setFromTimestamp( $(this) );
+    // });
+    
+    
+
+// End UI
+
+
+
+
 
 
 })(); // end script
