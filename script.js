@@ -137,6 +137,26 @@ function insertAtCaret(areaId,text) {
 	txtarea.scrollTop = scrollPos;
 }
 
+function saveText(){
+    // autosave every second
+    var field = document.getElementById("textbox");
+    if ( localStorage.getItem("autosave")) {
+       field.value = localStorage.getItem("autosave");
+    }
+    setInterval(function(){
+       localStorage.setItem("autosave", field.value);
+    }, 1000);
+    
+}
+
+function loadFileName(){
+    // load existing file name
+    if ( localStorage.getItem("lastfile") ) {
+       document.getElementById("lastfile").innerHTML = "Last file: "+localStorage.getItem("lastfile");
+       toggleAbout();
+    }    
+}
+
 /******************************************
                 Other
 ******************************************/
@@ -165,36 +185,29 @@ function toggleControls(){
     $('.input').toggleClass('active');
 };
 
-console.log( detectFormats() );
+function setFormatsMessage(){
+    document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";    
+}
 
 /******************************************
              Initialisation
 ******************************************/
 
-var audioPlayer;
 
 // for playPause() function
 var playing = false;
 
-// autosave every second
-var field = document.getElementById("textbox");
-if ( localStorage.getItem("autosave")) {
-   field.value = localStorage.getItem("autosave");
-}
-setInterval(function(){
-   localStorage.setItem("autosave", field.value);
-}, 1000);
 
-// load existing file name
-if ( localStorage.getItem("lastfile") ) {
-   document.getElementById("lastfile").innerHTML = "Last file: "+localStorage.getItem("lastfile");
-   toggleAbout();
+function init(){
+    saveText();
+    loadFileName();
+    setFormatsMessage();
 }
 
-document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";
+init();
 
 /******************************************
-             User Interface
+             User Interaction
 ******************************************/
 
     // keyboard shortcuts
