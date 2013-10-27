@@ -145,10 +145,10 @@ function saveText(){
     // autosave every second
     var field = document.getElementById("textbox");
     if ( localStorage.getItem("autosave")) {
-       field.value = localStorage.getItem("autosave");
+       field.innerHTML = localStorage.getItem("autosave");
     }
     setInterval(function(){
-       localStorage.setItem("autosave", field.value);
+       localStorage.setItem("autosave", field.innerHTML);
     }, 1000);
     
 }
