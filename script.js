@@ -84,6 +84,10 @@ function toggleAbout(){
     $('.about').toggleClass('active');
 }
 
+function adjustEditorHeight(){
+    $('.textbox-container').height( window.innerHeight - 36 );
+}
+
 /******************************************
                 Timestamp
 ******************************************/
@@ -198,6 +202,7 @@ function init(){
     saveText();
     loadFileName();
     setFormatsMessage();
+    adjustEditorHeight();
 }
 
 init();
