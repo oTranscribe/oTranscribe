@@ -246,7 +246,7 @@ $(window).resize(function() {
     // });
     Mousetrap.bind('mod+j', function(e) {
         document.execCommand('insertHTML',false,
-            '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>'
+        '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>&nbsp;'
         );
         console.log(tsHTML);
         return false;
