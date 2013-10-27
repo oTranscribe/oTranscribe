@@ -207,6 +207,12 @@ function init(){
 
 init();
 
+$(window).resize(function() {
+    adjustEditorHeight();
+    adjustPlayerWidth();
+});
+
+
 /******************************************
              User Interaction
 ******************************************/
