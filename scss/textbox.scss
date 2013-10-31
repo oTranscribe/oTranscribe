@@ -1,8 +1,8 @@
 #textbox {
-    height: 400px;
     resize: none;
     
-    font-size: 12pt;
+    font-size: 15px;
+    line-height: 20px;
     font-family: Arial;
     padding: 5px;
     margin: 50px auto;
@@ -16,7 +16,7 @@
     box-shadow: 0px 0px 10px #CCC;
     width: 600px;
     padding: 50px;
-    min-height: 550px;
+    min-height: 700px;
     overflow-y: hidden;
     
     
