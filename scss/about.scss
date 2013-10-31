@@ -1,46 +1,83 @@
 .about {
+    
+    font-family: "Helvetica Neue";
+    
     background: rgb(241, 241, 241);
     z-index: 200;
     position: relative;
-    padding: 40px 30%;
+    padding: 40px 0;
+    
+    
     margin-bottom: -100%; // pushes editing area up
     
     display: none;
     &.active {
         display: block;
     }
-            
-    p {
-        em {
-            font-style: italic;
-        }
-        strong {
-            font-weight: bold;
-        }
+    
+    
+    .container {
+        width: 850px;
+        margin: 0 auto;
     }
+    
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 500;
         
-        
-    p+p, ul {
-        margin: 0.8em 0;
+        color: $accent;
+    }
+    
+    p.lead {
+        font-size: 25px;
+        font-weight: 300;
+        text-align: center;
+        width: 65%;
+        margin: 0 auto;
+        display: block;
+        line-height: 32px;
+    }
+                
+    ul {
+        text-align: center;
+        margin: 2em 0 0 0;
     }
     
     li {
-        list-style-type: disc;
-        margin: 0.5em 0;
-        margin-left: 1em;
+        width: 27%;
+        display: inline-block;
+        vertical-align: top;
+        font-size: 16px;
+        height: 6em;
+        line-height: 20px;
+        text-align: center;
+        padding: 0 3%;     
+        
+        strong {
+            font-weight: 500; ;
+            color: $accent;
+            
+        }
+    }
+    
+    a {
+        color: inherit;
+        &:hover {
+            color: #777;
+        };
     }
     
     .close {
         display: block;
-        background: grey;
+        background: $accent;
         padding: 0.7em 1em;
         border-radius: 5px;
         color: white;
-        font-weight: 100;
         margin: 0 auto;
         width: 11em;
         text-align: center;
-        margin-top: 2em;
         cursor: pointer;
         
         &:hover {
@@ -50,3 +87,30 @@
     
     
 }
+
+
+@media (max-width: 850px) {
+    .about {    
+        h1 {
+            font-size: 35px;
+        
+        }
+        .lead {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 24px; 
+        }
+        .container {
+            width: 100%;
+        }
+        li {
+            width: auto;
+            padding: 3px 10%; 
+            padding-bottom: 5px;
+            text-align: left;
+            display: block;
+            height: auto;        
+        }    
+    }    
+}
+
