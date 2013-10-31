@@ -81,7 +81,7 @@
         cursor: pointer;
         
         &:hover {
-            background: #999;
+            background: darken($accent, 10%);
         }
     }
     
@@ -95,13 +95,16 @@
             font-size: 35px;
         
         }
-        .lead {
+        p.lead {
             font-size: 18px;
             font-weight: 400;
             line-height: 24px; 
         }
         .container {
             width: 100%;
+        }
+        ul {
+            margin: 2em 0; 
         }
         li {
             width: auto;
