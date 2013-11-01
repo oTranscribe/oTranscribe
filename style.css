@@ -108,39 +108,82 @@ body {
     padding: 0; }
 
 .about {
+  font-family: "Helvetica Neue";
   background: #f1f1f1;
   z-index: 200;
   position: relative;
-  padding: 40px 30%;
+  padding: 40px 0;
   margin-bottom: -100%;
   display: none; }
   .about.active {
     display: block; }
-  .about p em {
-    font-style: italic; }
-  .about p strong {
-    font-weight: bold; }
-  .about p + p, .about ul {
-    margin: 0.8em 0; }
+  .about .container {
+    width: 850px;
+    margin: 0 auto; }
+  .about h1 {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #3482b1; }
+  .about p.lead {
+    font-size: 25px;
+    font-weight: 300;
+    text-align: center;
+    width: 65%;
+    margin: 0 auto;
+    display: block;
+    line-height: 32px; }
+  .about ul {
+    text-align: center;
+    margin: 2em 0 0 0; }
   .about li {
-    list-style-type: disc;
-    margin: 0.5em 0;
-    margin-left: 1em; }
+    width: 27%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 16px;
+    height: 6em;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 3%; }
+    .about li strong {
+      font-weight: 500;
+      color: #3482b1; }
+  .about a {
+    color: inherit; }
+    .about a:hover {
+      color: #777; }
   .about .close {
     display: block;
-    background: grey;
+    background: #3482b1;
     padding: 0.7em 1em;
     border-radius: 5px;
     color: white;
-    font-weight: 100;
     margin: 0 auto;
     width: 11em;
     text-align: center;
-    margin-top: 2em;
     cursor: pointer; }
     .about .close:hover {
-      background: #999; }
+      background: #28658a; }
 
+@media (max-width: 850px) {
+  .about h1 {
+    font-size: 35px; }
+  .about p.lead {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px; }
+  .about .container {
+    width: 100%; }
+  .about ul {
+    margin: 2em 0; }
+  .about li {
+    width: auto;
+    padding: 3px 10%;
+    padding-bottom: 5px;
+    text-align: left;
+    display: block;
+    height: auto; } }
 .controls {
   display: none; }
   .controls .button {
