@@ -39,7 +39,6 @@ function skip(direction){
 }
 
 // speed
-// min="0.5" max="2.0" step ="0.25"
 function speed(newSpeed){
     console.log(typeof newSpeed);
     var min = 0.5;
@@ -47,19 +46,19 @@ function speed(newSpeed){
     var step = 0.25;
     var newSpeedNumber;
     var currentSpeed = document.getElementById('audio').playbackRate;
-    console.log('x');
-    if ((newSpeed == "up") && !(currentSpeed == max)){
+    if ((newSpeed == "up") && (currentSpeed < max)){
         newSpeedNumber = currentSpeed+step;
-    } else if ((newSpeed == "down") && !(currentSpeed == min)){
+    } else if ((newSpeed == "down") && (currentSpeed > min)){
         newSpeedNumber = currentSpeed-step;
     } else if (newSpeed == "reset"){
         newSpeedNumber = 1;
-    } else if (!(typeof newSpeed == 'string')) {
+    } else if (typeof newSpeed == 'number') {
         newSpeedNumber = newSpeed;
     }
-    document.getElementById('audio').playbackRate = newSpeedNumber;
-    document.getElementById('slider3').value = newSpeedNumber;
-    
+    if (typeof(newSpeedNumber) != "undefined") {
+        document.getElementById('audio').playbackRate = newSpeedNumber;
+        document.getElementById('slider3').value = newSpeedNumber;        
+    }
 }
 
 function initAudioJS(){
@@ -293,9 +292,9 @@ $(window).resize(function() {
         }    
     });
 
-    $( "#slider3" ).mousemove(function() {
-      speed(this.value);
-    });
+    $( "#slider3" ).change(function() {
+      speed(this.valueAsNumber);
+    });    
     
     $('.title').click(function(){
         toggleAbout();
