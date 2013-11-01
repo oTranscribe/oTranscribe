@@ -39,19 +39,27 @@ function skip(direction){
 }
 
 // speed
+// min="0.5" max="2.0" step ="0.25"
 function speed(newSpeed){
+    console.log(typeof newSpeed);
+    var min = 0.5;
+    var max = 2;
+    var step = 0.25;
     var newSpeedNumber;
     var currentSpeed = document.getElementById('audio').playbackRate;
-    if (newSpeed == "up"){
-        newSpeedNumber = currentSpeed+0.1;
-    } else if (newSpeed == "down"){
-        newSpeedNumber = currentSpeed-0.1;
+    console.log('x');
+    if ((newSpeed == "up") && !(currentSpeed == max)){
+        newSpeedNumber = currentSpeed+step;
+    } else if ((newSpeed == "down") && !(currentSpeed == min)){
+        newSpeedNumber = currentSpeed-step;
     } else if (newSpeed == "reset"){
         newSpeedNumber = 1;
-    } else {
+    } else if (!(typeof newSpeed == 'string')) {
         newSpeedNumber = newSpeed;
     }
     document.getElementById('audio').playbackRate = newSpeedNumber;
+    document.getElementById('slider3').value = newSpeedNumber;
+    
 }
 
 function initAudioJS(){
@@ -236,14 +244,14 @@ $(window).resize(function() {
         skip('forwards');
         return false;
     });
-    // Mousetrap.bind('f3', function(e) {
-    //     speed('down');
-    //     return false;
-    // });
-    // Mousetrap.bind('f4', function(e) {
-    //     speed('up');
-    //     return false;
-    // });
+    Mousetrap.bind('f3', function(e) {
+        speed('down');
+        return false;
+    });
+    Mousetrap.bind('f4', function(e) {
+        speed('up');
+        return false;
+    });
     Mousetrap.bind('mod+j', function(e) {
         document.execCommand('insertHTML',false,
         '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>&nbsp;'
