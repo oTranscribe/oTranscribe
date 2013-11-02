@@ -168,18 +168,21 @@ body {
     .about .credits p {
       font-size: 14px;
       margin-top: 10px; }
-  .about .close {
+  .about .start {
     display: block;
-    background: #3482b1;
     padding: 0.7em 1em;
     border-radius: 5px;
     color: white;
     margin: 0 auto;
     width: 11em;
     text-align: center;
-    cursor: pointer; }
-    .about .close:hover {
-      background: #28658a; }
+    background: grey;
+    cursor: default; }
+    .about .start.ready {
+      cursor: pointer;
+      background: #3482b1; }
+      .about .start.ready:hover {
+        background: #28658a; }
 
 @media (max-width: 850px) {
   .about h1 {

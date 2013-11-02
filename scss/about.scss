@@ -90,19 +90,23 @@
         }
     }
     
-    .close {
+    .start {
         display: block;
-        background: $accent;
         padding: 0.7em 1em;
         border-radius: 5px;
         color: white;
         margin: 0 auto;
         width: 11em;
         text-align: center;
-        cursor: pointer;
+        background: grey;
+        cursor: default;
         
-        &:hover {
-            background: darken($accent, 10%);
+        &.ready {
+            cursor: pointer;
+            background: $accent;
+            &:hover {
+                background: darken($accent, 10%);
+            }            
         }
     }
     

@@ -200,6 +200,11 @@ function setFormatsMessage(){
     document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";    
 }
 
+function setStartButton(){
+    $('.start').html('Start transcribing').addClass('ready');
+}
+
+
 /******************************************
              Initialisation
 ******************************************/
@@ -210,6 +215,7 @@ function init(){
     loadFileName();
     setFormatsMessage();
     adjustEditorHeight();
+    setStartButton();
 }
 
 init();
@@ -300,7 +306,7 @@ $(window).resize(function() {
         toggleAbout();
     });
 
-    $('.about .close').click(function(){
+    $('.about .start.ready').click(function(){
         toggleAbout();
     });
     
