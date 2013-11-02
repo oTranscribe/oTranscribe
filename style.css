@@ -27,7 +27,7 @@ table {
   border-spacing: 0; }
 
 body {
-  font-family: Arial;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   height: 100%; }
 
 .input {
@@ -108,7 +108,6 @@ body {
     padding: 0; }
 
 .about {
-  font-family: "Helvetica Neue";
   background: #f1f1f1;
   z-index: 200;
   position: relative;
