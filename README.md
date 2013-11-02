@@ -15,7 +15,7 @@ It's currently under active development by [Elliot Bentley](http://elliotbentley
 
 Although a [web version](http://otranscribe.com/) is available, you can install oTranscribe anywhere by following these steps:
 
-1. Download [the current ZIP archive](https://github.com/ejb/transcriber/archive/master.zip).
+1. Download [the current ZIP archive](https://github.com/otranscribe/otranscribe/archive/master.zip).
 2. Upload the files to a server of your choice.
 3. Er...
 4. That's it.
