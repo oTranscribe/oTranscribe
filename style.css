@@ -126,10 +126,9 @@ body {
     font-weight: 500;
     color: #3482b1; }
   .about p.lead {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 300;
     text-align: center;
-    width: 65%;
     margin: 0 auto;
     display: block;
     line-height: 32px; }
@@ -152,6 +151,23 @@ body {
     color: inherit; }
     .about a:hover {
       color: #777; }
+  .about .credits {
+    text-align: center;
+    margin-top: 80px; }
+    .about .credits .twitter {
+      display: inline-block;
+      background: #777;
+      padding: 5px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: white;
+      font-size: 12px;
+      margin-right: 10px; }
+      .about .credits .twitter:hover {
+        background: #5e5e5e; }
+    .about .credits p {
+      font-size: 14px;
+      margin-top: 10px; }
   .about .close {
     display: block;
     background: #3482b1;
