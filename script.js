@@ -68,6 +68,9 @@ function initAudioJS(){
     });
 }
 
+function resetPlayer(){
+    location.reload();
+}
 
 
 /******************************************
@@ -298,6 +301,11 @@ $(window).resize(function() {
             console.log ($('.speed-box').not(':hover').length);
         }    
     });
+    
+    $('.button.refresh').click(function(){
+        resetPlayer();
+    });
+    
 
     $( "#slider3" ).change(function() {
       speed(this.valueAsNumber);
@@ -323,8 +331,7 @@ $(window).resize(function() {
     
     // $('.timestamp').click(function(){
     //     setFromTimestamp( $(this) );
-    // });
-    
+    // });    
     
 
 // End UI

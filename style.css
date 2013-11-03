@@ -229,6 +229,10 @@ body {
 .play-pause .icon-play {
   display: inline; }
 
+.button.refresh {
+  border-left: 1px solid #3F3F3F;
+  border-right: none; }
+
 .button:after {
   opacity: 0;
   padding-top: 2em;
