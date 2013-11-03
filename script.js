@@ -14,6 +14,7 @@ function createPlayer(file){
     }
     console.log(url);
     $('#audio')[0].src = url;    
+    console.log(file.name);
 }
 
 // play/pause
@@ -316,6 +317,7 @@ $(window).resize(function() {
       adjustPlayerWidth();
       toggleControls();        
       localStorage.setItem("lastfile", this.files[0].name);
+      $('.scrubber .loaded').html( this.files[0].name );    
       console.log('Loading complete.')    ;
     });
     
