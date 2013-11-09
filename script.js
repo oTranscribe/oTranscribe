@@ -270,33 +270,42 @@ $(window).resize(function() {
 ******************************************/
 
     // keyboard shortcuts
-    Mousetrap.bind('escape', function(e) {
+    function pd(e){
         if (e.preventDefault) {
             e.preventDefault();
         } else {
             // internet explorer
             e.returnValue = false;
         }
+    }
+
+    Mousetrap.bind('escape', function(e) {
+        pd(e);
         playPause();
         return false;
     });
     Mousetrap.bind('f1', function(e) {
+        pd(e);
         skip('backwards');
         return false;
     });
     Mousetrap.bind('f2', function(e) {
+        pd(e);
         skip('forwards');
         return false;
     });
     Mousetrap.bind('f3', function(e) {
+        pd(e);
         speed('down');
         return false;
     });
     Mousetrap.bind('f4', function(e) {
+        pd(e);
         speed('up');
         return false;
     });
     Mousetrap.bind('mod+j', function(e) {
+        pd(e);
         document.execCommand('insertHTML',false,
         '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>&nbsp;'
         );
@@ -304,16 +313,19 @@ $(window).resize(function() {
         return false;
     });
     Mousetrap.bind('mod+s', function(e) {
+        pd(e);
         alert("No need to manually save - your transcript is automatically backed up continuously.")
         return false;
     });
 
     Mousetrap.bind('mod+b', function(e) {
+        pd(e);
         document.execCommand('bold',false,null);
         return false;
     });
 
     Mousetrap.bind('mod+i', function(e) {
+        pd(e);
         document.execCommand('italic',false,null);
         return false;
     });
