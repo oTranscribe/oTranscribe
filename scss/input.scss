@@ -3,16 +3,18 @@
     margin: 0 auto;
 	max-height: 0;
 	overflow: hidden;
+    opacity: 0;
     
-	-webkit-transition: max-height 1s, margin 1s;
-	-moz-transition: max-height 1s, margin 1s;
-	transition: max-height 1s, margin 1s;
+	-webkit-transition: max-height 1s, margin 1s, opacity 0.5s;
+	-moz-transition: max-height 1s, margin 1s, opacity 0.5s;
+	transition: max-height 1s, margin 1s, opacity 0.5s;
     
 }
 
 .input.active {
 	max-height: 200px;
     margin: 25px auto;
+    opacity: 1;
 }
 
 #lastfile, #formats {
