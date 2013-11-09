@@ -70,7 +70,7 @@ body {
   text-indent: 0; }
   .file-input-wrapper:hover, .file-input-wrapper.hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4d9ccb), color-stop(1, #3a90c5));
-    background: -moz-linear-gradient(center top, #33b4f4 5%, #2b9fd9 100%);
+    background: -moz-linear-gradient(center top, #4d9ccb 5%, #4d9ccb 100%);
     background-color: #58AFDB; }
 
 .btn-file-input i {

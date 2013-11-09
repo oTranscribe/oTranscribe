@@ -44,11 +44,11 @@
     color: white;
 
     background-color:$accent;
-    text-indent:0;
+    text-indent:0;    
 
     &:hover, &.hover {
         background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($accent, 10%)), color-stop(1, lighten($accent, 5%)) );
-        background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
+        background:-moz-linear-gradient( center top, lighten($accent, 10%) 5%, lighten($accent, 10%) 100% );
     	background-color:#58AFDB;
     }   
 
