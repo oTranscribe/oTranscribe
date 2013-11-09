@@ -110,12 +110,24 @@
         }
     }
     
+    #old-browser {
+        width: 400px;
+        padding: 0 10px;
+        margin: 0 auto;
+        color: darkred;
+        line-height: 20px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
     
 }
 
 
 @media (max-width: 850px) {
     .about {    
+        padding: 40px 10%;
+
         h1 {
             font-size: 35px;
         
@@ -133,12 +145,15 @@
         }
         li {
             width: auto;
-            padding: 3px 10%; 
+            padding: 3px 0; 
             padding-bottom: 5px;
             text-align: left;
             display: block;
             height: auto;        
         }    
     }    
+    #old-browser {
+        width: auto;
+    }
 }
 

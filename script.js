@@ -242,6 +242,24 @@ function setStartButton(){
     $('.start').html('Start transcribing').addClass('ready');
 }
 
+function html5Support(){
+    var audioTagSupport = !!(document.createElement('audio').canPlayType);
+    var contentEditableSupport = document.getElementById('textbox').contentEditable;
+    var fileApiSupport = !!(window.FileReader);
+
+    if (audioTagSupport && contentEditableSupport && fileApiSupport){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function oldBrowserCheck(){
+    if ( html5Support() === false ){
+        document.getElementById('old-browser').innerHTML = 'Your browser does not appear to support some HTML5 features necessary for oTranscribe to run correctly. Please switch to a <a href="http://browsehappy.com">modern desktop browser</a>.';
+    }
+}
+
 
 /******************************************
              Initialisation
@@ -249,6 +267,7 @@ function setStartButton(){
 
 
 function init(){
+    oldBrowserCheck();
     saveText();
     loadFileName();
     setFormatsMessage();
