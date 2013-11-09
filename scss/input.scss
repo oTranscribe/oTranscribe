@@ -35,27 +35,29 @@
 
 .file-input-wrapper {
     width: 200px;
-    height: 40px;
+    padding: 15px;
     overflow: hidden;
     position: relative;
     margin: 20px auto;
-    background: #33B3F4;
     border-radius: 5px;
     border: 0;
     color: white;
 
-    box-shadow: inset 0px 1px 2px 1px #2b9fd9;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #33b4f4), color-stop(1, #2b9fd9) );
-    background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
-    background-color:#33b4f4;
+    background-color:$accent;
     text-indent:0;
-    border:1px solid #33b4f4;
 
-    &:hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #7FCEF5), color-stop(1, #58AFDB) );
+    &:hover, &.hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($accent, 10%)), color-stop(1, lighten($accent, 5%)) );
         background:-moz-linear-gradient( center top, #33b4f4 5%, #2b9fd9 100% );
     	background-color:#58AFDB;
-    }    
+    }   
+
+}
+
+.btn-file-input i {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 5px;
 }
 
 
@@ -71,7 +73,6 @@
 .file-input-wrapper > .btn-file-input {
   display: inline-block;
   width: 200px;
-  height: 40px;
 }
 
 .btn-file-input {

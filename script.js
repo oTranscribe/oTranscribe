@@ -173,6 +173,17 @@ function loadFileName(){
     }    
 }
 
+function dragListener(){
+    var button = $('.file-input-wrapper')[0];
+    button.addEventListener('dragover', function(){
+        $('.file-input-wrapper').addClass('hover');
+    }, false);
+    button.addEventListener('dragleave', function(){
+        $('.file-input-wrapper').removeClass('hover');
+    }, false);
+    
+}
+
 /******************************************
                 Other
 ******************************************/
@@ -242,6 +253,7 @@ function init(){
     loadFileName();
     setFormatsMessage();
     adjustEditorHeight();
+    dragListener();
     setStartButton();
 }
 
@@ -351,6 +363,7 @@ $(window).resize(function() {
     
 
 // End UI
+
 
 
 })(); // end script
