@@ -51,6 +51,10 @@ body {
   #lastfile a, #formats a {
     color: inherit; }
 
+#formats.warning {
+  transition: color 1s;
+  color: darkred; }
+
 .file-input-wrapper {
   width: 200px;
   height: 40px;

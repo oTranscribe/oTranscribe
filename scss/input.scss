@@ -25,6 +25,11 @@
     }
 }
 
+#formats.warning {
+    transition: color 1s;
+    color: darkred;
+}
+
 
 .file-input-wrapper {
     width: 200px;
