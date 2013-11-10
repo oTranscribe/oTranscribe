@@ -116,7 +116,7 @@ function getTimestamp(){
 
 function insertTimestamp(){
     document.execCommand('insertHTML',false,
-    '<span class="timestamp" contenteditable="false" data="hi" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>&nbsp;'
+    '<span class="timestamp" contenteditable="false" data="hi" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">' + getTimestamp() + '</span>&nbsp;'
     );
     $('.timestamp').each(function( index ) {
         $( this )[0].contentEditable = false;

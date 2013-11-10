@@ -28,11 +28,19 @@
     }
     
     .timestamp {
-        color: blue;
+        color: $accent;
+        border-radius: 5px;
+        border-left: 2px solid #3482b1;
+        border-right: 2px solid #3482b1;
+        padding: 0 3px;
+        margin: 0 3px;
         &:hover {
-            background: lightblue;
+            background: lighten($accent, 50%);
             cursor: pointer;
         }
+        &:active {
+            background: lighten($accent, 40%);
+        };
     }
 }
 
