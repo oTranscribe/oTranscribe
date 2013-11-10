@@ -115,43 +115,14 @@ function getTimestamp(){
 };
 
 function insertTimestamp(){
-    insertAtCaret('textbox',"["+getTimestamp()+"]" );
+    document.execCommand('insertHTML',false,
+    '<span class="timestamp" contenteditable="false" data="hi" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>&nbsp;'
+    );
+    $('.timestamp').each(function( index ) {
+        $( this )[0].contentEditable = false;
+    });
 }
-    
-// insert text at cursor
-function insertAtCaret(areaId,text) {
-	var txtarea = document.getElementById(areaId);
-	var scrollPos = txtarea.scrollTop;
-	var strPos = 0;
-	var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ? 
-		"ff" : (document.selection ? "ie" : false ) );
-	if (br == "ie") { 
-		txtarea.focus();
-		var range = document.selection.createRange();
-		range.moveStart ('character', -txtarea.value.length);
-		strPos = range.text.length;
-	}
-	else if (br == "ff") strPos = txtarea.selectionStart;
-	
-	var front = (txtarea.value).substring(0,strPos);  
-	var back = (txtarea.value).substring(strPos,txtarea.value.length); 
-	txtarea.value=front+text+back;
-	strPos = strPos + text.length;
-	if (br == "ie") { 
-		txtarea.focus();
-		var range = document.selection.createRange();
-		range.moveStart ('character', -txtarea.value.length);
-		range.moveStart ('character', strPos);
-		range.moveEnd ('character', 0);
-		range.select();
-	}
-	else if (br == "ff") {
-		txtarea.selectionStart = strPos;
-		txtarea.selectionEnd = strPos;
-		txtarea.focus();
-	}
-	txtarea.scrollTop = scrollPos;
-}
+
 
 function saveText(){
     // autosave every second
@@ -325,10 +296,7 @@ $(window).resize(function() {
     });
     Mousetrap.bind('mod+j', function(e) {
         pd(e);
-        document.execCommand('insertHTML',false,
-        '<span class="timestamp" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">[' + getTimestamp() + ']</span>&nbsp;'
-        );
-        console.log(tsHTML);
+        insertTimestamp();
         return false;
     });
     Mousetrap.bind('mod+s', function(e) {
