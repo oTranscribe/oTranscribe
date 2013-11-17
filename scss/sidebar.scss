@@ -1,0 +1,63 @@
+@mixin sidebar-block {
+    padding: 5px 0;
+}
+
+@mixin transition {
+    -webkit-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.text-panel {
+    position: fixed;
+    top: 100px;
+    width: 200px;
+    padding-left: 20px;
+    text-align: left;
+    
+    .sbutton {
+        @include sidebar-block;
+
+        i {
+          font-size: 20px;
+          min-width: 20px;
+          text-align: center;
+          display: inline-block;
+          vertical-align: middle;
+        }
+        
+        .label {
+            text-transform: uppercase;
+            font-size: 10px;
+            padding: 0 5px;
+            display: inline-block;
+            opacity: 0;
+            @include transition;
+        }
+    }
+
+    .wordcount {
+        @include sidebar-block;
+        font-size: 12px;
+        &:after {
+            content: " words approx.";
+            opacity: 0;
+            @include transition;
+        }
+    }
+
+
+    opacity: 0.3;
+    @include transition;
+    
+    &:hover {
+       opacity: 1;
+       .wordcount:after {
+           opacity: 1;
+       }
+       .sbutton .label {
+           opacity: 0.5;
+       }
+    }
+
+
+}

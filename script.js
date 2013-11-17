@@ -100,6 +100,11 @@ function adjustEditorHeight(){
     $('.textbox-container').height( window.innerHeight - 36 );
 }
 
+function placeTextPanel(){
+   var position = parseInt( $('#textbox').css('marginRight'), 10) + 700;
+   $('.text-panel').css('left', position);
+}
+
 /******************************************
                 Timestamp
 ******************************************/
@@ -243,6 +248,7 @@ function init(){
     loadFileName();
     setFormatsMessage();
     adjustEditorHeight();
+    placeTextPanel();
     dragListener();
     setStartButton();
 }
@@ -252,6 +258,7 @@ init();
 $(window).resize(function() {
     adjustEditorHeight();
     adjustPlayerWidth();
+    placeTextPanel();
 });
 
 
