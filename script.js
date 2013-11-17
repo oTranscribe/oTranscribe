@@ -389,10 +389,7 @@ $(window).resize(function() {
     $('#attach').change(function() {
         reactToFile(this);
     });    
-    // $('.timestamp').click(function(){
-    //     setFromTimestamp( $(this) );
-    // });    
-    
+
 
 // End UI
 

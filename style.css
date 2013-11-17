@@ -417,6 +417,11 @@ body {
   -webkit-transition: opacity 0.2s;
   transition: opacity 0.2s; }
   .text-panel .sbutton {
+    display: block;
+    background: inherit;
+    border: none;
+    padding: 0;
+    margin: 0;
     padding: 5px 0; }
     .text-panel .sbutton i {
       font-size: 20px;
