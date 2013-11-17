@@ -436,7 +436,7 @@ body {
     padding: 5px 0;
     font-size: 12px; }
     .text-panel .wordcount:after {
-      content: " words approx.";
+      content: " words";
       opacity: 0;
       -webkit-transition: opacity 0.2s;
       transition: opacity 0.2s; }

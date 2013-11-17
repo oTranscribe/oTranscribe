@@ -39,7 +39,7 @@
         @include sidebar-block;
         font-size: 12px;
         &:after {
-            content: " words approx.";
+            content: " words";
             opacity: 0;
             @include transition;
         }

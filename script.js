@@ -105,6 +105,31 @@ function placeTextPanel(){
    $('.text-panel').css('left', position);
 }
 
+function countWords(str) {
+    var count = 0,
+                i,
+                j = str.length;
+
+    for (i = 0; i <= j;i++){
+        if (str.charAt(i) == " ") {
+            count ++;
+        }
+    }
+    return count + 1;  
+}
+
+function countTextbox(){
+    var count = countWords( document.getElementById('textbox').innerHTML );
+    document.getElementById('wc').innerHTML = count;
+}
+
+function initWordCount(){
+    setInterval(function(){
+        countTextbox();
+    }, 1000);
+    
+}
+
 /******************************************
                 Timestamp
 ******************************************/
@@ -250,6 +275,7 @@ function init(){
     adjustEditorHeight();
     placeTextPanel();
     dragListener();
+    initWordCount();
     setStartButton();
 }
 
