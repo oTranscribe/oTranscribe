@@ -435,8 +435,10 @@ body {
       .text-panel .sbutton i:hover {
         border-color: #AAA;
         cursor: pointer; }
-      .text-panel .sbutton i.active, .text-panel .sbutton i:active {
+      .text-panel .sbutton i:active {
         box-shadow: 0 0 3px grey inset; }
+      .text-panel .sbutton i.active {
+        color: #3482b1; }
     .text-panel .sbutton .label {
       text-transform: uppercase;
       font-size: 10px;

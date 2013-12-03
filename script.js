@@ -101,7 +101,7 @@ function adjustEditorHeight(){
 }
 
 function placeTextPanel(){
-   var position = parseInt( $('#textbox').css('marginRight'), 10) + 700;
+   var position = parseInt( $('#textbox').offset().left, 10) + 700;
    $('.text-panel').css('left', position);
 }
 
@@ -129,6 +129,32 @@ function initWordCount(){
     }, 1000);
     
 }
+
+
+function watchFormatting(){
+    var b = document.queryCommandState("Bold");
+    var bi = $('.sbutton.bold i');
+    var i = document.queryCommandState("italic");
+    var ii = $('.sbutton.italic i');
+    
+    if (b === true){
+        bi.addClass('active');
+    } else {
+        bi.removeClass('active');
+    }
+    if (i === true){
+        ii.addClass('active');
+    } else {
+        ii.removeClass('active');
+    }
+}
+
+function initWatchFormatting(){
+    setInterval(function(){
+        watchFormatting();
+    }, 100);
+}
+
 
 /******************************************
                 Timestamp
@@ -276,6 +302,7 @@ function init(){
     placeTextPanel();
     dragListener();
     initWordCount();
+    initWatchFormatting();
     setStartButton();
 }
 

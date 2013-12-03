@@ -7,6 +7,7 @@
     transition: opacity 0.2s;
 }
 
+
 .text-panel {
     position: fixed;
     top: 100px;
@@ -36,14 +37,18 @@
             padding: 3px;
             border: 1px solid #CCC;
             border-radius: 2px;
-
+            
             &:hover {
               border-color: #AAA;
               cursor: pointer;   
             }
             
-            &.active, &:active {
+            &:active {
                 box-shadow: 0 0 3px grey inset;
+            }
+            
+            &.active {
+                color: $accent;
             }
         }
         
