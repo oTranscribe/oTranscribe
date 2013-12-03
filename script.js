@@ -162,22 +162,6 @@ function initWatchFormatting(){
 
 // get timestamp
 // var timestamp;
-function getTimestamp(){
-    // get timestap
-    var time = document.getElementById('audio').currentTime  
-    var minutes = Math.floor(time / 60);
-    var seconds = ("0" + Math.round( time - minutes * 60 ) ).slice(-2);
-    return minutes+":"+seconds;
-};
-
-function insertTimestamp(){
-    document.execCommand('insertHTML',false,
-    '<span class="timestamp" contenteditable="false" data="hi" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">' + getTimestamp() + '</span>&nbsp;'
-    );
-    $('.timestamp').each(function( index ) {
-        $( this )[0].contentEditable = false;
-    });
-}
 
 
 function saveText(){
@@ -259,6 +243,8 @@ function reactToFile(input){
 function toggleControls(){
     $('.topbar').toggleClass('inputting');
     $('.input').toggleClass('active');
+    $('.sbutton.time').toggleClass('active');
+    $('.text-panel').toggleClass('editing');
 };
 
 function setFormatsMessage(){
@@ -441,3 +427,22 @@ function setFromTimestamp(clickts, element){
         document.getElementById('audio').currentTime = splitTimestamp(clickts);
     }
 }
+
+
+function getTimestamp(){
+    // get timestap
+    var time = document.getElementById('audio').currentTime  
+    var minutes = Math.floor(time / 60);
+    var seconds = ("0" + Math.round( time - minutes * 60 ) ).slice(-2);
+    return minutes+":"+seconds;
+};
+
+function insertTimestamp(){
+    document.execCommand('insertHTML',false,
+    '<span class="timestamp" contenteditable="false" data="hi" onclick="var x = this; setFromTimestamp(\'' + getTimestamp() + '\', x);">' + getTimestamp() + '</span>&nbsp;'
+    );
+    $('.timestamp').each(function( index ) {
+        $( this )[0].contentEditable = false;
+    });
+}
+

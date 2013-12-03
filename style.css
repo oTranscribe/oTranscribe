@@ -413,9 +413,14 @@ body {
   width: 200px;
   padding-left: 20px;
   text-align: left;
+  padding-top: 200px;
+  -webkit-transition: padding 1s;
+  transition: padding 1s;
   opacity: 0.3;
-  -webkit-transition: opacity 0.2s;
-  transition: opacity 0.2s; }
+  -webkit-transition: opacity 0.2s, padding 1s;
+  transition: opacity 0.2s, padding 1s; }
+  .text-panel.editing {
+    padding-top: 0px; }
   .text-panel .sbutton {
     display: block;
     background: inherit;
@@ -423,6 +428,10 @@ body {
     padding: 0;
     margin: 0;
     padding: 5px 0; }
+    .text-panel .sbutton.time {
+      display: none; }
+      .text-panel .sbutton.time.active {
+        display: block; }
     .text-panel .sbutton i {
       font-size: 20px;
       min-width: 20px;
@@ -445,8 +454,8 @@ body {
       padding: 0 5px;
       display: inline-block;
       opacity: 0;
-      -webkit-transition: opacity 0.2s;
-      transition: opacity 0.2s; }
+      -webkit-transition: opacity 0.2s, padding 1s;
+      transition: opacity 0.2s, padding 1s; }
   .text-panel .wordcount {
     padding: 5px 0;
     font-size: 16px;
@@ -454,8 +463,8 @@ body {
     .text-panel .wordcount:after {
       content: " words";
       opacity: 0;
-      -webkit-transition: opacity 0.2s;
-      transition: opacity 0.2s; }
+      -webkit-transition: opacity 0.2s, padding 1s;
+      transition: opacity 0.2s, padding 1s; }
   .text-panel:hover {
     opacity: 1; }
     .text-panel:hover .wordcount:after {
