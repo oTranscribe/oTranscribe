@@ -27,11 +27,24 @@
         
 
         i {
-          font-size: 20px;
-          min-width: 20px;
-          text-align: center;
-          display: inline-block;
-          vertical-align: middle;
+            font-size: 20px;
+            min-width: 20px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+
+            padding: 3px;
+            border: 1px solid #CCC;
+            border-radius: 2px;
+
+            &:hover {
+              border-color: #AAA;
+              cursor: pointer;   
+            }
+            
+            &.active, &:active {
+                box-shadow: 0 0 3px grey inset;
+            }
         }
         
         .label {
@@ -46,7 +59,8 @@
 
     .wordcount {
         @include sidebar-block;
-        font-size: 12px;
+        font-size: 16px; 
+        margin-top: 10px;
         &:after {
             content: " words";
             opacity: 0;

@@ -428,7 +428,15 @@ body {
       min-width: 20px;
       text-align: center;
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: middle;
+      padding: 3px;
+      border: 1px solid #CCC;
+      border-radius: 2px; }
+      .text-panel .sbutton i:hover {
+        border-color: #AAA;
+        cursor: pointer; }
+      .text-panel .sbutton i.active, .text-panel .sbutton i:active {
+        box-shadow: 0 0 3px grey inset; }
     .text-panel .sbutton .label {
       text-transform: uppercase;
       font-size: 10px;
@@ -439,7 +447,8 @@ body {
       transition: opacity 0.2s; }
   .text-panel .wordcount {
     padding: 5px 0;
-    font-size: 12px; }
+    font-size: 16px;
+    margin-top: 10px; }
     .text-panel .wordcount:after {
       content: " words";
       opacity: 0;
