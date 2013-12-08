@@ -133,19 +133,19 @@ function initWordCount(){
 
 function watchFormatting(){
     var b = document.queryCommandState("Bold");
-    var bi = $('.sbutton.bold i');
+    var bi = document.getElementById("icon-b");
     var i = document.queryCommandState("italic");
-    var ii = $('.sbutton.italic i');
+    var ii = document.getElementById("icon-i");
     
     if (b === true){
-        bi.addClass('active');
+        bi.className = "icon-bold active"
     } else {
-        bi.removeClass('active');
+        bi.className = "icon-bold"
     }
     if (i === true){
-        ii.addClass('active');
+        ii.className = "icon-italic active"
     } else {
-        ii.removeClass('active');
+        ii.className = "icon-italic"
     }
 }
 
