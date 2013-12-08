@@ -7,5 +7,7 @@ body {
 
 
 $accent: rgb(52, 130, 177);
+$dark: rgb(50,50,50);
+
 
 @import "input", "about", "controls", "topbar", "speedbox", "audiojs", "textbox", "sidebar";

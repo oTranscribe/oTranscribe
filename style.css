@@ -228,13 +228,13 @@ body {
     height: 36px;
     width: 36px;
     text-align: center;
-    border-right: 1px solid #3F3F3F;
-    background: black;
+    border-right: 1px solid #4c4c4c;
+    background: #323232;
     color: white;
     padding: 10px 0;
     height: 16px; }
     .controls .button:hover {
-      background-color: #3F3F3F;
+      background-color: #4c4c4c;
       cursor: pointer; }
 
 .play-pause.playing .icon-pause {
@@ -273,7 +273,7 @@ body {
   content: 'F2'; }
 
 .topbar {
-  background: black;
+  background: #323232;
   color: white;
   box-shadow: 0px 0px 10px #666;
   -webkit-box-shadow: 0px 0px 10px #666;
@@ -291,14 +291,14 @@ body {
   display: inline-block;
   vertical-align: top;
   width: auto;
-  background: black;
+  background: #323232;
   color: white;
-  border-right: 1px solid #3F3F3F; }
+  border-right: 1px solid #4c4c4c; }
   .title:hover {
-    background-color: #3F3F3F;
+    background-color: #4c4c4c;
     cursor: pointer; }
   .title.active {
-    color: black;
+    color: #323232;
     background: #f1f1f1; }
     .title.active:hover {
       background: #DDD; }
@@ -307,12 +307,12 @@ body {
   width: 85px; }
   .button.speed.fixed {
     background: white;
-    color: black; }
+    color: #323232; }
     .button.speed.fixed .speed-box {
       display: block; }
 
 .speed-box {
-  background: black;
+  background: #323232;
   color: white;
   width: 190px;
   padding: 8px 0px 5px 0px;
@@ -349,7 +349,7 @@ body {
   font-family: inherit;
   box-shadow: none;
   -webkit-box-shadow: none;
-  background: black;
+  background: #323232;
   display: inline-block;
   width: auto;
   height: 33px; }
@@ -357,11 +357,12 @@ body {
     display: none; }
 
 .scrubber .progress {
-  background: white; }
+  background: white;
+  opacity: 0.4; }
 
 .scrubber .loaded {
-  background: #333;
-  color: grey;
+  background: #7f7f7f;
+  color: #323232;
   padding: 1px 2px;
   text-align: center;
   cursor: default; }
@@ -383,7 +384,8 @@ body {
   width: 600px;
   padding: 50px;
   min-height: 700px;
-  overflow-y: hidden; }
+  overflow-y: hidden;
+  color: #323232; }
   #textbox b, #textbox strong {
     font-weight: bold; }
   #textbox i, #textbox em {
@@ -427,7 +429,8 @@ body {
     border: none;
     padding: 0;
     margin: 0;
-    padding: 5px 0; }
+    padding: 5px 0;
+    color: #323232; }
     .text-panel .sbutton.time {
       display: none; }
       .text-panel .sbutton.time.active {
@@ -458,6 +461,7 @@ body {
       transition: opacity 0.2s, padding 1s; }
   .text-panel .wordcount {
     padding: 5px 0;
+    color: #323232;
     font-size: 16px;
     margin-top: 10px; }
     .text-panel .wordcount:after {

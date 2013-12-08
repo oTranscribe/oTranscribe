@@ -1,5 +1,5 @@
 .topbar {
-    background: black;
+    background: $dark;
     color: white;
     box-shadow: 0px 0px 10px #666;
     -webkit-box-shadow: 0px 0px 10px #666;
@@ -22,16 +22,16 @@
     vertical-align: top;
     width: auto;
 
-    background: black;
+    background: $dark;
     color: white;
-    border-right: 1px solid #3F3F3F;
+    border-right: 1px solid lighten($dark, 10%);
 
     &:hover {
-        background-color: #3F3F3F;
+        background-color: lighten($dark, 10%);
         cursor: pointer;
     };
     &.active {
-        color: black;
+        color: $dark;
         background: rgb(241, 241, 241);
         &:hover {
             background: #DDD;

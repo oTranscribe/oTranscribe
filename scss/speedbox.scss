@@ -3,7 +3,7 @@
     width: 85px;
     &.fixed {
         background: white;
-        color: black;
+        color: $dark;
         .speed-box {
             display: block;
         }
@@ -11,7 +11,7 @@
 }
 
 .speed-box {
-    background: black;
+    background: $dark;
     color: white;
     width: 190px;
     padding: 8px 0px 5px 0px;

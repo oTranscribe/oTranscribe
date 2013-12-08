@@ -5,7 +5,7 @@
     font-family: inherit;
     box-shadow: none;
     -webkit-box-shadow: none;
-    background: black;
+    background: $dark;
     display: inline-block;
     width: auto;
     height: 33px;
@@ -17,12 +17,13 @@
 
 .scrubber .progress {
     background: white;
+    opacity: 0.4;
 }
 
 
 .scrubber .loaded {
-    background: #333;
-    color: grey;
+    background: lighten($dark, 30%);
+    color: $dark;
     padding: 1px 2px;
     text-align: center;
     cursor: default;

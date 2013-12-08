@@ -8,15 +8,15 @@
         height: 36px;
         width: 36px;
         text-align: center;
-        border-right: 1px solid #3F3F3F;
-        background: black;
+        border-right: 1px solid lighten($dark, 10%);
+        background: $dark;
         color: white;
     
         padding: 10px 0;
         height: 16px;
         
         &:hover {
-            background-color: #3F3F3F;
+            background-color: lighten($dark, 10%);
             cursor: pointer;
         };
     }

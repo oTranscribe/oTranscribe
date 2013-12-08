@@ -1,5 +1,6 @@
 @mixin sidebar-block {
     padding: 5px 0;
+    color: $dark;
 }
 
 @mixin transition {
@@ -9,6 +10,7 @@
 
 
 .text-panel {
+    
     position: fixed;
     top: 100px;
     width: 200px;
