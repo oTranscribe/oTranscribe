@@ -13,16 +13,20 @@
     .play-pause {
         display: none;
     }
+    
+    .time {
+        border-color: lighten($dark, 10%);
+    }
 }
 
 .scrubber .progress {
     background: white;
-    opacity: 0.4;
+    opacity: 0.5;
 }
 
 
 .scrubber .loaded {
-    background: lighten($dark, 30%);
+    background: lighten($dark, 50%);
     color: $dark;
     padding: 1px 2px;
     text-align: center;

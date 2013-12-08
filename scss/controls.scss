@@ -40,7 +40,7 @@
 }
 
 .button.refresh {
-    border-left: 1px solid #3F3F3F;
+    border-left: 1px solid lighten($dark, 10%);
     border-right: none;
 }
 

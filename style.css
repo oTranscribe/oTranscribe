@@ -113,6 +113,7 @@ body {
     padding: 0; }
 
 .about {
+  color: #323232;
   background: #f1f1f1;
   z-index: 200;
   position: relative;
@@ -128,11 +129,9 @@ body {
     font-size: 50px;
     text-align: center;
     margin-bottom: 20px;
-    font-weight: 500;
     color: #3482b1; }
   .about p.lead {
     font-size: 20px;
-    font-weight: 300;
     text-align: center;
     margin: 0 auto;
     display: block;
@@ -150,7 +149,7 @@ body {
     text-align: center;
     padding: 0 3%; }
     .about li strong {
-      font-weight: 500;
+      font-weight: bold;
       color: #3482b1; }
   .about a {
     color: inherit; }
@@ -204,7 +203,7 @@ body {
       font-size: 35px; }
     .about p.lead {
       font-size: 18px;
-      font-weight: 400;
+      font-weight: bold;
       line-height: 24px; }
     .about .container {
       width: 100%; }
@@ -248,7 +247,7 @@ body {
   display: inline; }
 
 .button.refresh {
-  border-left: 1px solid #3F3F3F;
+  border-left: 1px solid #4c4c4c;
   border-right: none; }
 
 .button:after {
@@ -355,13 +354,15 @@ body {
   height: 33px; }
   .audiojs .play-pause {
     display: none; }
+  .audiojs .time {
+    border-color: #4c4c4c; }
 
 .scrubber .progress {
   background: white;
-  opacity: 0.4; }
+  opacity: 0.5; }
 
 .scrubber .loaded {
-  background: #7f7f7f;
+  background: #b2b2b2;
   color: #323232;
   padding: 1px 2px;
   text-align: center;
