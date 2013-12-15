@@ -113,7 +113,7 @@ body {
     padding: 0; }
 
 .about {
-  color: #323232;
+  color: #262626;
   background: #f1f1f1;
   z-index: 200;
   position: relative;
@@ -227,13 +227,13 @@ body {
     height: 36px;
     width: 36px;
     text-align: center;
-    border-right: 1px solid #4c4c4c;
-    background: #323232;
+    border-right: 1px solid #404040;
+    background: #262626;
     color: white;
     padding: 10px 0;
     height: 16px; }
     .controls .button:hover {
-      background-color: #4c4c4c;
+      background-color: #404040;
       cursor: pointer; }
 
 .play-pause.playing .icon-pause {
@@ -247,7 +247,7 @@ body {
   display: inline; }
 
 .button.refresh {
-  border-left: 1px solid #4c4c4c;
+  border-left: 1px solid #404040;
   border-right: none; }
 
 .button:after {
@@ -272,7 +272,7 @@ body {
   content: 'F2'; }
 
 .topbar {
-  background: #323232;
+  background: #262626;
   color: white;
   box-shadow: 0px 0px 10px #666;
   -webkit-box-shadow: 0px 0px 10px #666;
@@ -290,14 +290,14 @@ body {
   display: inline-block;
   vertical-align: top;
   width: auto;
-  background: #323232;
+  background: #262626;
   color: white;
-  border-right: 1px solid #4c4c4c; }
+  border-right: 1px solid #404040; }
   .title:hover {
-    background-color: #4c4c4c;
+    background-color: #404040;
     cursor: pointer; }
   .title.active {
-    color: #323232;
+    color: #262626;
     background: #f1f1f1; }
     .title.active:hover {
       background: #DDD; }
@@ -306,12 +306,12 @@ body {
   width: 85px; }
   .button.speed.fixed {
     background: white;
-    color: #323232; }
+    color: #262626; }
     .button.speed.fixed .speed-box {
       display: block; }
 
 .speed-box {
-  background: #323232;
+  background: #262626;
   color: white;
   width: 190px;
   padding: 8px 0px 5px 0px;
@@ -348,22 +348,22 @@ body {
   font-family: inherit;
   box-shadow: none;
   -webkit-box-shadow: none;
-  background: #323232;
+  background: #262626;
   display: inline-block;
   width: auto;
   height: 33px; }
   .audiojs .play-pause {
     display: none; }
   .audiojs .time {
-    border-color: #4c4c4c; }
+    border-color: #404040; }
 
 .scrubber .progress {
   background: white;
   opacity: 0.5; }
 
 .scrubber .loaded {
-  background: #b2b2b2;
-  color: #323232;
+  background: #a6a6a6;
+  color: #262626;
   padding: 1px 2px;
   text-align: center;
   cursor: default; }
@@ -386,7 +386,7 @@ body {
   padding: 50px;
   min-height: 700px;
   overflow-y: hidden;
-  color: #323232; }
+  color: #262626; }
   #textbox b, #textbox strong {
     font-weight: bold; }
   #textbox i, #textbox em {
@@ -431,7 +431,7 @@ body {
     padding: 0;
     margin: 0;
     padding: 5px 0;
-    color: #323232; }
+    color: #262626; }
     .text-panel .sbutton.time {
       display: none; }
       .text-panel .sbutton.time.active {
@@ -462,7 +462,7 @@ body {
       transition: opacity 0.2s, padding 1s; }
   .text-panel .wordcount {
     padding: 5px 0;
-    color: #323232;
+    color: #262626;
     font-size: 16px;
     margin-top: 10px; }
     .text-panel .wordcount:after {
