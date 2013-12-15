@@ -16,19 +16,18 @@ It's currently under active development by [Elliot Bentley](http://elliotbentley
 Although a [web version](http://otranscribe.com/) is available, you can install oTranscribe anywhere by following these steps:
 
 1. Download [the current ZIP archive](https://github.com/otranscribe/otranscribe/archive/master.zip).
+2. Compile the CSS and JS with Grunt (see below for more detailed instructions).
 2. Upload the files to a server of your choice.
 3. Er...
 4. That's it.
 
 Please note that, in Chrome, local copies oTranscribe may not run correctly due to the browser's [privacy settings](http://programmers.stackexchange.com/questions/72435/why-is-google-blocking-users-from-accessing-their-local-file-system-in-chromium).
 
-### Compiling the CSS
+### Compiling the CSS and JavaScript
 
-`style.css` is compiled using SASS from a bunch of files in the `/scss` directory. Once you've installed [SASS](http://sass-lang.com/), just run the following:
+This repository only includes the "raw" JavaScript and CSS. To compile the production-ready files, install [Grunt](http://gruntjs.com) and then run the `grunt` command.
 
-```
-sass scss/base.scss:style.css
-```
+Unfamiliar with Grunt? Check out [Chris Coyier's excellent guide](http://24ways.org/2013/grunt-is-not-weird-and-hard/) to this useful build tool.
 
 ### Libraries
 
