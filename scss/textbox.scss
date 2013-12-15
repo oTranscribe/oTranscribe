@@ -31,8 +31,8 @@
     .timestamp {
         color: $accent;
         border-radius: 5px;
-        border-left: 2px solid #3482b1;
-        border-right: 2px solid #3482b1;
+        border-left: 2px solid $accent;
+        border-right: 2px solid $accent;
         padding: 0 3px;
         margin: 0 3px;
         &:hover {
