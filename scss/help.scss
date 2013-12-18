@@ -1,0 +1,69 @@
+.help {
+        
+    @include page;
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+    
+    p, ul, ol {
+        margin-top: 1em;
+    }
+    
+    h2, h3 {
+        margin-top: 1.4em;
+    }
+    
+    h2 {
+        font-size: 1.4em;
+    }
+    
+    strong, h2, h3 {
+        font-weight: bold;
+    }
+    
+    li {
+        list-style-type: disc;
+        margin-left: 2em;
+    }
+    
+    p, li {
+        line-height: 1.3em;
+    }
+    
+    .container {
+        width: 500px;
+    }
+    
+    a {
+        color: $accent;
+        &:visited {
+            color: darken($accent, 30%);
+        }
+    }
+    
+    #close-help {
+        color: $accent;
+        cursor: pointer;
+        margin-bottom: 2em;
+        &:hover {
+            text-decoration: underline;
+        };
+    }
+    
+
+}
+
+@media (max-width: 850px) {
+
+    .help {
+
+    padding: 0;    
+        .container {
+            width: auto;
+            padding: 5%;
+        }
+    }
+
+}

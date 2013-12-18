@@ -15,7 +15,7 @@
     }
 }
 
-.title {
+@mixin title-button {
     padding: 10px;
     text-align: left;
     display: inline-block;
@@ -24,7 +24,6 @@
 
     background: $dark;
     color: white;
-    border-right: 1px solid lighten($dark, 10%);
 
     &:hover {
         background-color: lighten($dark, 10%);
@@ -37,4 +36,17 @@
             background: #DDD;
         }
     }
+    
+}
+
+.title {
+    @include title-button;
+    border-right: 1px solid lighten($dark, 10%);
+    
+}
+
+.help-title {
+    @include title-button;
+    border-right: 1px solid lighten($dark, 10%);
+    
 }

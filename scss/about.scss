@@ -1,13 +1,12 @@
-.about {
-        
+@mixin page {
+    
     color: $dark;
         
     background: rgb(241, 241, 241);
     z-index: 200;
     position: relative;
     padding: 40px 0;
-    
-    
+
     margin-bottom: -100%; // pushes editing area up
     
     display: none;
@@ -15,11 +14,17 @@
         display: block;
     }
     
-    
     .container {
         width: 850px;
         margin: 0 auto;
     }
+    
+
+}
+
+.about {
+        
+    @include page;    
     
     h1 {
         font-size: 50px;

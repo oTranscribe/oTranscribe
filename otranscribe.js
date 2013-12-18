@@ -85,16 +85,26 @@ function adjustPlayerWidth(){
     var cntrls = $('.controls');
     console.log ("Window width: "+$(window).width()+"\nControls offset: "+cntrls.offset().left+"\nControls width: "+cntrls.width()+"\nTitle width: "+$('.title').width() );
     
-    var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth() );
+    var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() );
     $('.scrubber').width( $('.scrubber').width()+gap );
    console.log(gap);
 }
 
 
 function toggleAbout(){
+    $('.help-title').removeClass('active');
+    $('.help').removeClass('active');
     $('.title').toggleClass('active');
     $('.about').toggleClass('active');
 }
+
+function toggleHelp(){
+    $('.title').removeClass('active');
+    $('.about').removeClass('active');
+    $('.help-title').toggleClass('active');
+    $('.help').toggleClass('active');
+}
+
 
 function adjustEditorHeight(){
     $('.textbox-container').height( window.innerHeight - 36 );
@@ -393,7 +403,17 @@ $(window).resize(function() {
     
     $('.title').click(function(){
         toggleAbout();
+        console.log('about');
     });
+
+    $('.help-title').click(function(){
+        toggleHelp();
+    });
+
+    $('#close-help').click(function(){
+        toggleHelp();
+    });
+
 
     $('.about .start.ready').click(function(){
         toggleAbout();
