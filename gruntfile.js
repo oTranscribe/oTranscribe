@@ -8,7 +8,14 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'js/libs/*.js', // All JS in the libs folder
-                    'otranscribe.js'  // This specific file
+                    'js/intro.js'
+                  , 'js/audioplayer.js'
+                  , 'js/texteditor.js'
+                  , 'js/timestamp.js'
+                  , 'js/other.js'
+                  , 'js/init.js'
+                  , 'js/ui.js'
+                  , 'js/timestamp_ext.js'
                 ],
                 dest: 'script.js',
             }
