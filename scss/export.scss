@@ -38,6 +38,15 @@
         opacity: 1;
     }
     
+    p {
+        padding: 0 10px 10px 10px;
+        font-size: 11px;
+        line-height: 13px;
+        a {
+            color: white;
+        }
+    }
+    
     .export-title {
         text-align: center;
         font-weight: bold;
