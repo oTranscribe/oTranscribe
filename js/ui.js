@@ -113,6 +113,15 @@
     $('#icon-exp').click(function() {
         placeExportPanel();
     });    
+    
+    $('.textbox-container').click(function(e) {
+        if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){
+            e.preventDefault();
+            return;
+        }
+        hideExportPanel();
+    });    
+    
 
 
 // End UI

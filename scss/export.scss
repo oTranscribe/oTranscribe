@@ -3,6 +3,7 @@
        
     &:after {
     	bottom: 100%;
+        left: 50%;
     	border: solid transparent;
     	content: " ";
     	height: 0;
@@ -12,7 +13,7 @@
     	border-color: rgba(51, 51, 51, 0);
     	border-bottom-color: $dark;
     	border-width: 15px;
-    	margin-left: -15px;
+    	margin-left: 95px;
     }
 }
 
@@ -23,37 +24,42 @@
     position: fixed;
     top: 300px;
     width: 260px;
-    padding: 20px 0;
     text-align: left;
     background: $dark;
     color: white;
     border-radius: 3px;
-    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
     -webkit-transform: scale(0.1);
     -webkit-transform-origin: 89% 0;
-
-    display: none;
+    opacity: 0;
 
     &.active {
-        display: block;
         -webkit-transform: scale(1);
+        opacity: 1;
     }
     
     .export-title {
         text-align: center;
         font-weight: bold;
+        margin: 10px 0;
+        font-size: 16px;
     }
     
-    .export-block-md {
-        img {
-            display: block;
-            border-radius: 3px;
-            margin: 20px 0 10px 0;
-        }
-        display: inline-block;
+    .export-block-md, .export-block-txt {
+        display: block;
         text-align: center;
-        width: 100px;
-        margin-left: 20px;
+        font-size: 14px;
+        padding: 10px 0;
+        margin: 10px;
+        margin-top: 10px;
+        border-radius: 3px;
+        border: 1px solid #555;
+        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        &:hover{
+            background: #555;
+        };
     }
 }
 
