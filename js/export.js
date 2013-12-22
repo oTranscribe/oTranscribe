@@ -11,7 +11,7 @@ var exportText = {
     },
     txt : function() {
         var p = document.getElementById('textbox').innerHTML;
-        var clean = $.htmlClean(p, {format:true, removeTags:["div", "span", "img", "em", "strong", "p"]});
+        var clean = $.htmlClean(p, {format:true, removeTags:["div", "span", "img", "em", "strong", "p", "pre"]});
         return clean.replace(/\t/gm,"");
     },
     utf8_to_b64 : function( str ) {
