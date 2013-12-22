@@ -5,7 +5,7 @@
 var exportText = {
     md : function(){
         var p = document.getElementById('textbox').innerHTML;
-        var clean = $.htmlClean(p, {format:true, removeTags: ["div", "span", "img"]});
+        var clean = $.htmlClean(p, {format:true, removeTags: ["div", "span", "img", "pre"]});
         var x = toMarkdown( clean );   
         return x.replace(/\t/gm,"");           
     },
