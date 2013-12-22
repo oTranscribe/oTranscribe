@@ -77,4 +77,32 @@ function oldBrowserCheck(){
     }
 }
 
+function chromeOsCheck(){
+    var ua = window.navigator.userAgent;
+    if ( ua.indexOf("CrOS") > -1 ) {
+        console.log("Chrome OS detected.");
+        
+        Mousetrap.bind('ctrl+1', function(e) {
+            pd(e);
+            skip('backwards');
+            return false;
+        });
+        Mousetrap.bind('ctrl+2', function(e) {
+            pd(e);
+            skip('forwards');
+            return false;
+        });
+        Mousetrap.bind('ctrl+3', function(e) {
+            pd(e);
+            speed('down');
+            return false;
+        });
+        Mousetrap.bind('ctrl+4', function(e) {
+            pd(e);
+            speed('up');
+            return false;
+        });
+    }
+}
+
 

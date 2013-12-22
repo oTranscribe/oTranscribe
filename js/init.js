@@ -13,6 +13,7 @@ function init(){
     dragListener();
     initWordCount();
     initWatchFormatting();
+    chromeOsCheck();
     setStartButton();
 }
 
