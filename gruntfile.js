@@ -16,6 +16,7 @@ module.exports = function(grunt) {
                   , 'js/init.js'
                   , 'js/ui.js'
                   , 'js/timestamp_ext.js'
+                  , 'js/export.js'
                 ],
                 dest: 'script.js',
             }

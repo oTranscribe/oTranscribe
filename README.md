@@ -38,3 +38,5 @@ oTranscribe is built on the foundations of several awesome projects:
 - [Mousetrap](http://craig.is/killing/mice)
 - [CDNJS](http://cdnjs.com/) for script hosting
 - [Font Awesome](http://fontawesome.io/)
+- [to-markdown](https://github.com/domchristie/to-markdown)
+- [jquery-clean](https://code.google.com/p/jquery-clean/)
