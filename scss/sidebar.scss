@@ -38,8 +38,10 @@
         
         &.time {
             display: none;
+            height: 0;
             &.active {
                 display: block;
+                height: auto;
             }
         }
 

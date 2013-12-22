@@ -110,6 +110,10 @@
         reactToFile(this);
     });    
 
+    $('#icon-exp').click(function() {
+        placeExportPanel();
+    });    
+
 
 // End UI
 

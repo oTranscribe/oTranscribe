@@ -29,5 +29,13 @@ var exportText = {
     }
 }
 
+function placeExportPanel(){
+    var origin = $('#icon-exp').offset();
+    var right = parseInt( $('body').width() - origin.left - 35 );
+    var top = parseInt( origin.top ) + 75;
+    $('.export-panel')
+        .css({'right': right,'top': top})
+        .addClass('active'); 
+}
 
-// exportText.mdButton(document.body);
+placeExportPanel();

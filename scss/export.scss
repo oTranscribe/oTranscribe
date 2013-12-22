@@ -1,0 +1,59 @@
+@mixin arrow-box {
+	position: relative;
+       
+    &:after {
+    	bottom: 100%;
+    	border: solid transparent;
+    	content: " ";
+    	height: 0;
+    	width: 0;
+    	position: absolute;
+    	pointer-events: none;
+    	border-color: rgba(51, 51, 51, 0);
+    	border-bottom-color: $dark;
+    	border-width: 15px;
+    	margin-left: -15px;
+    }
+}
+
+
+
+.export-panel {
+    @include arrow-box;
+    position: fixed;
+    top: 300px;
+    width: 260px;
+    padding: 20px 0;
+    text-align: left;
+    background: $dark;
+    color: white;
+    border-radius: 3px;
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -webkit-transform: scale(0.1);
+    -webkit-transform-origin: 89% 0;
+
+    display: none;
+
+    &.active {
+        display: block;
+        -webkit-transform: scale(1);
+    }
+    
+    .export-title {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    .export-block-md {
+        img {
+            display: block;
+            border-radius: 3px;
+            margin: 20px 0 10px 0;
+        }
+        display: inline-block;
+        text-align: center;
+        width: 100px;
+        margin-left: 20px;
+    }
+}
+
