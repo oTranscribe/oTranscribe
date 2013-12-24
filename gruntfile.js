@@ -17,6 +17,7 @@ module.exports = function(grunt) {
                   , 'js/ui.js'
                   , 'js/timestamp_ext.js'
                   , 'js/export.js'
+                  , 'js/google.js'
                 ],
                 dest: 'script.js',
             }

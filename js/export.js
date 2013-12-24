@@ -39,6 +39,7 @@ var exportText = {
 function placeExportPanel(){
     exportText.mdButton();
     exportText.txtButton();
+    gd.handleClientLoad();
         
     var origin = $('#icon-exp').offset();
     var right = parseInt( $('body').width() - origin.left - 35 );

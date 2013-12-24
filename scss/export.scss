@@ -26,7 +26,10 @@
     margin: 10px;
     border-radius: 3px;
     color: white;
-    text-decoration: none;    
+    text-decoration: none;
+    
+    transition: background-color 0.5s, border 0.5s;    
+    -webkit-transition: background-color 0.5s, border 0.5s;    
 }
 
 @mixin export-button {
