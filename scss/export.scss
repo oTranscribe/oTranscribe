@@ -17,7 +17,26 @@
     }
 }
 
+@mixin export-block {
 
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;    
+}
+
+@mixin export-button {
+    background: #555;
+    cursor: pointer;
+    border: none;
+    &:hover{
+        background: $accent;
+    }   
+}
 
 .export-panel {
     @include arrow-box;
@@ -48,27 +67,37 @@
     }
     
     .export-title {
-        text-align: center;
         font-weight: bold;
-        margin: 10px 0;
+        margin: 10px;
         font-size: 16px;
     }
     
     .export-block-md, .export-block-txt {
-        display: block;
-        text-align: center;
-        font-size: 14px;
-        padding: 10px 0;
-        margin: 10px;
-        margin-top: 10px;
-        border-radius: 3px;
+        @include export-block;
+        @include export-button;
+    }
+    
+    .export-block-gd {
+        @include export-block;
         border: 1px solid #555;
-        cursor: pointer;
-        color: white;
-        text-decoration: none;
-        &:hover{
-            background: #555;
-        };
+        text-align: left;
+
+        &.authenticated {
+            @include export-button;
+            text-align: center;
+            .sign-in { display: none; }
+        }
+        
+        .sign-in {
+            @include export-button;
+            display: inline-block;
+            font-size: 12px;
+            padding: 6px;
+            vertical-align: top;
+            margin: -5px -5px 0 0;
+            float: right;
+            border-radius: 2px;
+        }
     }
 }
 
