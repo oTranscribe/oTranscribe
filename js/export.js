@@ -36,6 +36,7 @@ var exportText = {
     }
 }
 
+
 function placeExportPanel(){
     exportText.mdButton();
     exportText.txtButton();
@@ -53,3 +54,19 @@ function hideExportPanel(){
     $('.export-panel').removeClass('active');
     
 }
+
+exportText.createBlob = function(){
+    var p = document.getElementById('textbox').innerHTML;
+    var aFileParts = [p];
+    var oBlob = new Blob(aFileParts, {type : 'text/html'}); // the blob
+    return oBlob;
+}
+
+exportText.reader= function(){
+    var reader = new FileReader();
+    var blob = exportText.createBlob();
+    reader.readAsBinaryString(blob);
+    return reader;
+}
+
+

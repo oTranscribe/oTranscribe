@@ -114,6 +114,16 @@
         placeExportPanel();
     });    
     
+    $('.export-block-gd').click(function() {
+        if ( $( this ).hasClass( "gd-authenticated" ) ){
+            insertFile();            
+        }
+        return false;
+    });
+    
+
+
+    
     // $('.textbox-container').click(function(e) {
     //     if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){
     //         e.preventDefault();
@@ -122,7 +132,6 @@
     //     hideExportPanel();
     // });    
     
-
 
 // End UI
 

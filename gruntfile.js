@@ -14,10 +14,10 @@ module.exports = function(grunt) {
                   , 'js/timestamp.js'
                   , 'js/other.js'
                   , 'js/init.js'
-                  , 'js/ui.js'
-                  , 'js/timestamp_ext.js'
                   , 'js/export.js'
                   , 'js/google.js'
+                  , 'js/ui.js'
+                  , 'js/timestamp_ext.js'
                 ],
                 dest: 'script.js',
             }

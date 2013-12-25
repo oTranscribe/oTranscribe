@@ -85,7 +85,7 @@
         border: 1px solid #555;
         text-align: left;
 
-        &.authenticated {
+        &.gd-authenticated {
             @include export-button;
             text-align: center;
             .sign-in { display: none; }
