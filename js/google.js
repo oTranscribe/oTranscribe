@@ -29,7 +29,7 @@ gd.checkAuth = function() {
 gd.handleAuthResult = function(authResult) {
   if (authResult && !authResult.error) {
     // Access token has been successfully retrieved, requests can be sent to the API.
-    $('.export-block-gd').addClass('gd-authenticated');
+    $('.export-block-gd').addClass('gd-authenticated').removeClass("unauth");
   } else {
     // No access token could be retrieved, show the button to start the authorization flow.
     console.log("g2");
@@ -41,11 +41,20 @@ gd.handleAuthResult = function(authResult) {
   }
 }
 
-gd.updateButton = function(status, link){
-    $('.export-block-gd').text( status );
-    $('.export-block-gd')[0].href = link;
-    $('.export-block-gd').off('click');
-    
+gd.updateButton = function(status, active, link){
+    var exportBlockGd = $('.export-block-gd');
+    exportBlockGd[0].href = link;
+    exportBlockGd[0].innerHTML = status;
+    exportBlockGd.off('click');
+    if (active == true){
+        exportBlockGd.off('click');
+        exportBlockGd.addClass('gd-authenticated');        
+    } else if (active == false){
+        exportBlockGd.click(function(){
+            return false;
+        });
+        exportBlockGd.removeClass('gd-authenticated');
+    }
 }
 
 
@@ -65,7 +74,7 @@ function uploadFile(evt) {
  * @param {Function} callback Function to call when the request is complete.
  */
 function insertFile(callback) {
-    gd.updateButton("Sending to Drive...");
+    gd.updateButton("Sending to Drive...",false);
 
   const boundary = '-------314159265358979323846';
   const delimiter = "\r\n--" + boundary + "\r\n";
@@ -104,7 +113,7 @@ function insertFile(callback) {
       callback = function(file) {
         console.log(file);
         console.log("Uploaded to "+file.alternateLink);
-        gd.updateButton("Open in Drive -->",file.alternateLink);
+        gd.updateButton('Open in Drive &rarr;', true, file.alternateLink);
       };
     }
     request.execute(callback);

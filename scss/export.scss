@@ -28,8 +28,8 @@
     color: white;
     text-decoration: none;
     
-    transition: background-color 0.5s, border 0.5s;    
-    -webkit-transition: background-color 0.5s, border 0.5s;    
+//    transition: background-color 0.5s, border 0.5s;    
+//    -webkit-transition: background-color 0.5s, border 0.5s;    
 }
 
 @mixin export-button {
@@ -83,17 +83,21 @@
     .export-block-gd {
         @include export-block;
         border: 1px solid #555;
-        text-align: left;
+        cursor: default;
+        
+        &.unauth{
+            text-align: left;            
+            .sign-in { display: inline-block; }
+        }
 
         &.gd-authenticated {
             @include export-button;
             text-align: center;
-            .sign-in { display: none; }
         }
         
         .sign-in {
             @include export-button;
-            display: inline-block;
+            display: none;
             font-size: 12px;
             padding: 6px;
             vertical-align: top;
