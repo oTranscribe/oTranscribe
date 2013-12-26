@@ -84,6 +84,7 @@
     .export-block-gd {
         @include export-block;
         border: 1px solid #555;
+        padding: 8px 10px;
         cursor: default;
         
         &.unauth{
