@@ -18,13 +18,16 @@ function createPlayer(file){
 
 // play/pause
 function playPause(){
-    var playing = !document.getElementById('audio').paused
+    var audio = document.getElementById('audio');
+    var playing = !audio.paused;
+    var playPause = $('.play-pause');
     if (playing == true){
-        document.getElementById('audio').pause();
-        $('.play-pause').removeClass('playing');
+        audio.pause();
+        playPause.removeClass('playing');
     } else {
-        document.getElementById('audio').play();
-        $('.play-pause').addClass('playing');
+        audio.currentTime = audio.currentTime-1.5;
+        audio.play();
+        playPause.addClass('playing');
     };
 };
 
