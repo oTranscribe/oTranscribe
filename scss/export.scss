@@ -54,6 +54,7 @@
     -webkit-transform: scale(0.1);
     -webkit-transform-origin: 89% 0;
     opacity: 0;
+    z-index: 100;
 
     &.active {
         -webkit-transform: scale(1);

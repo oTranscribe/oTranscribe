@@ -124,13 +124,18 @@
 
 
     
-    // $('.textbox-container').click(function(e) {
-    //     if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){
-    //         e.preventDefault();
-    //         return;
-    //     }
-    //     hideExportPanel();
-    // });    
+    $('.textbox-container').click(function(e) {
+        if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){
+            e.preventDefault();
+            return;
+        }
+        hideExportPanel();
+    });    
+    
+    $(".export-panel").click(function(e) {
+         e.stopPropagation();
+    });
+    
     
 
 // End UI
