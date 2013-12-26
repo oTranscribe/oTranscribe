@@ -114,12 +114,18 @@
         placeExportPanel();
     });    
     
-    $('.export-block-gd').click(function() {
-        if ( $( this ).hasClass( "gd-authenticated" ) ){
-            insertFile();            
-        }
-        return false;
-    });
+    // $('.export-block-gd').click(function() {
+    //     if ( 
+    //         $( this ).hasClass( "gd-authenticated" ) 
+    //         && 
+    //         ( $( this ).attr('href').indexOf('google') == -1 )
+    //     ){
+    //         insertFile();            
+    //         return false;
+    //     } else {
+    //         return true;
+    //     }
+    // });
     
 
 

@@ -29,7 +29,7 @@ gd.checkAuth = function() {
 gd.handleAuthResult = function(authResult) {
   if (authResult && !authResult.error) {
     // Access token has been successfully retrieved, requests can be sent to the API.
-    $('.export-block-gd').addClass('gd-authenticated').removeClass("unauth");
+    gd.updateButton("Google Drive",true,"javascript:insertFile();");
   } else {
     // No access token could be retrieved, show the button to start the authorization flow.
     console.log("g2");
@@ -43,19 +43,16 @@ gd.handleAuthResult = function(authResult) {
 
 gd.updateButton = function(status, active, link){
     var exportBlockGd = $('.export-block-gd');
-    exportBlockGd[0].href = link;
     exportBlockGd[0].innerHTML = status;
-    exportBlockGd.off('click');
     if (active == true){
-        exportBlockGd.off('click');
-        exportBlockGd.addClass('gd-authenticated');        
+        exportBlockGd.addClass('gd-authenticated').removeClass("unauth");  
     } else if (active == false){
-        exportBlockGd.click(function(){
-            return false;
-        });
         exportBlockGd.removeClass('gd-authenticated');
     }
+    exportBlockGd[0].href = link;
 }
+
+gd.button = '<a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">Google Drive<div class="sign-in" id="x-gd-sign">Sign in</div></a>';
 
 
 
@@ -73,7 +70,7 @@ function uploadFile(evt) {
  * @param {File} fileData File object to read data from.
  * @param {Function} callback Function to call when the request is complete.
  */
-function insertFile(callback) {
+window.insertFile = function(callback) {
     gd.updateButton("Sending to Drive...",false);
 
   const boundary = '-------314159265358979323846';
