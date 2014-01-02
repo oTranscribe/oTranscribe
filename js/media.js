@@ -19,10 +19,6 @@ oT.media.create = function(file){
         video.src = url;
         video.id = "media";
         video.controls = true;        
-        video.style.position = 'absolute';
-        video.style.top = "100px";
-        video.style.left = "20px";
-        video.style.width = "200px";
         document.body.appendChild(video); 
         
     } else {

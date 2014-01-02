@@ -9,13 +9,36 @@ function detectFormats(format){
     return !!(a.canPlayType && a.canPlayType('audio/'+format+';').replace(/no/, ''));
 }
 
-function listSupportedFormats(){
+function detectVideoFormats(format){
+    var a = document.createElement('audio');
+    return !!(a.canPlayType && a.canPlayType('audio/'+format+';').replace(/no/, ''));
+}
+
+function listSupportedFormats(type){
+    if (type == "video") {
+        var formats = ['mp3', 'ogg', 'webm', 'wav'];        
+    } else if (type == "audio"){
+        var formats = ['mp4', 'ogg', 'webm'];
+    }
     var supportedFormats = [];
-    var formats = ['mp3', 'ogg', 'webm', 'wav'];
     var i = 0;
     formats.forEach(function(format, index) {
         if (detectFormats(format) == true){
             supportedFormats[i] = format;
+            i++;
+        }
+    });
+    return supportedFormats.join('/');
+}
+
+function listSupportedVideoFormats(){
+    var supportedFormats = [];
+    var formats = ['mp4', 'ogg', 'webm'];
+    var i = 0;
+    formats.forEach(function(format, index) {
+        if (detectVideoFormats(format) == true){
+            supportedFormats[i] = format;
+            addAndToEnd(i, supportedFormats);
             i++;
         }
     });
@@ -52,7 +75,7 @@ function toggleControls(){
 };
 
 function setFormatsMessage(){
-    document.getElementById("formats").innerHTML = "Your browser supports the following formats: "+listSupportedFormats()+". You may need to <a href='http://media.io'>convert your file</a>.";    
+    document.getElementById("formats").innerHTML = "Your browser supports "+listSupportedFormats("audio")+" audio files and "+listSupportedFormats("video")+" video files. You may need to <a href='http://media.io'>convert your file</a>.";    
 }
 
 function setStartButton(){
