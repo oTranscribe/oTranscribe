@@ -30,8 +30,8 @@ function checkTypeSupport(file){
 function reactToFile(input){
     var file = input.files[0];
     if ( checkTypeSupport( file ) === true ){
-        createPlayer( file );
-        initAudioJS();
+        oT.media.create( file );
+        oT.media.initAudioJS();
         adjustPlayerWidth();
         toggleControls();
         localStorage.setItem("lastfile", file.name);
