@@ -6,16 +6,30 @@ oT.media.e = function(){
 }
 
 oT.media.create = function(file){
-    console.log(file);
-    $('#audio').remove();
-    $('#player-hook').append('<audio id="media" src=""></audio>');
+
     if (window.webkitURL) {
         console.log('webkit');
         var url = window.webkitURL.createObjectURL(file);
     } else {
         var url = window.URL.createObjectURL(file);      
     }
-    oT.media.e().src = url;    
+
+    if ( file.type.indexOf("video") >= -1 ) {
+        var video = document.createElement('video');
+        video.src = url;
+        video.id = "media";
+        video.controls = true;        
+        video.style.position = 'absolute';
+        video.style.top = "100px";
+        video.style.left = "20px";
+        video.style.width = "200px";
+        document.body.appendChild(video); 
+        
+    } else {
+        $('#player-hook').append('<audio id="media" src=""></audio>');
+        oT.media.e().src = url;            
+    }
+
 }
 
 oT.media.playPause = function(){
