@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 src: [
                     'js/libs/*.js', // All JS in the libs folder
                     'js/intro.js'
-                  , 'js/audioplayer.js'
+                  , 'js/media.js'
                   , 'js/texteditor.js'
                   , 'js/timestamp.js'
                   , 'js/other.js'
