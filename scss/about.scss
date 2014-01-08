@@ -139,16 +139,19 @@
         }
     }
     
-    #old-browser {
+    #old-browser, .mobile {
         width: 400px;
-        padding: 0 10px;
+        max-width: 98%;
+        padding: 0;
         margin: 0 auto;
         color: darkred;
         line-height: 20px;
         margin-top: 20px;
         text-align: center;
     }
-    
+    .mobile {
+        display: none;
+    }
     
 }
 
@@ -197,6 +200,15 @@
         .start {
             width: 80%;
         }
+        .credits{
+            a {
+                margin-right: 0;
+            }
+            span {
+                display: block;
+                padding-top: 10px;
+            }
+        }
     }
         
     #old-browser {
@@ -204,7 +216,11 @@
     }
     
     .textbox-container {
-//        max-height: 0px;
+        display: none;
+    }
+    
+    .about .mobile {
+        display: block;
     }
 }
 
