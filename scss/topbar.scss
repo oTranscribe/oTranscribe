@@ -13,6 +13,10 @@
     &.inputting .controls {
             display: none;
     }
+    
+    &.inputting .help-title {
+        border-right: 1px solid lighten($dark, 10%);        
+    }
 }
 
 @mixin title-button {
@@ -47,6 +51,5 @@
 
 .help-title {
     @include title-button;
-    border-right: 1px solid lighten($dark, 10%);
     
 }
