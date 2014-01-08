@@ -46,8 +46,9 @@ function listSupportedVideoFormats(){
 }
 
 function checkTypeSupport(file){
-  var a = document.createElement('audio');
-  return !!(a.canPlayType && a.canPlayType(file.type).replace(/no/, ''));
+    var fileType = file.type.split("/")[0];
+    var a = document.createElement(fileType);
+    return !!(a.canPlayType && a.canPlayType(file.type).replace(/no/, ''));
 }
 
 function reactToFile(input){
