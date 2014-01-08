@@ -71,9 +71,31 @@
         };
     }
     
+    .press {
+        text-align:center;
+        padding: 10px 0 40px 0;
+        p {
+            font-size: 20px;
+//            font-weight: bold;
+            padding-bottom: 10px;
+        }
+        a {
+            display: inline-block;
+            width: 33%;
+            vertical-align: middle;
+            opacity: 0.6;
+            &:hover {
+                opacity: 1;
+            };
+        }
+        img {
+            width: 80%;
+        }
+    }
+    
     .credits {
         text-align: center;
-        margin-top: 80px;
+        margin-top: 40px;
         
         .twitter {
             display: inline-block;
@@ -101,11 +123,13 @@
         border-radius: 5px;
         color: white;
         margin: 0 auto;
-        width: 11em;
+        width: 14em;
         text-align: center;
         background: grey;
         cursor: default;
-        
+//        margin-top: 20px;
+        font-size: 25px;
+                
         &.ready {
             cursor: pointer;
             background: $accent;
@@ -156,9 +180,31 @@
             display: block;
             height: auto;        
         }    
-    }    
+        .press {
+            text-align: left;
+            padding-top: 0;
+            p {
+                padding-bottom: 20px;
+                font-size: inherit;
+            }
+            a {
+                width: 100%;
+                img {
+                    max-width: 225px;
+                }
+            }
+        }
+        .start {
+            width: 80%;
+        }
+    }
+        
     #old-browser {
         width: auto;
+    }
+    
+    .textbox-container {
+//        max-height: 0px;
     }
 }
 
