@@ -18,9 +18,9 @@ oT.media.create = function(file){
         var video = document.createElement('video');
         video.src = url;
         video.id = "media";
-        video.controls = true;        
+        video.controls = true;
+        video.style.width = oT.media.videoWidth();
         document.body.appendChild(video); 
-        
     } else {
         $('#player-hook').append('<audio id="media" src=""></audio>');
         oT.media.e().src = url;            
@@ -70,6 +70,13 @@ oT.media.speed = function(newSpeed){
     if (typeof(newSpeedNumber) != "undefined") {
         oT.media.e().playbackRate = newSpeedNumber;
         document.getElementById('slider3').value = newSpeedNumber;        
+    }
+}
+
+oT.media.videoWidth = function(){
+    var boxOffset = document.getElementById('textbox').getBoundingClientRect().left;
+    if ( boxOffset > 200 ) {
+        return (boxOffset-40) + "px";
     }
 }
 
