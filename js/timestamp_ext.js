@@ -12,12 +12,12 @@ var ts = {
     setFrom : function(clickts, element){
         console.log(element.childNodes.length);
         if (element.childNodes.length == 1) {
-            document.getElementById('audio').currentTime = ts.split(clickts);
+            oT.media.e().currentTime = ts.split(clickts);
         }
     },
     get : function(){
         // get timestap
-        var time = document.getElementById('audio').currentTime  
+        var time = oT.media.e().currentTime  
         var minutes = Math.floor(time / 60);
         var seconds = ("0" + Math.round( time - minutes * 60 ) ).slice(-2);
         return minutes+":"+seconds;
@@ -36,7 +36,6 @@ var ts = {
 function setFromTimestamp(clickts, element){
     ts.setFrom(clickts, element);
 }
-
 
 
 
