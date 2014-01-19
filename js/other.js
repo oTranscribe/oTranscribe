@@ -55,11 +55,10 @@ function reactToFile(input){
     var file = input.files[0];
     if ( checkTypeSupport( file ) === true ){
         oT.media.create( file );
-        oT.media.initAudioJS();
+        oT.media.initProgressor();
         adjustPlayerWidth();
         toggleControls();
         localStorage.setItem("lastfile", file.name);
-        $('.scrubber .loaded').html( file.name );
         console.log('Loading complete.') ;
     } else {
         var msg = "Your browser does not support " + file.type.split("/")[1] + " files. Switch to a different browser or <a href=\"http://media.io\">convert your file</a> to another format.";

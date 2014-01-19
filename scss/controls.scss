@@ -84,3 +84,26 @@ video#media {
     background: $dark;
 }
 
+#player-hook {
+    display: inline-block;
+    min-width: 100px;
+    height: 16px;
+    margin: 10px;
+    background: grey;
+    color: lightgrey;
+    text-align: center;
+    cursor: default;
+    font-size: 14px;
+  }
+
+#progressor-progress {
+    background: white;
+    background: lighten($dark, 15%);
+}
+
+#player-time {
+    display: inline-block;
+    font-size: 13px;
+    padding: 11px 10px;
+    border-left: 1px solid lighten($dark, 10%);
+}

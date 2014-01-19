@@ -14,17 +14,21 @@ oT.media.create = function(file){
         var url = window.URL.createObjectURL(file);      
     }
 
-    if ( file.type.indexOf("video") >= -1 ) {
+    if ( file.type.indexOf("video") > -1 ) {
         var video = document.createElement('video');
         video.src = url;
         video.id = "media";
-        video.controls = true;
         video.style.width = oT.media.videoWidth();
         document.body.appendChild(video); 
     } else {
         $('#player-hook').append('<audio id="media" src=""></audio>');
         oT.media.e().src = url;            
     }
+    
+    console.log(file);
+    console.log(file.name);
+    
+    oT.media.e().title = file.name;
 
 }
 
@@ -83,6 +87,15 @@ oT.media.videoWidth = function(){
 oT.media.initAudioJS = function(){
     audiojs.events.ready(function() {
       audiojs.createAll();
+    });
+}
+
+oT.media.initProgressor = function(){
+    progressor.init({
+        media : oT.media.e(),
+        bar : $('#player-hook')[0],
+        text : oT.media.e().title,
+        time : $('#player-time')[0]    // element to contain live-updating time (optional)
     });
 }
 

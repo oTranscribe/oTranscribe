@@ -10,7 +10,7 @@ function adjustPlayerWidth(){
     console.log ("Window width: "+$(window).width()+"\nControls offset: "+cntrls.offset().left+"\nControls width: "+cntrls.width()+"\nTitle width: "+$('.title').width() );
     
     var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() );
-    $('.scrubber').width( $('.scrubber').width()+gap );
+    $('#player-hook').width( $('#player-hook').width()+gap );
    console.log(gap);
 }
 
