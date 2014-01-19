@@ -56,8 +56,8 @@ function reactToFile(input){
     if ( checkTypeSupport( file ) === true ){
         oT.media.create( file );
         oT.media.initProgressor();
-        adjustPlayerWidth();
         toggleControls();
+        adjustPlayerWidth();
         localStorage.setItem("lastfile", file.name);
         console.log('Loading complete.') ;
     } else {
