@@ -91,11 +91,11 @@ oT.media.initAudioJS = function(){
 }
 
 oT.media.initProgressor = function(){
-    progressor.init({
+    var p = new Progressor({
         media : oT.media.e(),
         bar : $('#player-hook')[0],
         text : oT.media.e().title,
-        time : $('#player-time')[0]    // element to contain live-updating time (optional)
+        time : $('#player-time')[0]
     });
 }
 

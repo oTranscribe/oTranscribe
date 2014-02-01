@@ -84,21 +84,22 @@ video#media {
     background: $dark;
 }
 
-#player-hook {
+.progressor {
     display: inline-block;
     min-width: 100px;
-    height: 16px;
+    height: 14px;
     margin: 10px;
-    background: grey;
     color: lightgrey;
+    background: lighten($dark, 15%);
     text-align: center;
     cursor: default;
-    font-size: 14px;
+    font-size: 13px;
+    padding-top: 2px;
   }
 
-#progressor-progress {
+.progressor-progress {
     background: white;
-    background: lighten($dark, 15%);
+    background: grey;
 }
 
 #player-time {
