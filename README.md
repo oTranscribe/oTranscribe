@@ -9,7 +9,6 @@
 
 ... and more!
 
-It's currently under active development by [Elliot Bentley](http://elliotbentley.com/), so expect many changes and additions over the coming weeks. As it makes heavy use of cutting-edge HTML5 features, it may not work on old browsers (or new ones, for that matter).
 
 ### Download a copy
 
@@ -34,7 +33,7 @@ Unfamiliar with Grunt? Check out [Chris Coyier's excellent guide](http://24ways.
 oTranscribe is built on the foundations of several awesome projects:
 
 - [jQuery](http://jquery.com)
-- [AudioJS](http://kolber.github.io/audiojs/)
+- ~~[AudioJS](http://kolber.github.io/audiojs/)~~ (replaced with [progressor.js](https://github.com/ejb/progressor.js))
 - [Mousetrap](http://craig.is/killing/mice)
 - [CDNJS](http://cdnjs.com/) for script hosting
 - [Font Awesome](http://fontawesome.io/)
