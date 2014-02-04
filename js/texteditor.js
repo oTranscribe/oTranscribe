@@ -9,8 +9,8 @@ function adjustPlayerWidth(){
     var cntrls = $('.controls');
     console.log ("Window width: "+$(window).width()+"\nControls offset: "+cntrls.offset().left+"\nControls width: "+cntrls.width()+"\nTitle width: "+$('.title').width() );
     
-    var gap = $(window).width() - (cntrls.offset().left + cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() );
-    $('.scrubber').width( $('.scrubber').width()+gap );
+    var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() );
+    $('#player-hook').width( $('#player-hook').width()+gap -10 );
    console.log(gap);
 }
 

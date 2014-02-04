@@ -9,7 +9,7 @@ module.exports = function(grunt) {
                 src: [
                     'js/libs/*.js', // All JS in the libs folder
                     'js/intro.js'
-                  , 'js/audioplayer.js'
+                  , 'js/media.js'
                   , 'js/texteditor.js'
                   , 'js/timestamp.js'
                   , 'js/other.js'
@@ -72,6 +72,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('default', ['concat','uglify','sass','watch']);
 
 };

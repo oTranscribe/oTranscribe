@@ -14,27 +14,27 @@
 
     Mousetrap.bind('escape', function(e) {
         pd(e);
-        playPause();
+        oT.media.playPause();
         return false;
     });
     Mousetrap.bind('f1', function(e) {
         pd(e);
-        skip('backwards');
+        oT.media.skip('backwards');
         return false;
     });
     Mousetrap.bind('f2', function(e) {
         pd(e);
-        skip('forwards');
+        oT.media.skip('forwards');
         return false;
     });
     Mousetrap.bind('f3', function(e) {
         pd(e);
-        speed('down');
+        oT.media.speed('down');
         return false;
     });
     Mousetrap.bind('f4', function(e) {
         pd(e);
-        speed('up');
+        oT.media.speed('up');
         return false;
     });
     Mousetrap.bind('mod+j', function(e) {
@@ -62,14 +62,14 @@
 
 
     $('.play-pause').click(function(){
-        playPause();    
+        oT.media.playPause();    
     });
 
     $('.skip-backwards').click(function(){
-        skip('backwards');    
+        oT.media.skip('backwards');    
     });
     $('.skip-forwards').click(function(){
-        skip('forwards');    
+        oT.media.skip('forwards');    
     });
 
     $( ".speed" ).click(function() {
@@ -78,14 +78,9 @@
             console.log ($('.speed-box').not(':hover').length);
         }    
     });
-    
-    $('.button.refresh').click(function(){
-        resetPlayer();
-    });
-    
 
     $( "#slider3" ).change(function() {
-      speed(this.valueAsNumber);
+      oT.media.speed(this.valueAsNumber);
     });    
     
     $('.title').click(function(){

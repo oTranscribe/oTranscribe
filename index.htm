@@ -21,8 +21,8 @@
                     F3 <i class="slider-origin"></i><input id="slider3" type ="range" min ="0.5" max="2.0" step ="0.25" value ="1"/> F4
         		</div>
             </div><!--
-        --><span id="player-hook"></span><!--
-        --><div class="button refresh"><i class="icon-refresh"></i></div><!--
+        --><div id="player-hook"></div><!--
+        --><div id="player-time"></div><!--
     --></div><!--
     --><div class="help-title">Help</div><!--
     
@@ -30,16 +30,23 @@
 
 <div class="about active">
     <div class="container">
-    <h1>oTranscribe <span style="font-size: 0.5em;vertical-align: top;text-transform: uppercase;color: #AAA;">beta</span></h1>
+    <h1>oTranscribe <span style="font-size: 0.5em;vertical-align: top;text-transform: uppercase;color: #AAA; width: 0; display: inline-block;">beta</span></h1>
 
     <p class="lead">A free web app to take the pain out of transcribing recorded interviews.</p>
+
+    <div class="start">Loading...</div>
+    <div id="old-browser"></div>
+    <div class="mobile">oTranscribe works on desktop computers only.</div>
+
 
     <ul>
         <li><strong>No more switching</strong> between Quicktime and Word.</li><!--
         --><li><strong>Pause, rewind and fast-forward</strong> without taking your hands off the keyboard.</li><!--
         --><li>Navigate through your transcript with <strong>interactive timestamps</strong>.</li><!--
-        --><li><strong>Automatically saved</strong> to your browser's internal storage every second.</li><!--
+        --><li><strong>Automatically saved</strong> to your browser's storage every second.</li><!--
         --><li><strong>Private</strong> - your audio file and transcript <em>never</em> leave your computer.</li><!--
+        --><li><strong>Export</strong> to Markdown, plain text and Google Docs.</li><!--
+        --><li><strong>Video file support</strong> with integrated player.</li><!--
         --><li><strong><a href="https://github.com/otranscribe/otranscribe">Open source</a></strong> under the MIT license.</li>
     </ul>
     
@@ -48,19 +55,25 @@
     <a href="http://thenextweb.com/apps/2014/01/08/otranscribe-simple-useful-free-web-app-transcription">
         <img src="img/tnw_logo.png">
     </a><!--
+    --><a href="http://www.theguardian.com/media/2014/jan/22/ten-tools-for-digital-and-citizen-journalists-on-the-go">
+        <img src="img/gdn_logo.png">
+    </a><!--
+    --><a href="http://lifehacker.com/otranscribe-is-a-free-keyboard-friendly-transcription-1498812713">
+        <img src="img/lh_logo.png">
+    </a><!--
     --><a href="http://www.fastcolabs.com/3024571/is-this-the-transcription-app-journalists-have-been-waiting-for">
         <img src="img/fastco_logo.png">
     </a><!--
     --><a href="http://www.journalism.co.uk/news/journalist-creates-web-app-for-audio-transcription/s2/a555258/">
         <img src="img/jcu_logo.png">
+    </a><!--
+    --><a href="http://wannabehacks.co.uk/2013/12/19/otranscribe-a-new-tool-to-help-make-transcribing-audio-easier/">
+        <img src="img/wh_logo.png">
     </a>
     </div>
     
     </div>
     
-    <div class="start">Loading...</div>
-    <div id="old-browser"></div>
-    <div class="mobile">oTranscribe works on desktop computers only.</div>
     
 
 
@@ -148,8 +161,8 @@
 <div class="textbox-container">
     <div class="input active">
         <div class="file-input-wrapper">
-          <button class="btn-file-input"><i class="icon-upload"></i>Choose audio file</button>
-          <input id="attach" type="file" name="file" accept="audio/*"  />
+          <button class="btn-file-input"><i class="icon-upload"></i>Choose audio (or video) file</button>
+          <input id="attach" type="file" name="file" accept="audio/*, video/*"  />
         </div>
     
         <div id="lastfile"></div>
@@ -191,13 +204,13 @@
             Google Drive
             <div class="sign-in" id="x-gd-sign">Sign in</div>
         </a>
-        <p>The export function is still experimental. If you notice an error, please <a href="mailto:otranscribe@elliotbentley.com">email</a> with details, including your browser and OS.</p>
     </div>
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.5/mousetrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 
+<script src="http://ejb.github.io/progressor.js/progressor.js" type="text/javascript" charset="utf-8"></script>
 <script src="//cdn.jsdelivr.net/audiojs/0.1/audio.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="script.js"></script>
 <script src="https://apis.google.com/js/client.js?onload=gd.handleClientLoad" type="text/javascript"></script>

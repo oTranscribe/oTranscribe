@@ -48,14 +48,14 @@
     }
     
     li {
-        width: 27%;
+        width: 18%;
         display: inline-block;
         vertical-align: top;
         font-size: 16px;
-        height: 6em;
         line-height: 20px;
         text-align: center;
         padding: 0 3%;     
+        padding-bottom: 25px;
         
         strong {
             font-weight: bold;
@@ -72,11 +72,12 @@
     }
     
     .press {
+        color: $accent;
+        font-weight: bold;
         text-align:center;
-        padding: 10px 0 40px 0;
+        padding: 0;
         p {
             font-size: 20px;
-//            font-weight: bold;
             padding-bottom: 10px;
         }
         a {
@@ -123,12 +124,12 @@
         border-radius: 5px;
         color: white;
         margin: 0 auto;
+        margin-top: 20px;
         width: 14em;
         text-align: center;
         background: grey;
         cursor: default;
-//        margin-top: 20px;
-        font-size: 25px;
+        font-size: 21px;
                 
         &.ready {
             cursor: pointer;
