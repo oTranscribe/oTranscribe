@@ -78,11 +78,6 @@
             console.log ($('.speed-box').not(':hover').length);
         }    
     });
-    
-    $('.button.refresh').click(function(){
-        oT.media.reset();
-    });
-    
 
     $( "#slider3" ).change(function() {
       oT.media.speed(this.valueAsNumber);

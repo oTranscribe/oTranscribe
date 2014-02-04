@@ -99,8 +99,3 @@ oT.media.initProgressor = function(){
     });
 }
 
-oT.media.reset = function(){
-    location.reload();
-}
-
-
