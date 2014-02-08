@@ -15,9 +15,9 @@ function detectVideoFormats(format){
 }
 
 function listSupportedFormats(type){
-    if (type == "video") {
+    if (type == "audio") {
         var formats = ['mp3', 'ogg', 'webm', 'wav'];        
-    } else if (type == "audio"){
+    } else if (type == "video"){
         var formats = ['mp4', 'ogg', 'webm'];
     }
     var supportedFormats = [];
