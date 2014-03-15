@@ -53,7 +53,7 @@ function placeExportPanel(){
 
 function hideExportPanel(){
     $('.export-panel').removeClass('active');
-    $('.export-block-gd')[0].outerHTML = gd.button;
+    $('.export-block-gd')[0].outerHTML = gd.button();
 }
 
 exportText.createBlob = function(){

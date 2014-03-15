@@ -50,13 +50,13 @@ gd.updateButton = function(status, active, link){
     exportBlockGd[0].href = link;
 }
 
-gd.button = (function(){
+gd.button = function(){
     var signIn = $("#ui-sign-in").text();
     var text = '<a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">Google Drive<div class="sign-in" id="x-gd-sign">'
     + signIn +
     '</div></a>'
     return text;
-})();
+}
 
 function uploadFile(evt) {
   gapi.client.load('drive', 'v2', function() {

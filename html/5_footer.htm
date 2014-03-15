@@ -5,19 +5,17 @@
         
     <div id="ui-supported-formats">Your browser supports [xxx] audio files and [yyy] video files. You may need to <a href='http://media.io'>convert your file</a>.</div>
     
-    <div id="ui-start-text" data-l10n-id="start-ready">Start transcribing</div>   
-    
     <div id="ui-old-browser-warning" data-l10n-id="old-browser-warning">Your browser does not appear to support some HTML5 features necessary for oTranscribe to run correctly. Please switch to a <a href="http://browsehappy.com">modern desktop browser</a>.</div> 
     
-    <div id="ui-format-warning">"Your browser does not support [file-format] files. Switch to a different browser or <a href=\"http://media.io\">convert your file</a> to another format."
+    <div id="ui-format-warning"  data-l10n-id="format-warn">Your browser does not support [file-format] files. Switch to a different browser or <a href="http://media.io">convert your file</a> to another format.</div>
         
-    <div id="ui-sign-in">Sign in</div>
+    <div id="ui-sign-in" data-l10n-id="sign-in">Sign in</div>
 
-    <div id="ui-sending-to-drive">Sending to Drive...</div>
+    <div id="ui-sending-to-drive" data-l10n-id="send-drive">Sending to Drive...</div>
     
-    <div id="ui-open-in-drive">Open in Drive</div>
+    <div id="ui-open-in-drive" data-l10n-id="open-drive">Open in Drive</div>
 
-    <div id="ui-file-name">Transcript exported</div>
+    <div id="ui-file-name" data-l10n-id="file-name">Transcript exported</div>
 
 </div>
 
@@ -31,8 +29,12 @@
 
 <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 
+<script>
+$(document).ready(function(){
+    document.webL10n.setLanguage('pirate');
+});
+</script>        
 
-<script>document.webL10n.setLanguage('pirate');</script>
 
 
 </body>

@@ -130,13 +130,16 @@
         background: grey;
         cursor: default;
         font-size: 21px;
-                
+        .start-loading { display: inline; }
+        .start-ready { display: none; }             
         &.ready {
             cursor: pointer;
             background: $accent;
             &:hover {
                 background: darken($accent, 10%);
-            }            
+            }
+            .start-loading { display: none; }
+            .start-ready { display: inline; }             
         }
     }
     
