@@ -98,22 +98,6 @@
         placeExportPanel();
     });    
     
-    // $('.export-block-gd').click(function() {
-    //     if ( 
-    //         $( this ).hasClass( "gd-authenticated" ) 
-    //         && 
-    //         ( $( this ).attr('href').indexOf('google') == -1 )
-    //     ){
-    //         insertFile();            
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    // });
-    
-
-
-    
     $('.textbox-container').click(function(e) {
         if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){
             e.preventDefault();
