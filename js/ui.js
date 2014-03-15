@@ -86,15 +86,6 @@
         toggleAbout();
     });
 
-    $('.help-title').click(function(){
-        toggleHelp();
-    });
-
-    $('#close-help').click(function(){
-        toggleHelp();
-    });
-
-
     $('.about .start.ready').click(function(){
         toggleAbout();
     });
