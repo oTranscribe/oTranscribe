@@ -20,7 +20,14 @@ module.exports = function(grunt) {
                   , 'js/timestamp_ext.js'
                 ],
                 dest: 'script.js',
+            },
+            html: {
+                src: [
+                    'html/*.htm'
+                ],
+                dest: 'index.html',
             }
+            
         },
         
         uglify: {
@@ -48,6 +55,13 @@ module.exports = function(grunt) {
             scripts: {
                 files: ['js/*.js', 'otranscribe.js'],
                 tasks: ['concat', 'uglify'],
+                options: {
+                    spawn: false,
+                },
+            },
+            html: {
+                files: ['html/*.htm'],
+                tasks: ['concat'],
                 options: {
                     spawn: false,
                 },
