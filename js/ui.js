@@ -86,9 +86,19 @@
     $('.title').click(function(){
         toggleAbout();
     });
+    
+    $('.language-title').click(function(){
+        oT.lang.togglePanel();
+    });
+    
+    $('.language-button').click(function(){
+       oT.lang.setLang( $(this).data('language') ); 
+    });
 
-    $('.about .start.ready').click(function(){
-        toggleAbout();
+    $('.about .start').click(function(){
+        if ( $(this).hasClass('ready') ) {
+            toggleAbout();
+        }
     });
     
     $('#attach').change(function() {

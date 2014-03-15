@@ -9,8 +9,13 @@ oT.lang.setLang = function(lang){
 
 oT.lang.applyLang = function(){
     var lang = localStorage.getItem('oTranscribe-language');
-    console.log(lang);
     document.webL10n.setLanguage(lang);
+}
+
+oT.lang.togglePanel = function(){
+    $('.language-picker').toggle();
+    $('.text-panel').toggle();
+    $('.language-title').toggleClass('active');
 }
 
 window.oT.lang = oT.lang;
