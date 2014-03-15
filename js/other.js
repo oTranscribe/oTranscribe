@@ -82,7 +82,7 @@ function setFormatsMessage(){
 }
 
 function setStartButton(){
-    var startText = $('#ui-start-text').text();
+    var startText = $('#ui-start-text').html();
     $('.start').html(startText).addClass('ready');
 }
 
