@@ -27,7 +27,15 @@ module.exports = function(grunt) {
                     'html/*.htm'
                 ],
                 dest: 'index.html',
+            },
+            l10n: {
+                src: [
+                    'l10n/english.ini'
+                  , 'l10n/*.ini'
+                ],
+                dest: 'data.ini',
             }
+            
             
         },
         
@@ -62,6 +70,13 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['html/*.htm'],
+                tasks: ['concat'],
+                options: {
+                    spawn: false,
+                },
+            },
+            l10n: {
+                files: ['l10n/*.ini'],
                 tasks: ['concat'],
                 options: {
                     spawn: false,
