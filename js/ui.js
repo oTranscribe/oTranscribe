@@ -44,7 +44,8 @@
     });
     Mousetrap.bind('mod+s', function(e) {
         pd(e);
-        alert("No need to manually save - your transcript is automatically backed up continuously.")
+        var text = $('#ui-save-alert').html();
+        alert(text);
         return false;
     });
 

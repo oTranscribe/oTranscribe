@@ -60,7 +60,8 @@ function reactToFile(input){
         adjustPlayerWidth();
         localStorage.setItem("lastfile", file.name);
     } else {
-        var msg = "Your browser does not support " + file.type.split("/")[1] + " files. Switch to a different browser or <a href=\"http://media.io\">convert your file</a> to another format.";
+        var msg = $('#ui-format-warning').html();
+        msg = msg.replace('[file-format]',file.type.split("/")[1]);
         $('#formats').html(msg).addClass('warning');
     }
     
@@ -74,11 +75,15 @@ function toggleControls(){
 };
 
 function setFormatsMessage(){
-    document.getElementById("formats").innerHTML = "Your browser supports "+listSupportedFormats("audio")+" audio files and "+listSupportedFormats("video")+" video files. You may need to <a href='http://media.io'>convert your file</a>.";    
+    var text = $('#ui-supported-formats').html();
+    text = text.replace("[xxx]",listSupportedFormats("audio"));
+    text = text.replace("[yyy]",listSupportedFormats("video"));
+    document.getElementById("formats").innerHTML = text;
 }
 
 function setStartButton(){
-    $('.start').html('Start transcribing').addClass('ready');
+    var startText = $('#ui-start-text').text();
+    $('.start').html(startText).addClass('ready');
 }
 
 function html5Support(){
@@ -95,7 +100,8 @@ function html5Support(){
 
 function oldBrowserCheck(){
     if ( html5Support() === false ){
-        document.getElementById('old-browser').innerHTML = 'Your browser does not appear to support some HTML5 features necessary for oTranscribe to run correctly. Please switch to a <a href="http://browsehappy.com">modern desktop browser</a>.';
+        var oldBrowserWarning = $('#ui-old-browser-warning')
+        document.getElementById('old-browser').innerHTML = oldBrowserWarning;
     }
 }
 

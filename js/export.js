@@ -32,7 +32,8 @@ var exportText = {
     },
     name : function(){
         var d = new Date();
-        return "Transcript exported " + d.toUTCString();
+        var fileName = $("#ui-file-name").text();
+        return fileName + " " + d.toUTCString();
     }
 }
 
