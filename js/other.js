@@ -59,7 +59,6 @@ function reactToFile(input){
         toggleControls();
         adjustPlayerWidth();
         localStorage.setItem("lastfile", file.name);
-        console.log('Loading complete.') ;
     } else {
         var msg = "Your browser does not support " + file.type.split("/")[1] + " files. Switch to a different browser or <a href=\"http://media.io\">convert your file</a> to another format.";
         $('#formats').html(msg).addClass('warning');
@@ -103,7 +102,6 @@ function oldBrowserCheck(){
 function chromeOsCheck(){
     var ua = window.navigator.userAgent;
     if ( ua.indexOf("CrOS") > -1 ) {
-        console.log("Chrome OS detected.");
         
         Mousetrap.bind('ctrl+1', function(e) {
             pd(e);
