@@ -44,7 +44,8 @@
     });
     Mousetrap.bind('mod+s', function(e) {
         pd(e);
-        alert("No need to manually save - your transcript is automatically backed up continuously.")
+        var text = $('#ui-save-alert').html();
+        alert(text);
         return false;
     });
 
@@ -75,7 +76,6 @@
     $( ".speed" ).click(function() {
         if ($('.speed-box').not(':hover').length) {
             $(this).toggleClass('fixed');
-            console.log ($('.speed-box').not(':hover').length);
         }    
     });
 
@@ -85,17 +85,7 @@
     
     $('.title').click(function(){
         toggleAbout();
-        console.log('about');
     });
-
-    $('.help-title').click(function(){
-        toggleHelp();
-    });
-
-    $('#close-help').click(function(){
-        toggleHelp();
-    });
-
 
     $('.about .start.ready').click(function(){
         toggleAbout();
@@ -108,22 +98,6 @@
     $('#icon-exp').click(function() {
         placeExportPanel();
     });    
-    
-    // $('.export-block-gd').click(function() {
-    //     if ( 
-    //         $( this ).hasClass( "gd-authenticated" ) 
-    //         && 
-    //         ( $( this ).attr('href').indexOf('google') == -1 )
-    //     ){
-    //         insertFile();            
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    // });
-    
-
-
     
     $('.textbox-container').click(function(e) {
         if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){

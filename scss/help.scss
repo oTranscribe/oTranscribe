@@ -1,10 +1,13 @@
 .help {
         
+
     @include page;
+
+    display: block;
     
     h1 {
-        font-size: 2em;
-        margin-bottom: 1em;
+        font-size: 3em;
+        margin: 0.3em 0 0 0;
     }
     
     p, ul, ol {
@@ -17,6 +20,7 @@
     
     h2 {
         font-size: 1.4em;
+        margin-top: 3em;
     }
     
     strong, h2, h3 {
@@ -33,7 +37,7 @@
     }
     
     .container {
-        width: 500px;
+        width: 600px;
     }
     
     a {
@@ -45,8 +49,8 @@
     
     #close-help {
         color: $accent;
-        cursor: pointer;
-        margin-bottom: 2em;
+        text-decoration: none;
+        font-size: 1em;
         &:hover {
             text-decoration: underline;
         };

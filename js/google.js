@@ -1,4 +1,3 @@
-console.log('google');
 
 var gd = {
     CLIENT_ID : '219206830455.apps.googleusercontent.com',
@@ -32,7 +31,6 @@ gd.handleAuthResult = function(authResult) {
     gd.updateButton("Google Drive",true,"javascript:insertFile();");
   } else {
     // No access token could be retrieved, show the button to start the authorization flow.
-    console.log("g2");
     document.getElementById('x-gd-sign').onclick = function() {
         gapi.auth.authorize(
             {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': false},
@@ -52,10 +50,13 @@ gd.updateButton = function(status, active, link){
     exportBlockGd[0].href = link;
 }
 
-gd.button = '<a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">Google Drive<div class="sign-in" id="x-gd-sign">Sign in</div></a>';
-
-
-
+gd.button = (function(){
+    var signIn = $("#ui-sign-in").text();
+    var text = '<a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">Google Drive<div class="sign-in" id="x-gd-sign">'
+    + signIn +
+    '</div></a>'
+    return text;
+})();
 
 function uploadFile(evt) {
   gapi.client.load('drive', 'v2', function() {
@@ -71,14 +72,14 @@ function uploadFile(evt) {
  * @param {Function} callback Function to call when the request is complete.
  */
 window.insertFile = function(callback) {
-    gd.updateButton("Sending to Drive...",false);
+    var sendingText = $("#ui-sending-to-drive").text();
+    gd.updateButton(sendingText,false);
 
   const boundary = '-------314159265358979323846';
   const delimiter = "\r\n--" + boundary + "\r\n";
   const close_delim = "\r\n--" + boundary + "--";
 
   var reader = exportText.reader();
-  console.log(reader);
   reader.onload = function(e) {
     var contentType = 'application/octet-stream';
     var metadata = {
@@ -108,9 +109,8 @@ window.insertFile = function(callback) {
         'body': multipartRequestBody});
     if (!callback) {
       callback = function(file) {
-        console.log(file);
-        console.log("Uploaded to "+file.alternateLink);
-        gd.updateButton('Open in Drive &rarr;', true, file.alternateLink);
+          var openText = $("#ui-open-in-drive").text();
+        gd.updateButton(openText + ' &rarr;', true, file.alternateLink);
       };
     }
     request.execute(callback);
