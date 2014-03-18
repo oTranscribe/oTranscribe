@@ -60,7 +60,7 @@ function reactToFile(input){
         adjustPlayerWidth();
         localStorage.setItem("lastfile", file.name);
     } else {
-        var msg = $('#ui-format-warning').html();
+        var msg = document.webL10n.get('format-warn');
         msg = msg.replace('[file-format]',file.type.split("/")[1]);
         $('#formats').html(msg).addClass('warning');
     }
@@ -75,14 +75,14 @@ function toggleControls(){
 };
 
 function setFormatsMessage(){
-    var text = $('#ui-supported-formats').html();
+    var text = document.webL10n.get('formats');
     text = text.replace("[xxx]",listSupportedFormats("audio"));
     text = text.replace("[yyy]",listSupportedFormats("video"));
     document.getElementById("formats").innerHTML = text;
 }
 
 function setStartButton(){
-    var startText = $('#ui-start-text').html();
+    var startText = document.webL10n.get('start-ready');
     $('.start').text(startText).addClass('ready');
 }
 
@@ -100,7 +100,7 @@ function html5Support(){
 
 function oldBrowserCheck(){
     if ( html5Support() === false ){
-        var oldBrowserWarning = $('#ui-old-browser-warning')
+        var oldBrowserWarning = document.webL10n.get('old-browser-warning');
         document.getElementById('old-browser').innerHTML = oldBrowserWarning;
     }
 }

@@ -32,7 +32,7 @@ var exportText = {
     },
     name : function(){
         var d = new Date();
-        var fileName = $("#ui-file-name").text();
+        var fileName = document.webL10n.get('file-name');
         return fileName + " " + d.toUTCString();
     }
 }

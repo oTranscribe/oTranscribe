@@ -51,7 +51,7 @@ gd.updateButton = function(status, active, link){
 }
 
 gd.button = function(){
-    var signIn = $("#ui-sign-in").text();
+    var signIn = document.webL10n.get('sign-in');
     var text = '<a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">Google Drive<div class="sign-in" id="x-gd-sign">'
     + signIn +
     '</div></a>'
@@ -72,7 +72,7 @@ function uploadFile(evt) {
  * @param {Function} callback Function to call when the request is complete.
  */
 window.insertFile = function(callback) {
-    var sendingText = $("#ui-sending-to-drive").text();
+    var sendingText = document.webL10n.get('send-drive');
     gd.updateButton(sendingText,false);
 
   const boundary = '-------314159265358979323846';
@@ -109,7 +109,7 @@ window.insertFile = function(callback) {
         'body': multipartRequestBody});
     if (!callback) {
       callback = function(file) {
-          var openText = $("#ui-open-in-drive").text();
+          var openText = document.webL10n.get('open-drive');
         gd.updateButton(openText + ' &rarr;', true, file.alternateLink);
       };
     }

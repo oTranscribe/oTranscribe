@@ -4,18 +4,20 @@
 
 
 function init(){
-    oldBrowserCheck();
-    saveText();
-    loadFileName();
-    setFormatsMessage();
-    adjustEditorHeight();
-    placeTextPanel();
-    dragListener();
-    initWordCount();
-    initWatchFormatting();
-    chromeOsCheck();
-    setStartButton();
     oT.lang.applyLang();
+    setTimeout(function(){
+        oldBrowserCheck();
+        saveText();
+        loadFileName();
+        setFormatsMessage();
+        adjustEditorHeight();
+        placeTextPanel();
+        dragListener();
+        initWordCount();
+        initWatchFormatting();
+        chromeOsCheck();
+        setStartButton();
+    },200);
 }
 
 $(document).ready(function(){
