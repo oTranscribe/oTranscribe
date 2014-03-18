@@ -4,24 +4,23 @@
 
 
 function init(){
-    oT.lang.applyLang();
-    setTimeout(function(){
-        oldBrowserCheck();
-        saveText();
-        loadFileName();
-        setFormatsMessage();
-        adjustEditorHeight();
-        placeTextPanel();
-        dragListener();
-        initWordCount();
-        initWatchFormatting();
-        chromeOsCheck();
-        setStartButton();
-    },200);
+    oldBrowserCheck();
+    saveText();
+    loadFileName();
+    setFormatsMessage();
+    adjustEditorHeight();
+    placeTextPanel();
+    dragListener();
+    initWordCount();
+    initWatchFormatting();
+    chromeOsCheck();
+    setStartButton();
 }
 
 $(document).ready(function(){
-    init();
+    oT.lang.applyLang(function(){
+        init()
+    });
 });
 
 $(window).resize(function() {
