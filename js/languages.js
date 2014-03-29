@@ -15,12 +15,10 @@ oT.lang.setLang = function(lang){
 }
 
 oT.lang.applyLang = function(callback){
-    var lang = localStorage.getItem('oTranscribe-language') || navigator.language.substr(0,2);
-    document.webL10n.setLanguage(lang);
-    $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
-    setTimeout(function(){
-        callback();        
-    },1000);
+    var lang = localStorage.getItem('oTranscribe-language');
+    if(lang) {
+        document.webL10n.setLanguage(lang);
+    }
 }
 
 oT.lang.togglePanel = function(){
@@ -28,9 +26,14 @@ oT.lang.togglePanel = function(){
     $('.language-title').toggleClass('active');
 }
 
-oT.lang.buildPanel = function(){
-    for (var i = 0; i < oT.lang.langs.length; i++) {
-        var l = oT.lang.langs[i];
+oT.lang.bide = function(){
+    if (document.webL10n.getReadyState() === 'complete' ) {
+        console.log( document.webL10n.getReadyState() );
+        oT.lang.applyLang();
+    } else {
+        setTimeout(function(){
+            oT.lang.bide();
+        },50);
     }
 }
 

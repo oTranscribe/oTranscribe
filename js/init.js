@@ -4,23 +4,28 @@
 
 
 function init(){
-    oldBrowserCheck();
     saveText();
     loadFileName();
-    setFormatsMessage();
     adjustEditorHeight();
     placeTextPanel();
     dragListener();
     initWordCount();
     initWatchFormatting();
     chromeOsCheck();
-    setStartButton();
 }
 
+window.addEventListener('localized', function() {
+    console.log( document.webL10n.getLanguage() );
+    setFormatsMessage();
+    setStartButton();
+    oldBrowserCheck();
+    $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
+}, false);
+
+
 $(document).ready(function(){
-    oT.lang.applyLang(function(){
-        init()
-    });
+    init();
+    oT.lang.bide();
 });
 
 $(window).resize(function() {
