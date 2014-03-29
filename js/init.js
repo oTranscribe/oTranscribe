@@ -15,7 +15,6 @@ function init(){
 }
 
 window.addEventListener('localized', function() {
-    console.log( document.webL10n.getLanguage() );
     setFormatsMessage();
     setStartButton();
     oldBrowserCheck();
@@ -32,7 +31,9 @@ $(window).resize(function() {
     adjustEditorHeight();
     adjustPlayerWidth();
     placeTextPanel();
-    document.getElementById('media').style.width = oT.media.videoWidth();
+    if (document.getElementById('media') ) {
+        document.getElementById('media').style.width = oT.media.videoWidth();
+    }
 });
 
 

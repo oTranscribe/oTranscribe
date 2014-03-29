@@ -1,7 +1,7 @@
 oT.lang = {};
 
 oT.lang.langs = {
-    'english': 'English',
+    'en': 'English',
     'pirate': 'Pirate',
     'es': 'Español',
     'fr': 'Français'
@@ -28,7 +28,6 @@ oT.lang.togglePanel = function(){
 
 oT.lang.bide = function(){
     if (document.webL10n.getReadyState() === 'complete' ) {
-        console.log( document.webL10n.getReadyState() );
         oT.lang.applyLang();
     } else {
         setTimeout(function(){
