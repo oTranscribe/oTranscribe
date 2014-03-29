@@ -5,7 +5,6 @@
 
 function init(){
     saveText();
-    loadFileName();
     adjustEditorHeight();
     placeTextPanel();
     dragListener();
@@ -18,6 +17,7 @@ window.addEventListener('localized', function() {
     setFormatsMessage();
     setStartButton();
     oldBrowserCheck();
+    loadFileName();
     $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
 }, false);
 
@@ -25,6 +25,9 @@ window.addEventListener('localized', function() {
 $(document).ready(function(){
     init();
     oT.lang.bide();
+    if ( localStorage.getItem("lastfile") ) {
+        toggleAbout();
+    }
 });
 
 $(window).resize(function() {

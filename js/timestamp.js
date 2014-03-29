@@ -17,8 +17,8 @@ function saveText(){
 function loadFileName(){
     // load existing file name
     if ( localStorage.getItem("lastfile") ) {
-       document.getElementById("lastfile").innerHTML = "Last file: "+localStorage.getItem("lastfile");
-       toggleAbout();
+        var lastfileText = document.webL10n.get('last-file');
+       document.getElementById("lastfile").innerHTML = lastfileText+" "+localStorage.getItem("lastfile");
     }    
 }
 
