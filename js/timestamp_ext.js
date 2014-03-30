@@ -10,7 +10,6 @@ var ts = {
         return seconds;
     },
     setFrom : function(clickts, element){
-        console.log(element.childNodes.length);
         if (element.childNodes.length == 1) {
             oT.media.e().currentTime = ts.split(clickts);
         }

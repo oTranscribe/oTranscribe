@@ -75,7 +75,6 @@
     $( ".speed" ).click(function() {
         if ($('.speed-box').not(':hover').length) {
             $(this).toggleClass('fixed');
-            console.log ($('.speed-box').not(':hover').length);
         }    
     });
 
@@ -85,17 +84,7 @@
     
     $('.title').click(function(){
         toggleAbout();
-        console.log('about');
     });
-
-    $('.help-title').click(function(){
-        toggleHelp();
-    });
-
-    $('#close-help').click(function(){
-        toggleHelp();
-    });
-
 
     $('.about .start.ready').click(function(){
         toggleAbout();

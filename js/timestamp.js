@@ -2,10 +2,6 @@
                 Timestamp
 ******************************************/
 
-// get timestamp
-// var timestamp;
-
-
 function saveText(){
     var field = document.getElementById("textbox");
     // load existing autosave (if present)

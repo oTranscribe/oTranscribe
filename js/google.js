@@ -1,4 +1,3 @@
-console.log('google');
 
 var gd = {
     CLIENT_ID : '219206830455.apps.googleusercontent.com',
@@ -32,7 +31,6 @@ gd.handleAuthResult = function(authResult) {
     gd.updateButton("Google Drive",true,"javascript:insertFile();");
   } else {
     // No access token could be retrieved, show the button to start the authorization flow.
-    console.log("g2");
     document.getElementById('x-gd-sign').onclick = function() {
         gapi.auth.authorize(
             {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': false},
@@ -78,7 +76,6 @@ window.insertFile = function(callback) {
   const close_delim = "\r\n--" + boundary + "--";
 
   var reader = exportText.reader();
-  console.log(reader);
   reader.onload = function(e) {
     var contentType = 'application/octet-stream';
     var metadata = {
@@ -108,8 +105,6 @@ window.insertFile = function(callback) {
         'body': multipartRequestBody});
     if (!callback) {
       callback = function(file) {
-        console.log(file);
-        console.log("Uploaded to "+file.alternateLink);
         gd.updateButton('Open in Drive &rarr;', true, file.alternateLink);
       };
     }

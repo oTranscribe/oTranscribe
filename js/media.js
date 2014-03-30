@@ -8,7 +8,6 @@ oT.media.e = function(){
 oT.media.create = function(file){
 
     if (window.webkitURL) {
-        console.log('webkit');
         var url = window.webkitURL.createObjectURL(file);
     } else {
         var url = window.URL.createObjectURL(file);      
@@ -24,9 +23,6 @@ oT.media.create = function(file){
         $('#player-hook').append('<audio id="media" src=""></audio>');
         oT.media.e().src = url;            
     }
-    
-    console.log(file);
-    console.log(file.name);
     
     oT.media.e().title = file.name;
 
