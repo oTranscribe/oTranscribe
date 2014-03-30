@@ -7,15 +7,17 @@
 
 
 function saveText(){
-    // autosave every second
     var field = document.getElementById("textbox");
+    // load existing autosave (if present)
     if ( localStorage.getItem("autosave")) {
        field.innerHTML = localStorage.getItem("autosave");
     }
-    setInterval(function(){
-       localStorage.setItem("autosave", field.innerHTML);
-    }, 1000);
-    
+    // autosave every second - but wait five seconds before kicking in
+    setTimeout(function(){
+        setInterval(function(){
+           localStorage.setItem("autosave", field.innerHTML);
+        }, 1000);
+    }, 5000);
 }
 
 function loadFileName(){
