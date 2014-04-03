@@ -94,7 +94,7 @@
         reactToFile(this);
     });    
 
-    $('#icon-exp').click(function() {
+    $('.sbutton.export').click(function() {
         placeExportPanel();
     });    
     
@@ -115,7 +115,11 @@
 
     
     $('.textbox-container').click(function(e) {
-        if( ($(e.target).is('#icon-exp')) || $(e.target).is('.export-panel') ){
+        if(
+            $(e.target).is('#icon-exp') ||
+            $(e.target).is('.export-panel') ||
+            $(e.target).is('.sbutton.export')
+        ){
             e.preventDefault();
             return;
         }

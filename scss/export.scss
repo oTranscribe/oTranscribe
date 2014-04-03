@@ -53,11 +53,15 @@
     -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
     -webkit-transform: scale(0.1);
     -webkit-transform-origin: 89% 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
+    transform: scale(0.1);
+    transform-origin: 89% 0;
     opacity: 0;
     z-index: 100;
 
     &.active {
         -webkit-transform: scale(1);
+        transform: scale(1);
         opacity: 1;
     }
     
