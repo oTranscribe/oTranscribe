@@ -77,7 +77,7 @@ window.insertFile = function(callback) {
 
   var reader = exportText.reader();
   reader.onload = function(e) {
-    var contentType = 'application/octet-stream';
+    var contentType = 'text/html';
     var metadata = {
       'title': exportText.name(),
       'mimeType': 'text/html'
