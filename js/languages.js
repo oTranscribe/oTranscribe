@@ -18,6 +18,8 @@ oT.lang.applyLang = function(callback){
     var lang = localStorage.getItem('oTranscribe-language');
     if(lang) {
         document.webL10n.setLanguage(lang);
+    } else {
+        document.webL10n.setLanguage('en');
     }
 }
 
