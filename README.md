@@ -28,6 +28,15 @@ This repository only includes the "raw" JavaScript and CSS. To compile the produ
 
 Unfamiliar with Grunt? Check out [Chris Coyier's excellent guide](http://24ways.org/2013/grunt-is-not-weird-and-hard/) to this useful build tool.
 
+### Translations
+
+Translations have been provided by the following talented and generous volunteers:
+
+*   Spanish: [Cristian Duque](https://github.com/crskkk) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
+*   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
+
+More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
+
 ### Libraries
 
 oTranscribe is built on the foundations of several awesome projects:
@@ -39,3 +48,4 @@ oTranscribe is built on the foundations of several awesome projects:
 - [Font Awesome](http://fontawesome.io/)
 - [to-markdown](https://github.com/domchristie/to-markdown)
 - [jquery-clean](https://code.google.com/p/jquery-clean/)
+- [webL10n](https://github.com/fabi1cazenave/webL10n)
