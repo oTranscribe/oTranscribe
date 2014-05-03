@@ -15,9 +15,12 @@ function init(){
     initWatchFormatting();
     chromeOsCheck();
     setStartButton();
+    oT.lang.applyLang();
 }
 
-init();
+$(document).ready(function(){
+    init();
+});
 
 $(window).resize(function() {
     adjustEditorHeight();

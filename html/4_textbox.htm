@@ -1,7 +1,7 @@
 <div class="textbox-container">
     <div class="input active">
         <div class="file-input-wrapper">
-          <button class="btn-file-input"><i class="icon-upload"></i>Choose audio (or video) file</button>
+          <button class="btn-file-input"><i class="icon-upload"></i><span data-l10n-id="choose-file">Choose audio (or video) file</span></button>
           <input id="attach" type="file" name="file" accept="audio/*, video/*"  />
         </div>
     
@@ -28,21 +28,23 @@
         <button class="sbutton time" onclick="ts.insert();">
             <i class="icon-time"></i><span class="label">ctrl+j</span>
         </button>
-        <div class="wordcount" id="wc">            
+        <div class="wordcount">
+            <span id="wc"></span>    
+            <span class="wc-text" data-l10n-id="wordcount">words</span>        
         </div>
         <button class="sbutton export">
-            <i class="icon-share" id="icon-exp"></i><span class="label">Export</span>
+            <i class="icon-share" id="icon-exp"></i><span class="label" data-l10n-id="export">Export</span>
         </button>
         
     </div>
     <div class="export-panel">
-        <div class="export-title">Download transcript as...</div>
-        <a class="export-block-md" id="x-md" target="_blank">Markdown (.md)</a>
-        <a class="export-block-txt" id="x-txt" target="_blank">Plain text (.txt)</a>
-        <div class="export-title">Send transcript to...</div>
+        <div class="export-title" data-l10n-id="export-download">Download transcript as...</div>
+        <a class="export-block-md" id="x-md" target="_blank"  data-l10n-id="export-markdown">Markdown (.md)</a>
+        <a class="export-block-txt" id="x-txt" target="_blank" data-l10n-id="export-text">Plain text (.txt)</a>
+        <div class="export-title" data-l10n-id="export-send">Send transcript to...</div>
         <a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">
             Google Drive
-            <div class="sign-in" id="x-gd-sign">Sign in</div>
+            <div class="sign-in" data-l10n-id="sign-in" id="x-gd-sign">Sign in</div>
         </a>
     </div>
 </div>

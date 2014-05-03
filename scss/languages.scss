@@ -1,0 +1,27 @@
+.language-picker {
+    @include page;
+    
+    .language-button {
+        display: inline-block;
+        padding: 1em;
+        margin-bottom: 10px;
+        width: 20%;
+        cursor: pointer;
+        &:hover {
+            background: #DDD;
+        };
+    }
+    
+    .language-suggest {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 1em;
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            background: #DDD;
+        };
+    }
+}

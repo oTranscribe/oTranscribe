@@ -32,7 +32,8 @@ var exportText = {
     },
     name : function(){
         var d = new Date();
-        return "Transcript exported " + d.toUTCString();
+        var fileName = $("#ui-file-name").text();
+        return fileName + " " + d.toUTCString();
     }
 }
 
@@ -52,7 +53,7 @@ function placeExportPanel(){
 
 function hideExportPanel(){
     $('.export-panel').removeClass('active');
-    $('.export-block-gd')[0].outerHTML = gd.button;
+    $('.export-block-gd')[0].outerHTML = gd.button();
 }
 
 exportText.createBlob = function(){

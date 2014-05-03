@@ -44,7 +44,8 @@
     });
     Mousetrap.bind('mod+s', function(e) {
         pd(e);
-        alert("No need to manually save - your transcript is automatically backed up continuously.")
+        var text = $('#ui-save-alert').html();
+        alert(text);
         return false;
     });
 
@@ -85,9 +86,19 @@
     $('.title').click(function(){
         toggleAbout();
     });
+    
+    $('.language-title').click(function(){
+        oT.lang.togglePanel();
+    });
+    
+    $('.language-button').click(function(){
+       oT.lang.setLang( $(this).data('language') ); 
+    });
 
-    $('.about .start.ready').click(function(){
-        toggleAbout();
+    $('.about .start').click(function(){
+        if ( $(this).hasClass('ready') ) {
+            toggleAbout();
+        }
     });
     
     $('#attach').change(function() {
@@ -97,22 +108,6 @@
     $('.sbutton.export').click(function() {
         placeExportPanel();
     });    
-    
-    // $('.export-block-gd').click(function() {
-    //     if ( 
-    //         $( this ).hasClass( "gd-authenticated" ) 
-    //         && 
-    //         ( $( this ).attr('href').indexOf('google') == -1 )
-    //     ){
-    //         insertFile();            
-    //         return false;
-    //     } else {
-    //         return true;
-    //     }
-    // });
-    
-
-
     
     $('.textbox-container').click(function(e) {
         if(

@@ -8,7 +8,7 @@
 function adjustPlayerWidth(){
     var cntrls = $('.controls');
     
-    var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() );
+    var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() + $('.language-title').outerWidth()  );
     $('#player-hook').width( $('#player-hook').width()+gap -10 );
 }
 

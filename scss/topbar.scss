@@ -51,5 +51,13 @@
 
 .help-title {
     @include title-button;
+    border-right: 1px solid lighten($dark, 10%);
     text-decoration: none;
+}
+
+.language-title {
+    @include title-button;    
+    i {
+        font-size: 0.90em;
+    }
 }
