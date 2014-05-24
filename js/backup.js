@@ -87,11 +87,11 @@ oT.backup.list = function(){
     return result.sort().reverse();
 }
 
+
 oT.backup.restore = function(timestamp){
+    oT.backup.save();
     var textbox = document.getElementById("textbox");
-    var oldText = textbox.innerHTML;
     var newText = localStorage.getItem('oTranscribe-backup-'+timestamp);
-    console.log(newText);
     document.getElementById("textbox").innerHTML = newText;
     oT.backup.closePanel();
 }
