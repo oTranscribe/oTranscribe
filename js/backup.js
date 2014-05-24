@@ -12,9 +12,8 @@ oT.backup.closePanel = function(){
 oT.backup.generateBlock = function(ref){
     // create icon and 'restore' button
     var text = localStorage.getItem(ref);
-    var date = ref.replace('oTranscribe-backup-','');
-    date = new Date( parseFloat(date) );
-    // date = date.format("dd.mm.yyyy hh:MM:ss");
+    var timestamp = ref.replace('oTranscribe-backup-','');
+    var date = oT.backup.formatDate(timestamp);
     
     var block = document.createElement('div');
     var doc = document.createElement('div');
@@ -30,6 +29,22 @@ oT.backup.generateBlock = function(ref){
     block.appendChild(restoreButton);
     
     return block;
+}
+
+oT.backup.formatDate = function(timestamp){
+    var d = new Date( parseFloat(timestamp) );
+    var day =  d.getDate() + '/' + (d.getMonth()+1);
+    var now = new Date();
+    today = now.getDate() + '/' + (now.getMonth()+1);
+    yesterday = (now.getDate()-1) + '/' + (now.getMonth()+1);
+    if (day === today) {
+        day = 'Today';
+    } else if (day === yesterday) {
+        day = 'Yesterday'
+    }
+    var time = + d.getHours() + ':' + d.getMinutes();
+    formattedDate = day + ' ' + time;
+    return formattedDate;
 }
 
 oT.backup.populatePanel = function(){
