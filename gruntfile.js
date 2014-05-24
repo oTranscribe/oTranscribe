@@ -13,6 +13,7 @@ module.exports = function(grunt) {
                   , 'js/texteditor.js'
                   , 'js/timestamp.js'
                   , 'js/other.js'
+                  , 'js/backup.js'
                   , 'js/init.js'
                   , 'js/google.js'
                   , 'js/export.js'

@@ -109,6 +109,14 @@
         placeExportPanel();
     });    
     
+    $('.sbutton.backup').click(function(){
+        oT.backup.openPanel();
+    });
+    
+    $('.backup-close').click(function(){
+        oT.backup.closePanel();
+    });
+    
     $('.textbox-container').click(function(e) {
         if(
             $(e.target).is('#icon-exp') ||
