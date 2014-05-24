@@ -39,6 +39,12 @@
         padding: 5px;
         box-sizing: border-box;
         
+        .no-backups {
+            color: #ccc;
+            text-align: center;
+            padding-top: 10px;
+        }
+        
         .backup-block {
             padding: 10px;
             box-sizing: border-box;

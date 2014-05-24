@@ -54,6 +54,9 @@ oT.backup.populatePanel = function(){
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
+    if (docs.length === 0) {
+        $('.backup-window').append( '<div class="no-backups">No backups found.</div>' );
+    }
 }
 
 oT.backup.save = function(){
