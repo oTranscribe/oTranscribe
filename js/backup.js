@@ -62,6 +62,10 @@ oT.backup.save = function(){
     var timestamp = new Date().getTime();
     localStorage.setItem('oTranscribe-backup-'+timestamp, text.innerHTML);
     // and bleep icon
+    // TODO
+    // and add to tray
+    var newBlock = oT.backup.generateBlock('oTranscribe-backup-'+timestamp);
+    $('.backup-window').prepend( oT.backup.generateBlock('oTranscribe-backup-'+timestamp) );
 }
 
 oT.backup.init = function(){
