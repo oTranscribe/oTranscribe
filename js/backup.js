@@ -42,7 +42,12 @@ oT.backup.formatDate = function(timestamp){
     } else if (day === yesterday) {
         day = 'Yesterday'
     }
-    var time = + d.getHours() + ':' + d.getMinutes();
+    var time = d.getHours() + ':';
+    if (d.getMinutes() < 10) {
+        time += '0';        
+    }
+    time += d.getMinutes();
+    
     formattedDate = day + ' ' + time;
     return formattedDate;
 }
