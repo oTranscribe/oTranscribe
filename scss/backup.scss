@@ -35,5 +35,25 @@
         height: 300px;
         width: 800px;
         margin: 0 auto;
+        overflow: scroll;
+        
+        .backup-block {
+            padding: 20px;
+            width: 190px;
+            display: inline-block;
+            .backup-doc {
+                overflow: scroll;
+                background: white;
+                height: 220px;
+                padding: 10px;
+                font-size: 8px;
+            }
+            .backup-restore-button {
+                text-align: center;
+                margin-top: 10px;
+                color: white;
+                font-size: 12px;
+            }
+        }
     }
 }

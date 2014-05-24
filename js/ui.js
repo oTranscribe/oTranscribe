@@ -44,8 +44,7 @@
     });
     Mousetrap.bind('mod+s', function(e) {
         pd(e);
-        var text = document.webL10n.get('save-alert');
-        alert(text);
+        oT.backup.save();
         return false;
     });
 
