@@ -35,16 +35,25 @@
         height: 300px;
         width: 800px;
         margin: 0 auto;
-        overflow: scroll;
+        overflow-y: scroll;
+        padding: 5px;
+        box-sizing: border-box;
         
         .backup-block {
-            padding: 20px;
-            width: 190px;
+            padding: 10px;
+            box-sizing: border-box;
+            width: 25%;
             display: inline-block;
+//            &+.backup-block {
+//                padding-left: 0;
+//            }
+//            &:nth-child(4n) {
+//                padding-left: 20px;
+//            }
             .backup-doc {
-                overflow: scroll;
+                overflow-y: scroll;
                 background: white;
-                height: 220px;
+                height: 180px;
                 padding: 10px;
                 font-size: 8px;
             }

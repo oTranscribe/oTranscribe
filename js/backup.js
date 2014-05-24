@@ -35,7 +35,7 @@ oT.backup.generateBlock = function(ref){
 oT.backup.populatePanel = function(){
     // fill panel with four icons
     var docs = oT.backup.list();
-    docs.slice(0,3);
+    docs = docs.slice(0,10);
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
