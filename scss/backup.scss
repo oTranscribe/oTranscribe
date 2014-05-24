@@ -44,12 +44,6 @@
             box-sizing: border-box;
             width: 25%;
             display: inline-block;
-//            &+.backup-block {
-//                padding-left: 0;
-//            }
-//            &:nth-child(4n) {
-//                padding-left: 20px;
-//            }
             .backup-doc {
                 overflow-y: scroll;
                 background: white;
@@ -62,6 +56,10 @@
                 margin-top: 10px;
                 color: white;
                 font-size: 12px;
+                span {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
             }
         }
     }

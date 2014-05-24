@@ -111,7 +111,7 @@
     $('.sbutton.backup').click(function(){
         oT.backup.openPanel();
     });
-    
+        
     $('.backup-close').click(function(){
         oT.backup.closePanel();
     });

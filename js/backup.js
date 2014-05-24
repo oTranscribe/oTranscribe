@@ -24,7 +24,7 @@ oT.backup.generateBlock = function(ref){
     restoreButton.className = 'backup-restore-button';
 
     doc.innerHTML = text;
-    restoreButton.innerHTML = date+' - restore';
+    restoreButton.innerHTML = date+' - <span onClick="oT.backup.restore('+timestamp+');">restore</span>';
     block.appendChild(doc);
     block.appendChild(restoreButton);
     
@@ -82,6 +82,15 @@ oT.backup.list = function(){
         }
     }
     return result.sort().reverse();
+}
+
+oT.backup.restore = function(timestamp){
+    var textbox = document.getElementById("textbox");
+    var oldText = textbox.innerHTML;
+    var newText = localStorage.getItem('oTranscribe-backup-'+timestamp);
+    console.log(newText);
+    document.getElementById("textbox").innerHTML = newText;
+    oT.backup.closePanel();
 }
 
 // original autosave function
