@@ -10,6 +10,8 @@ function saveText(){
     }
     // autosave every second - but wait five seconds before kicking in
     setTimeout(function(){
+        // prevent l10n from replacing user text
+        $('#textbox p[data-l10n-id]').attr('data-l10n-id','');
         setInterval(function(){
            localStorage.setItem("autosave", field.innerHTML);
         }, 1000);
