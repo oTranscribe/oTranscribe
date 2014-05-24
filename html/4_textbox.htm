@@ -1,7 +1,7 @@
 <div class="textbox-container">
     <div class="input active">
         <div class="file-input-wrapper">
-          <button class="btn-file-input"><i class="icon-upload"></i><span data-l10n-id="choose-file">Choose audio (or video) file</span></button>
+          <button class="btn-file-input"><i class="fa fa-arrow-circle-o-up"></i><span data-l10n-id="choose-file">Choose audio (or video) file</span></button>
           <input id="attach" type="file" name="file" accept="audio/*, video/*"  />
         </div>
     
@@ -20,20 +20,20 @@
     
     <div class="text-panel">
         <button class="sbutton bold" onclick="document.execCommand('bold',false,null);">
-            <i class="icon-bold" id="icon-b"></i><span class="label">ctrl+b</span>
+            <i class="fa fa-bold" id="icon-b"></i><span class="label">ctrl+b</span>
         </button>
         <button class="sbutton italic" onclick="document.execCommand('italic',false,null);">
-            <i class="icon-italic" id="icon-i"></i><span class="label">ctrl+i</span>
+            <i class="fa fa-italic" id="icon-i"></i><span class="label">ctrl+i</span>
         </button>
         <button class="sbutton time" onclick="ts.insert();">
-            <i class="icon-time"></i><span class="label">ctrl+j</span>
+            <i class="fa fa-clock-o"></i><span class="label">ctrl+j</span>
         </button>
         <div class="wordcount">
             <span id="wc"></span>    
             <span class="wc-text" data-l10n-id="wordcount">words</span>        
         </div>
         <button class="sbutton export">
-            <i class="icon-share" id="icon-exp"></i><span class="label" data-l10n-id="export">Export</span>
+            <i class="fa fa-share-square-o" id="icon-exp"></i><span class="label" data-l10n-id="export">Export</span>
         </button>
         
     </div>
