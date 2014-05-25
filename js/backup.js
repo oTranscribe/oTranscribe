@@ -6,7 +6,10 @@ oT.backup.openPanel = function(){
 }
 
 oT.backup.closePanel = function(){
-    $('.backup-panel').fadeOut('fast');
+    $('.backup-panel').fadeOut('fast',function(){
+        $('.backup-window').empty();
+        
+    });
 }
 
 oT.backup.generateBlock = function(ref){
