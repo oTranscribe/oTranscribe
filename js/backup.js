@@ -53,15 +53,20 @@ oT.backup.formatDate = function(timestamp){
 }
 
 oT.backup.populatePanel = function(){
-    // fill panel with four icons
+    oT.backup.addDocsToPanel(0,8);
+    if (oT.backup.list().length === 0) {
+        $('.backup-window').append( '<div class="no-backups">No backups found.</div>' );
+    }
+}
+
+oT.backup.addDocsToPanel = function(start,end){
+    $('.more-backups').remove();
     var docs = oT.backup.list();
-    docs = docs.slice(0,10);
+    docs = docs.slice(start,end);
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
-    if (docs.length === 0) {
-        $('.backup-window').append( '<div class="no-backups">No backups found.</div>' );
-    }
+    $('.backup-window').append( '<div class="more-backups" onclick="oT.backup.addDocsToPanel('+(end+1)+','+(end+9)+')" >Load older backups</div>' );
 }
 
 oT.backup.save = function(){

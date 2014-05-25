@@ -45,6 +45,18 @@
             padding-top: 10px;
         }
         
+        .more-backups {
+            color: white;
+            text-align: center;
+            background: #555;
+            padding: 1em 0;
+            margin: 10px;
+            cursor: pointer;
+            &:hover {
+                background: #666;
+            }
+        }
+        
         .backup-block {
             padding: 10px;
             box-sizing: border-box;
