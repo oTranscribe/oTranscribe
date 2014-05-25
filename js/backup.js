@@ -70,7 +70,10 @@ oT.backup.save = function(){
     var timestamp = new Date().getTime();
     localStorage.setItem('oTranscribe-backup-'+timestamp, text.innerHTML);
     // and bleep icon
-    // TODO
+    $('.sbutton.backup').addClass('flash');
+    setTimeout(function(){
+        $('.sbutton.backup').removeClass('flash');
+    },1000);
     // and add to tray
     var newBlock = oT.backup.generateBlock('oTranscribe-backup-'+timestamp);
     $('.backup-window').prepend( oT.backup.generateBlock('oTranscribe-backup-'+timestamp) );
