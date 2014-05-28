@@ -45,6 +45,11 @@
                 height: auto;
             }
         }
+        
+        &.backup.flash i {
+            -webkit-animation: save-flash 1s;
+            animation: save-flash 1s;
+        }
 
         i {
             font-size: 20px;
@@ -105,5 +110,19 @@
        }
     }
 
-
 }
+
+
+
+@-webkit-keyframes save-flash {
+  0%   { color: $dark;       }
+  15%  { color: $accent;     }
+  100% { color: $dark;       }
+}
+
+@keyframes save-flash {
+  0%   { color: $dark;       }
+  15%  { color: $accent;     }
+  100% { color: $dark;       }
+}
+

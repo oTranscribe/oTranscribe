@@ -2,22 +2,6 @@
                 Timestamp
 ******************************************/
 
-function saveText(){
-    var field = document.getElementById("textbox");
-    // load existing autosave (if present)
-    if ( localStorage.getItem("autosave")) {
-       field.innerHTML = localStorage.getItem("autosave");
-    }
-    // autosave every second - but wait ten seconds before kicking in
-    setTimeout(function(){
-        // prevent l10n from replacing user text
-        $('#textbox p[data-l10n-id]').attr('data-l10n-id','');
-        setInterval(function(){
-           localStorage.setItem("autosave", field.innerHTML);
-        }, 1000);
-    }, 10000);
-}
-
 function loadFileName(){
     // load existing file name
     if ( localStorage.getItem("lastfile") ) {

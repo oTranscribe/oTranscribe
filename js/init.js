@@ -5,6 +5,7 @@
 
 function init(){
     saveText();
+    oT.backup.init();
     adjustEditorHeight();
     placeTextPanel();
     dragListener();

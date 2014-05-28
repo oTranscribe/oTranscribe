@@ -70,14 +70,14 @@ function watchFormatting(){
     var ii = document.getElementById("icon-i");
     
     if (b === true){
-        bi.className = "icon-bold active"
+        bi.className = "fa fa-bold active"
     } else {
-        bi.className = "icon-bold"
+        bi.className = "fa fa-bold"
     }
     if (i === true){
-        ii.className = "icon-italic active"
+        ii.className = "fa fa-italic active"
     } else {
-        ii.className = "icon-italic"
+        ii.className = "fa fa-italic"
     }
 }
 
