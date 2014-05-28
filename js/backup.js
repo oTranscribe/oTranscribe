@@ -65,12 +65,14 @@ oT.backup.populatePanel = function(){
 
 oT.backup.addDocsToPanel = function(start,end){
     $('.more-backups').remove();
-    var docs = oT.backup.list();
-    docs = docs.slice(start,end);
+    var allDocs = oT.backup.list();
+    docs = allDocs.slice(start,end);
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
-    $('.backup-window').append( '<div class="more-backups" onclick="oT.backup.addDocsToPanel('+(end+1)+','+(end+9)+')" >Load older backups</div>' );
+    if (allDocs[end]) {
+        $('.backup-window').append( '<div class="more-backups" onclick="oT.backup.addDocsToPanel('+(end)+','+(end+8)+')" >Load older backups</div>' );
+    }
 }
 
 oT.backup.save = function(){
