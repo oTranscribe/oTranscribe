@@ -2,6 +2,7 @@ oT.backup = {};
 
 oT.backup.openPanel = function(){
     oT.backup.populatePanel();
+    $('.backup-window').height( $('.textbox-container').height() * (3/5) );
     $('.backup-panel').fadeIn('fast');
 }
 
