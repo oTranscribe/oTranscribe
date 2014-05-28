@@ -3,14 +3,14 @@
 <title>oTranscribe - Help</title>
 
 <link rel="stylesheet" href="../style.css" type="text/css" media="screen" title="no title" charset="utf-8">
-<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
 
 </head>
 <body>
 
 <div class="help">
     <div class="container">
-        <a href="../" id="close-help"><i class="icon-double-angle-left"></i> back to oTranscribe</a>
+        <a href="../" id="close-help"><i class="fa fa-angle-double-left"></i> back to oTranscribe</a>
         <h1>oTranscribe Help</h1>
 
         
@@ -28,6 +28,10 @@
         <h2 id="where_is_my_transcript_stored_how_secure_is_it">Where is my transcript stored? How secure is it?</h2>
 
         <p>oTranscribe is designed in a way that your data (both the audio file and the written transcript) <em>never</em> leaves your local computer. The transcript is not kept on a remote server or &#8220;in the cloud&#8221;, but is instead in the browser&#8217;s <em>localStorage</em>. The downside is that it is not possible to access your saved transcripts from another computer.</p>
+
+    <p>oTranscribe's automatic backup system saves the current transcript every five minutes, and stores each copy for one week. Click on the <i class="fa fa-history"></i> button to view backups and restore an old copy of your transcript.</p>
+    
+    <p>oTranscribe is not a permanent document store, as browser storage is notoriously unreliable (even with this backup system). Please make sure to export your work regularly to prevent loss of data.</p>
 
     <h2 id="what_keyboard_shortcuts_are_there">What keyboard shortcuts are there?</h2>
 
@@ -47,6 +51,7 @@
     <li><strong>Ctrl+B</strong>: Bold</li>
     <li><strong>Ctrl+I</strong>: Italics</li>
     <li><strong>Ctrl+J</strong>: Insert timestamp</li>
+    <li><strong>Ctrl+S</strong>: Manual backup</li>
     </ul>
 
     <p>Note: On OS X, using Cmd instead of Ctrl.</p>
