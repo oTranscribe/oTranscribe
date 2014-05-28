@@ -90,6 +90,7 @@ oT.backup.save = function(){
 oT.backup.init = function(){
     setTimeout(function(){
         oT.backup.save();
+        oT.backup.cleanup();
     },300000 /* 5 minutes */);
 }
 
@@ -110,6 +111,20 @@ oT.backup.restore = function(timestamp){
     var newText = localStorage.getItem('oTranscribe-backup-'+timestamp);
     document.getElementById("textbox").innerHTML = newText;
     oT.backup.closePanel();
+}
+
+oT.backup.cleanup = function(){
+    var backups = oT.backup.list();
+    for (var i = 0; i < backups.length; i++) {
+        var bu = backups[i];
+        var ts = bu.replace('oTranscribe-backup-','');
+        var date = new Date( parseFloat( ts ) );
+        var diff = Date.now() - date;
+        // 1 day = 86400000 miliseconds
+        if (diff > (86400000*7) ) {
+            localStorage.removeItem( bu );
+        }
+    }
 }
 
 // original autosave function
