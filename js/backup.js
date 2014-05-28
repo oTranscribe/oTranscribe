@@ -88,7 +88,7 @@ oT.backup.save = function(){
 }
 
 oT.backup.init = function(){
-    setTimeout(function(){
+    setInterval(function(){
         oT.backup.save();
         oT.backup.cleanup();
     },300000 /* 5 minutes */);
