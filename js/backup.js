@@ -85,7 +85,15 @@ oT.backup.save = function(){
     },1000);
     // and add to tray
     var newBlock = oT.backup.generateBlock('oTranscribe-backup-'+timestamp);
-    $('.backup-window').prepend( oT.backup.generateBlock('oTranscribe-backup-'+timestamp) );
+    newBlock.className += ' new-block';
+    $('.backup-window').prepend( newBlock );
+    $( newBlock ).animate({
+        'opacity': 1,
+        'width': '25%'
+    },'slow',function(){
+        $( newBlock ).find('.backup-restore-button').fadeIn();
+    });
+    
 }
 
 oT.backup.init = function(){

@@ -65,8 +65,17 @@
             box-sizing: border-box;
             width: 25%;
             display: inline-block;
+            vertical-align: top;
+            &.new-block {
+                opacity: 0;
+                width: 0;
+                .backup-restore-button {
+                    display: none;
+                }
+            }
             .backup-doc {
                 overflow-y: scroll;
+                overflow-x: hidden;
                 background: white;
                 height: 180px;
                 padding: 10px;
