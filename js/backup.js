@@ -79,7 +79,7 @@ oT.backup.save = function(){
     // save current text to timestamped localStorage item
     var text = document.getElementById("textbox");
     var timestamp = new Date().getTime();
-    localStorage.setItem('oTranscribe-backup-'+timestamp, text.innerHTML);
+    oT.backup.saveToLocalStorage('oTranscribe-backup-'+timestamp, text.innerHTML);
     // and bleep icon
     $('.sbutton.backup').addClass('flash');
     setTimeout(function(){
@@ -95,6 +95,20 @@ oT.backup.save = function(){
     },'slow',function(){
         $( newBlock ).find('.backup-restore-button').fadeIn();
     });
+    
+}
+
+oT.backup.saveToLocalStorage = function(name){
+    console.log(name);
+    try {
+       localStorage.setItem( name );
+    } catch (e) {
+        console.log('error');
+       if(e.name === "NS_ERROR_DOM_QUOTA_REACHED") {
+           oT.backup.removeOldest();
+           // oT.backup.save();
+       }
+    }
     
 }
 
@@ -138,6 +152,19 @@ oT.backup.cleanup = function(){
     }
 }
 
+oT.backup.removeOldest = function(){
+	localStorage.clear();
+
+    var list = oT.backup.list();
+    // var toDelete = list.slice(Math.max(list.length - 5, 1));
+    var toDelete = list;
+    console.log('todelete: ',toDelete);
+    for (var i = 0; i < toDelete.length; i++) {
+        console.log('deleting '+toDelete[i])
+        localStorage.removeItem( toDelete[i] );
+    }
+}
+
 // original autosave function
 function saveText(){
     var field = document.getElementById("textbox");
@@ -148,7 +175,7 @@ function saveText(){
     // autosave every second - but wait five seconds before kicking in
     setTimeout(function(){
         setInterval(function(){
-           localStorage.setItem("autosave", field.innerHTML);
+           oT.backup.saveToLocalStorage("autosave", field.innerHTML);
         }, 1000);
     }, 5000);
 }
