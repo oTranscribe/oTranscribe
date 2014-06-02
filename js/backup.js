@@ -98,15 +98,13 @@ oT.backup.save = function(){
     
 }
 
-oT.backup.saveToLocalStorage = function(name){
-    console.log(name);
+oT.backup.saveToLocalStorage = function(key,value){
     try {
-       localStorage.setItem( name );
+       localStorage.setItem( key, value );
     } catch (e) {
-        console.log('error');
-       if(e.name === "NS_ERROR_DOM_QUOTA_REACHED") {
+       if (e.name === "NS_ERROR_DOM_QUOTA_REACHED") {
            oT.backup.removeOldest();
-           // oT.backup.save();
+           oT.backup.save();
        }
     }
     
@@ -153,15 +151,12 @@ oT.backup.cleanup = function(){
 }
 
 oT.backup.removeOldest = function(){
-	localStorage.clear();
 
     var list = oT.backup.list();
-    // var toDelete = list.slice(Math.max(list.length - 5, 1));
-    var toDelete = list;
-    console.log('todelete: ',toDelete);
+    var toDelete = list.slice(Math.max(list.length - 5, 1));
     for (var i = 0; i < toDelete.length; i++) {
-        console.log('deleting '+toDelete[i])
         localStorage.removeItem( toDelete[i] );
+    	localStorage.clear( toDelete[i] );
     }
 }
 
@@ -169,7 +164,7 @@ oT.backup.removeOldest = function(){
 function saveText(){
     var field = document.getElementById("textbox");
     // load existing autosave (if present)
-    if ( localStorage.getItem("autosave")) {
+    if ( localStorage.getItem("autosave")) {        
        field.innerHTML = localStorage.getItem("autosave");
     }
     // autosave every second - but wait five seconds before kicking in
