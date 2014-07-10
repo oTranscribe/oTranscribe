@@ -34,23 +34,15 @@
 
 
 .file-input-wrapper {
+    @include button;
     width: 200px;
     padding: 15px;
     overflow: hidden;
     position: relative;
-    margin: 20px auto;
-    border-radius: 5px;
+    margin: 20px auto 5px auto;
     border: 0;
-    color: white;
 
-    background-color:$accent;
     text-indent:0;    
-
-    &:hover, &.hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($accent, 10%)), color-stop(1, lighten($accent, 5%)) );
-        background:-moz-linear-gradient( center top, lighten($accent, 10%) 5%, lighten($accent, 10%) 100% );
-    	background-color:#58AFDB;
-    }   
 
 }
 
@@ -98,4 +90,13 @@
             border:0;
             padding:0
         }
+}
+
+.yt-input {
+    @include button;
+    width: 210px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    font-size: 14px;
+    
 }

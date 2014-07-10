@@ -11,7 +11,7 @@ var ts = {
     },
     setFrom : function(clickts, element){
         if (element.childNodes.length == 1) {
-            oT.media.e().currentTime = ts.split(clickts);
+            oT.media.skipTo( ts.split(clickts) );
         }
     },
     get : function(){

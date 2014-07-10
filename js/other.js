@@ -132,4 +132,17 @@ function chromeOsCheck(){
     }
 }
 
-
+oT.askForYoutube = function(){
+    var url = prompt("Enter YouTube video URL:");
+    if ( url.indexOf('youtube') > -1 ){
+        oT.media.create( url );
+        toggleControls();
+        adjustPlayerWidth();
+        $('#player-time').hide();
+        // localStorage.setItem("lastfile", file.name);
+    } else {
+        var msg = 'Please enter a valid YouTube URL.'
+        $('#formats').html(msg).addClass('warning');
+    }
+    
+}

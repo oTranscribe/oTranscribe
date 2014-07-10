@@ -13,6 +13,20 @@ body {
 $accent: rgb(52, 130, 177);
 $dark: hsl(0,0,15);
 
+@mixin button{
+    color: white;
+    text-align: center;
+    background-color:$accent;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    &:hover, &.hover {
+        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($accent, 10%)), color-stop(1, lighten($accent, 5%)) );
+        background:-moz-linear-gradient( center top, lighten($accent, 10%) 5%, lighten($accent, 10%) 100% );
+    	background-color:#58AFDB;
+    }   
+    
+}
 
 @import "input", "about", "help", "controls", "topbar", "languages", "speedbox", "audiojs", "textbox", "sidebar", "export", "backup";
 

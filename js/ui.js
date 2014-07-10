@@ -103,6 +103,10 @@
     $('#attach').change(function() {
         reactToFile(this);
     });    
+    
+    $('.yt-input').click(function(){
+        oT.askForYoutube();
+    })
 
     $('.sbutton.export').click(function() {
         placeExportPanel();
