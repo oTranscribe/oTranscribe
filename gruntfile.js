@@ -10,6 +10,7 @@ module.exports = function(grunt) {
                     'js/libs/*.js', // All JS in the libs folder
                     'js/intro.js'
                   , 'js/media.js'
+                  , 'js/input.js'
                   , 'js/texteditor.js'
                   , 'js/timestamp.js'
                   , 'js/other.js'

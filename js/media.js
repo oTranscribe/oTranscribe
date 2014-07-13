@@ -158,7 +158,7 @@ oT.media.yt = function(url){
                 modestbranding: 1
             },
             events: {
-                // 'onReady': onPlayerReady,
+                'onReady': onPlayerReady,
                 'onStateChange': updatePause
             }
         });
@@ -181,6 +181,12 @@ oT.media.yt = function(url){
             oT.media.ytEl.pauseVideo(); 
         }
         oT.media.ytEl.paused = true;
+        
+        function onPlayerReady(){
+            // fix non-responsive keyboard shortcuts bug
+            $('#slider3').val(0.5).change().val(1).change();        
+            
+        }
     }    
     window.onYouTubeIframeAPIReady = youtubeReady;
 }
@@ -197,7 +203,10 @@ oT.media.yt.setTitle = function(id){
         success: function(d) {
             var title = '[YouTube] '+d.entry.title.$t;
             oT.media.e().title = title;
-            localStorage.setItem("lastfile", title);
+            oT.input.saveFileDetails({
+                name: title,
+                source: 'https://www.youtube.com/watch?v='+id
+            })
             $('#player-hook').html(title).addClass('media-title');
             adjustPlayerWidth();
         }

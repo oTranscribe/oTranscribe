@@ -8,7 +8,7 @@ function init(){
     oT.backup.init();
     adjustEditorHeight();
     placeTextPanel();
-    dragListener();
+    oT.input.dragListener();
     initWordCount();
     initWatchFormatting();
     chromeOsCheck();
@@ -18,7 +18,7 @@ window.addEventListener('localized', function() {
     setFormatsMessage();
     setStartButton();
     oldBrowserCheck();
-    loadFileName();
+    oT.input.loadPreviousFileDetails();
     $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
 }, false);
 

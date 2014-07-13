@@ -27,6 +27,15 @@
     }
 }
 
+#lastfile .media-reload {
+    color: $accent;
+    cursor: pointer;
+}
+
+#lastfile .media-reload:hover {
+    text-decoration: underline;
+};
+
 #formats.warning {
     transition: color 1s;
     color: darkred;
