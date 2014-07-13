@@ -51,7 +51,8 @@ function checkTypeSupport(file){
     return !!(a.canPlayType && a.canPlayType(file.type).replace(/no/, ''));
 }
 
-function reactToFile(input){
+oT.input = {};
+oT.input.reactToFile = function(input){
     var file = input.files[0];
     if ( checkTypeSupport( file ) === true ){
         oT.media.create( file );
@@ -64,7 +65,18 @@ function reactToFile(input){
         msg = msg.replace('[file-format]',file.type.split("/")[1]);
         $('#formats').html(msg).addClass('warning');
     }
-    
+}
+
+oT.input.askForYoutube = function(){
+    var url = prompt("Enter YouTube video URL:");
+    if ( url.indexOf('youtube') > -1 ){
+        oT.media.create( url );
+        toggleControls();
+        $('#player-time').hide();
+    } else {
+        var msg = 'Please enter a valid YouTube URL.'
+        $('#formats').html(msg).addClass('warning');
+    }   
 }
 
 function toggleControls(){
@@ -130,19 +142,4 @@ function chromeOsCheck(){
             return false;
         });
     }
-}
-
-oT.askForYoutube = function(){
-    var url = prompt("Enter YouTube video URL:");
-    if ( url.indexOf('youtube') > -1 ){
-        oT.media.create( url );
-        toggleControls();
-        adjustPlayerWidth();
-        $('#player-time').hide();
-        // localStorage.setItem("lastfile", file.name);
-    } else {
-        var msg = 'Please enter a valid YouTube URL.'
-        $('#formats').html(msg).addClass('warning');
-    }
-    
 }

@@ -101,11 +101,11 @@
     });
     
     $('#attach').change(function() {
-        reactToFile(this);
+        oT.input.reactToFile(this);
     });    
     
     $('.yt-input').click(function(){
-        oT.askForYoutube();
+        oT.input.askForYoutube();
     })
 
     $('.sbutton.export').click(function() {

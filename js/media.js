@@ -11,7 +11,7 @@ oT.media.e = function(){
 
 oT.media.create = function(file){
     
-    if (file.indexOf('youtube') > -1) {
+    if (file.indexOf && file.indexOf('youtube') > -1) {
         oT.media.yt(file);
         return;
     }
@@ -145,9 +145,11 @@ oT.media.yt = function(url){
     },500);
     
     function youtubeReady() {        
+        
+        var videoId = youtube_parser(oT.media.yt.url);
         oT.media.ytEl = new YT.Player('media', {
             width: '100%',
-            videoId: youtube_parser(oT.media.yt.url),
+            videoId: videoId,
             playerVars: {
                 // controls: 0,
                 disablekb: 1,
@@ -170,22 +172,7 @@ oT.media.yt = function(url){
             }
         }
         
-        // youtube video title
-        
-        
-        var url = 'http://gdata.youtube.com/feeds/api/videos/M7lc1UVf-VE?v=2&alt=json-in-script&callback=?';
-        $.ajax({
-           type: 'GET',
-            url: url,
-            async: false,
-            jsonpCallback: 'jsonCallback',
-            contentType: "application/json",
-            dataType: 'jsonp',
-            success: function(d) {
-                console.log(d.entry.title.$t);
-                oT.media.e().title = 'YouTube: '+d.entry.title.$t;
-            }
-        });
+        oT.media.yt.setTitle(videoId);
         
         oT.media.ytEl.play = function(){
             oT.media.ytEl.playVideo()
@@ -194,14 +181,26 @@ oT.media.yt = function(url){
             oT.media.ytEl.pauseVideo(); 
         }
         oT.media.ytEl.paused = true;
-        
-        setInterval(function(){
-            oT.media.ytEl.duration = oT.media.e().getDuration();
-            oT.media.e().currentTime = oT.media.e().getCurrentTime();
-            $(oT.media.e()).trigger('timeupdate');
-            console.log(oT.media.e().currentTime,oT.media.e().duration);
-        },100);
     }    
     window.onYouTubeIframeAPIReady = youtubeReady;
+}
+
+oT.media.yt.setTitle = function(id){
+    var url = 'http://gdata.youtube.com/feeds/api/videos/'+id+'?v=2&alt=json-in-script&callback=?';
+    $.ajax({
+       type: 'GET',
+        url: url,
+        async: false,
+        jsonpCallback: 'jsonCallback',
+        contentType: "application/json",
+        dataType: 'jsonp',
+        success: function(d) {
+            var title = '[YouTube] '+d.entry.title.$t;
+            oT.media.e().title = title;
+            localStorage.setItem("lastfile", title);
+            $('#player-hook').html(title).addClass('media-title');
+            adjustPlayerWidth();
+        }
+    });
 }
 

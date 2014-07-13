@@ -95,11 +95,20 @@ video#media, iframe#media {
     cursor: default;
     font-size: 13px;
     padding-top: 2px;
-  }
+}
 
 .progressor-progress {
     background: white;
     background: grey;
+}
+
+.media-title {
+    display: inline-block;
+    margin: 11px 0;
+    color: lightgrey;
+    text-align: center;
+    font-size: 14px;
+    border-right: 1px solid lighten($dark, 10%);
 }
 
 #player-time {
