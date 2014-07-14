@@ -182,6 +182,10 @@ oT.media.yt = function(url){
         }
         oT.media.ytEl.paused = true;
         
+        setInterval(function(){
+            oT.media.ytEl.currentTime = oT.media.ytEl.getCurrentTime();
+        },200);
+        
         // YouTube embeds can't do 0.25 increments
         $('#slider3').attr('step',0.5);
         oT.media.speedIncrement = 0.5;
