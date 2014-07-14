@@ -75,7 +75,7 @@ oT.media.skip = function(direction){
 oT.media.speed = function(newSpeed){
     var min = 0.5;
     var max = 2;
-    var step = 0.25;
+    var step = oT.media.speedIncrement || 0.25;
     var newSpeedNumber;
     var currentSpeed = oT.media.e().playbackRate;
     if ((newSpeed == "up") && (currentSpeed < max)){
@@ -181,6 +181,10 @@ oT.media.yt = function(url){
             oT.media.ytEl.pauseVideo(); 
         }
         oT.media.ytEl.paused = true;
+        
+        // YouTube embeds can't do 0.25 increments
+        $('#slider3').attr('step',0.5);
+        oT.media.speedIncrement = 0.5;
         
         function onPlayerReady(){
             // fix non-responsive keyboard shortcuts bug
