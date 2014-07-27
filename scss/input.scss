@@ -109,3 +109,61 @@
     font-size: 14px;
     
 }
+
+.ext-input-field {
+    width: 30%;
+    margin: 0 auto;  
+    background: $dark;
+    border-radius: 3px;
+    padding: 8px;
+    margin-bottom: 20px;
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 35%;
+    box-shadow: 0 0 5px grey;
+    text-align: center;
+    label {
+        color: white;
+        font-size: 14px;
+    }
+    input {
+        width: 100%;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        font-size: 14px;
+        font-family: inherit;
+        padding: 3px;
+        margin-top: 8px;
+    }
+    .close-ext-input {
+        float: right;
+        color: white;
+        cursor: pointer;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        };
+    }
+    .ext-input-warning {
+        color: white;
+        text-align: left;
+        font-size: 12px;
+        padding-top: 5px;
+        display: none;
+    }
+}
+
+.input.ext-input {
+    .file-input-wrapper,
+    .yt-input,
+    #lastfile,
+    #formats {
+//        display: none;
+    opacity: 0.2;
+    }
+    .ext-input-field {
+        display: block;
+    }
+}

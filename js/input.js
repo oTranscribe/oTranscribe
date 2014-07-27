@@ -15,13 +15,31 @@ oT.input.reactToFile = function(input){
 }
 
 oT.input.askForYoutube = function(){
-    var url = prompt("Enter YouTube video URL:");
+    $('.input').addClass('ext-input');
+    
+    var $form = $('.ext-input input');
+    $form.focus();
+    $form.keypress(function (e) {
+      if (e.which == 13) {
+        oT.input.reactToYoutube( $(this).val() );
+        return false;
+      }
+    });
+    
+}
+
+oT.input.reactToYoutube = function(url){
+    console.log(url);
     if ( url.indexOf('youtube') > -1 ){
         oT.input.processYoutube( url );
     } else {
-        var msg = 'Please enter a valid YouTube URL.'
-        $('#formats').html(msg).addClass('warning');
-    }   
+        var msg = 'Please enter a valid YouTube URL. For example: https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        $('.ext-input-warning').text(msg).show();
+    }
+}
+
+oT.input.returnToNormal = function(){
+    $('.input').removeClass('ext-input');
 }
 
 oT.input.processYoutube = function(url){

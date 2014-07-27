@@ -107,6 +107,10 @@
     $('.yt-input').click(function(){
         oT.input.askForYoutube();
     })
+    
+    $('.close-ext-input').click(function(){
+        oT.input.returnToNormal();
+    });
 
     $('.sbutton.export').click(function() {
         placeExportPanel();
