@@ -89,7 +89,9 @@ oT.media.speed = function(newSpeed){
     }
     if (typeof(newSpeedNumber) != "undefined") {
         oT.media.e().playbackRate = newSpeedNumber;
-        oT.media.e().setPlaybackRate(newSpeedNumber);
+        if (oT.media.e().setPlaybackRate) {
+            oT.media.e().setPlaybackRate(newSpeedNumber);
+        }
         document.getElementById('slider3').value = newSpeedNumber;        
     }
 }
@@ -115,6 +117,13 @@ oT.media.initProgressor = function(){
         time : $('#player-time')[0]
     });
 }
+
+oT.media.disableSpeed = function(){
+    $('.speed-box').html('This media only supports 1x playback rate. Sorry.');
+    oT.media.speed = function(){
+        return false;
+    }
+};
 
 oT.media.yt = function(url){
     oT.media.yt.url = url;
@@ -194,6 +203,10 @@ oT.media.yt = function(url){
             // fix non-responsive keyboard shortcuts bug
             $('#slider3').val(0.5).change().val(1).change();        
             
+            // Some YouTube embeds only support normal speed
+            if (oT.media.ytEl.getAvailablePlaybackRates()[0] === 1) {
+                oT.media.disableSpeed();
+            }
         }
     }    
     window.onYouTubeIframeAPIReady = youtubeReady;
