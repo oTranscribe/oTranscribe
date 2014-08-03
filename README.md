@@ -6,6 +6,7 @@
 - Adjust playback speed with a slider or using F3/F4
 - Your transcript is automatically saved to the browser's `localStorage` every second
 - Rich text support using `contentEditable`
+- YouTube and video file support
 
 ... and more!
 
