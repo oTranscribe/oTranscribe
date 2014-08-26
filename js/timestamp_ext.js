@@ -18,7 +18,7 @@ var ts = {
         // get timestap
         var time = oT.media.e().currentTime  
         var minutes = Math.floor(time / 60);
-        var seconds = ("0" + Math.round( time - minutes * 60 ) ).slice(-2);
+        var seconds = ("0" + Math.floor( time - minutes * 60 ) ).slice(-2);
         return minutes+":"+seconds;
     },
     insert : function(){
