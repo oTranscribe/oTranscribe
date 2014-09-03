@@ -6,7 +6,8 @@ oT.lang.langs = {
     'es': 'Español',
     'fr': 'Français',
     'nl': 'Nederlands',
-    'ja': '日本語'
+    'ja': '日本語',
+    'pl': 'Polski'
 }
 
 oT.lang.setLang = function(lang){

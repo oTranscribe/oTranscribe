@@ -53,6 +53,10 @@ function countWords(str) {
 function countTextbox(){
     var count = countWords( document.getElementById('textbox').innerHTML );
     document.getElementById('wc').innerHTML = count;
+    
+    var wordcountText = document.webL10n.get('wordcount', {n: count});
+    document.querySelector('.wc-text').innerHTML = wordcountText;
+      
 }
 
 function initWordCount(){
