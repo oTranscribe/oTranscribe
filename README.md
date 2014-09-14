@@ -37,6 +37,7 @@ Translations have been provided by the following talented and generous volunteer
 *   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
 *   Japanese: [harupong](http://blog.harupong.com).
+*   Polish: Emil Maruszczak and Piotr Tarasewicz.
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 
