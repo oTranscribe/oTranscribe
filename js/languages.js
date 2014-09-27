@@ -8,6 +8,7 @@ oT.lang.langs = {
     'nl': 'Nederlands',
     'ja': '日本語',
     'pl': 'Polski'
+    'pt': 'Português'
 }
 
 oT.lang.setLang = function(lang){
