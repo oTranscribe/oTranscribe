@@ -37,26 +37,23 @@ function placeTextPanel(){
    $('.text-panel').css('left', position);
 }
 
-function countWords(str) {
-    var count = 0,
-                i,
-                j = str.length;
-
-    for (i = 0; i <= j;i++){
-        if (str.charAt(i) == " ") {
-            count ++;
-        }
+function countWords(str){
+    var trimmedStr = $.trim(str);
+    if (trimmedStr){
+        return trimmedStr.match(/\S+/gi).length;
     }
-    return count + 1;  
+    return 0;
 }
 
 function countTextbox(){
-    var count = countWords( document.getElementById('textbox').innerHTML );
+    var textboxEl = document.getElementById('textbox');
+    var textboxText = textboxElement.innerText || textboxElement.textContent;
+    var count = countWords(textboxText);
+ 
     document.getElementById('wc').innerHTML = count;
     
     var wordcountText = document.webL10n.get('wordcount', {n: count});
     document.querySelector('.wc-text').innerHTML = wordcountText;
-      
 }
 
 function initWordCount(){
