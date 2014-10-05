@@ -46,7 +46,7 @@ function countWords(str){
 }
 
 function countTextbox(){
-    var textboxEl = document.getElementById('textbox');
+    var textboxElement = document.getElementById('textbox');
     var textboxText = textboxElement.innerText || textboxElement.textContent;
     var count = countWords(textboxText);
  
