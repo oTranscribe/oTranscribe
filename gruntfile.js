@@ -11,6 +11,7 @@ module.exports = function(grunt) {
                     'js/intro.js'
                   , 'js/media.js'
                   , 'js/input.js'
+                  , 'js/import.js'
                   , 'js/texteditor.js'
                   , 'js/timestamp.js'
                   , 'js/other.js'

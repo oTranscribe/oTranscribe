@@ -2,30 +2,46 @@
                  Export
 ******************************************/
 
-var exportText = {
-    md : function(){
+oT.export = {};
+
+oT.export.asFormat = function( format ){
+    if (format === 'md') {
         var p = document.getElementById('textbox').innerHTML;
-        var clean = $.htmlClean(p, {format:true, removeTags: ["div", "span", "img", "pre"]});
+        var clean = $.htmlClean(p, {format:true, removeTags: ["div", "span", "img", "pre", "text"]});
         var x = toMarkdown( clean );   
         return x.replace(/\t/gm,"");           
-    },
-    txt : function() {
+    } else if (format === 'txt') {
         var p = document.getElementById('textbox').innerHTML;
-        var clean = $.htmlClean(p, {format:true, removeTags:["div", "span", "img", "em", "strong", "p", "pre"]});
+        var clean = $.htmlClean(p, {format:true, removeTags:["div", "span", "img", "em", "strong", "p", "pre", "text"]});
         return clean.replace(/\t/gm,"");
-    },
+    } else if (format === 'html') {
+        var p = document.getElementById('textbox').innerHTML;
+        return p.replace('\n','');
+    }
+}
+
+oT.export.placeButton = function ( format ){
+    if (format === 'otr') {
+        var doc = oT.export.createJsonFile();
+        var a = document.getElementById('x-otr');
+        a.download = exportText.name() + ".otr";
+        a.href = "data:text/plain;base64," + exportText.utf8_to_b64( doc );
+    }
+}
+
+var exportText = {
     utf8_to_b64 : function( str ) {
         return window.btoa(unescape(encodeURIComponent( str )));
     },
     // element choose element to append button to
     mdButton : function(element) {
-        var md = exportText.md();
+        var md = oT.export.asFormat('md');
         var a = document.getElementById('x-md');
         a.download = exportText.name() + ".md";
         a.href = "data:text/plain;base64," + exportText.utf8_to_b64( md );
     },
     txtButton : function(element) {
-        var txt = exportText.txt();
+        var txt = oT.export.asFormat('txt');
         var a = document.getElementById('x-txt');
         a.download = exportText.name() + ".txt";
         a.href = "data:text/plain;base64," + exportText.utf8_to_b64( txt );
@@ -41,6 +57,7 @@ var exportText = {
 function placeExportPanel(){
     exportText.mdButton();
     exportText.txtButton();
+    oT.export.placeButton('otr');
     gd.handleClientLoad();
         
     var origin = $('#icon-exp').offset();
@@ -71,3 +88,8 @@ exportText.reader= function(){
 }
 
 
+oT.export.createJsonFile = function(){
+    var result = {};
+    result.text = oT.export.asFormat('html');
+    return JSON.stringify(result);
+};

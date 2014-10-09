@@ -130,9 +130,8 @@ oT.backup.list = function(){
 
 oT.backup.restore = function(timestamp){
     oT.backup.save();
-    var textbox = document.getElementById("textbox");
     var newText = localStorage.getItem('oTranscribe-backup-'+timestamp);
-    document.getElementById("textbox").innerHTML = newText;
+    oT.import.replaceTranscriptTextWith(newText);
     oT.backup.closePanel();
 }
 
