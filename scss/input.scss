@@ -41,6 +41,18 @@
     color: darkred;
 }
 
+@mixin custom-file-selector {
+    position: relative;
+    overflow: hidden;
+    & > input[type="file"] {
+      font-size: 200px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+}
 
 .file-input-wrapper {
     @include button;
@@ -52,6 +64,8 @@
     border: 0;
 
     text-indent:0;    
+    
+    @include custom-file-selector;
 
 }
 
@@ -63,14 +77,6 @@
 
 
 
-.file-input-wrapper > input[type="file"] {
-  font-size: 200px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  cursor: pointer;
-}
 .file-input-wrapper > .btn-file-input {
   display: inline-block;
   width: 200px;

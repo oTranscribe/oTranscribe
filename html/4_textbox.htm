@@ -12,8 +12,6 @@
             </label>
             <div class="ext-input-warning"></div>
         </div>
-
-      <input id="local-file-import" type="file" name="file" accept=".otr"  />
     
         <div id="lastfile"></div>
         <div id="formats"></div>
@@ -45,9 +43,18 @@
         <button class="sbutton backup">
             <i class="fa fa-history"></i><span class="label">history</span>
         </button>
+        <div class="import-file-wrapper">
+            <button class="sbutton import">
+                <i class="fa fa-sign-in" id="icon-imp"></i><span class="label" data-l10n-id="">Import</span>
+            </button>
+            <input id="local-file-import" type="file" name="file" accept=".otr"  />
+        </div>
         <button class="sbutton export">
             <i class="fa fa-share-square-o" id="icon-exp"></i><span class="label" data-l10n-id="export">Export</span>
+            
         </button>
+                
+                
         
     </div>
     <div class="export-panel">

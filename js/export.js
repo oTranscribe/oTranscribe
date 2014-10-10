@@ -61,8 +61,8 @@ function placeExportPanel(){
     gd.handleClientLoad();
         
     var origin = $('#icon-exp').offset();
-    var right = parseInt( $('body').width() - origin.left - 35 );
-    var top = parseInt( origin.top ) + 50;
+    var right = parseInt( $('body').width() - origin.left + 25 );
+    var top = parseInt( origin.top ) - 50;
     $('.export-panel')
         .css({'right': right,'top': top})
         .addClass('active'); 
@@ -91,5 +91,11 @@ exportText.reader= function(){
 oT.export.createJsonFile = function(){
     var result = {};
     result.text = oT.export.asFormat('html');
+    if (oT.media.e() !== null){
+        result.audio = oT.media.e().title;
+    } else {
+        result.audio = '';
+    }
+    console.log(result);
     return JSON.stringify(result);
 };

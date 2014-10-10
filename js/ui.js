@@ -39,7 +39,7 @@
     });
     Mousetrap.bind('mod+j', function(e) {
         pd(e);
-        ts.insert();
+        oT.timestamp.insert();
         return false;
     });
     Mousetrap.bind('mod+s', function(e) {

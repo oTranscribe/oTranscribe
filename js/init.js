@@ -11,6 +11,7 @@ function init(){
     oT.input.dragListener();
     initWordCount();
     initWatchFormatting();
+    oT.timestamp.activate();
     chromeOsCheck();
 }
 

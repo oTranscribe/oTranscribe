@@ -112,6 +112,10 @@
 
 }
 
+.import-file-wrapper {
+    @include custom-file-selector;
+    
+}
 
 
 @-webkit-keyframes save-flash {

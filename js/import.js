@@ -1,13 +1,14 @@
 oT.import = {}
 
 oT.import.loadFile = function( file ){
-
-    file = JSON.parse(file);
-    var text = file.text;
-    console.log(file);
     
-    oT.import.replaceTranscriptTextWith(text);
-    console.log(text);
+    try {
+        file = JSON.parse(file);    
+        oT.import.replaceTranscriptTextWith(file.text);
+        oT.import.remindOfAudioFile(file.audio)
+    } catch (e) {
+        alert('This is not a valid oTranscribe format (.otr) file.');
+    }
 }
 
 oT.import.replaceTranscriptTextWith = function( newText ){
@@ -15,12 +16,28 @@ oT.import.replaceTranscriptTextWith = function( newText ){
     // TODO: CLEAN STRING
     newText = oT.import.clean(newText);
     
-    var textbox = document.getElementById("textbox");
-    if (typeof newText === 'string') {
-        textbox.innerHTML = newText;
-    } else {
-        textbox.innerHTML = '';
-        textbox.appendChild(newText);    
+    var $textbox = $("#textbox");
+    
+    $textbox.fadeOut(300,function(){
+        if (typeof newText === 'string') {
+            $textbox[0].innerHTML = newText;
+        } else {
+            textbox[0].innerHTML = '';
+            $textbox[0].appendChild(newText);    
+        }
+        oT.timestamp.activate();
+        $(this).fadeIn(300);
+    });
+    
+}
+
+oT.import.remindOfAudioFile = function( filename ){
+    if (filename && filename !== '') {
+        // var lastfileText = document.webL10n.get('last-file');
+        lastfileText = 'File last used with imported document:';
+        var lastfileEl = document.getElementById("lastfile");
+        lastfileEl.innerHTML = lastfileText+' '+filename;
+        lastfileEl.style.color = '#333';
     }
 }
 
@@ -34,11 +51,14 @@ oT.import.localButtonReaction = function( input ){
         oT.import.loadFile( contents );
     }
     
+    input.value = '';
+    
     
 }
 
 oT.import.clean = function(text){
-    text = text.replace('<text>','');
-    text = text.replace('</text>','');
+    
+    text = oT.texteditor.clean(text);
+    
     return text;
 }

@@ -2,7 +2,17 @@
                Text editor
 ******************************************/
 
+oT.texteditor = {}
 
+oT.texteditor.clean = function( html ){
+    var result = $.htmlClean(html, {
+        format: false,
+        allowedTags: ['p', 'div', 'strong', 'em', 'i', 'b', 'span'],
+        allowedAttributes: [['class',['span']],['data-timestamp',['span']]],
+        allowedClasses: ['timestamp']
+    });
+    return result;
+}
 
 
 function adjustPlayerWidth(){

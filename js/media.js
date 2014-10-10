@@ -3,7 +3,7 @@ oT.media = {};
 
 oT.media.e = function(){
     var element = document.getElementById('media');
-    if (element.tagName === 'IFRAME') {
+    if (element && element.tagName === 'IFRAME') {
         return oT.media.ytEl;
     }
     return element || null;
