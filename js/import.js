@@ -5,7 +5,7 @@ oT.import.loadFile = function( file ){
     try {
         file = JSON.parse(file);    
         oT.import.replaceTranscriptTextWith(file.text);
-        oT.import.remindOfAudioFile(file.audio)
+        oT.import.remindOfMediaFile(file.media, file['media-source'], file['media-time']);
     } catch (e) {
         alert('This is not a valid oTranscribe format (.otr) file.');
     }
@@ -26,18 +26,26 @@ oT.import.replaceTranscriptTextWith = function( newText ){
             $textbox[0].appendChild(newText);    
         }
         oT.timestamp.activate();
+        $('.textbox-container').scrollTop(0)
         $(this).fadeIn(300);
     });
     
 }
 
-oT.import.remindOfAudioFile = function( filename ){
+oT.import.remindOfMediaFile = function( filename, filesource, filetime ){
     if (filename && filename !== '') {
         // var lastfileText = document.webL10n.get('last-file');
-        lastfileText = 'File last used with imported document:';
-        var lastfileEl = document.getElementById("lastfile");
-        lastfileEl.innerHTML = lastfileText+' '+filename;
-        lastfileEl.style.color = '#333';
+        var lastfileText = 'File last used with imported document:';
+        var restoreText = 'Restore';
+        if ((filesource) && (oT.media.yt.parse(filesource))) {
+            oT.message.header( lastfileText+' <a href="#" id="restore-media">'+filename+'</a>' );
+            $('#restore-media').click(function(){
+                oT.media.create(filesource, filetime);
+                return false;
+            });
+        } else {
+            oT.message.header(lastfileText+' '+filename);
+        }
     }
 }
 

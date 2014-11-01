@@ -1,0 +1,24 @@
+.message-panel {
+    width: 600px;
+    margin: 20px auto -20px;
+    background: #ddd;
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    &.hidden {
+        display: none;
+    }
+    .message-content > a {
+        color: inherit;
+    }
+}
+
+
+.close-message-panel {
+    float: right;
+    cursor: pointer;
+    opacity: 0.6;
+    &:hover {
+        opacity: 1;
+    }
+}

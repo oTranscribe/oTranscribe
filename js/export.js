@@ -92,10 +92,17 @@ oT.export.createJsonFile = function(){
     var result = {};
     result.text = oT.export.asFormat('html');
     if (oT.media.e() !== null){
-        result.audio = oT.media.e().title;
+        result.media = oT.media.e().title;
+        result['media-time'] = oT.media.e().currentTime;
+        if (oT.media.ytEl) {
+            result['media-source'] = oT.media.ytEl.getVideoUrl();
+        } else {
+            result['media-source'] = '';
+        }
     } else {
-        result.audio = '';
+        result.media = '';
+        result['media-source'] = '';
+        result['media-time'] = '';
     }
-    console.log(result);
     return JSON.stringify(result);
 };

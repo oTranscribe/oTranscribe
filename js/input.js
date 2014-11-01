@@ -29,8 +29,7 @@ oT.input.askForYoutube = function(){
 }
 
 oT.input.reactToYoutube = function(url){
-    console.log(url);
-    if ( url.indexOf('youtube') > -1 ){
+    if ( oT.media.yt.parse(url) ){
         oT.input.processYoutube( url );
     } else {
         var msg = 'Please enter a valid YouTube URL. For example: https://www.youtube.com/watch?v=dQw4w9WgXcQ'
@@ -52,7 +51,6 @@ oT.input.loadPreviousFileDetails = function(){
     if ( localStorage.getItem("oT-lastfile") ) {
         var lastFile = JSON.parse( localStorage.getItem("oT-lastfile") );
         var lastfileText = document.webL10n.get('last-file');
-        console.log(lastFile.source);
         if (lastFile.name === undefined) {
             document.getElementById("lastfile").innerHTML = lastfileText+' '+lastFile;
         } else if (lastFile.source === '') {

@@ -16,6 +16,12 @@
         <div id="lastfile"></div>
         <div id="formats"></div>
     </div>
+    
+    <div class="message-panel hidden">
+            <div class="close-message-panel"><i class="fa fa-times"></i></div>
+            <div class="message-content"></div>
+    </div>
+    
     <div id="textbox"  class="mousetrap" contenteditable="true">
         <p data-l10n-id="d-txt1">Enter your transcript here...</p>
         <p>&nbsp;</p>
@@ -33,7 +39,7 @@
         <button class="sbutton italic" onclick="document.execCommand('italic',false,null);">
             <i class="fa fa-italic" id="icon-i"></i><span class="label">ctrl+i</span>
         </button>
-        <button class="sbutton time" onclick="ts.insert();">
+        <button class="sbutton time" onclick="oT.timestamp.insert();">
             <i class="fa fa-clock-o"></i><span class="label">ctrl+j</span>
         </button>
         <div class="wordcount">

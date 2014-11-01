@@ -144,6 +144,9 @@
          e.stopPropagation();
     });
     
+    $('.close-message-panel').click(function(){
+        oT.message.close();
+    })
     
 
 // End UI

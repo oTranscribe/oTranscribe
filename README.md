@@ -29,6 +29,15 @@ This repository only includes the "raw" JavaScript and CSS. To compile the produ
 
 Unfamiliar with Grunt? Check out [Chris Coyier's excellent guide](http://24ways.org/2013/grunt-is-not-weird-and-hard/) to this useful build tool.
 
+### OTR file format
+
+oTranscribe has its own file format (.otr), which is just a JSON file with the following parameters:
+
+* **text**: The raw HTML of the transcript
+* **media**: If available, the name of the last media used
+* **media-source**: If available, a link to the last media used
+* **media-time**: If available, the playtime of the last media used
+
 ### Translations
 
 Translations have been provided by the following talented and generous volunteers:

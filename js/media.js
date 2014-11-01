@@ -9,9 +9,13 @@ oT.media.e = function(){
     return element || null;
 }
 
-oT.media.create = function(file){
+oT.media.create = function(file, startpoint){
     
-    if (file.indexOf && file.indexOf('youtube') > -1) {
+    if (startpoint) {
+        oT.media.startPoint = startpoint;
+    }
+    
+    if (file.indexOf && oT.media.yt.parse(file)) {
         oT.media.yt(file);
         return;
     }
@@ -41,7 +45,7 @@ oT.media.skipTo = function(time){
     var element = oT.media.e();
     var yt = !!oT.media.ytEl;
     if (yt) {
-        element.seekTo( time );
+        oT.media.ytEl.seekTo( time );
     } else {
        element.currentTime = time;
     }    
@@ -136,17 +140,7 @@ oT.media.yt = function(url){
     var video = document.createElement('div');
     video.setAttribute('id','media');
     document.body.appendChild(video); 
-    
-    function youtube_parser(url){
-        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
-        var match = url.match(regExp);
-        if (match&&match[2].length==11){
-            return match[2];
-        }else{
-            alert(url);
-        }
-    }
-    
+        
     setInterval(function(){
         var $ifr = $('iframe#media');
         $ifr.width(oT.media.videoWidth); 
@@ -155,7 +149,7 @@ oT.media.yt = function(url){
     
     function youtubeReady() {        
         
-        var videoId = youtube_parser(oT.media.yt.url);
+        var videoId = oT.media.yt.parse(oT.media.yt.url);
         oT.media.ytEl = new YT.Player('media', {
             width: '100%',
             videoId: videoId,
@@ -201,15 +195,35 @@ oT.media.yt = function(url){
         
         function onPlayerReady(){
             // fix non-responsive keyboard shortcuts bug
-            $('#slider3').val(0.5).change().val(1).change();        
+            $('#slider3').val(0.5).change().val(1).change();     
             
             // Some YouTube embeds only support normal speed
             if (oT.media.ytEl.getAvailablePlaybackRates()[0] === 1) {
                 oT.media.disableSpeed();
             }
+
+            // kickstart youtube
+            oT.media.e().play();
+            setTimeout(function(){
+                oT.media.e().pause();
+                if (oT.media.startPoint) {
+                    setTimeout(function(){
+                        oT.media.e().seekTo( oT.media.startPoint );
+                    },500);
+                }
+            },500);
         }
     }    
     window.onYouTubeIframeAPIReady = youtubeReady;
+}
+
+oT.media.yt.parse = function(url){
+    var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    var match = url.match(regExp);
+    if (match&&match[2].length==11){
+        return match[2];
+    }
+    return false;
 }
 
 oT.media.yt.setTitle = function(id){
