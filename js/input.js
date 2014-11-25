@@ -2,9 +2,7 @@ oT.input = {};
 oT.input.reactToFile = function(input){
     var file = input.files[0];
     if ( checkTypeSupport( file ) === true ){
-        oT.media.create( file );
-        oT.media.initProgressor();
-        inputToEditor();
+        oT.media.create( { file: file } );
         adjustPlayerWidth();
         oT.input.saveFileDetails(file.name);
     } else {
@@ -29,8 +27,9 @@ oT.input.askForYoutube = function(){
 }
 
 oT.input.reactToYoutube = function(url){
-    if ( oT.media.yt.parse(url) ){
+    if ( oT.media.ytParse(url) ){
         oT.input.processYoutube( url );
+        $('.input').removeClass('ext-input');
     } else {
         var msg = 'Please enter a valid YouTube URL. For example: https://www.youtube.com/watch?v=dQw4w9WgXcQ'
         $('.ext-input-warning').text(msg).show();
@@ -42,9 +41,7 @@ oT.input.returnToNormal = function(){
 }
 
 oT.input.processYoutube = function(url){
-    inputToEditor();
-    $('#player-time').hide();
-    oT.media.create( url );
+    oT.media.create( {file: url} );
 }
 
 oT.input.loadPreviousFileDetails = function(){
@@ -87,8 +84,16 @@ oT.input.dragListener = function(){
     
 }
 
+oT.input.show = function(){
+    $('.topbar').addClass('inputting');
+    $('.input').addClass('active');
+    $('.sbutton.time').removeClass('active');
+    $('.text-panel').removeClass('editing');
+    
+}
 
-function inputToEditor(){
+
+oT.input.hide = function(){
     $('.topbar').removeClass('inputting');
     $('.input').removeClass('active');
     $('.sbutton.time').addClass('active');

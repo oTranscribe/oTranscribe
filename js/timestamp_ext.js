@@ -11,7 +11,7 @@ oT.timestamp = {
     },
     get: function(){
         // get timestap
-        var time = oT.media.e().currentTime  
+        var time = oT.player.currentTime  
         var minutes = Math.floor(time / 60);
         var seconds = ("0" + Math.floor( time - minutes * 60 ) ).slice(-2);
         return minutes+":"+seconds;

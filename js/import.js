@@ -37,10 +37,10 @@ oT.import.remindOfMediaFile = function( filename, filesource, filetime ){
         // var lastfileText = document.webL10n.get('last-file');
         var lastfileText = 'File last used with imported document:';
         var restoreText = 'Restore';
-        if ((filesource) && (oT.media.yt.parse(filesource))) {
+        if ((filesource) && (oT.media.ytParse(filesource))) {
             oT.message.header( lastfileText+' <a href="#" id="restore-media">'+filename+'</a>' );
             $('#restore-media').click(function(){
-                oT.media.create(filesource, filetime);
+                oT.media.create({file: filesource, startpoint: filetime});
                 return false;
             });
         } else {

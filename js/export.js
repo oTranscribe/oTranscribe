@@ -91,9 +91,9 @@ exportText.reader= function(){
 oT.export.createJsonFile = function(){
     var result = {};
     result.text = oT.export.asFormat('html');
-    if (oT.media.e() !== null){
-        result.media = oT.media.e().title;
-        result['media-time'] = oT.media.e().currentTime;
+    if (oT.player !== null){
+        result.media = oT.player.title;
+        result['media-time'] = oT.player.currentTime;
         if (oT.media.ytEl) {
             result['media-source'] = oT.media.ytEl.getVideoUrl();
         } else {

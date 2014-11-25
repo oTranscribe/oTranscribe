@@ -14,27 +14,27 @@
 
     Mousetrap.bind('escape', function(e) {
         pd(e);
-        oT.media.playPause();
+        oT.player.playPause();
         return false;
     });
     Mousetrap.bind('f1', function(e) {
         pd(e);
-        oT.media.skip('backwards');
+        oT.player.skip('backwards');
         return false;
     });
     Mousetrap.bind('f2', function(e) {
         pd(e);
-        oT.media.skip('forwards');
+        oT.player.skip('forwards');
         return false;
     });
     Mousetrap.bind('f3', function(e) {
         pd(e);
-        oT.media.speed('down');
+        oT.player.speed('down');
         return false;
     });
     Mousetrap.bind('f4', function(e) {
         pd(e);
-        oT.media.speed('up');
+        oT.player.speed('up');
         return false;
     });
     Mousetrap.bind('mod+j', function(e) {
@@ -62,14 +62,17 @@
 
 
     $('.play-pause').click(function(){
-        oT.media.playPause();    
+        oT.player.playPause();    
     });
 
     $('.skip-backwards').click(function(){
-        oT.media.skip('backwards');    
+        oT.player.skip('backwards');    
     });
     $('.skip-forwards').click(function(){
-        oT.media.skip('forwards');    
+        oT.player.skip('forwards');    
+    });
+    $('.button.reset').click(function(){
+        oT.media.reset({input: true});    
     });
 
     $( ".speed" ).click(function() {
@@ -79,7 +82,7 @@
     });
 
     $( "#slider3" ).change(function() {
-      oT.media.speed(this.valueAsNumber);
+      oT.player.speed(this.valueAsNumber);
     });    
     
     $('.title').click(function(){
