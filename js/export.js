@@ -93,7 +93,7 @@ oT.export.createJsonFile = function(){
     result.text = oT.export.asFormat('html');
     if (oT.player !== null){
         result.media = oT.player.title;
-        result['media-time'] = oT.player.currentTime;
+        result['media-time'] = oT.player.getTime();
         if (oT.media.ytEl) {
             result['media-source'] = oT.media.ytEl.getVideoUrl();
         } else {

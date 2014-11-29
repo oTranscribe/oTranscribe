@@ -137,6 +137,12 @@ oT.playerObj.prototype.speed = function(newSpeed){
         document.getElementById('slider3').value = newSpeedNumber;        
     }
 }
+oT.playerObj.prototype.getTime = function(){
+    return this.element.currentTime;
+}
+oT.playerObj.prototype.getDuration = function(){
+    return this.element.duration;
+}
 
 oT.playerObj.prototype.reset = function(){
     $('#media').remove();
@@ -197,7 +203,6 @@ oT.playerObj.prototype._youtubeReady = function(){
         }
     });
     
-    
     this._setYoutubeTitle(videoId);
         
     setInterval(function(){
@@ -228,6 +233,8 @@ oT.playerObj.prototype._youtubeReadyPartTwo = function(){
         oT.media.disableSpeed();
     }
     
+    this.element.duration = this._ytEl.getDuration()
+
     var that = this;
 
     // kickstart youtube
