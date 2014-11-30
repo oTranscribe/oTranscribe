@@ -7,6 +7,7 @@ oT.player.skip = function(){};
 oT.player.speed = function(){};
 
 oT.media.create = function(opts){
+    oT.media.reset();
     oT.input.hide();
     oT.player = new oT.playerObj(opts);
 }
@@ -154,8 +155,10 @@ oT.playerObj.prototype.reset = function(){
 
 oT.media.reset = function(options){
     options = options || {};
-    oT.player.reset();
-    oT.player = {};
+    if (oT.player.reset) {
+        oT.player.reset();
+        oT.player = {};
+    }
     if (options.input) {
         oT.input.loadPreviousFileDetails();
         oT.input.show();
