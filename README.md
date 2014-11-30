@@ -42,12 +42,13 @@ oTranscribe has its own file format (.otr), which is just a JSON file with the f
 
 Translations have been provided by the following talented and generous volunteers:
 
-*   Spanish: [Cristian Duque](https://github.com/crskkk) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
-*   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
+*   Chinese: baiqj and Cindy Ng.
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
+*   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
 *   Japanese: [harupong](http://blog.harupong.com).
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
-*   Chinese: baiqj and Cindy Ng.
+*   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
+*   Spanish: [Cristian Duque](https://github.com/crskkk) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 

@@ -9,7 +9,8 @@ oT.lang.langs = {
     'pl': 'Polski',
     'zh-hant': '繁體中文',
     'zh-hans': '简体中文',
-    'ja': '日本語'
+    'ja': '日本語',
+    'pt': 'Português'
 }
 
 oT.lang.setLang = function(lang){
