@@ -47,6 +47,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
 *   Japanese: [harupong](http://blog.harupong.com).
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
+*   Chinese: baiqj and Cindy Ng.
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 
