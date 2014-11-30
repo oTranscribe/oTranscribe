@@ -48,7 +48,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Japanese: [harupong](http://blog.harupong.com).
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
-*   Spanish: [Cristian Duque](https://github.com/crskkk) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
+*   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 
