@@ -7,9 +7,15 @@ oT.player.skip = function(){};
 oT.player.speed = function(){};
 
 oT.media.create = function(opts){
-    oT.media.reset();
+    oT.media.reset({
+        callback: function(){
+            oT.player = new oT.playerObj(opts);
+        }
+    });
     oT.input.hide();
-    oT.player = new oT.playerObj(opts);
+    setInterval(function(){
+        adjustPlayerWidth();
+    },500);
 }
 
 oT.playerObj = function(opts){
@@ -146,9 +152,10 @@ oT.playerObj.prototype.getDuration = function(){
 }
 
 oT.playerObj.prototype.reset = function(){
+    this.speed("reset");
     $('#media').remove();
     $('#player-time').show();
-    $('#player-hook').removeClass('progressor media-title media-titleprogressor').empty();    
+    $('#player-hook').removeClass('progressor media-title media-titleprogressor').empty();
 }
 
 
@@ -162,6 +169,11 @@ oT.media.reset = function(options){
     if (options.input) {
         oT.input.loadPreviousFileDetails();
         oT.input.show();
+    }
+    if (options.callback) {
+        setTimeout(function(){
+            options.callback();
+        },500);
     }
 }
 
@@ -189,7 +201,6 @@ oT.playerObj.prototype._youtubeReady = function(){
     var that = this;
 
     var videoId = oT.media.ytParse(this.file);
-    console.log('YT',YT);
     this._ytEl = new YT.Player('media', {
         width: '100%',
         videoId: videoId,
@@ -211,7 +222,7 @@ oT.playerObj.prototype._youtubeReady = function(){
     setInterval(function(){
         that.element.currentTime = that._ytEl.getCurrentTime();
     },200);
-    
+        
     // YouTube embeds can't do 0.25 increments
     $('#slider3').attr('step',0.5);
     oT.media.speedIncrement = 0.5;
@@ -239,17 +250,21 @@ oT.playerObj.prototype._youtubeReadyPartTwo = function(){
     this.element.duration = this._ytEl.getDuration()
 
     var that = this;
-
-    // kickstart youtube
-    this.play();
+    
     setTimeout(function(){
-        that.pause();
-        if (oT.media.startPoint) {
-            setTimeout(function(){
-                that.seekTo( oT.media.startPoint );
-            },500);
-        }
-    },500);
+        // kickstart youtube
+        this.play();
+        setTimeout(function(){
+            that.pause();
+            if (oT.media.startPoint) {
+                setTimeout(function(){
+                    that.seekTo( oT.media.startPoint );
+                },500);
+            }
+        },500);
+        
+    },1000);
+
 }
 
 
@@ -268,21 +283,18 @@ oT.playerObj.prototype._buildYoutube = function(url){
     
     // import YouTube API
     if ( $('#youtube-script').length === 0) {
-        console.log('no');
         var tag = document.createElement('script');
         tag.setAttribute('id','youtube-script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     } else {
-        console.log('yes');
         this._youtubeReady(this);
     }
     window.onYouTubeIframeAPIReady = this._youtubeReady.bind(this);        
 }
 
 oT.media.ytParse = function(url){
-    console.log(url);
     if (url.match) {
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
         var match = url.match(regExp);
@@ -309,7 +321,6 @@ oT.playerObj.prototype._setYoutubeTitle = function(id){
                 name: title,
                 source: 'https://www.youtube.com/watch?v='+id
             });
-            console.log( $('#player-hook') );
             $('#player-hook').html(title).addClass('media-title');
             adjustPlayerWidth();
         },
