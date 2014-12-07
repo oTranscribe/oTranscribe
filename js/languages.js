@@ -4,6 +4,7 @@ oT.lang.langs = {
     'en': 'English',
     'pirate': 'Pirate',
     'es': 'Español',
+    'de': 'Deutsch',
     'fr': 'Français',
     'nl': 'Nederlands',
     'pl': 'Polski',
