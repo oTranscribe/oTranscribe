@@ -46,12 +46,12 @@ Translations have been provided by the following talented and generous volunteer
 *   Chinese: baiqj and Cindy Ng.
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
 *   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
+*   German: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and Lisa Bernhardt.
+*   Italian: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Edoardo Putti](http://edoput.it)
 *   Japanese: [harupong](http://blog.harupong.com).
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
-*   German: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and Lisa Bernhardt.
-*   Italian: [Edoardo Putti](http://edoput.it)
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 
