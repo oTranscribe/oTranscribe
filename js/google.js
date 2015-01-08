@@ -15,9 +15,16 @@ gd.handleClientLoad = function() {
  * Check if the current user has authorized the application.
  */
 gd.checkAuth = function() {
-  gapi.auth.authorize(
-      {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
-      gd.handleAuthResult);
+    try {
+        gapi.auth.authorize(
+            {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
+            gd.handleAuthResult);
+    } catch(e) {
+        $('.export-block-gd').css({
+            'opacity': 0.5,
+            'pointer-events': 'none'
+        });
+    }
 }
 
 /**
