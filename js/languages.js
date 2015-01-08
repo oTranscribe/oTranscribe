@@ -13,7 +13,8 @@ oT.lang.langs = {
     'ja': '日本語',
     'pt': 'Português',
     'ca': 'Català',
-    'it': 'Italiano'
+    'it': 'Italiano',
+    'id': 'Bahasa Indonesia'
 }
 
 oT.lang.setLang = function(lang){
