@@ -7,7 +7,7 @@ oT.texteditor = {}
 oT.texteditor.clean = function( html ){
     var result = $.htmlClean(html, {
         format: false,
-        allowedTags: ['p', 'div', 'strong', 'em', 'i', 'b', 'span'],
+        allowedTags: ['p', 'div', 'strong', 'em', 'i', 'b', 'span', 'br'],
         allowedAttributes: [['class',['span']],['data-timestamp',['span']]],
         allowedClasses: ['timestamp']
     });
