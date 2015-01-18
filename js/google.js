@@ -4,6 +4,16 @@ var gd = {
     SCOPES : 'https://www.googleapis.com/auth/drive'
 }
 
+
+// Called during startup to prevent blocking
+gd.loadGoogleApiAsync = function(){
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://apis.google.com/js/client.js?onload=gd.handleClientLoad";
+    document.body.appendChild(script);
+}
+
+
 /**
  * Called when the client library is loaded to start the auth flow.
  */
