@@ -14,7 +14,7 @@ oT.lang.langs = {
     'pt': 'Português',
     'ca': 'Català',
     'it': 'Italiano',
-    'id': 'Bahasa Indonesia'
+    'id': 'Indonesia'
 }
 
 oT.lang.setLang = function(lang){

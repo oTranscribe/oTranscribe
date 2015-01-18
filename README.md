@@ -47,6 +47,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
 *   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
 *   German: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and Lisa Bernhardt.
+*   Indonesian: Joy Tikoalu.
 *   Italian: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com), [Edoardo Putti](http://edoput.it) and Federico Lasta.
 *   Japanese: [harupong](http://blog.harupong.com).
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
