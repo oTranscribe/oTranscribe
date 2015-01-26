@@ -28,7 +28,8 @@ oT.backup.generateBlock = function(ref){
     restoreButton.className = 'backup-restore-button';
 
     doc.innerHTML = text;
-    restoreButton.innerHTML = date+' - <span onClick="oT.backup.restore('+timestamp+');">restore</span>';
+    var restoreText = document.webL10n.get('restore-button');
+    restoreButton.innerHTML = date+' - <span onClick="oT.backup.restore('+timestamp+');">' +restoreText+ '</span>';
     block.appendChild(doc);
     block.appendChild(restoreButton);
     
@@ -42,9 +43,9 @@ oT.backup.formatDate = function(timestamp){
     today = now.getDate() + '/' + (now.getMonth()+1);
     yesterday = (now.getDate()-1) + '/' + (now.getMonth()+1);
     if (day === today) {
-        day = 'Today';
+        day = document.webL10n.get('today');
     } else if (day === yesterday) {
-        day = 'Yesterday'
+        day = document.webL10n.get('yesterday');
     }
     var time = d.getHours() + ':';
     if (d.getMinutes() < 10) {
@@ -59,7 +60,8 @@ oT.backup.formatDate = function(timestamp){
 oT.backup.populatePanel = function(){
     oT.backup.addDocsToPanel(0,8);
     if (oT.backup.list().length === 0) {
-        $('.backup-window').append( '<div class="no-backups">No backups found.</div>' );
+        var noBackupsText = document.webL10n.get('no-backups');
+        $('.backup-window').append( '<div class="no-backups">'+noBackupsText+'</div>' );
     }
 }
 
@@ -71,7 +73,8 @@ oT.backup.addDocsToPanel = function(start,end){
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
     if (allDocs[end]) {
-        $('.backup-window').append( '<div class="more-backups" onclick="oT.backup.addDocsToPanel('+(end)+','+(end+8)+')" >Load older backups</div>' );
+        var loadMoreText = document.webL10n.get('more-backups');
+        $('.backup-window').append( '<div class="more-backups" onclick="oT.backup.addDocsToPanel('+(end)+','+(end+8)+')" >'+loadMoreText+'</div>' );
     }
 }
 

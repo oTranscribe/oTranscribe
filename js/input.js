@@ -31,7 +31,7 @@ oT.input.reactToYoutube = function(url){
         oT.input.processYoutube( url );
         $('.input').removeClass('ext-input');
     } else {
-        var msg = 'Please enter a valid YouTube URL. For example: https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        var msg = document.webL10n.get('youtube-error');
         $('.ext-input-warning').text(msg).show();
     }
 }
