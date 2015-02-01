@@ -4,10 +4,10 @@
           <button class="btn-file-input"><i class="fa fa-arrow-circle-o-up"></i><span data-l10n-id="choose-file">Choose audio (or video) file</span></button>
           <input id="attach" type="file" name="file" accept="audio/*, video/*"  />
         </div>
-        <div class="yt-input">or YouTube video</div>
+        <div class="yt-input" data-l10n-id="choose-youtube">or YouTube video</div>
         <div class="ext-input-field">
             <div class="close-ext-input"><i class="fa fa-times"></i></div>
-            <label>Enter YouTube video URL:
+            <label data-l10n-id="youtube-instrux">Enter YouTube video URL:
                 <input type="text">
             </label>
             <div class="ext-input-warning"></div>
@@ -47,11 +47,11 @@
             <span class="wc-text" data-l10n-id="wordcount">words</span>        
         </div>
         <button class="sbutton backup">
-            <i class="fa fa-history"></i><span class="label">history</span>
+            <i class="fa fa-history"></i><span class="label" data-l10n-id="history-button">history</span>
         </button>
         <div class="import-file-wrapper">
             <button class="sbutton import">
-                <i class="fa fa-sign-in" id="icon-imp"></i><span class="label" data-l10n-id="">Import</span>
+                <i class="fa fa-sign-in" id="icon-imp"></i><span class="label" data-l10n-id="import-button">Import</span>
             </button>
             <input id="local-file-import" type="file" name="file" accept=".otr"  />
         </div>
@@ -67,7 +67,7 @@
         <div class="export-title" data-l10n-id="export-download">Download transcript as...</div>
         <a class="export-block-md" id="x-md" target="_blank"  data-l10n-id="export-markdown">Markdown (.md)</a>
         <a class="export-block-txt" id="x-txt" target="_blank" data-l10n-id="export-text">Plain text (.txt)</a>
-        <a class="export-block-txt" id="x-otr" target="_blank" data-l10n-id="">oTranscribe format (.otr)</a>
+        <a class="export-block-txt" id="x-otr" target="_blank" data-l10n-id="export-otr">oTranscribe format (.otr)</a>
         <div class="export-title" data-l10n-id="export-send">Send transcript to...</div>
         <a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">
             Google Drive
@@ -78,8 +78,8 @@
     <div class="backup-panel">
         <div class="backup-description">
             <div class="backup-close"><i class="fa fa-times"></i></div>
-            <div class="backup-title">Transcript history</div>
-            <div class="backup-instructions">A copy of your work is saved every five minutes. Backups are not stored for very long. Press Ctrl+S to save at any time.</div>
+            <div class="backup-title" data-l10n-id="history-title">Transcript history</div>
+            <div class="backup-instructions" data-l10n-id="history-instrux">A copy of your work is saved every five minutes. Backups are not stored for very long. Press Ctrl+S to save at any time.</div>
         </div>
         <div class="backup-window"><!-- backup blocks go here --></div>
     </div>

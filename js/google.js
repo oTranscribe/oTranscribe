@@ -4,6 +4,16 @@ var gd = {
     SCOPES : 'https://www.googleapis.com/auth/drive'
 }
 
+
+// Called during startup to prevent blocking
+gd.loadGoogleApiAsync = function(){
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://apis.google.com/js/client.js?onload=gd.handleClientLoad";
+    document.body.appendChild(script);
+}
+
+
 /**
  * Called when the client library is loaded to start the auth flow.
  */
@@ -15,9 +25,16 @@ gd.handleClientLoad = function() {
  * Check if the current user has authorized the application.
  */
 gd.checkAuth = function() {
-  gapi.auth.authorize(
-      {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
-      gd.handleAuthResult);
+    try {
+        gapi.auth.authorize(
+            {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
+            gd.handleAuthResult);
+    } catch(e) {
+        $('.export-block-gd').css({
+            'opacity': 0.5,
+            'pointer-events': 'none'
+        });
+    }
 }
 
 /**
