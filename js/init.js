@@ -13,6 +13,7 @@ function init(){
     initWatchFormatting();
     oT.timestamp.activate();
     chromeOsCheck();
+    gd.loadGoogleApiAsync();
 }
 
 window.addEventListener('localized', function() {
