@@ -88,22 +88,22 @@ function chromeOsCheck(){
         
         Mousetrap.bind('ctrl+1', function(e) {
             pd(e);
-            skip('backwards');
+            oT.player.skip('backwards');
             return false;
         });
         Mousetrap.bind('ctrl+2', function(e) {
             pd(e);
-            skip('forwards');
+            oT.player.skip('forwards');
             return false;
         });
         Mousetrap.bind('ctrl+3', function(e) {
             pd(e);
-            speed('down');
+            oT.player.speed('down');
             return false;
         });
         Mousetrap.bind('ctrl+4', function(e) {
             pd(e);
-            speed('up');
+            oT.player.speed('up');
             return false;
         });
     }
