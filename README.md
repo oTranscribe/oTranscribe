@@ -43,7 +43,7 @@ oTranscribe has its own file format (.otr), which is just a JSON file with the f
 Translations have been provided by the following talented and generous volunteers:
 
 *   Catalan: [Joan Montané](http://www.softcatala.org/wiki/Usuari:Jmontane) and [Jon Sindreu](https://twitter.com/jonsindreu).
-*   Chinese: baiqj and Cindy Ng.
+*   Chinese: baiqj, Cindy Ng and [Andy Pan](https://github.com/andy0130tw).
 *   Danish: [Christian Bruun](http://christianb.dk).
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
 *   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
