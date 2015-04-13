@@ -12,6 +12,7 @@ oT.lang.langs = {
     'zh-hans': '简体中文',
     'ja': '日本語',
     'pt': 'Português',
+    'ptbr': 'Português do Brasil',
     'ca': 'Català',
     'it': 'Italiano',
     'da': 'Dansk',
