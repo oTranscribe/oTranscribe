@@ -54,6 +54,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
+*   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 
