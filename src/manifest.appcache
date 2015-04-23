@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# Updated [timestamp goes here]
+ 
+index.html
+style.css
+script.js
+l10n.js
+data.ini
+img/
+//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.5/mousetrap.min.js
+//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js
+//ejb.github.io/progressor.js/progressor.js
+//cdn.jsdelivr.net/audiojs/0.1/audio.min.js
+//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css
+
+NETWORK:
+*
+ 
+FALLBACK:
+

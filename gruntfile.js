@@ -69,7 +69,6 @@ module.exports = function(grunt) {
         copy: {
             img: {
                 files: [
-                    // includes files within path
                     {
                         expand: true,
                         flatten: true,
@@ -80,7 +79,6 @@ module.exports = function(grunt) {
             },
             l10n: {
                 files: [
-                    // includes files within path
                     {
                         expand: true,
                         flatten: true,
@@ -88,6 +86,28 @@ module.exports = function(grunt) {
                         dest: 'dist/'
                     }
                 ],
+            },
+            manifest: {
+                files: [
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['src/manifest.appcache'],
+                        dest: 'dist/'
+                    }
+                ],
+            }
+            
+        },
+        
+        replace: {
+            manifest: {
+                src: ['dist/manifest.appcache'],
+                overwrite: true,
+                replacements: [{
+                    from: '[timestamp goes here]',
+                    to: new Date().toGMTString()
+                }]
             }
         },
 
@@ -130,7 +150,23 @@ module.exports = function(grunt) {
                 options: {
                     spawn: false,
                 }
+            },
+            img: {
+                files: ['src/manifest.appcache'],
+                tasks: ['copy:manifest'],
+                options: {
+                    spawn: false,
+                }
+            },
+            replace: {
+                files: ['src/*'],
+                tasks: ['replace'],
+                options: {
+                    spawn: false,
+                }
             }
+            
+            
         }
         
         
@@ -143,9 +179,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-text-replace');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat','uglify','sass','copy']);
-    grunt.registerTask('watch', ['concat','uglify','sass','copy','watch']);
+    grunt.registerTask('default', ['concat','uglify','sass','copy','replace']);
+    grunt.registerTask('watch', ['concat','uglify','sass','copy','replace','watch']);
 
 };
