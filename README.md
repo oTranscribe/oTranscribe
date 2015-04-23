@@ -17,7 +17,7 @@ Although a [web version](http://otranscribe.com/) is available, you can install 
 
 1. Download [the current ZIP archive](https://github.com/otranscribe/otranscribe/archive/master.zip).
 2. Compile the CSS and JS with Grunt (see below for more detailed instructions).
-2. Upload the files to a server of your choice.
+2. Upload the files in the newly-generated `dist` folder to a server of your choice.
 3. Er...
 4. That's it.
 
@@ -25,7 +25,12 @@ Please note that, in Chrome, local copies oTranscribe may not run correctly due 
 
 ### Compiling the CSS and JavaScript
 
-This repository only includes the "raw" JavaScript and CSS. To compile the production-ready files, install [Grunt](http://gruntjs.com) and then run the `grunt` command.
+The `src` folder in this repository only includes the "raw" JavaScript and CSS. To compile the production-ready files:
+
+- Install [Node.js and NPM](https://nodejs.org).
+- Run `npm install -g grunt-cli` to install [Grunt](http://gruntjs.com)
+- Run `npm install` to install necessary Grunt packages
+- Run `grunt` to compile the `dist` folder
 
 Unfamiliar with Grunt? Check out [Chris Coyier's excellent guide](http://24ways.org/2013/grunt-is-not-weird-and-hard/) to this useful build tool.
 

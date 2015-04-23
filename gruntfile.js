@@ -7,37 +7,37 @@ module.exports = function(grunt) {
         concat: {   
             dist: {
                 src: [
-                    'js/libs/*.js', // All JS in the libs folder
-                    'js/intro.js'
-                  , 'js/media.js'
-                  , 'js/input.js'
-                  , 'js/message-panel.js'
-                  , 'js/import.js'
-                  , 'js/texteditor.js'
-                  , 'js/timestamp.js'
-                  , 'js/other.js'
-                  , 'js/backup.js'
-                  , 'js/init.js'
-                  , 'js/google.js'
-                  , 'js/export.js'
-                  , 'js/languages.js'
-                  , 'js/ui.js'
-                  , 'js/timestamp_ext.js'
+                    'src/js/libs/*.js', // All JS in the libs folder
+                    'src/js/intro.js'
+                  , 'src/js/media.js'
+                  , 'src/js/input.js'
+                  , 'src/js/message-panel.js'
+                  , 'src/js/import.js'
+                  , 'src/js/texteditor.js'
+                  , 'src/js/timestamp.js'
+                  , 'src/js/other.js'
+                  , 'src/js/backup.js'
+                  , 'src/js/init.js'
+                  , 'src/js/google.js'
+                  , 'src/js/export.js'
+                  , 'src/js/languages.js'
+                  , 'src/js/ui.js'
+                  , 'src/js/timestamp_ext.js'
                 ],
-                dest: 'script.js',
+                dest: 'dist/script.js',
             },
             html: {
                 src: [
-                    'html/*.htm'
+                    'src/html/*.htm'
                 ],
-                dest: 'index.html',
+                dest: 'dist/index.html',
             },
             l10n: {
                 src: [
-                    'l10n/english.ini'
-                  , 'l10n/*.ini'
+                    'src/l10n/english.ini'
+                  , 'src/l10n/*.ini'
                 ],
-                dest: 'data.ini',
+                dest: 'dist/data.ini',
             }
             
             
@@ -48,9 +48,9 @@ module.exports = function(grunt) {
                 options: {
                     sourceMap: true
                 },
+                
                 files: {
-                    src: 'script.js',
-                    dest: 'script.js'
+                    'dist/script.js': ['dist/script.js']
                 }
             }
         },
@@ -61,39 +61,72 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    'style.css': 'scss/base.scss'
+                    'dist/style.css': 'src/scss/base.scss'
                 }
             } 
         },
+        
+        copy: {
+            img: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['src/img/*'],
+                        dest: 'dist/img/'
+                    }
+                ],
+            },
+            l10n: {
+                files: [
+                    // includes files within path
+                    {
+                        expand: true,
+                        flatten: true,
+                        src: ['src/js/webL10n/l10n.js'],
+                        dest: 'dist/'
+                    }
+                ],
+            }
+        },
+
         
         watch: {
             options: {
                 livereload: true,
             },
             scripts: {
-                files: ['js/*.js', 'otranscribe.js'],
+                files: ['src/js/*.js', 'otranscribe.js'],
                 tasks: ['concat', 'uglify'],
                 options: {
                     spawn: false,
                 },
             },
             html: {
-                files: ['html/*.htm'],
+                files: ['src/html/*.htm'],
                 tasks: ['concat'],
                 options: {
                     spawn: false,
                 },
             },
             l10n: {
-                files: ['l10n/*.ini'],
-                tasks: ['concat'],
+                files: ['src/l10n/*.ini','js/webL10n/l10n.js'],
+                tasks: ['concat','copy:l10n'],
                 options: {
                     spawn: false,
                 },
             },
             css: {
-                files: ['scss/*.scss'],
+                files: ['src/scss/*.scss'],
                 tasks: ['sass'],
+                options: {
+                    spawn: false,
+                }
+            },
+            img: {
+                files: ['src/img/*'],
+                tasks: ['copy:img'],
                 options: {
                     spawn: false,
                 }
@@ -109,8 +142,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
-    grunt.registerTask('default', ['concat','uglify','sass','watch']);
+    grunt.registerTask('default', ['concat','uglify','sass','copy']);
+    grunt.registerTask('watch', ['concat','uglify','sass','copy','watch']);
 
 };
