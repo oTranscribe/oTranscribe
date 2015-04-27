@@ -1,7 +1,25 @@
 .fa {
     display: inline-block;
-//    font-size: 14px;
     &:before {
         content: '◉';
+    }
+}
+
+$fafallbacks: (
+    play:'▶︎',
+    pause: '🁢🁢',
+    backward: '◀︎◀︎',
+    forward: '▶︎▶︎',
+    speed: ' ',
+    refresh: '♲',
+    bold: 'B',
+    italic: 'I',
+    clock-o: '⌚︎',
+    times: 'x';
+);
+
+@each $class, $symbol in $fafallbacks {
+    .fa-#{$class}:before {
+        content: $symbol;
     }
 }
