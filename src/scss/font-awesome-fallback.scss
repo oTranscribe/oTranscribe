@@ -1,0 +1,7 @@
+.fa {
+    display: inline-block;
+//    font-size: 14px;
+    &:before {
+        content: '◉';
+    }
+}
