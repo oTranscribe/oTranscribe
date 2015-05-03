@@ -17,9 +17,7 @@ Although a [web version](http://otranscribe.com/) is available, you can install 
 
 1. Download [the current ZIP archive](https://github.com/otranscribe/otranscribe/archive/master.zip).
 2. Compile the CSS and JS with Grunt (see below for more detailed instructions).
-2. Upload the files in the newly-generated `dist` folder to a server of your choice.
-3. Er...
-4. That's it.
+3. Upload the files in the newly-generated `dist` folder to a server of your choice.
 
 Please note that, in Chrome, local copies oTranscribe may not run correctly due to the browser's [privacy settings](http://programmers.stackexchange.com/questions/72435/why-is-google-blocking-users-from-accessing-their-local-file-system-in-chromium).
 

@@ -32,6 +32,14 @@ module.exports = function(grunt) {
                 ],
                 dest: 'dist/index.html',
             },
+            help: {
+                src: [
+                    'src/help.htm'
+                ],
+                dest: 'dist/help/index.html',
+            },
+            
+             
             l10n: {
                 src: [
                     'src/l10n/english.ini'

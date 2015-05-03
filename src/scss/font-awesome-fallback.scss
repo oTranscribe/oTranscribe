@@ -15,7 +15,7 @@ $fafallbacks: (
     bold: 'B',
     italic: 'I',
     clock-o: '⌚︎',
-    times: 'x';
+    times: 'x'
 );
 
 @each $class, $symbol in $fafallbacks {
