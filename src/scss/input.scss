@@ -162,15 +162,12 @@
     }
 }
 
-.input.ext-input {
+.ext-input-active {
     .file-input-wrapper,
     .alt-input-button,
     #lastfile,
     #formats {
-//        display: none;
-    opacity: 0.2;
-    }
-    .ext-input-field {
-        display: block;
+        opacity: 0.2;
+        pointer-events: none;
     }
 }

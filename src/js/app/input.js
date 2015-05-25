@@ -2,7 +2,7 @@ oT.input = {};
 
 oT.input.setup = function(){
     var input = new oTinput({
-        element: '.file-input-wrapper-2',
+        element: '.file-input-outer',
         onFileChange: function(file){
             oT.media.create( { file: file } );
             adjustPlayerWidth();
@@ -14,8 +14,8 @@ oT.input.setup = function(){
             $('#formats').html(msg).addClass('warning');
         },
         onURLSubmit: function(url){
+            input.showURLInput();
             oT.media.create( {file: url} );
-            $('.input').removeClass('ext-input');
         },
         onURLError: function(error){
             var msg = document.webL10n.get('youtube-error');

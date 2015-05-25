@@ -4,26 +4,17 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        concat: {   
+        concat: {
             dist: {
+                options: {
+                    banner: "var oT = {};(function(){",
+                    footer: '}());'
+                },
                 src: [
                     'src/js/libs/*.js', // All JS in the libs folder
-                    'src/js/modules/*.js', // Modules
-                    'src/js/intro.js'
-                  , 'src/js/media.js'
-                  , 'src/js/input.js'
-                  , 'src/js/message-panel.js'
-                  , 'src/js/import.js'
-                  , 'src/js/texteditor.js'
-                  , 'src/js/timestamp.js'
-                  , 'src/js/other.js'
-                  , 'src/js/backup.js'
-                  , 'src/js/init.js'
-                  , 'src/js/google.js'
-                  , 'src/js/export.js'
-                  , 'src/js/languages.js'
-                  , 'src/js/ui.js'
-                  , 'src/js/timestamp_ext.js'
+                    'src/js/modules/*.js', // Home for work-in-progress modules
+                    'bower_components/otinput/dist/otinput.js',
+                    'src/js/app/*.js'
                 ],
                 dest: 'dist/script.js',
             },

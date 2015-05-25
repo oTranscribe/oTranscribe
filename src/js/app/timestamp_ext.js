@@ -40,10 +40,10 @@ oT.timestamp = {
 }
 
 // backwards compatibility, as old timestamps use setFromTimestamp() and ts.setFrom()
-function setFromTimestamp(clickts, element){
+window.setFromTimestamp = function(clickts, element){
     ts.setFrom(clickts, element);
 }
-var ts = {
+window.ts = {
     setFrom: function(clickts, element){
         if (element.childNodes.length == 1) {
             oT.player.skipTo( oT.timestamp.split(clickts) );

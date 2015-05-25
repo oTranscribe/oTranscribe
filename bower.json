@@ -1,0 +1,19 @@
+{
+  "name": "oTranscribe",
+  "version": "0.0.0",
+  "homepage": "https://github.com/oTranscribe/oTranscribe",
+  "authors": [
+    "ejb <mail@elliotbentley.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "otinput": "*"
+  }
+}

@@ -28,6 +28,8 @@ The `src` folder in this repository only includes the "raw" JavaScript and CSS. 
 - Install [Node.js and NPM](https://nodejs.org).
 - Run `npm install -g grunt-cli` to install [Grunt](http://gruntjs.com)
 - Run `npm install` to install necessary Grunt packages
+- Run `npm install -g bower` to install [Bower](http://bower.io/#install-bower)
+- Run `bower install` to install necessary Bower packages
 - Run `grunt` to compile the `dist` folder
 
 Unfamiliar with Grunt? Check out [Chris Coyier's excellent guide](http://24ways.org/2013/grunt-is-not-weird-and-hard/) to this useful build tool.
