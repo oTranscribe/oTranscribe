@@ -107,13 +107,14 @@
         }
 }
 
-.yt-input {
+.alt-input-button {
     @include button;
-    width: 210px;
     margin: 0 auto 20px auto;
     padding: 10px;
     font-size: 14px;
-    
+    display: block;
+    border: 0;
+    width: 230px;    
 }
 
 .ext-input-field {
@@ -163,7 +164,7 @@
 
 .input.ext-input {
     .file-input-wrapper,
-    .yt-input,
+    .alt-input-button,
     #lastfile,
     #formats {
 //        display: none;

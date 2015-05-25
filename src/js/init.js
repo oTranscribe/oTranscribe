@@ -8,7 +8,6 @@ function init(){
     oT.backup.init();
     adjustEditorHeight();
     placeTextPanel();
-    oT.input.dragListener();
     initWordCount();
     initWatchFormatting();
     oT.timestamp.activate();
@@ -17,7 +16,7 @@ function init(){
 }
 
 window.addEventListener('localized', function() {
-    setFormatsMessage();
+    oT.input.setup();
     setStartButton();
     oldBrowserCheck();
     oT.input.loadPreviousFileDetails();

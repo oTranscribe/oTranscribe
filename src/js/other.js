@@ -3,61 +3,6 @@
                 Other
 ******************************************/
 
-
-function detectFormats(format){
-    var a = document.createElement('audio');
-    return !!(a.canPlayType && a.canPlayType('audio/'+format+';').replace(/no/, ''));
-}
-
-function detectVideoFormats(format){
-    var a = document.createElement('audio');
-    return !!(a.canPlayType && a.canPlayType('audio/'+format+';').replace(/no/, ''));
-}
-
-function listSupportedFormats(type){
-    if (type == "audio") {
-        var formats = ['mp3', 'ogg', 'webm', 'wav'];        
-    } else if (type == "video"){
-        var formats = ['mp4', 'ogg', 'webm'];
-    }
-    var supportedFormats = [];
-    var i = 0;
-    formats.forEach(function(format, index) {
-        if (detectFormats(format) == true){
-            supportedFormats[i] = format;
-            i++;
-        }
-    });
-    return supportedFormats.join('/');
-}
-
-function listSupportedVideoFormats(){
-    var supportedFormats = [];
-    var formats = ['mp4', 'ogg', 'webm'];
-    var i = 0;
-    formats.forEach(function(format, index) {
-        if (detectVideoFormats(format) == true){
-            supportedFormats[i] = format;
-            addAndToEnd(i, supportedFormats);
-            i++;
-        }
-    });
-    return supportedFormats.join(', ');
-}
-
-function checkTypeSupport(file){
-    var fileType = file.type.split("/")[0];
-    var a = document.createElement(fileType);
-    return !!(a.canPlayType && a.canPlayType(file.type).replace(/no/, ''));
-}
-
-function setFormatsMessage(){
-    var text = document.webL10n.get('formats');
-    text = text.replace("[xxx]",listSupportedFormats("audio"));
-    text = text.replace("[yyy]",listSupportedFormats("video"));
-    document.getElementById("formats").innerHTML = text;
-}
-
 function setStartButton(){
     var startText = document.webL10n.get('start-ready');
     $('.start').text(startText).addClass('ready');

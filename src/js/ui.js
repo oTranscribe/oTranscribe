@@ -94,21 +94,9 @@
         }
     });
     
-    $('#attach').change(function() {
-        oT.input.reactToFile(this);
-    });    
-
     $('#local-file-import').change(function() {
         oT.import.localButtonReaction(this);
     });        
-    
-    $('.yt-input').click(function(){
-        oT.input.askForYoutube();
-    })
-    
-    $('.close-ext-input').click(function(){
-        oT.input.returnToNormal();
-    });
 
     $('.sbutton.export').click(function() {
         placeExportPanel();

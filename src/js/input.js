@@ -1,47 +1,48 @@
 oT.input = {};
-oT.input.reactToFile = function(input){
-    var file = input.files[0];
-    if ( checkTypeSupport( file ) === true ){
-        oT.media.create( { file: file } );
-        adjustPlayerWidth();
-        oT.input.saveFileDetails(file.name);
-    } else {
-        var msg = document.webL10n.get('format-warn');
-        msg = msg.replace('[file-format]',file.type.split("/")[1]);
-        $('#formats').html(msg).addClass('warning');
-    }
-}
 
-oT.input.askForYoutube = function(){
-    $('.input').addClass('ext-input');
-    
-    var $form = $('.ext-input input');
-    $form.focus();
-    $form.keypress(function (e) {
-      if (e.which == 13) {
-        oT.input.reactToYoutube( $(this).val() );
-        return false;
-      }
+oT.input.setup = function(){
+    var input = new oTinput({
+        element: '.file-input-wrapper-2',
+        onFileChange: function(file){
+            oT.media.create( { file: file } );
+            adjustPlayerWidth();
+            oT.input.saveFileDetails(file.name);
+        },
+        onFileError: function(err, file){
+            var msg = document.webL10n.get('format-warn');
+            msg = msg.replace('[file-format]',file.type.split("/")[1]);
+            $('#formats').html(msg).addClass('warning');
+        },
+        onURLSubmit: function(url){
+            oT.media.create( {file: url} );
+            $('.input').removeClass('ext-input');
+        },
+        onURLError: function(error){
+            var msg = document.webL10n.get('youtube-error');
+            $('.ext-input-warning').text(msg).show();
+        },
+        onDragover: function(){
+            $('.file-input-wrapper').addClass('hover');
+        },
+        onDragleave: function(){
+            $('.file-input-wrapper').removeClass('hover');
+        },
+        text: {
+            button: '<i class="fa fa-arrow-circle-o-up"></i>'+document.webL10n.get('choose-file'),
+            altButton: document.webL10n.get('choose-youtube'),
+            altInputText: document.webL10n.get('youtube-instrux'),
+            closeAlt: '<i class="fa fa-times"></i>'
+        }
     });
-    
+
+    oT.input.setFormatsMessage( input.getSupportedFormats() );
 }
 
-oT.input.reactToYoutube = function(url){
-    if ( oTplayer.parseYoutubeURL(url) ){
-        oT.input.processYoutube( url );
-        $('.input').removeClass('ext-input');
-    } else {
-        var msg = document.webL10n.get('youtube-error');
-        $('.ext-input-warning').text(msg).show();
-    }
-}
-
-oT.input.returnToNormal = function(){
-    $('.input').removeClass('ext-input');
-}
-
-oT.input.processYoutube = function(url){
-    oT.media.create( {file: url} );
+oT.input.setFormatsMessage = function(formats){
+    var text = document.webL10n.get('formats');
+    text = text.replace("[xxx]", formats.audio.join('/') );
+    text = text.replace("[yyy]", formats.video.join('/') );
+    document.getElementById("formats").innerHTML = text;
 }
 
 oT.input.loadPreviousFileDetails = function(){
@@ -71,17 +72,6 @@ oT.input.saveFileDetails = function(fileDetails){
         }
     }
     localStorage.setItem("oT-lastfile", JSON.stringify( obj ));
-}
-
-oT.input.dragListener = function(){
-    var button = $('.file-input-wrapper')[0];
-    button.addEventListener('dragover', function(){
-        $('.file-input-wrapper').addClass('hover');
-    }, false);
-    button.addEventListener('dragleave', function(){
-        $('.file-input-wrapper').removeClass('hover');
-    }, false);
-    
 }
 
 oT.input.show = function(){

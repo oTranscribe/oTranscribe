@@ -34,7 +34,9 @@ oT.media.create = function(opts){
 // switching files
 oT.media.reset = function(options){
     options = options || {};
-    oT.player.reset();
+    if (oT.player.reset) {
+        oT.player.reset();
+    }
     if (options.input) {
         oT.input.loadPreviousFileDetails();
         oT.input.show();
