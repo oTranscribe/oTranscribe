@@ -27,7 +27,7 @@ oT.input.askForYoutube = function(){
 }
 
 oT.input.reactToYoutube = function(url){
-    if ( oT.media.ytParse(url) ){
+    if ( oTplayer.parseYoutubeURL(url) ){
         oT.input.processYoutube( url );
         $('.input').removeClass('ext-input');
     } else {

@@ -8,6 +8,7 @@ module.exports = function(grunt) {
             dist: {
                 src: [
                     'src/js/libs/*.js', // All JS in the libs folder
+                    'src/js/modules/*.js', // Modules
                     'src/js/intro.js'
                   , 'src/js/media.js'
                   , 'src/js/input.js'

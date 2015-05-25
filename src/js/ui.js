@@ -60,11 +60,6 @@
         return false;
     });
 
-
-    $('.play-pause').click(function(){
-        oT.player.playPause();    
-    });
-
     $('.skip-backwards').click(function(){
         oT.player.skip('backwards');    
     });
@@ -80,10 +75,6 @@
             $(this).toggleClass('fixed');
         }    
     });
-
-    $( "#slider3" ).change(function() {
-      oT.player.speed(this.valueAsNumber);
-    });    
     
     $('.title').click(function(){
         toggleAbout();
