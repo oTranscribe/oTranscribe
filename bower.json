@@ -14,6 +14,8 @@
     "tests"
   ],
   "dependencies": {
-    "otinput": "*"
+    "otinput": "*",
+    "progressor": "~0.3.0",
+    "otplayer": "~1.0.0"
   }
 }

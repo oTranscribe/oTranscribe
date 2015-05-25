@@ -14,6 +14,8 @@ module.exports = function(grunt) {
                     'src/js/libs/*.js', // All JS in the libs folder
                     'src/js/modules/*.js', // Home for work-in-progress modules
                     'bower_components/otinput/dist/otinput.js',
+                    'bower_components/otplayer/dist/otplayer.js',
+                    'bower_components/progressor/progressor.js',
                     'src/js/app/*.js'
                 ],
                 dest: 'dist/script.js',

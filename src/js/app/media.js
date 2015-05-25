@@ -19,6 +19,9 @@ oT.media.create = function(opts){
         speedSlider: document.querySelector('#slider3'),
         playPause: document.querySelector('.button.play-pause')
     }
+    opts.onReady = function(){
+        $(window).resize();
+    }
     oT.media.reset({
         callback: function(){
             // oTplayer is a separate module
@@ -27,6 +30,8 @@ oT.media.create = function(opts){
     });
     oT.input.hide();
     setInterval(function(){
+        var width = oT.media.videoWidth();
+        $('#oTplayerEl').width( width ).height( width*(3/4) );
         adjustPlayerWidth();
     },50);
 }
@@ -37,6 +42,11 @@ oT.media.reset = function(options){
     if (oT.player.reset) {
         oT.player.reset();
     }
+    oT.player = function(){};
+    oT.player.playPause = function(){};
+    oT.player.skipTo = function(){};
+    oT.player.skip = function(){};
+    oT.player.speed = function(){};
     if (options.input) {
         oT.input.loadPreviousFileDetails();
         oT.input.show();
@@ -47,12 +57,13 @@ oT.media.reset = function(options){
         },500);
     }
 }
+oT.media.reset();
 
 // calculate optimal width for video element based on window size
 oT.media.videoWidth = function(){
     var boxOffset = document.getElementById('textbox').getBoundingClientRect().left;
     if ( boxOffset > 200 ) {
-        return (boxOffset-40) + "px";
+        return (boxOffset-40);
     }
 }
 
