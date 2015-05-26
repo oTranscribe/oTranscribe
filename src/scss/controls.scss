@@ -19,6 +19,10 @@
             background-color: lighten($dark, 10%);
             cursor: pointer;
         };
+        &:active {
+            background-color: darken($dark, 10%);
+        };
+        
     }
 }
 
