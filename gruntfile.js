@@ -32,6 +32,12 @@ module.exports = function(grunt) {
                 ],
                 dest: 'dist/help/index.html',
             },
+            opensource: {
+                src: [
+                    'src/opensource.htm'
+                ],
+                dest: 'dist/opensource/index.html',
+            },
             
              
             l10n: {

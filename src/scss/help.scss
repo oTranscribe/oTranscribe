@@ -1,4 +1,4 @@
-.help {
+.separate-page {
         
 
     @include page;
@@ -20,7 +20,18 @@
     
     h2 {
         font-size: 1.4em;
-        margin-top: 3em;
+        margin-top: 1.8em;
+        small {
+            font-size: 0.8em;
+            font-weight: normal;
+        }
+        a {
+            color: $accent;
+            &:visited {
+                color: $accent;
+            }
+            
+        }
     }
     
     strong, h2, h3 {
@@ -37,7 +48,7 @@
     }
     
     .container {
-        width: 600px;
+        max-width: 600px;
     }
     
     a {
@@ -55,15 +66,32 @@
             text-decoration: underline;
         };
     }
+    
+    .row {
+        padding:20px;
+        margin: 20px 0;
+        background:#e1e1e1;
+        border-radius: 4px;
+        h2 {
+            margin: 0;
+        }
+    }
 
-
+    .button {
+        @include button;
+        display: inline-block;
+        padding: 8px;
+        text-decoration: none !important;
+        color: white !important;
+    }
+    
 }
 
 @media (max-width: 850px) {
 
-    .help {
+    .separate-page {
 
-    padding: 0;    
+        padding: 0;    
         .container {
             width: auto;
             padding: 5%;
