@@ -16,6 +16,6 @@
   "dependencies": {
     "otinput": "*",
     "progressor": "~0.3.0",
-    "otplayer": "~1.0.0"
+    "otplayer": "~1.1.0"
   }
 }
