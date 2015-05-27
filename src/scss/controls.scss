@@ -19,6 +19,10 @@
             background-color: lighten($dark, 10%);
             cursor: pointer;
         };
+        &:active {
+            background-color: darken($dark, 10%);
+        };
+        
     }
 }
 
@@ -114,6 +118,7 @@ video#oTplayerEl, iframe#oTplayerEl {
 }
 
 #player-time {
+    @include noselect(text);
     display: inline-block;
     font-size: 13px;
     padding: 11px 0;

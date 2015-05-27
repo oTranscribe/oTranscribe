@@ -1,15 +1,5 @@
 @import "reset";
 
-body {
-    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
-    height: 100%;
-}
-
-#extra-ui-text {
-    display: none;
-}
-
-
 $accent: rgb(52, 130, 177);
 $dark: hsl(0,0,15);
 
@@ -26,6 +16,26 @@ $dark: hsl(0,0,15);
     	background-color:#58AFDB;
     }   
     
+}
+
+@mixin noselect($val) {
+    -webkit-touch-callout: $val;
+    -webkit-user-select: $val;
+    -khtml-user-select: $val;
+    -moz-user-select: $val;
+    -ms-user-select: $val;
+    user-select: $val;
+}
+
+
+body {
+    @include noselect(none);
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    height: 100%;
+}
+
+#extra-ui-text {
+    display: none;
 }
 
 @import "input", "about", "help", "controls", "topbar", "languages", "speedbox", "audiojs", "textbox", "message-panel", "sidebar", "export", "backup", "font-awesome-fallback";
