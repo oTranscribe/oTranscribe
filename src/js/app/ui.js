@@ -60,27 +60,38 @@
         return false;
     });
 
-    $('.skip-backwards').click(function(){
-        oT.player.skip('backwards');    
+    var skippingButtonInterval;
+    $('.skip-backwards').mousedown(function(){
+        oT.player.skip('backwards');
+        skippingButtonInterval = setInterval(function(){
+            oT.player.skip('backwards');
+        },100);
+    }).mouseup(function(){
+        clearInterval(skippingButtonInterval);
     });
-    $('.skip-forwards').click(function(){
+    $('.skip-forwards').mousedown(function(){
         oT.player.skip('forwards');    
+        skippingButtonInterval = setInterval(function(){
+            oT.player.skip('forwards');
+        },100);
+    }).mouseup(function(){
+        clearInterval(skippingButtonInterval);
     });
     $('.button.reset').click(function(){
         oT.media.reset({input: true});    
     });
 
-    $( ".speed" ).click(function() {
+    $( ".speed" ).mousedown(function() {
         if ($('.speed-box').not(':hover').length) {
             $(this).toggleClass('fixed');
         }    
     });
     
-    $('.title').click(function(){
+    $('.title').mousedown(function(){
         toggleAbout();
     });
     
-    $('.language-title').click(function(){
+    $('.language-title').mousedown(function(){
         oT.lang.togglePanel();
     });
     

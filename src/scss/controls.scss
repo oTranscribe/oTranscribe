@@ -118,6 +118,7 @@ video#oTplayerEl, iframe#oTplayerEl {
 }
 
 #player-time {
+    @include noselect(text);
     display: inline-block;
     font-size: 13px;
     padding: 11px 0;

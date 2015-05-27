@@ -61,6 +61,7 @@
         }
         
         .backup-block {
+            @include noselect(text);
             padding: 10px;
             box-sizing: border-box;
             width: 25%;
