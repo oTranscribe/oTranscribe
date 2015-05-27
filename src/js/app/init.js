@@ -11,7 +11,6 @@ function init(){
     initWordCount();
     initWatchFormatting();
     oT.timestamp.activate();
-    chromeOsCheck();
     gd.loadGoogleApiAsync();
 }
 

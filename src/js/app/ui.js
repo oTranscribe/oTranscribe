@@ -2,62 +2,29 @@
              User Interaction
 ******************************************/
 
-    // keyboard shortcuts
-    function pd(e){
-        if (e.preventDefault) {
-            e.preventDefault();
-        } else {
-            // internet explorer
-            e.returnValue = false;
-        }
-    }
-
-    Mousetrap.bind('escape', function(e) {
-        pd(e);
-        oT.player.playPause();
-        return false;
-    });
-    Mousetrap.bind('f1', function(e) {
-        pd(e);
-        oT.player.skip('backwards');
-        return false;
-    });
-    Mousetrap.bind('f2', function(e) {
-        pd(e);
-        oT.player.skip('forwards');
-        return false;
-    });
-    Mousetrap.bind('f3', function(e) {
-        pd(e);
-        oT.player.speed('down');
-        return false;
-    });
-    Mousetrap.bind('f4', function(e) {
-        pd(e);
-        oT.player.speed('up');
-        return false;
-    });
-    Mousetrap.bind('mod+j', function(e) {
-        pd(e);
-        oT.timestamp.insert();
-        return false;
-    });
-    Mousetrap.bind('mod+s', function(e) {
-        pd(e);
-        oT.backup.save();
-        return false;
-    });
-
-    Mousetrap.bind('mod+b', function(e) {
-        pd(e);
-        document.execCommand('bold',false,null);
-        return false;
-    });
-
-    Mousetrap.bind('mod+i', function(e) {
-        pd(e);
-        document.execCommand('italic',false,null);
-        return false;
+var keyboardShortcuts = [
+        [ 'escape',      function(){  oT.player.playPause();                      }],
+        [['f1','mod+1'], function(){  oT.player.skip('backwards');                }],
+        [['f2','mod+2'], function(){  oT.player.skip('forwards');                 }],
+        [['f3','mod+3'], function(){  oT.player.speed('down');                    }],
+        [['f4','mod+4'], function(){  oT.player.speed('up');                      }],
+        [ 'mod+j',       function(){  oT.timestamp.insert();                      }],
+        [ 'mod+s',       function(){  oT.backup.save();                           }],
+        [ 'mod+b',       function(){  document.execCommand('bold',false,null);    }],
+        [ 'mod+i',       function(){  document.execCommand('italic',false,null);  }]
+    ];
+    
+    $.each(keyboardShortcuts, function(i,m){
+        Mousetrap.bind(m[0], function(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                // internet explorer
+                e.returnValue = false;
+            }
+            m[1]();
+            return false;
+        });
     });
 
     $('.skip-backwards').click(function(){
