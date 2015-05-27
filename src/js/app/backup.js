@@ -111,6 +111,7 @@ oT.backup.init = function(){
         oT.message.header( backupClearMessage );
     }
     localStorageManager.onSaveFailure = oT.backup.warning;
+    oT.backup.migrate();
     oT.backup.autosaveInit();
     setInterval(function(){
         oT.backup.save();
@@ -156,9 +157,8 @@ oT.backup.migrate = function(){
        localStorageManager.setItem("autosave", localStorage.getItem("autosave") );
     }
     var backupList = [];
-    var ls = localStorageManager.getArray();
-    for (var i = 0; i < ls.length; i++) {
-        var key = ls[i].key;
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
         if (key.indexOf('oTranscribe-backup') === 0) {
             var item = localStorage.getItem( key );
             localStorageManager.setItem( key, item );

@@ -43,6 +43,16 @@ oTranscribe has its own file format (.otr), which is just a JSON file with the f
 * **media-source**: If available, a link to the last media used
 * **media-time**: If available, the playtime of the last media used
 
+### Running tests
+
+While oTranscribe's components are thoroughly tested, the app itself has only limited tests.
+
+To setup, [install CasperJS](http://docs.casperjs.org/en/latest/installation.html).
+
+Then run a server at the root directory of this repository at `http://localhost:8000`, and on the command line run:
+
+    casperjs test tests/
+
 ### Translations
 
 Translations have been provided by the following talented and generous volunteers:
