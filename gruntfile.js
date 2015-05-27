@@ -16,6 +16,7 @@ module.exports = function(grunt) {
                     'bower_components/otinput/dist/otinput.js',
                     'bower_components/otplayer/dist/otplayer.js',
                     'bower_components/progressor/progressor.js',
+                    'bower_components/localStorageManager/localStorageManager.js',
                     'src/js/app/*.js'
                 ],
                 dest: 'dist/script.js',

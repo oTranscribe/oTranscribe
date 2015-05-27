@@ -4,7 +4,6 @@
 
 
 function init(){
-    saveText();
     oT.backup.init();
     adjustEditorHeight();
     placeTextPanel();
@@ -27,7 +26,7 @@ window.addEventListener('localized', function() {
 $(document).ready(function(){
     init();
     oT.lang.bide();
-    if ( localStorage.getItem("lastfile") ) {
+    if ( localStorageManager.getItem("lastfile") ) {
         toggleAbout();
     }
 });

@@ -22,13 +22,13 @@ oT.lang.langs = {
 
 oT.lang.setLang = function(lang){
     if (lang){
-        localStorage.setItem('oTranscribe-language',lang);
+        localStorageManager.setItem('oTranscribe-language',lang);
         window.location.reload();
     }
 }
 
 oT.lang.applyLang = function(callback){
-    var lang = localStorage.getItem('oTranscribe-language');
+    var lang = localStorageManager.getItem('oTranscribe-language');
     if(lang) {
         document.webL10n.setLanguage(lang);
     } else {

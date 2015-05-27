@@ -14,9 +14,12 @@ oT.backup.closePanel = function(){
 }
 
 oT.backup.generateBlock = function(ref){
+    console.log('ref',ref);
     // create icon and 'restore' button
-    var text = localStorage.getItem(ref);
-    var timestamp = ref.replace('oTranscribe-backup-','');
+    var obj = localStorageManager.getItemMetadata(ref);
+    console.log('obj',obj);
+    var text = obj.value;
+    var timestamp = obj.timestamp;
     var date = oT.backup.formatDate(timestamp);
     
     var block = document.createElement('div');
@@ -69,6 +72,7 @@ oT.backup.addDocsToPanel = function(start,end){
     $('.more-backups').remove();
     var allDocs = oT.backup.list();
     docs = allDocs.slice(start,end);
+    console.log(docs);
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
@@ -79,10 +83,10 @@ oT.backup.addDocsToPanel = function(start,end){
 }
 
 oT.backup.save = function(){
-    // save current text to timestamped localStorage item
+    // save current text to timestamped localStorageManager item
     var text = document.getElementById("textbox");
     var timestamp = new Date().getTime();
-    oT.backup.saveToLocalStorage('oTranscribe-backup-'+timestamp, text.innerHTML);
+    localStorageManager.setItem('oTranscribe-backup-'+timestamp, text.innerHTML);
     // and bleep icon
     $('.sbutton.backup').addClass('flash');
     setTimeout(function(){
@@ -101,80 +105,82 @@ oT.backup.save = function(){
     
 }
 
-oT.backup.saveToLocalStorage = function(key,value){
-    try {
-       localStorage.setItem( key, value );
-    } catch (e) {
-       if (e.name === "NS_ERROR_DOM_QUOTA_REACHED") {
-           oT.backup.removeOldest();
-           oT.backup.save();
-       }
-    }
-    
-}
-
 oT.backup.init = function(){
+    localStorageManager.onFull = function(){
+        var backupClearMessage = document.webL10n.get('backup-clear');
+        oT.message.header( backupClearMessage );
+    }
+    localStorageManager.onSaveFailure = oT.backup.warning;
+    oT.backup.autosaveInit();
     setInterval(function(){
         oT.backup.save();
-        oT.backup.cleanup();
     },300000 /* 5 minutes */);
+}
+
+oT.backup.notYetWarned = true;
+oT.backup.warning = function(){
+    var backupWarningMessage = document.webL10n.get('backup-error');
+    if (oT.backup.notYetWarned === true) {
+        oT.message.header( backupWarningMessage );
+        oT.backup.notYetWarned = false;
+    }
 }
 
 oT.backup.list = function(){
     var result = [];
-    for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i).indexOf('oTranscribe-backup') > -1) {
-            result.push(localStorage.key(i));
+    var ls = localStorageManager.getArray();
+    for (var i = 0; i < ls.length; i++) {
+        if (ls[i].key.indexOf('oTranscribe-backup') > -1) {
+            result.push( ls[i].key );
         }
     }
     return result.sort().reverse();
 }
 
-
 oT.backup.restore = function(timestamp){
     oT.backup.save();
-    var newText = localStorage.getItem('oTranscribe-backup-'+timestamp);
-    oT.import.replaceTranscriptTextWith(newText);
+    var item = localStorageManager.getItem('oTranscribe-backup-'+timestamp);
+    if ( item ) {
+        var newText = item;
+        oT.import.replaceTranscriptTextWith(newText);
+    } else {
+        var restoreErrorMessage = document.webL10n.get('restore-error');
+        oT.message.header( restoreErrorMessage );
+    }
     oT.backup.closePanel();
 }
 
-oT.backup.cleanup = function(){
-    var backups = oT.backup.list();
-    for (var i = 0; i < backups.length; i++) {
-        var bu = backups[i];
-        var ts = bu.replace('oTranscribe-backup-','');
-        var date = new Date( parseFloat( ts ) );
-        var diff = Date.now() - date;
-        // 1 day = 86400000 miliseconds
-        if (diff > (86400000*7) ) {
-            localStorage.removeItem( bu );
+oT.backup.migrate = function(){
+    // May 2015 - migration to localStorageManager
+    if ( localStorage.getItem("autosave")) {        
+       localStorageManager.setItem("autosave", localStorage.getItem("autosave") );
+    }
+    var backupList = [];
+    var ls = localStorageManager.getArray();
+    for (var i = 0; i < ls.length; i++) {
+        var key = ls[i].key;
+        if (key.indexOf('oTranscribe-backup') === 0) {
+            var item = localStorage.getItem( key );
+            localStorageManager.setItem( key, item );
+            localStorage.removeItem( key );
         }
     }
 }
 
-oT.backup.removeOldest = function(){
-
-    var list = oT.backup.list();
-    var toDelete = list.slice(Math.max(list.length - 5, 1));
-    for (var i = 0; i < toDelete.length; i++) {
-        localStorage.removeItem( toDelete[i] );
-    	localStorage.clear( toDelete[i] );
-    }
-}
-
 // original autosave function
-function saveText(){
+oT.backup.autosaveInit = function(){
     var field = document.getElementById("textbox");
+    
     // load existing autosave (if present)
-    if ( localStorage.getItem("autosave")) {        
-       field.innerHTML = localStorage.getItem("autosave");
+    if ( localStorageManager.getItem("autosave")) {        
+       field.innerHTML = localStorageManager.getItem("autosave");
     }
     // autosave every second - but wait five seconds before kicking in
     setTimeout(function(){
         // prevent l10n from replacing user text
         $('#textbox p[data-l10n-id]').attr('data-l10n-id','');
         setInterval(function(){
-           oT.backup.saveToLocalStorage("autosave", field.innerHTML);
+           localStorageManager.setItem("autosave", field.innerHTML);
         }, 1000);
     }, 5000);
 }

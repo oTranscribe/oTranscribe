@@ -46,8 +46,8 @@ oT.input.setFormatsMessage = function(formats){
 }
 
 oT.input.loadPreviousFileDetails = function(){
-    if ( localStorage.getItem("oT-lastfile") ) {
-        var lastFile = JSON.parse( localStorage.getItem("oT-lastfile") );
+    if ( localStorageManager.getItem("oT-lastfile") ) {
+        var lastFile = JSON.parse( localStorageManager.getItem("oT-lastfile") );
         var lastfileText = document.webL10n.get('last-file');
         if (lastFile.name === undefined) {
             document.getElementById("lastfile").innerHTML = lastfileText+' '+lastFile;
@@ -71,7 +71,7 @@ oT.input.saveFileDetails = function(fileDetails){
             source: ''
         }
     }
-    localStorage.setItem("oT-lastfile", JSON.stringify( obj ));
+    localStorageManager.setItem("oT-lastfile", JSON.stringify( obj ));
 }
 
 oT.input.show = function(){
