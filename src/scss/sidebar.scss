@@ -87,6 +87,7 @@
     }
 
     .wordcount {
+        @include noselect(text);
         @include sidebar-block;
         font-size: 16px; 
         margin-top: 10px;

@@ -26,30 +26,3 @@ function oldBrowserCheck(){
         document.getElementById('old-browser').innerHTML = oldBrowserWarning;
     }
 }
-
-function chromeOsCheck(){
-    var ua = window.navigator.userAgent;
-    if ( ua.indexOf("CrOS") > -1 ) {
-        
-        Mousetrap.bind('ctrl+1', function(e) {
-            pd(e);
-            oT.player.skip('backwards');
-            return false;
-        });
-        Mousetrap.bind('ctrl+2', function(e) {
-            pd(e);
-            oT.player.skip('forwards');
-            return false;
-        });
-        Mousetrap.bind('ctrl+3', function(e) {
-            pd(e);
-            oT.player.speed('down');
-            return false;
-        });
-        Mousetrap.bind('ctrl+4', function(e) {
-            pd(e);
-            oT.player.speed('up');
-            return false;
-        });
-    }
-}

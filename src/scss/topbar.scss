@@ -40,6 +40,10 @@
             background: #DDD;
         }
     }
+    &:active {
+        background-color: darken($dark, 10%);
+    };
+    
     
 }
 

@@ -17,6 +17,7 @@
     "otinput": "*",
     "progressor": "~0.3.0",
     "otplayer": "~1.1.0",
-    "localStorageManager": "~0.2.1"
+    "localStorageManager": "~0.2.1",
+    "mousetrap": "~1.5.2"
   }
 }

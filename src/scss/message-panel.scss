@@ -8,6 +8,10 @@
     &.hidden {
         display: none;
     }
+    &.stuck {
+        position: fixed;
+        top: 30px;
+    }
     .message-content > a {
         color: inherit;
     }

@@ -1,5 +1,5 @@
 @mixin page {
-    
+    @include noselect(text);
     color: $dark;
         
     background: rgb(241, 241, 241);

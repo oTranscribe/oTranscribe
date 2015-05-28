@@ -8,7 +8,8 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     banner: "var oT = {};(function(){",
-                    footer: '}());'
+                    footer: '}());',
+                    separator: ';'
                 },
                 src: [
                     'src/js/libs/*.js', // All JS in the libs folder
@@ -17,6 +18,7 @@ module.exports = function(grunt) {
                     'bower_components/otplayer/dist/otplayer.js',
                     'bower_components/progressor/progressor.js',
                     'bower_components/localStorageManager/localStorageManager.js',
+                    'bower_components/mousetrap/mousetrap.js',
                     'src/js/app/*.js'
                 ],
                 dest: 'dist/script.js',

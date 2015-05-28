@@ -1,4 +1,5 @@
 #textbox {
+    @include noselect(text);
     resize: none;
     
     font-size: 15px;
