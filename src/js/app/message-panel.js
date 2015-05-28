@@ -3,12 +3,13 @@ oT.message = {}
 oT.message.header = function(msg){
     $('.message-panel .message-content').html( msg );
     var $panel = $('.message-panel');
+    var $textbox = $('#textbox');
     $panel.removeClass('hidden');
     oT.message.stickyWatch = setInterval(function(){
-        if ( $panel.offset().top < 30 ) {
+        if ( $textbox.offset().top < 0 ) {
             $panel.css('margin-left', $panel.css('margin-left') );
             $panel.addClass('stuck');
-        } else if (!$panel.hasClass('stuck')) {
+        } else {
             $panel.removeClass('stuck');
         }
     },50);
