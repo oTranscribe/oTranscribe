@@ -34,6 +34,9 @@ casper.test.begin('autosave migration', 6, function(test) {
         }), '<p>Document at latest stage...</p>');
 
         test.assertEquals(casper.evaluate(function() {
+            return localStorageManager.getItemMetadata('oTranscribe-backup-0000000').timestamp;
+        }), '0000000');
+        test.assertEquals(casper.evaluate(function() {
             return localStorageManager.getItem('oTranscribe-backup-0000000');
         }), '<p>Document at earlier stage.</p>');
         test.assertEquals(casper.evaluate(function() {

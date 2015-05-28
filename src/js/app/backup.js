@@ -14,10 +14,8 @@ oT.backup.closePanel = function(){
 }
 
 oT.backup.generateBlock = function(ref){
-    console.log('ref',ref);
     // create icon and 'restore' button
     var obj = localStorageManager.getItemMetadata(ref);
-    console.log('obj',obj);
     var text = obj.value;
     var timestamp = obj.timestamp;
     var date = oT.backup.formatDate(timestamp);
@@ -72,7 +70,6 @@ oT.backup.addDocsToPanel = function(start,end){
     $('.more-backups').remove();
     var allDocs = oT.backup.list();
     docs = allDocs.slice(start,end);
-    console.log(docs);
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
     }
@@ -160,8 +157,11 @@ oT.backup.migrate = function(){
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
         if (key.indexOf('oTranscribe-backup') === 0) {
-            var item = localStorage.getItem( key );
-            localStorageManager.setItem( key, item );
+            var item = {
+                value: localStorage.getItem( key ),
+                timestamp: key.split('-')[2]
+            };
+            localStorage.setItem( 'localStorageManager_'+key, JSON.stringify(item) );
             localStorage.removeItem( key );
         }
     }
