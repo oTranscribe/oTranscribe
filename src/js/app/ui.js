@@ -3,15 +3,16 @@
 ******************************************/
 
 var keyboardShortcuts = [
-        [ 'escape',      function(){  oT.player.playPause();                      }],
-        [['f1','mod+1'], function(){  oT.player.skip('backwards');                }],
-        [['f2','mod+2'], function(){  oT.player.skip('forwards');                 }],
-        [['f3','mod+3'], function(){  oT.player.speed('down');                    }],
-        [['f4','mod+4'], function(){  oT.player.speed('up');                      }],
-        [ 'mod+j',       function(){  oT.timestamp.insert();                      }],
-        [ 'mod+s',       function(){  oT.backup.save();                           }],
-        [ 'mod+b',       function(){  document.execCommand('bold',false,null);    }],
-        [ 'mod+i',       function(){  document.execCommand('italic',false,null);  }]
+        [ 'escape',      function(){  oT.player.playPause();                         }],
+        [['f1','mod+1'], function(){  oT.player.skip('backwards');                   }],
+        [['f2','mod+2'], function(){  oT.player.skip('forwards');                    }],
+        [['f3','mod+3'], function(){  oT.player.speed('down');                       }],
+        [['f4','mod+4'], function(){  oT.player.speed('up');                         }],
+        [ 'mod+j',       function(){  oT.timestamp.insert();                         }],
+        [ 'mod+s',       function(){  oT.backup.save();                              }],
+        [ 'mod+b',       function(){  document.execCommand('bold',false,null);       }],
+        [ 'mod+i',       function(){  document.execCommand('italic',false,null);     }],
+        [ 'mod+u',       function(){  document.execCommand('underline',false,null);  }]
     ];
     
     $.each(keyboardShortcuts, function(i,m){
