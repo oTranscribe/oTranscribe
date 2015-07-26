@@ -1,4 +1,4 @@
-casper.test.begin('autosave migration', 6, function(test) {
+casper.test.begin('autosave migration', 7, function(test) {
     casper.start('http://localhost:8000/dist/');
         
     casper.thenEvaluate(function() {
@@ -43,6 +43,10 @@ casper.test.begin('autosave migration', 6, function(test) {
             return localStorage.getItem('oTranscribe-backup-0000000');
         }), '');
 
+    });
+    
+    casper.thenEvaluate(function() {
+        localStorage.clear();
     });
 
     casper.run(function(){

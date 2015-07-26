@@ -99,7 +99,19 @@ oT.backup.save = function(){
     },'slow',function(){
         $( newBlock ).find('.backup-restore-button').fadeIn();
     });
-    
+    oT.backup.trimToOneHundred();
+}
+
+oT.backup.trimToOneHundred = function(){
+    var backups = oT.backup.list();
+    if (backups.length < 100) {
+        return;
+    }
+    for (var i = 0; i < backups.length; i++) {
+        if (i > 99) {
+            localStorageManager.removeItem(backups[i]);
+        }
+    }
 }
 
 oT.backup.init = function(){
