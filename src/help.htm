@@ -40,7 +40,18 @@
     <p>The short answer is: unfortunately, no.</p>
     
     <p>The long answer is: oTranscribe sometimes loses work for a multitude of reasons (including the user clearing their cache or localStorage becoming full). If your work is not present in the history panel, it's gone for good. Please make sure to export your work regularly, especially when using oTranscribe for an extended period of time.</p>
-
+    
+    <h2 id="why_is_otranscribe_is_no_longer_saving_backups">Why is oTranscribe is no longer saving backups?</h2>
+        
+    <p>This can sometimes happen when the browser's local storage is full. If you clear the existing stored documents, it should begin saving again. Note that this may affect locally-stored data belonging to other apps and sites.</p>
+    
+    <ul>
+    <li><strong> Google Chrome</strong>: Go to “Clear Browsing Data” in Chrome’s "More tools" menu and check “Hosted app data” only. Then press "Clear browsing data".</li>
+    <li><strong>Firefox</strong>: Open <a href="about:preferences#privacy">preferences</a> and go to "privacy". Click on "clear your recent history" and check "cookies" only. Then click "clear now".</li>
+    <li><strong>Safari</strong>: Open Safari preferences and go to the "Privacy" tab. Click on the small "Details..." button. Search for oTranscribe, then click on the oTranscribe row and click "Remove".</li>
+    <li>Alternatively, if you know how to access the browser console, you can run <strong>localStorage.clear();</strong> on otranscribe.com.</li>
+    </ul>
+    
     <h2 id="what_keyboard_shortcuts_are_there">What keyboard shortcuts are there?</h2>
 
     <h3 id="audio_playback">Audio playback</h3>
