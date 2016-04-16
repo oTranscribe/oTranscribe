@@ -66,6 +66,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Indonesian: [Joy Tikoalu](mailto:joy.tikoalu@gmail.com).
 *   Italian: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com), [Edoardo Putti](http://edoput.it) and Federico Lasta.
 *   Japanese: [harupong](http://blog.harupong.com).
+*   Norwegian: [Hallvar Hauge Johnsen](http://www.hyggelaget.no/)
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
 *   Brazilian Portuguese: Leonardo Barichello.
