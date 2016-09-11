@@ -31,5 +31,8 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && mkdir ./dist && ./node_modules/webpack/bin/webpack.js --watch -p"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0"
   }
 }

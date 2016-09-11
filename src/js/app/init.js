@@ -2,8 +2,11 @@
              Initialisation
 ******************************************/
 
+const $ = require('jquery');
 
-function init(){
+let oT = {};
+
+export default function init(){
     oT.backup.init();
     adjustEditorHeight();
     placeTextPanel();
