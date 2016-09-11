@@ -13,14 +13,6 @@
 //     });
 //     return result;
 // }
-//
-//
-// function adjustPlayerWidth(){
-//     var cntrls = $('.controls');
-//
-//     var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() + $('.language-title').outerWidth()  );
-//     $('#player-hook').width( $('#player-hook').width()+gap -10 );
-// }
 
 function toggleAbout(){
     $('.help-title').removeClass('active');
@@ -34,16 +26,6 @@ function toggleAbout(){
 //     $('.about').removeClass('active');
 //     $('.help-title').toggleClass('active');
 //     $('.help').toggleClass('active');
-// }
-//
-//
-// function adjustEditorHeight(){
-//     $('.textbox-container').height( window.innerHeight - 36 );
-// }
-//
-// function placeTextPanel(){
-//    var position = parseInt( $('#textbox').offset().left, 10) + 700;
-//    $('.text-panel').css('left', position);
 // }
 
 const $ = require('jquery');
