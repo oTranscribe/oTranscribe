@@ -51,6 +51,9 @@ module.exports = {
           //     from: './src/html/',
           //     to: './'
           // }
+          {
+              from: './node_modules/webl10n/l10n.js'
+          }
       ]),
       new HtmlWebpackPlugin({
           template: 'html?interpolate&attrs=img:data-src!./src/index.html'

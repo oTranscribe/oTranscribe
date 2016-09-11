@@ -4,24 +4,28 @@
 
 const $ = require('jquery');
 
-let oT = {};
+import { watchFormatting, watchWordCount } from './texteditor';
+import googleDriveSetup from './google';
+import inputSetup from './input';
 
 export default function init(){
-    oT.backup.init();
-    adjustEditorHeight();
-    placeTextPanel();
-    initWordCount();
-    initWatchFormatting();
-    oT.timestamp.activate();
-    gd.loadGoogleApiAsync();
+    // oT.backup.init();
+    // adjustEditorHeight();
+    // placeTextPanel();
+    watchWordCount();
+    watchFormatting();
+    // oT.timestamp.activate();
+    googleDriveSetup();
 }
 
 window.addEventListener('localized', function() {
-    oT.input.setup();
-    setStartButton();
-    oldBrowserCheck();
-    oT.input.loadPreviousFileDetails();
-    $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
+    inputSetup();
+    var startText = document.webL10n.get('start-ready');
+    $('.start').text(startText).addClass('ready');
+    
+    // oldBrowserCheck();
+    // oT.input.loadPreviousFileDetails();
+    // $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
 }, false);
 
 

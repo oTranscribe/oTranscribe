@@ -3,11 +3,6 @@
                 Other
 ******************************************/
 
-function setStartButton(){
-    var startText = document.webL10n.get('start-ready');
-    $('.start').text(startText).addClass('ready');
-}
-
 function html5Support(){
     var audioTagSupport = !!(document.createElement('audio').canPlayType);
     var contentEditableSupport = document.getElementById('textbox').contentEditable;

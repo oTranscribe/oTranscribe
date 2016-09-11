@@ -1,51 +1,53 @@
 /******************************************
                Text editor
 ******************************************/
+//
+// oT.texteditor = {}
+//
+// oT.texteditor.clean = function( html ){
+//     var result = $.htmlClean(html, {
+//         format: false,
+//         allowedTags: ['p', 'div', 'strong', 'em', 'i', 'b', 'span', 'br'],
+//         allowedAttributes: [['class',['span']],['data-timestamp',['span']]],
+//         allowedClasses: ['timestamp']
+//     });
+//     return result;
+// }
+//
+//
+// function adjustPlayerWidth(){
+//     var cntrls = $('.controls');
+//
+//     var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() + $('.language-title').outerWidth()  );
+//     $('#player-hook').width( $('#player-hook').width()+gap -10 );
+// }
+//
+//
+// function toggleAbout(){
+//     $('.help-title').removeClass('active');
+//     $('.help').removeClass('active');
+//     $('.title').toggleClass('active');
+//     $('.about').toggleClass('active');
+// }
+//
+// function toggleHelp(){
+//     $('.title').removeClass('active');
+//     $('.about').removeClass('active');
+//     $('.help-title').toggleClass('active');
+//     $('.help').toggleClass('active');
+// }
+//
+//
+// function adjustEditorHeight(){
+//     $('.textbox-container').height( window.innerHeight - 36 );
+// }
+//
+// function placeTextPanel(){
+//    var position = parseInt( $('#textbox').offset().left, 10) + 700;
+//    $('.text-panel').css('left', position);
+// }
 
-oT.texteditor = {}
-
-oT.texteditor.clean = function( html ){
-    var result = $.htmlClean(html, {
-        format: false,
-        allowedTags: ['p', 'div', 'strong', 'em', 'i', 'b', 'span', 'br'],
-        allowedAttributes: [['class',['span']],['data-timestamp',['span']]],
-        allowedClasses: ['timestamp']
-    });
-    return result;
-}
-
-
-function adjustPlayerWidth(){
-    var cntrls = $('.controls');
-    
-    var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() + $('.language-title').outerWidth()  );
-    $('#player-hook').width( $('#player-hook').width()+gap -10 );
-}
-
-
-function toggleAbout(){
-    $('.help-title').removeClass('active');
-    $('.help').removeClass('active');
-    $('.title').toggleClass('active');
-    $('.about').toggleClass('active');
-}
-
-function toggleHelp(){
-    $('.title').removeClass('active');
-    $('.about').removeClass('active');
-    $('.help-title').toggleClass('active');
-    $('.help').toggleClass('active');
-}
-
-
-function adjustEditorHeight(){
-    $('.textbox-container').height( window.innerHeight - 36 );
-}
-
-function placeTextPanel(){
-   var position = parseInt( $('#textbox').offset().left, 10) + 700;
-   $('.text-panel').css('left', position);
-}
+const $ = require('jquery');
 
 function countWords(str){
     var trimmedStr = $.trim(str);
@@ -98,4 +100,7 @@ function initWatchFormatting(){
     }, 100);
 }
 
-
+export {
+    initWatchFormatting as watchFormatting,
+    countTextbox as watchWordCount
+};
