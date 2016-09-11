@@ -48,8 +48,10 @@
 
 .textbox-container {
     overflow-y: scroll;
-    position: relative;
-    height: 500px; 
-    background: #EEE;
+    position: fixed;
+    height: calc(100% - 36px);
+    background: #eee;
+    top: 36px;
+    width: 100%;
 }
 

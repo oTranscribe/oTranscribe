@@ -1,6 +1,10 @@
 
 .controls {
     display: none; // default state
+//    display: -webkit-flex;
+//    display: flex;
+    -webkit-flex: 1;
+    flex: 1;
     
     .button {
         display: inline-block;
@@ -90,7 +94,7 @@ video#oTplayerEl, iframe#oTplayerEl {
 
 .progressor {
     display: inline-block;
-    min-width: 100px;
+    width: 100%;
     height: 14px;
     margin: 10px;
     color: lightgrey;
@@ -101,6 +105,13 @@ video#oTplayerEl, iframe#oTplayerEl {
     padding-top: 2px;
     vertical-align: middle;
     overflow: hidden;
+}
+
+#player-hook {
+    display: inline-block;
+    flex: 1;
+    -webkit-flex: 1;
+    min-width: 100px;
 }
 
 .progressor-progress {

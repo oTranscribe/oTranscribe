@@ -4,7 +4,7 @@
 
 const $ = require('jquery');
 
-import { watchFormatting, watchWordCount } from './texteditor';
+import { watchFormatting, watchWordCount, toggleAbout } from './texteditor';
 import googleDriveSetup from './google';
 import inputSetup from './input';
 
@@ -21,7 +21,11 @@ export default function init(){
 window.addEventListener('localized', function() {
     inputSetup();
     var startText = document.webL10n.get('start-ready');
-    $('.start').text(startText).addClass('ready');
+    $('.start')
+        .text(startText)
+        .addClass('ready')
+        .click(toggleAbout);
+    
     
     // oldBrowserCheck();
     // oT.input.loadPreviousFileDetails();

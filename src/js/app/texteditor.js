@@ -21,15 +21,14 @@
 //     var gap = $(window).width() - (cntrls.width() + $('.title').outerWidth()  + $('.help-title').outerWidth() + $('.language-title').outerWidth()  );
 //     $('#player-hook').width( $('#player-hook').width()+gap -10 );
 // }
-//
-//
-// function toggleAbout(){
-//     $('.help-title').removeClass('active');
-//     $('.help').removeClass('active');
-//     $('.title').toggleClass('active');
-//     $('.about').toggleClass('active');
-// }
-//
+
+function toggleAbout(){
+    $('.help-title').removeClass('active');
+    $('.help').removeClass('active');
+    $('.title').toggleClass('active');
+    $('.about').toggleClass('active');
+}
+
 // function toggleHelp(){
 //     $('.title').removeClass('active');
 //     $('.about').removeClass('active');
@@ -102,5 +101,6 @@ function initWatchFormatting(){
 
 export {
     initWatchFormatting as watchFormatting,
-    countTextbox as watchWordCount
+    countTextbox as watchWordCount,
+    toggleAbout as toggleAbout
 };

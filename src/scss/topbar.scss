@@ -6,10 +6,7 @@
     z-index: 50;
     position: relative;
     font-size: 16px;
-    .controls {
-        display: inline-block;
-    }
-    
+
     &.inputting .controls {
             display: none;
     }
