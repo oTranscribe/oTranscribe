@@ -2,14 +2,13 @@ oT.lang = {};
 
 oT.lang.langs = {
     'en': 'English',
-    'pirate': 'Pirate',
     'es': 'Español',
     'de': 'Deutsch',
     'fr': 'Français',
     'nl': 'Nederlands',
     'pl': 'Polski',
-    'zh-hant': '繁體中文',
-    'zh-hans': '简体中文',
+    'zh-hant': '繁體中文',  // traditional Chinese
+    'zh-hans': '简体中文',  // simplified Chinese 
     'ja': '日本語',
     'pt': 'Português',
     'ptbr': 'Português do Brasil',
@@ -46,11 +45,28 @@ oT.lang.togglePanel = function(){
 oT.lang.bide = function(){
     if (document.webL10n.getReadyState() === 'complete' ) {
         oT.lang.applyLang();
+        oT.lang.addMarkup();
     } else {
         setTimeout(function(){
             oT.lang.bide();
         },50);
     }
+}
+
+oT.lang.addMarkup = function(){
+    var buttons = Object.keys(oT.lang.langs)
+        .sort()
+        .map(function(code) {
+            var fullName = oT.lang.langs[code];
+            return '<div class="language-button" data-language="'+code+'">'+fullName+'</div>';
+        });
+    
+    $('.language-picker .container').html( buttons.join(' ') );
+    
+    $('.language-button').click(function(){
+       oT.lang.setLang( $(this).data('language') ); 
+    });
+    
 }
 
 window.oT.lang = oT.lang;

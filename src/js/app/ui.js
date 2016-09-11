@@ -63,10 +63,6 @@ var keyboardShortcuts = [
         oT.lang.togglePanel();
     });
     
-    $('.language-button').click(function(){
-       oT.lang.setLang( $(this).data('language') ); 
-    });
-
     $('.about .start').click(function(){
         if ( $(this).hasClass('ready') ) {
             toggleAbout();
