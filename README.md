@@ -61,7 +61,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Chinese: baiqj, Cindy Ng, [Andy Pan](https://github.com/andy0130tw), [Cp0204](https://github.com/Cp0204) and [Robin Kwong](https://github.com/RobinKwong)
 *   Danish: [Christian Bruun](http://christianb.dk).
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
-*   Filipino: Patricia Albano.
+*   Filipino: [Patricia Albano](https://www.linkedin.com/in/patriciaclaudiaalbano).
 *   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
 *   German: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and Lisa Bernhardt.
 *   Indonesian: [Joy Tikoalu](mailto:joy.tikoalu@gmail.com).
