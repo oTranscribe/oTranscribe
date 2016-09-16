@@ -18,7 +18,8 @@ oT.lang.langs = {
     'id': 'Indonesia',
     'uk': 'Українська',
     'ro': 'Română',
-    'no': 'Norsk'
+    'no': 'Norsk',
+    'fil': 'Filipino'
 }
 
 oT.lang.setLang = function(lang){
