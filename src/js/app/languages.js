@@ -7,20 +7,21 @@ oT.lang.langs = {
     'fr': 'Français',
     'nl': 'Nederlands',
     'pl': 'Polski',
-    'zh-hant': '繁體中文',  // traditional Chinese
-    'zh-hans': '简体中文',  // simplified Chinese 
-    'ja': '日本語',
+    'zh-hant': '繁體中文',  // Traditional Chinese
+    'zh-hans': '简体中文',  // Simplified Chinese 
+    'ja': '日本語',         // Japanese
     'pt': 'Português',
     'ptbr': 'Português do Brasil',
     'ca': 'Català',
     'it': 'Italiano',
     'da': 'Dansk',
     'id': 'Indonesia',
-    'uk': 'Українська',
+    'uk': 'Українська',   // Ukrainian
     'ro': 'Română',
-    'no': 'Norsk',
+    'no': 'Norsk',        // Norweigan
     'fil': 'Filipino',
-	'vi': 'Tiếng Việt'
+	'vi': 'Tiếng Việt',   // Vietnamese
+    'ru': 'Русский'       // Russian
 }
 
 oT.lang.setLang = function(lang){

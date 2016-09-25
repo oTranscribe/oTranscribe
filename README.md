@@ -72,6 +72,8 @@ Translations have been provided by the following talented and generous volunteer
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
 *   Brazilian Portuguese: Leonardo Barichello.
 *   Romanian: [Iain Apreotesei](https://github.com/ibriq) and [Catalina Albeanu](https://twitter.com/catalinacma)
+*   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004
+
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
 *   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
