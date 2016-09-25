@@ -37,17 +37,18 @@ export default function(opts) {
     });    
 
     setFormatsMessage( oTinput.getSupportedFormats() );
+    show();
 
 }
 
-function show(formats){
+function setFormatsMessage(formats){
     var text = document.webL10n.get('formats');
     text = text.replace("[xxx]", formats.audio.join('/') );
     text = text.replace("[yyy]", formats.video.join('/') );
     document.getElementById("formats").innerHTML = text;
 }
 
-function hide(){
+function loadPreviousFileDetails(){
     if ( localStorageManager.getItem("oT-lastfile") ) {
         var lastFile = JSON.parse( localStorageManager.getItem("oT-lastfile") );
         var lastfileText = document.webL10n.get('last-file');
@@ -76,7 +77,7 @@ function saveFileDetails(fileDetails){
     localStorageManager.setItem("oT-lastfile", JSON.stringify( obj ));
 }
 
-function loadPreviousFileDetails(){
+function show(){
     $('.topbar').addClass('inputting');
     $('.input').addClass('active');
     $('.sbutton.time').removeClass('active');
@@ -85,7 +86,7 @@ function loadPreviousFileDetails(){
 }
 
 
-function setFormatsMessage(){
+function hide(){
     $('.topbar').removeClass('inputting');
     $('.input').removeClass('active');
     $('.sbutton.time').addClass('active');
