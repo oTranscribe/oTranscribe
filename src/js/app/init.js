@@ -8,16 +8,22 @@ import { watchFormatting, watchWordCount, toggleAbout } from './texteditor';
 import googleDriveSetup from './google';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
+import languageSetup from './languages';
 
 export default function init(){
     // oT.backup.init();
     watchWordCount();
     watchFormatting();
+    languageSetup();
     // oT.timestamp.activate();
     googleDriveSetup();
+    if ( localStorageManager.getItem("lastfile") ) {
+        toggleAbout();
+    }
 }
 
-window.addEventListener('localized', function() {
+// note: this function may run multiple times
+function onLocalized() {
     inputSetup({
         create: function(file) {
             oT.media.create( { file: file } );
@@ -28,22 +34,14 @@ window.addEventListener('localized', function() {
     $('.start')
         .text(startText)
         .addClass('ready')
+        .off()
         .click(toggleAbout);
     
     oldBrowserCheck();
     // oT.input.loadPreviousFileDetails();
-    // $('#curr-lang').text( oT.lang.langs[document.webL10n.getLanguage()] );
+}
 
-}, false);
-
-
-$(document).ready(function(){
-    init();
-    // oT.lang.bide();
-    if ( localStorageManager.getItem("lastfile") ) {
-        toggleAbout();
-    }
-});
+window.addEventListener('localized', onLocalized, false);
 
 $(window).resize(function() {
     if (document.getElementById('media') ) {

@@ -1,6 +1,6 @@
-oT.lang = {};
+const $ = require('jquery');
 
-oT.lang.langs = {
+var languages = {
     'en': 'English',
     'es': 'Español',
     'de': 'Deutsch',
@@ -19,16 +19,15 @@ oT.lang.langs = {
     'uk': 'Українська',
     'ro': 'Română',
     'no': 'Norsk'
-}
+};
 
-oT.lang.setLang = function(lang){
+function setLang(lang){
     if (lang){
         localStorageManager.setItem('oTranscribe-language',lang);
         window.location.reload();
     }
-}
-
-oT.lang.applyLang = function(callback){
+};
+function applyLang(callback){
     var lang = localStorageManager.getItem('oTranscribe-language');
     if(lang) {
         document.webL10n.setLanguage(lang);
@@ -37,36 +36,40 @@ oT.lang.applyLang = function(callback){
     }
 }
 
-oT.lang.togglePanel = function(){
-    $('.language-picker').toggleClass('active');
-    $('.language-title').toggleClass('active');
-}
-
-oT.lang.bide = function(){
+function bide(){
     if (document.webL10n.getReadyState() === 'complete' ) {
-        oT.lang.applyLang();
-        oT.lang.addMarkup();
+        applyLang();
+        addMarkup();
     } else {
         setTimeout(function(){
-            oT.lang.bide();
+            bide();
         },50);
     }
 }
 
-oT.lang.addMarkup = function(){
-    var buttons = Object.keys(oT.lang.langs)
+function addMarkup(){
+    var buttons = Object.keys(languages)
         .sort()
         .map(function(code) {
-            var fullName = oT.lang.langs[code];
+            var fullName = languages[code];
             return '<div class="language-button" data-language="'+code+'">'+fullName+'</div>';
         });
     
     $('.language-picker .container').html( buttons.join(' ') );
     
     $('.language-button').click(function(){
-       oT.lang.setLang( $(this).data('language') ); 
+       setLang( $(this).data('language') ); 
     });
+    
+    $('#curr-lang').text( languages[document.webL10n.getLanguage()] );
+    
+    $('.language-title').mousedown(function(){
+        $('.language-picker').toggleClass('active');
+        $('.language-title').toggleClass('active');
+    });
+        
+    
     
 }
 
-window.oT.lang = oT.lang;
+export default bide;

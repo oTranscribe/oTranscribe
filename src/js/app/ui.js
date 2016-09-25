@@ -59,16 +59,6 @@ var keyboardShortcuts = [
         toggleAbout();
     });
     
-    $('.language-title').mousedown(function(){
-        oT.lang.togglePanel();
-    });
-    
-    $('.about .start').click(function(){
-        if ( $(this).hasClass('ready') ) {
-            toggleAbout();
-        }
-    });
-    
     $('#local-file-import').change(function() {
         oT.import.localButtonReaction(this);
     });        
