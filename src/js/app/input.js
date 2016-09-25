@@ -6,8 +6,8 @@ export default function(opts) {
         element: '.file-input-outer',
         onFileChange: function(file){
             opts.create(file);
-            adjustPlayerWidth();
             saveFileDetails(file.name);
+            hide();
         },
         onFileError: function(err, file){
             var msg = document.webL10n.get('format-warn');
@@ -17,6 +17,7 @@ export default function(opts) {
         onURLSubmit: function(url){
             input.showURLInput();
             opts.create(file);
+            hide();
         },
         onURLError: function(error){
             var msg = document.webL10n.get('youtube-error');

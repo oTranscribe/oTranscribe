@@ -9,6 +9,7 @@ import googleDriveSetup from './google';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
+import Player from './player/player'
 
 export default function init(){
     // oT.backup.init();
@@ -26,7 +27,11 @@ export default function init(){
 function onLocalized() {
     inputSetup({
         create: function(file) {
-            oT.media.create( { file: file } );
+		    let player = new Player({
+		        driver: Player.drivers.HTML5_AUDIO,
+		        source: window.URL.createObjectURL(file)
+		    });
+            // player.play();
         }
     });
     
