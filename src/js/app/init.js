@@ -9,7 +9,8 @@ import googleDriveSetup from './google';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
-import Player from './player/player'
+import Player from './player/player';
+import {bindPlayerToUI} from './ui';
 
 export default function init(){
     // oT.backup.init();
@@ -31,7 +32,7 @@ function onLocalized() {
 		        driver: Player.drivers.HTML5_AUDIO,
 		        source: window.URL.createObjectURL(file)
 		    });
-            // player.play();
+            bindPlayerToUI(player);
         }
     });
     

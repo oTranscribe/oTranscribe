@@ -2,12 +2,93 @@
              User Interaction
 ******************************************/
 
+const $ = require('jquery');
+const Mousetrap = require('mousetrap');
+
+export function bindPlayerToUI(player) {
+    
+    const $playPauseButton = $('.play-pause');
+    
+    var skippingButtonInterval;
+    addKeyboardShortcut(['f1','mod+1'], player.skip.bind(player, 'backwards'));
+    addKeyboardShortcut(['f2','mod+2'], player.skip.bind(player, 'forwards'));
+    
+    $('.skip-backwards').mousedown(function(){
+        player.skip('backwards');
+        skippingButtonInterval = setInterval(function(){
+            player.skip('backwards');
+        },100);
+    }).mouseup(function(){
+        clearInterval(skippingButtonInterval);
+    });
+    $('.skip-forwards').mousedown(function(){
+        player.skip('forwards');    
+        skippingButtonInterval = setInterval(function(){
+            player.skip('forwards');
+        },100);
+    }).mouseup(function(){
+        clearInterval(skippingButtonInterval);
+    });
+    
+    $playPauseButton.click(playPause);
+    addKeyboardShortcut('escape', playPause)
+    
+    let changingSpeed = false;
+    $('.speed-slider')
+        .attr('min',0.5)
+        .attr('max',2)
+        .attr('step',0.25)
+        .on('change', function() {
+            player.setSpeed(this.valueAsNumber);
+        });
+
+    player.onSpeedChange((speed) => {
+        $('.speed-slider').val( speed );            
+    });
+
+    addKeyboardShortcut(['f3','mod+3'], () => {
+        player.speed('down');
+    });
+    addKeyboardShortcut(['f4','mod+4'], () => {
+        player.speed('up');
+    });
+
+    // make speed box sticky if button is clicked
+    $( ".speed" ).mousedown(function() {
+        if ($('.speed-box').not(':hover').length) {
+            $(this).toggleClass('fixed');
+        }    
+    });
+
+    
+    function playPause() {
+        if (player.getStatus() !== 'playing'){
+            player.play();
+            $playPauseButton.addClass('playing');
+        } else {
+            player.pause();
+            $playPauseButton.removeClass('playing');
+        }
+    };
+    
+    function addKeyboardShortcut(key, fn) {
+        Mousetrap.bind(key, function(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                // internet explorer
+                e.returnValue = false;
+            }
+            fn();
+            return false;
+        });
+        
+    }
+}
+
+function oldSetup() {
+
 var keyboardShortcuts = [
-        [ 'escape',      function(){  oT.player.playPause();                         }],
-        [['f1','mod+1'], function(){  oT.player.skip('backwards');                   }],
-        [['f2','mod+2'], function(){  oT.player.skip('forwards');                    }],
-        [['f3','mod+3'], function(){  oT.player.speed('down');                       }],
-        [['f4','mod+4'], function(){  oT.player.speed('up');                         }],
         [ 'mod+j',       function(){  oT.timestamp.insert();                         }],
         [ 'mod+s',       function(){  oT.backup.save();                              }],
         [ 'mod+b',       function(){  document.execCommand('bold',false,null);       }],
@@ -28,32 +109,10 @@ var keyboardShortcuts = [
         });
     });
 
-    var skippingButtonInterval;
-    $('.skip-backwards').mousedown(function(){
-        oT.player.skip('backwards');
-        skippingButtonInterval = setInterval(function(){
-            oT.player.skip('backwards');
-        },100);
-    }).mouseup(function(){
-        clearInterval(skippingButtonInterval);
-    });
-    $('.skip-forwards').mousedown(function(){
-        oT.player.skip('forwards');    
-        skippingButtonInterval = setInterval(function(){
-            oT.player.skip('forwards');
-        },100);
-    }).mouseup(function(){
-        clearInterval(skippingButtonInterval);
-    });
     $('.button.reset').click(function(){
         oT.media.reset({input: true});    
     });
 
-    $( ".speed" ).mousedown(function() {
-        if ($('.speed-box').not(':hover').length) {
-            $(this).toggleClass('fixed');
-        }    
-    });
     
     $('.title').mousedown(function(){
         toggleAbout();
@@ -95,8 +154,7 @@ var keyboardShortcuts = [
         oT.message.close();
     })
     
-
-// End UI
+};
 
 
 

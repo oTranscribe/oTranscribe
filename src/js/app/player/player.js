@@ -18,6 +18,7 @@ methods & properties:
 - getSpeed
 - setSpeed
 - speed
+- onSpeedChange (only supports one callback)
 
 
 */
@@ -105,6 +106,7 @@ class Player{
         } else {
             throw ('Speed is outside the min/max speed bounds')
         }
+        this.onSpeedChangeCallback(speed);
     }
 
     speed(direction){
@@ -117,6 +119,10 @@ class Player{
         } else {
             throw ('Speed requires a direction: up or down')
         }
+    }
+    
+    onSpeedChange(callback) {
+        this.onSpeedChangeCallback = callback;
     }
 
     destroy(){
