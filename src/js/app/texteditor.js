@@ -60,8 +60,6 @@ function countTextbox(){
     var textboxText = textboxElement.innerText || textboxElement.textContent;
     var count = countWords(textboxText);
  
-    document.getElementById('wc').innerHTML = count;
-    
     var wordcountText = document.webL10n.get('wordcount', {n: count});
     document.querySelector('.wc-text').innerHTML = wordcountText;
 }
