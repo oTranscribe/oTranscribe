@@ -73,6 +73,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Brazilian Portuguese: Leonardo Barichello.
 *   Romanian: [Iain Apreotesei](https://github.com/ibriq) and [Catalina Albeanu](https://twitter.com/catalinacma)
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
+*   Swedish: c3ons. 
 *   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 

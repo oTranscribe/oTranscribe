@@ -20,7 +20,8 @@ oT.lang.langs = {
     'ro': 'Română',
     'no': 'Norsk',
     'fil': 'Filipino',
-	'vi': 'Tiếng Việt'
+	'vi': 'Tiếng Việt',
+    'sv': 'Svenska'
 }
 
 oT.lang.setLang = function(lang){
