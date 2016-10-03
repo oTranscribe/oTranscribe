@@ -35,6 +35,8 @@
   "dependencies": {
     "jquery": "^3.1.0",
     "mousetrap": "^1.6.0",
+    "progressor": "git://github.com/ejb/progressor.js.git",
+    "progressor.js": "git://github.com/ejb/progressor.js.git",
     "webl10n": "^1.0.0"
   }
 }

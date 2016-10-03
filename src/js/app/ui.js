@@ -4,6 +4,7 @@
 
 const $ = require('jquery');
 const Mousetrap = require('mousetrap');
+const Progressor = require('progressor.js');
 
 export function bindPlayerToUI(player) {
     
@@ -59,7 +60,13 @@ export function bindPlayerToUI(player) {
             $(this).toggleClass('fixed');
         }    
     });
-
+    
+    var progressBar = new Progressor({
+        media : document.querySelector('audio, video'),
+        bar : document.querySelector('#player-hook'),
+        text : 'Filename TK',                       
+        time : document.querySelector('#player-time')
+    });
     
     function playPause() {
         if (player.getStatus() !== 'playing'){

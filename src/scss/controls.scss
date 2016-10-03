@@ -131,10 +131,10 @@ video#oTplayerEl, iframe#oTplayerEl {
     display: inline-block;
     font-size: 13px;
     padding: 11px 0;
-    width: 80px;
     border-left: 1px solid lighten($dark, 10%);
     border-right: 1px solid lighten($dark, 10%);
     vertical-align: top;
     text-align: right;
-    padding-right: 10px;
+    padding-left: 8px;
+    padding-right: 14px;
 }
