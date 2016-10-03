@@ -130,8 +130,18 @@ class Player{
     }
 };
 
-Player.drivers = {
+const playerDrivers = {
     HTML5_AUDIO: HTML5_AUDIO
 };
 
-export default Player;
+let player = null;
+
+function getPlayer() {
+    return player;
+};
+
+function createPlayer(opts) {
+    player = new Player(opts);
+}
+
+export {createPlayer, getPlayer, playerDrivers};

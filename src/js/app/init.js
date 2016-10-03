@@ -9,7 +9,7 @@ import googleDriveSetup from './google';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
-import Player from './player/player';
+import {createPlayer, playerDrivers} from './player/player';
 import {bindPlayerToUI} from './ui';
 
 export default function init(){
@@ -28,11 +28,11 @@ export default function init(){
 function onLocalized() {
     inputSetup({
         create: function(file) {
-		    let player = new Player({
-		        driver: Player.drivers.HTML5_AUDIO,
+		    createPlayer({
+		        driver: playerDrivers.HTML5_AUDIO,
 		        source: window.URL.createObjectURL(file)
 		    });
-            bindPlayerToUI(player);
+            bindPlayerToUI();
         }
     });
     

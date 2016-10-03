@@ -5,8 +5,11 @@
 const $ = require('jquery');
 const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
+import {getPlayer} from './player/player';
 
-export function bindPlayerToUI(player) {
+export function bindPlayerToUI() {
+    
+    const player = getPlayer();
     
     const $playPauseButton = $('.play-pause');
     
