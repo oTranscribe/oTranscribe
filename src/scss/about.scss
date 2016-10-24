@@ -156,7 +156,9 @@
     .mobile {
         display: none;
     }
-    
+
+    min-height: calc(100vh - 20vh);
+    padding-top: 10%;    
 }
 
 
