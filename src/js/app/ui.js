@@ -12,7 +12,8 @@ var keyboardShortcuts = [
         [ 'mod+s',       function(){  oT.backup.save();                              }],
         [ 'mod+b',       function(){  document.execCommand('bold',false,null);       }],
         [ 'mod+i',       function(){  document.execCommand('italic',false,null);     }],
-        [ 'mod+u',       function(){  document.execCommand('underline',false,null);  }]
+        [ 'mod+u',       function(){  document.execCommand('underline',false,null);  }],
+        [ 'mod+0',       function(){  oT.player.skipTo( oT.timestamp.split("0:00")); }]
     ];
     
     $.each(keyboardShortcuts, function(i,m){
