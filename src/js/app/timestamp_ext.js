@@ -5,8 +5,14 @@
 
 oT.timestamp = {
     split: function(hms){
+        // backwards compatibility, as old timestamps are in the format mm:ss
         var a = hms.split(':');
-        var seconds = (+a[0]) * 60 + (+a[1]); 
+        var seconds = 0;
+        if (a.length == 2) {
+            seconds = (+a[0]) * 60 + (+a[1]);
+        } else {
+            seconds = ((+a[0]) * 60 + (+a[1])) * 60 + (+a[2]);
+        }
         return seconds;
     },
     get: function(){
@@ -15,9 +21,10 @@ oT.timestamp = {
             return false;
         }
         var time = oT.player.getTime();
-        var minutes = Math.floor(time / 60);
-        var seconds = ("0" + Math.floor( time - minutes * 60 ) ).slice(-2);
-        return minutes+":"+seconds;
+        var hours = ("0" + Math.floor(time / 3600)).slice(-2);
+        var minutes = ("0" + Math.floor(time / 60) % 60).slice(-2);
+        var seconds = ("0" + Math.floor( time % 60 )).slice(-2);
+        return hours + ":" + minutes + ":" + seconds;
     },
     insert: function(){
         var time = oT.timestamp.get();
