@@ -24,6 +24,9 @@ oT.timestamp = {
         var hours = ("0" + Math.floor(time / 3600)).slice(-2);
         var minutes = ("0" + Math.floor(time / 60) % 60).slice(-2);
         var seconds = ("0" + Math.floor( time % 60 )).slice(-2);
+        if (hours === '00') {
+            return minutes + ":" + seconds;
+        }
         return hours + ":" + minutes + ":" + seconds;
     },
     insert: function(){
