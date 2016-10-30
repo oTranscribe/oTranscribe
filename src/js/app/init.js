@@ -11,13 +11,19 @@ import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
 import {createPlayer, playerDrivers} from './player/player';
 import {bindPlayerToUI} from './ui';
+import { activateTimestamps, insertTimestamp } from './timestamps';
 
 export default function init(){
     // oT.backup.init();
     watchWordCount();
     watchFormatting();
     languageSetup();
-    // oT.timestamp.activate();
+    activateTimestamps();
+
+    // this is necessary due to execCommand restrictions
+    // see: http://stackoverflow.com/a/33321235
+    window.insertTimestamp = insertTimestamp;
+
     googleDriveSetup();
     if ( localStorageManager.getItem("lastfile") ) {
         toggleAbout();
