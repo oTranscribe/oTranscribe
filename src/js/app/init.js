@@ -9,8 +9,8 @@ import googleDriveSetup from './google';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
-import {createPlayer, playerDrivers} from './player/player';
-import {bindPlayerToUI} from './ui';
+import { createPlayer, playerDrivers, getPlayer } from './player/player';
+import { bindPlayerToUI } from './ui';
 import { activateTimestamps, insertTimestamp } from './timestamps';
 import { initBackup } from './backup';
 
@@ -33,7 +33,7 @@ export default function init(){
 
 // note: this function may run multiple times
 function onLocalized() {
-    inputSetup({
+    const resetInput = inputSetup({
         create: function(file) {
 		    createPlayer({
 		        driver: playerDrivers.HTML5_AUDIO,
@@ -49,6 +49,14 @@ function onLocalized() {
         .addClass('ready')
         .off()
         .click(toggleAbout);
+    
+    $('.reset').off().on('click', () => {
+        const player = getPlayer();
+        resetInput();
+        if (player) {
+            player.destroy();
+        }
+    });
     
     oldBrowserCheck();
     // oT.input.loadPreviousFileDetails();

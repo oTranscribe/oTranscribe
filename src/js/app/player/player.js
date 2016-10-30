@@ -126,7 +126,10 @@ class Player{
     }
 
     destroy(){
-    	this.driver.destroy();
+        if (this.driver) {
+            this.pause();
+        	this.driver.destroy();
+        }
     }
 };
 

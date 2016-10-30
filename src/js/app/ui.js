@@ -63,10 +63,12 @@ export function bindPlayerToUI(filename = '') {
             $(this).toggleClass('fixed');
         }    
     });
-    
+
+    const playerHook = document.querySelector('#player-hook');
+    playerHook.innerHTML = '';
     var progressBar = new Progressor({
         media : document.querySelector('audio, video'),
-        bar : document.querySelector('#player-hook'),
+        bar : playerHook,
         text : filename,                       
         time : document.querySelector('#player-time')
     });
@@ -118,11 +120,6 @@ var keyboardShortcuts = [
             return false;
         });
     });
-
-    $('.button.reset').click(function(){
-        oT.media.reset({input: true});    
-    });
-
     
     $('.title').mousedown(function(){
         toggleAbout();

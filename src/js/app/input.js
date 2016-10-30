@@ -39,6 +39,11 @@ export default function(opts) {
 
     setFormatsMessage( oTinput.getSupportedFormats() );
     show();
+    
+    return function reset() {
+        loadPreviousFileDetails();
+        show();
+    }
 
 }
 
