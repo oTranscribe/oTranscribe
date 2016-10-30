@@ -7,7 +7,7 @@ const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
 import {getPlayer} from './player/player';
 
-export function bindPlayerToUI() {
+export function bindPlayerToUI(filename = '') {
     
     const player = getPlayer();
     
@@ -67,7 +67,7 @@ export function bindPlayerToUI() {
     var progressBar = new Progressor({
         media : document.querySelector('audio, video'),
         bar : document.querySelector('#player-hook'),
-        text : 'Filename TK',                       
+        text : filename,                       
         time : document.querySelector('#player-time')
     });
     

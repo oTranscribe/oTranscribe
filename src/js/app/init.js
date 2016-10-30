@@ -32,7 +32,7 @@ function onLocalized() {
 		        driver: playerDrivers.HTML5_AUDIO,
 		        source: window.URL.createObjectURL(file)
 		    });
-            bindPlayerToUI();
+            bindPlayerToUI(file.name);
         }
     });
     
