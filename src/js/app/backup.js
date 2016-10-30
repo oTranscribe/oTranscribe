@@ -1,3 +1,63 @@
+const localStorageManager = require('local-storage-manager');
+
+function init(){
+    localStorageManager.onFull = function(){
+        var backupClearMessage = document.webL10n.get('backup-clear');
+        // oT.message.header( backupClearMessage );
+    }
+    // localStorageManager.onSaveFailure = warnAboutBackupFailure;
+    migrateToLocalStorageManager();
+    autosaveInit();
+    setInterval(function(){
+        // oT.backup.save();
+    },300000 /* 5 minutes */);
+}
+
+// original autosave function
+function autosaveInit(){
+    var field = document.querySelector("#textbox");
+    
+    // load existing autosave (if present)
+    if ( localStorageManager.getItem("autosave")) {        
+       field.innerHTML = localStorageManager.getItem("autosave");
+    }
+    // autosave every second - but wait five seconds before kicking in
+    setTimeout(function(){
+        // prevent l10n from replacing user text
+        const markupWithL10nData = Array.from(
+            field.querySelectorAll('p[data-l10n-id]')
+        );
+        markupWithL10nData.forEach(el => {
+            el.removeAttribute('data-l10n-id');
+        });
+        setInterval(function(){
+           localStorageManager.setItem("autosave", field.innerHTML);
+        }, 1000);
+    }, 5000);
+}
+
+
+function migrateToLocalStorageManager(){
+    // May 2015 - migration to localStorageManager
+    if ( localStorage.getItem("autosave")) {        
+       localStorageManager.setItem("autosave", localStorage.getItem("autosave") );
+    }
+    var backupList = [];
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.indexOf('oTranscribe-backup') === 0) {
+            var item = {
+                value: localStorage.getItem( key ),
+                timestamp: key.split('-')[2]
+            };
+            localStorage.setItem( 'localStorageManager_'+key, JSON.stringify(item) );
+            localStorage.removeItem( key );
+        }
+    }
+}
+
+/*
+
 oT.backup = {};
 
 oT.backup.openPanel = function(){
@@ -60,7 +120,7 @@ oT.backup.formatDate = function(timestamp){
 
 oT.backup.populatePanel = function(){
     oT.backup.addDocsToPanel(0,8);
-    if (oT.backup.list().length === 0) {
+    if (listFiles().length === 0) {
         var noBackupsText = document.webL10n.get('no-backups');
         $('.backup-window').append( '<div class="no-backups">'+noBackupsText+'</div>' );
     }
@@ -68,7 +128,7 @@ oT.backup.populatePanel = function(){
 
 oT.backup.addDocsToPanel = function(start,end){
     $('.more-backups').remove();
-    var allDocs = oT.backup.list();
+    var allDocs = listFiles();
     docs = allDocs.slice(start,end);
     for (var i = 0; i < docs.length; i++) {
         $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
@@ -103,7 +163,7 @@ oT.backup.save = function(){
 }
 
 oT.backup.trimToOneHundred = function(){
-    var backups = oT.backup.list();
+    var backups = listFiles();
     if (backups.length < 100) {
         return;
     }
@@ -114,29 +174,16 @@ oT.backup.trimToOneHundred = function(){
     }
 }
 
-oT.backup.init = function(){
-    localStorageManager.onFull = function(){
-        var backupClearMessage = document.webL10n.get('backup-clear');
-        oT.message.header( backupClearMessage );
-    }
-    localStorageManager.onSaveFailure = oT.backup.warning;
-    oT.backup.migrate();
-    oT.backup.autosaveInit();
-    setInterval(function(){
-        oT.backup.save();
-    },300000 /* 5 minutes */);
-}
-
-oT.backup.notYetWarned = true;
-oT.backup.warning = function(){
+let notYetWarned = true;
+function warnAboutBackupFailure(){
     var backupWarningMessage = document.webL10n.get('backup-error');
-    if (oT.backup.notYetWarned === true) {
+    if (notYetWarned === true) {
         oT.message.header( backupWarningMessage );
-        oT.backup.notYetWarned = false;
+        notYetWarned = false;
     }
 }
 
-oT.backup.list = function(){
+function listFiles(){
     var result = [];
     var ls = localStorageManager.getArray();
     for (var i = 0; i < ls.length; i++) {
@@ -160,39 +207,6 @@ oT.backup.restore = function(timestamp){
     oT.backup.closePanel();
 }
 
-oT.backup.migrate = function(){
-    // May 2015 - migration to localStorageManager
-    if ( localStorage.getItem("autosave")) {        
-       localStorageManager.setItem("autosave", localStorage.getItem("autosave") );
-    }
-    var backupList = [];
-    for (var i = 0; i < localStorage.length; i++) {
-        var key = localStorage.key(i);
-        if (key.indexOf('oTranscribe-backup') === 0) {
-            var item = {
-                value: localStorage.getItem( key ),
-                timestamp: key.split('-')[2]
-            };
-            localStorage.setItem( 'localStorageManager_'+key, JSON.stringify(item) );
-            localStorage.removeItem( key );
-        }
-    }
-}
+*/
 
-// original autosave function
-oT.backup.autosaveInit = function(){
-    var field = document.getElementById("textbox");
-    
-    // load existing autosave (if present)
-    if ( localStorageManager.getItem("autosave")) {        
-       field.innerHTML = localStorageManager.getItem("autosave");
-    }
-    // autosave every second - but wait five seconds before kicking in
-    setTimeout(function(){
-        // prevent l10n from replacing user text
-        $('#textbox p[data-l10n-id]').attr('data-l10n-id','');
-        setInterval(function(){
-           localStorageManager.setItem("autosave", field.innerHTML);
-        }, 1000);
-    }, 5000);
-}
+export { init as initBackup };

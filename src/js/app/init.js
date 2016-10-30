@@ -12,9 +12,10 @@ import languageSetup from './languages';
 import {createPlayer, playerDrivers} from './player/player';
 import {bindPlayerToUI} from './ui';
 import { activateTimestamps, insertTimestamp } from './timestamps';
+import { initBackup } from './backup';
 
 export default function init(){
-    // oT.backup.init();
+    initBackup();
     watchWordCount();
     watchFormatting();
     languageSetup();
