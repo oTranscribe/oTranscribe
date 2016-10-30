@@ -83,6 +83,6 @@ function initWatchFormatting(){
 
 export {
     initWatchFormatting as watchFormatting,
-    countTextbox as watchWordCount,
+    initWordCount as watchWordCount,
     toggleAbout as toggleAbout
 };
