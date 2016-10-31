@@ -30,14 +30,15 @@
     "webpack-dev-server": "^2.0.0-beta"
   },
   "scripts": {
-    "build": "rm -rf ./dist && mkdir ./dist && awk 'FNR==1{print \"\"}1' src/l10n/*.ini > dist/data.ini && ./node_modules/webpack/bin/webpack.js --watch -p"
+    "build": "make build"
   },
   "dependencies": {
+    "jakecache": "^1.0.0",
     "jquery": "^3.1.0",
+    "local-storage-manager": "git://github.com/ejb/localStorageManager.git",
     "mousetrap": "^1.6.0",
     "progressor": "git://github.com/ejb/progressor.js.git",
     "progressor.js": "git://github.com/ejb/progressor.js.git",
-    "local-storage-manager": "git://github.com/ejb/localStorageManager.git",
     "webl10n": "^1.0.0"
   }
 }

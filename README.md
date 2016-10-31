@@ -27,7 +27,7 @@ The `src` folder in this repository only includes the "raw" JavaScript and CSS. 
 
 - Install [Node.js and NPM](https://nodejs.org).
 - Run `npm install` to install dependencies
-- Run `npm run start` to compile the `dist` folder
+- Run `make build` to compile the `dist` folder
 
 ### OTR file format
 

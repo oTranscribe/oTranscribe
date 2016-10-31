@@ -9,7 +9,7 @@ module.exports = {
   },
   output: { // Transpiled and bundled output gets put in `build/bundle.js`.
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'   // Really, you want to upload index.html and assets/bundle.js
+    filename: 'bundle.js'   // Really, you want to upload index.htm and assets/bundle.js
   },
 
   // This makes it easier to debug scripts by listing line number of whichever file
@@ -56,7 +56,7 @@ module.exports = {
           }
       ]),
       new HtmlWebpackPlugin({
-          template: 'html?interpolate&attrs=img:data-src!./src/index.html'
+          template: 'html?interpolate&attrs=img:data-src!./src/index.htm'
       })
   ]
 };

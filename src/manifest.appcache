@@ -1,9 +1,8 @@
 CACHE MANIFEST
-# Updated [timestamp goes here]
  
 index.html
 style.css
-script.js
+bundle.js
 l10n.js
 data.ini
 help/index.html
