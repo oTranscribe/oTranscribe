@@ -5,7 +5,8 @@
 const $ = require('jquery');
 const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
-import {getPlayer} from './player/player';
+import { getPlayer } from './player/player';
+import { insertTimestamp } from './timestamps';
 
 export function bindPlayerToUI(filename = '') {
     
@@ -83,29 +84,33 @@ export function bindPlayerToUI(filename = '') {
         }
     };
     
-    function addKeyboardShortcut(key, fn) {
-        Mousetrap.bind(key, function(e) {
-            if (e.preventDefault) {
-                e.preventDefault();
-            } else {
-                // internet explorer
-                e.returnValue = false;
-            }
-            fn();
-            return false;
-        });
-        
-    }
+}
+
+function addKeyboardShortcut(key, fn) {
+    Mousetrap.bind(key, function(e) {
+        if (e.preventDefault) {
+            e.preventDefault();
+        } else {
+            // internet explorer
+            e.returnValue = false;
+        }
+        fn();
+        return false;
+    });
+    
+}
+
+export function keyboardShortcutSetup() {
+    addKeyboardShortcut( 'mod+b', () => document.execCommand('bold',false,null)       );
+    addKeyboardShortcut( 'mod+i', () => document.execCommand('italic',false,null)     );
+    addKeyboardShortcut( 'mod+u', () => document.execCommand('underline',false,null)  );
+    addKeyboardShortcut( 'mod+j', () => insertTimestamp()                             );
 }
 
 function oldSetup() {
 
-var keyboardShortcuts = [
-        [ 'mod+j',       function(){  oT.timestamp.insert();                         }],
-        [ 'mod+s',       function(){  oT.backup.save();                              }],
-        [ 'mod+b',       function(){  document.execCommand('bold',false,null);       }],
-        [ 'mod+i',       function(){  document.execCommand('italic',false,null);     }],
-        [ 'mod+u',       function(){  document.execCommand('underline',false,null);  }]
+    var keyboardShortcuts = [
+        [ 'mod+s',       function(){  oT.backup.save();                              }]
     ];
     
     $.each(keyboardShortcuts, function(i,m){
@@ -120,11 +125,7 @@ var keyboardShortcuts = [
             return false;
         });
     });
-    
-    $('.title').mousedown(function(){
-        toggleAbout();
-    });
-    
+        
     $('#local-file-import').change(function() {
         oT.import.localButtonReaction(this);
     });        

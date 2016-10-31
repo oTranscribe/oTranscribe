@@ -10,7 +10,7 @@ import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
 import { createPlayer, playerDrivers, getPlayer } from './player/player';
-import { bindPlayerToUI } from './ui';
+import { bindPlayerToUI, keyboardShortcutSetup } from './ui';
 import { activateTimestamps, insertTimestamp } from './timestamps';
 import { initBackup } from './backup';
 
@@ -24,11 +24,14 @@ export default function init(){
     // this is necessary due to execCommand restrictions
     // see: http://stackoverflow.com/a/33321235
     window.insertTimestamp = insertTimestamp;
+    
+    keyboardShortcutSetup();
 
     googleDriveSetup();
     if ( localStorageManager.getItem("lastfile") ) {
         toggleAbout();
     }
+    $('.title').mousedown(toggleAbout);
 }
 
 // note: this function may run multiple times
@@ -45,7 +48,6 @@ function onLocalized() {
     
     var startText = document.webL10n.get('start-ready');
     $('.start')
-        .text(startText)
         .addClass('ready')
         .off()
         .click(toggleAbout);
