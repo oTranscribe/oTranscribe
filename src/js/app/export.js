@@ -1,77 +1,111 @@
+const $ = require('jquery');
+$.htmlClean = p => p;
+const toMarkdown = require('to-markdown');
+
+
 /******************************************
                  Export
 ******************************************/
 
-oT.export = {};
+let exportFormats = {
+    download: [],
+    send: []
+};
 
-oT.export.asFormat = function( format ){
-    if (format === 'md') {
-        var p = document.getElementById('textbox').innerHTML;
-        var clean = $.htmlClean(p, {format:true, removeTags: ["div", "span", "img", "pre", "text"]});
+exportFormats.download.push({
+    name: 'Markdown',
+    extension: 'md',
+    fn: (txt) => {
+        var clean = $.htmlClean(txt, {format:true, removeTags: ["div", "span", "img", "pre", "text"]});
         var x = toMarkdown( clean );   
         return x.replace(/\t/gm,"");           
-    } else if (format === 'txt') {
-        var p = document.getElementById('textbox').innerHTML;
-        var clean = $.htmlClean(p, {format:true, removeTags:["div", "span", "img", "em", "strong", "p", "pre", "text"]});
+    }
+});
+
+exportFormats.download.push({
+    name: 'Plain text',
+    extension: 'txt',
+    fn: (txt) => {
+        var clean = $.htmlClean(txt, {format:true, removeTags:["div", "span", "img", "em", "strong", "p", "pre", "text"]});
         return clean.replace(/\t/gm,"");
-    } else if (format === 'html') {
-        var p = document.getElementById('textbox').innerHTML;
-        return p.replace('\n','');
     }
+});
+
+/*
+exportFormats.download.push({
+    name: 'oTranscribe format',
+    extension: 'otr',
+    fn: (txt) => {
+        let result = {};
+        result.text = txt.replace('\n','');
+        if (oT.player !== null){
+            result.media = oT.player.title;
+            if (oT.player.getTime) {
+                result['media-time'] = oT.player.getTime();
+            }
+            if (oT.media.ytEl) {
+                result['media-source'] = oT.media._ytEl.getVideoUrl();
+            } else {
+                result['media-source'] = '';
+            }
+        } else {
+            result.media = '';
+            result['media-source'] = '';
+            result['media-time'] = '';
+        }
+        const doc = JSON.stringify(result);
+        return "data:text/plain;base64," + exportText.utf8_to_b64( doc );
+    }
+});
+*/
+
+function generateDownloadButtons() {
+    return exportFormats.download.map(format => {
+        const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
+        const raw = document.querySelector('#textbox').innerHTML;
+        const file = format.fn(raw);
+        const href = "data:text/plain;base64," + window.btoa(unescape(encodeURIComponent( file )));
+        return `<a class="export-block-md" target="_blank" href="${href}" download="${fileName}.${format.extension}">${format.name} (.${format.extension})</a>`;
+    }).join('');
+
+    
 }
 
-oT.export.placeButton = function ( format ){
-    if (format === 'otr') {
-        var doc = oT.export.createJsonFile();
-        var a = document.getElementById('x-otr');
-        a.download = exportText.name() + ".otr";
-        a.href = "data:text/plain;base64," + exportText.utf8_to_b64( doc );
-    }
-}
-
-var exportText = {
-    utf8_to_b64 : function( str ) {
-        return window.btoa(unescape(encodeURIComponent( str )));
-    },
-    // element choose element to append button to
-    mdButton : function(element) {
-        var md = oT.export.asFormat('md');
-        var a = document.getElementById('x-md');
-        a.download = exportText.name() + ".md";
-        a.href = "data:text/plain;base64," + exportText.utf8_to_b64( md );
-    },
-    txtButton : function(element) {
-        var txt = oT.export.asFormat('txt');
-        var a = document.getElementById('x-txt');
-        a.download = exportText.name() + ".txt";
-        a.href = "data:text/plain;base64," + exportText.utf8_to_b64( txt );
-    },
-    name : function(){
-        var d = new Date();
-        var fileName = document.webL10n.get('file-name');
-        return fileName + " " + d.toUTCString();
-    }
-}
-
-
-function placeExportPanel(){
-    exportText.mdButton();
-    exportText.txtButton();
-    oT.export.placeButton('otr');
-    gd.handleClientLoad();
+export function exportSetup(){
+    // gd.handleClientLoad();
         
-    var origin = $('#icon-exp').offset();
-    var right = parseInt( $('body').width() - origin.left + 25 );
-    var top = parseInt( origin.top ) - 50;
-    $('.export-panel')
-        .css({'right': right,'top': top})
-        .addClass('active'); 
+    $('.sbutton.export').click(function() {
+        // document.querySelector('.container').innerHTML = downloadButtons;
+        var origin = $('#icon-exp').offset();
+        var right = parseInt( $('body').width() - origin.left + 25 );
+        var top = parseInt( origin.top ) - 50;
+        
+        const downloadButtons = generateDownloadButtons();
+        const exportPanelHTML = `
+        <div class="export-title" data-l10n-id="export-download">Download transcript as...</div>
+        ${downloadButtons}
+        <div class="export-title" data-l10n-id="export-send">Send transcript to...</div>
+        <a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">
+            Google Drive
+            <div class="sign-in" data-l10n-id="sign-in" id="x-gd-sign">Sign in</div>
+        </a>`;
+    
+        
+        $('.export-panel')
+            .html(exportPanelHTML)
+            .css({'right': right,'top': top})
+            .addClass('active'); 
+        
+    })
 }
 
 function hideExportPanel(){
     $('.export-panel').removeClass('active');
     $('.export-block-gd')[0].outerHTML = gd.button();
 }
+
+/*
+// GOOGLE DRIVE EXPORT STUFF
 
 exportText.createBlob = function(){
     var p = document.getElementById('textbox').innerHTML;
@@ -86,25 +120,6 @@ exportText.reader= function(){
     reader.readAsBinaryString(blob);
     return reader;
 }
+*/
 
 
-oT.export.createJsonFile = function(){
-    var result = {};
-    result.text = oT.export.asFormat('html');
-    if (oT.player !== null){
-        result.media = oT.player.title;
-        if (oT.player.getTime) {
-            result['media-time'] = oT.player.getTime();
-        }
-        if (oT.media.ytEl) {
-            result['media-source'] = oT.media._ytEl.getVideoUrl();
-        } else {
-            result['media-source'] = '';
-        }
-    } else {
-        result.media = '';
-        result['media-source'] = '';
-        result['media-time'] = '';
-    }
-    return JSON.stringify(result);
-};

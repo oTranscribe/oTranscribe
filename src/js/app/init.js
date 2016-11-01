@@ -13,6 +13,7 @@ import { createPlayer, playerDrivers, getPlayer } from './player/player';
 import { bindPlayerToUI, keyboardShortcutSetup } from './ui';
 import { activateTimestamps, insertTimestamp } from './timestamps';
 import { initBackup } from './backup';
+import { exportSetup } from './export';
 
 export default function init(){
     initBackup();
@@ -20,6 +21,7 @@ export default function init(){
     watchFormatting();
     languageSetup();
     activateTimestamps();
+    exportSetup();
 
     // this is necessary due to execCommand restrictions
     // see: http://stackoverflow.com/a/33321235
