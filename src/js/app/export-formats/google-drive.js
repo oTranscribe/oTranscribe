@@ -1,5 +1,6 @@
+const $ = require('jquery');
 
-export default function() {
+export default function({filename}) {
     
     var gd = {
         CLIENT_ID : '219206830455.apps.googleusercontent.com',
@@ -10,25 +11,24 @@ export default function() {
     // Called during startup to prevent blocking
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "https://apis.google.com/js/client.js?onload=gd.handleClientLoad";
+    script.src = "https://apis.google.com/js/client.js?onload=window.googleDriveStartLoad";
     document.body.appendChild(script);
-
 
     /**
      * Called when the client library is loaded to start the auth flow.
      */
-    gd.handleClientLoad = function() {
-      window.setTimeout(gd.checkAuth, 1);
+    window.googleDriveStartLoad = function() {
+      window.setTimeout(checkAuth, 1);
     }
 
     /**
      * Check if the current user has authorized the application.
      */
-    gd.checkAuth = function() {
+    function checkAuth() {
         try {
             gapi.auth.authorize(
                 {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
-                gd.handleAuthResult);
+                handleAuthResult);
         } catch(e) {
             $('.export-block-gd').css({
                 'opacity': 0.5,
@@ -42,7 +42,8 @@ export default function() {
      *
      * @param {Object} authResult Authorization result.
      */
-    gd.handleAuthResult = function(authResult) {
+    function handleAuthResult(authResult) {
+        debugger;
       if (authResult && !authResult.error) {
         // Access token has been successfully retrieved, requests can be sent to the API.
         gd.updateButton("Google Drive",true,"javascript:insertGoogleDriveFile();");
@@ -81,6 +82,20 @@ export default function() {
         insertFile(file);
       });
     }
+    
+    const createBlob = function(){
+        var p = document.getElementById('textbox').innerHTML;
+        var aFileParts = [p];
+        var oBlob = new Blob(aFileParts, {type : 'text/html'}); // the blob
+        return oBlob;
+    }
+    
+    const createReader = function(){
+        var reader = new FileReader();
+        var blob = createBlob();
+        reader.readAsBinaryString(blob);
+        return reader;
+    }
 
     /**
      * Insert new file.
@@ -96,12 +111,12 @@ export default function() {
       const delimiter = "\r\n--" + boundary + "\r\n";
       const close_delim = "\r\n--" + boundary + "--";
 
-      var reader = exportText.reader();
+      var reader = createReader();
       reader.onload = function(e) {
         var contentType = 'text/html';
         var metadata = {
-          'title': exportText.name(),
-          'mimeType': 'text/html'
+            'title': filename,
+            'mimeType': 'text/html'
         };
 
         var base64Data = btoa(reader.result);
@@ -133,5 +148,7 @@ export default function() {
         request.execute(callback);
       }
     }
+    
+    return checkAuth;
 }
 

@@ -3,6 +3,7 @@ const Mustache = require('mustache');
 $.htmlClean = p => p;
 const toMarkdown = require('to-markdown');
 const template = require('raw!../../html/export-panel.ms');
+import googleDriveSetup from './export-formats/google-drive';
 
 
 /******************************************
@@ -61,10 +62,9 @@ exportFormats.download.push({
 });
 */
 
-function generateButtons() {
+function generateButtons(fileName) {
   
     const downloadData = exportFormats.download.map(format => {
-        const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
         const raw = document.querySelector('#textbox').innerHTML;
         const file = format.fn(raw);
         const href = "data:text/plain;base64," + window.btoa(unescape(encodeURIComponent( file )));
@@ -83,7 +83,8 @@ function generateButtons() {
 }
 
 export function exportSetup(){
-    // gd.handleClientLoad();
+    const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
+    const checkGoogleAuth = googleDriveSetup(fileName);
         
     $('.sbutton.export').click(function() {
         // document.querySelector('.container').innerHTML = downloadButtons;
@@ -91,13 +92,14 @@ export function exportSetup(){
         var right = parseInt( $('body').width() - origin.left + 25 );
         var top = parseInt( origin.top ) - 50;
         
-        const exportPanelHTML = generateButtons();
+        const exportPanelHTML = generateButtons(fileName);
         
         $('.export-panel')
             .html(exportPanelHTML)
             .css({'right': right,'top': top})
             .addClass('active'); 
         
+        checkGoogleAuth();
     })
 }
 
@@ -105,23 +107,3 @@ function hideExportPanel(){
     $('.export-panel').removeClass('active');
     $('.export-block-gd')[0].outerHTML = gd.button();
 }
-
-/*
-// GOOGLE DRIVE EXPORT STUFF
-
-exportText.createBlob = function(){
-    var p = document.getElementById('textbox').innerHTML;
-    var aFileParts = [p];
-    var oBlob = new Blob(aFileParts, {type : 'text/html'}); // the blob
-    return oBlob;
-}
-
-exportText.reader= function(){
-    var reader = new FileReader();
-    var blob = exportText.createBlob();
-    reader.readAsBinaryString(blob);
-    return reader;
-}
-*/
-
-

@@ -5,7 +5,6 @@
 const $ = require('jquery');
 
 import { watchFormatting, watchWordCount, toggleAbout } from './texteditor';
-import googleDriveSetup from './google';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
@@ -29,7 +28,6 @@ export default function init(){
     
     keyboardShortcutSetup();
 
-    googleDriveSetup();
     if ( localStorageManager.getItem("lastfile") ) {
         toggleAbout();
     }
