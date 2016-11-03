@@ -37,6 +37,7 @@
     "jquery": "^3.1.0",
     "local-storage-manager": "git://github.com/ejb/localStorageManager.git",
     "mousetrap": "^1.6.0",
+    "mustache": "^2.2.1",
     "progressor": "git://github.com/ejb/progressor.js.git",
     "progressor.js": "git://github.com/ejb/progressor.js.git",
     "to-markdown": "^3.0.3",

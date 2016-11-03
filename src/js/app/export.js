@@ -1,6 +1,8 @@
 const $ = require('jquery');
+const Mustache = require('mustache');
 $.htmlClean = p => p;
 const toMarkdown = require('to-markdown');
+const template = require('raw!../../html/export-panel.ms');
 
 
 /******************************************
@@ -59,15 +61,24 @@ exportFormats.download.push({
 });
 */
 
-function generateDownloadButtons() {
-    return exportFormats.download.map(format => {
+function generateButtons() {
+  
+    const downloadData = exportFormats.download.map(format => {
         const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
         const raw = document.querySelector('#textbox').innerHTML;
         const file = format.fn(raw);
         const href = "data:text/plain;base64," + window.btoa(unescape(encodeURIComponent( file )));
-        return `<a class="export-block-md" target="_blank" href="${href}" download="${fileName}.${format.extension}">${format.name} (.${format.extension})</a>`;
-    }).join('');
-
+        return {
+            format: format,
+            file: format.fn(raw),
+            href: href,
+            fileName: fileName
+        };
+    })
+  
+    return Mustache.render(template, {
+        downloads: downloadData
+    });
     
 }
 
@@ -80,16 +91,7 @@ export function exportSetup(){
         var right = parseInt( $('body').width() - origin.left + 25 );
         var top = parseInt( origin.top ) - 50;
         
-        const downloadButtons = generateDownloadButtons();
-        const exportPanelHTML = `
-        <div class="export-title" data-l10n-id="export-download">Download transcript as...</div>
-        ${downloadButtons}
-        <div class="export-title" data-l10n-id="export-send">Send transcript to...</div>
-        <a class="export-block-gd unauth" id="x-gd" target="_blank" href="javascript:void(0);">
-            Google Drive
-            <div class="sign-in" data-l10n-id="sign-in" id="x-gd-sign">Sign in</div>
-        </a>`;
-    
+        const exportPanelHTML = generateButtons();
         
         $('.export-panel')
             .html(exportPanelHTML)
