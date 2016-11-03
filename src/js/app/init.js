@@ -40,7 +40,8 @@ function onLocalized() {
         create: function(file) {
 		    createPlayer({
 		        driver: playerDrivers.HTML5_AUDIO,
-		        source: window.URL.createObjectURL(file)
+		        source: window.URL.createObjectURL(file),
+                name: file.name
 		    });
             bindPlayerToUI(file.name);
         }

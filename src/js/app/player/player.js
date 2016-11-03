@@ -41,6 +41,9 @@ class Player{
 	    this.speedIncrement = 0.25;
 	    this.minSpeed = 0.5;
 	    this.maxSpeed = 2;
+        if (opts.name) {
+            this.name = opts.name;
+        }
 
 	    let attempts = 0;
 		let driver = this.driver;
@@ -123,6 +126,17 @@ class Player{
     
     onSpeedChange(callback) {
         this.onSpeedChangeCallback = callback;
+    }
+    
+    getName() {
+        if (this.driver.getName) {
+            return this.driver.getName();;
+        }
+        return this.name || '';
+    }
+
+    getTitle() {
+        return getName();
     }
 
     destroy(){

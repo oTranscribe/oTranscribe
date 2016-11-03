@@ -4,6 +4,7 @@ $.htmlClean = p => p;
 const toMarkdown = require('to-markdown');
 const template = require('raw!../../html/export-panel.ms');
 import googleDriveSetup from './export-formats/google-drive';
+import { getPlayer } from './player/player';
 
 
 /******************************************
@@ -34,33 +35,29 @@ exportFormats.download.push({
     }
 });
 
-/*
 exportFormats.download.push({
     name: 'oTranscribe format',
     extension: 'otr',
     fn: (txt) => {
         let result = {};
         result.text = txt.replace('\n','');
-        if (oT.player !== null){
-            result.media = oT.player.title;
-            if (oT.player.getTime) {
-                result['media-time'] = oT.player.getTime();
-            }
-            if (oT.media.ytEl) {
-                result['media-source'] = oT.media._ytEl.getVideoUrl();
-            } else {
-                result['media-source'] = '';
-            }
+        const player = getPlayer();
+        if (player){
+            result.media = player.getName();
+            result['media-time'] = player.getTime();
+            // if (oT.media.ytEl) {
+            //     result['media-source'] = oT.media._ytEl.getVideoUrl();
+            // } else {
+            //     result['media-source'] = '';
+            // }
         } else {
             result.media = '';
             result['media-source'] = '';
             result['media-time'] = '';
         }
-        const doc = JSON.stringify(result);
-        return "data:text/plain;base64," + exportText.utf8_to_b64( doc );
+        return JSON.stringify(result);
     }
 });
-*/
 
 function generateButtons(fileName) {
   
