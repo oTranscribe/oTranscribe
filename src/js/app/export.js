@@ -1,15 +1,30 @@
 const $ = require('jquery');
 const Mustache = require('mustache');
-$.htmlClean = p => p;
 const toMarkdown = require('to-markdown');
 const template = require('raw!../../html/export-panel.ms');
+const sanitizeHtml = require('sanitize-html');
 import googleDriveSetup from './export-formats/google-drive';
 import { getPlayer } from './player/player';
 
+function cleanHTML(dirty) {
+    return sanitizeHtml(dirty, {
+        allowedTags: [ 'b', 'i', 'em', 'strong', 'a', 'p', 'span' ],
+        transformTags: {
+            'div': sanitizeHtml.simpleTransform('p'),
+        },
+        allowedAttributes: {
+            'span': [ 'class', 'data-timestamp', 'contentEditable' ]
+        }
+    });
+};
 
-/******************************************
-                 Export
-******************************************/
+function getTexteditorContents() {
+    return document.querySelector('#textbox').innerHTML;
+}
+
+function getFilename() {
+    return document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
+}
 
 let exportFormats = {
     download: [],
@@ -20,9 +35,11 @@ exportFormats.download.push({
     name: 'Markdown',
     extension: 'md',
     fn: (txt) => {
-        var clean = $.htmlClean(txt, {format:true, removeTags: ["div", "span", "img", "pre", "text"]});
-        var x = toMarkdown( clean );   
-        return x.replace(/\t/gm,"");           
+        const fullyClean = sanitizeHtml(txt, {
+            allowedTags: [ 'p', 'em', 'strong', 'i' ]
+        });
+        const md = toMarkdown( cleanHTML(fullyClean) );
+        return md.replace(/\t/gm,"");           
     }
 });
 
@@ -30,8 +47,11 @@ exportFormats.download.push({
     name: 'Plain text',
     extension: 'txt',
     fn: (txt) => {
-        var clean = $.htmlClean(txt, {format:true, removeTags:["div", "span", "img", "em", "strong", "p", "pre", "text"]});
-        return clean.replace(/\t/gm,"");
+        const fullyClean = sanitizeHtml(txt, {
+            allowedTags: [ 'p' ]
+        });
+        const md = toMarkdown( fullyClean );
+        return md.replace(/\t/gm,"");           
     }
 });
 
@@ -72,14 +92,13 @@ exportFormats.send.push({
 function generateButtons(filename) {
     
     const downloadData = exportFormats.download.map(format => {
-        const raw = document.querySelector('#textbox').innerHTML;
-        const file = format.fn(raw);
+        const clean = cleanHTML( getTexteditorContents() );
+        const file = format.fn(clean);
         const href = "data:text/plain;base64," + window.btoa(unescape(encodeURIComponent( file )));
         return {
             format: format,
-            file: format.fn(raw),
             href: href,
-            filename: filename
+            filename: getFilename()
         };
     });    
   
@@ -113,7 +132,7 @@ export function exportSetup(){
         var right = parseInt( $('body').width() - origin.left + 25 );
         var top = parseInt( origin.top ) - 50;
         
-        const filename = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
+        const filename = getFilename();
         const data = {
             text: document.querySelector('#textbox').innerHTML,
             filename: filename
