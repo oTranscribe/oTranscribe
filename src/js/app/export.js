@@ -148,10 +148,10 @@ export function exportSetup(){
                 format.fn(data);
             } else {
                 format.setup(() => {
+                    format.ready = true;
                     setTimeout(() => {
                         format.fn(data)
-                        format.ready = true;
-                    }, 10);
+                    }, 500);
                 });
             }
         });
