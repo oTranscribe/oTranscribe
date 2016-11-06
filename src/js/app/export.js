@@ -38,7 +38,7 @@ exportFormats.download.push({
         const fullyClean = sanitizeHtml(txt, {
             allowedTags: [ 'p', 'em', 'strong', 'i' ]
         });
-        const md = toMarkdown( cleanHTML(fullyClean) );
+        const md = toMarkdown( fullyClean );
         return md.replace(/\t/gm,"");           
     }
 });
@@ -94,7 +94,8 @@ function generateButtons(filename) {
     const downloadData = exportFormats.download.map(format => {
         const clean = cleanHTML( getTexteditorContents() );
         const file = format.fn(clean);
-        const href = "data:text/plain;base64," + window.btoa(unescape(encodeURIComponent( file )));
+        const blob = new Blob([file], {type: 'data:text/plain'});
+        const href = window.URL.createObjectURL(blob);
         return {
             format: format,
             href: href,

@@ -1,7 +1,7 @@
 <div class="export-title" data-l10n-id="export-download">Download transcript as...</div>
 
 {{#downloads}}
-    <a class="export-block-md" target="_blank" href="{{href}}" download="{{fileName}}{{format.extension}}">{{format.name}} (.{{format.extension}})</a>
+    <a class="export-block-md" target="_blank" href="{{href}}" download="{{filename}}{{format.extension}}">{{format.name}} (.{{format.extension}})</a>
 {{/downloads}}
 
 <div class="export-title" data-l10n-id="export-send">Send transcript to...</div>
