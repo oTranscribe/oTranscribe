@@ -62,7 +62,7 @@ export default function(callbackFn) {
       
     }
 
-    gd.updateButton = function(status, active){
+    gd.updateButton = function(status, active, link){
         var exportBlockGd = $('.export-block-gd');
         exportBlockGd[0].innerHTML = status;
         if (active == true){
@@ -70,8 +70,13 @@ export default function(callbackFn) {
         } else if (active == false){
             exportBlockGd.removeClass('gd-authenticated');
         }
-        exportBlockGd[0].removeEventListener('click', insertGoogleDriveFile);
-        exportBlockGd[0].addEventListener('click', insertGoogleDriveFile);
+        if (link) {
+            exportBlockGd[0].removeEventListener('click', insertGoogleDriveFile);
+            exportBlockGd[0].href = link;
+        } else {
+            exportBlockGd[0].addEventListener('click', insertGoogleDriveFile);
+        }
+        
     }
 
     gd.button = function(){
@@ -121,7 +126,7 @@ export default function(callbackFn) {
       reader.onload = function(e) {
         var contentType = 'text/html';
         var metadata = {
-            'title': filename,
+            'title': currentFilename,
             'mimeType': 'text/html'
         };
 
@@ -145,14 +150,11 @@ export default function(callbackFn) {
               'Content-Type': 'multipart/mixed; boundary="' + boundary + '"'
             },
             'body': multipartRequestBody});
-        if (!callback) {
-          callback = function(file) {
+        request.execute(function(file) {
               var openText = document.webL10n.get('open-drive');
-            gd.updateButton(openText + ' &rarr;', true, file.alternateLink);
-          };
-        }
-        request.execute(callback);
-      }
+              gd.updateButton(openText + ' &rarr;', true, file.alternateLink);
+        });
+      } // reader.onload
     }
     
     callbackFn();

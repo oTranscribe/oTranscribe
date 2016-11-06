@@ -130,10 +130,6 @@ function oldSetup() {
         oT.import.localButtonReaction(this);
     });        
 
-    $('.sbutton.export').click(function() {
-        placeExportPanel();
-    });    
-    
     $('.sbutton.backup').click(function(){
         oT.backup.openPanel();
     });
@@ -141,23 +137,7 @@ function oldSetup() {
     $('.backup-close').click(function(){
         oT.backup.closePanel();
     });
-    
-    $('.textbox-container').click(function(e) {
-        if(
-            $(e.target).is('#icon-exp') ||
-            $(e.target).is('.export-panel') ||
-            $(e.target).is('.sbutton.export')
-        ){
-            e.preventDefault();
-            return;
-        }
-        hideExportPanel();
-    });    
-    
-    $(".export-panel").click(function(e) {
-         e.stopPropagation();
-    });
-    
+        
     $('.close-message-panel').click(function(){
         oT.message.close();
     })

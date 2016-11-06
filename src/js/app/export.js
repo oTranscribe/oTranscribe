@@ -64,12 +64,12 @@ exportFormats.send.push({
     setup: function(cb) {
         this.checkGoogleAuth = googleDriveSetup(cb);
     },
-    fn: function(txt, name) {
-        this.checkGoogleAuth({text: txt, filename: name});
+    fn: function(opts) {
+        this.checkGoogleAuth(opts);
     }
 })
 
-function generateButtons(fileName) {
+function generateButtons(filename) {
     
     const downloadData = exportFormats.download.map(format => {
         const raw = document.querySelector('#textbox').innerHTML;
@@ -79,7 +79,7 @@ function generateButtons(fileName) {
             format: format,
             file: format.fn(raw),
             href: href,
-            fileName: fileName
+            filename: filename
         };
     });    
   
@@ -90,21 +90,37 @@ function generateButtons(fileName) {
 }
 
 export function exportSetup(){
-            
+    
+    $('.textbox-container').click(function(e) {
+        if(
+            $(e.target).is('#icon-exp') ||
+            $(e.target).is('.export-panel') ||
+            $(e.target).is('.sbutton.export')
+        ){
+            e.preventDefault();
+            return;
+        }
+        hideExportPanel();
+    });    
+    
+    $(".export-panel").click(function(e) {
+         e.stopPropagation();
+    });
+    
     $('.sbutton.export').click(function() {
         // document.querySelector('.container').innerHTML = downloadButtons;
         var origin = $('#icon-exp').offset();
         var right = parseInt( $('body').width() - origin.left + 25 );
         var top = parseInt( origin.top ) - 50;
         
-        const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
-        const data ={
+        const filename = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
+        const data = {
             text: document.querySelector('#textbox').innerHTML,
-            filename: fileName
+            filename: filename
         };
         
         $('.export-panel')
-            .html(generateButtons(fileName))
+            .html(generateButtons(filename))
 
         exportFormats.send.forEach(format => {
 
@@ -129,5 +145,4 @@ export function exportSetup(){
 
 function hideExportPanel(){
     $('.export-panel').removeClass('active');
-    $('.export-block-gd')[0].outerHTML = gd.button();
 }
