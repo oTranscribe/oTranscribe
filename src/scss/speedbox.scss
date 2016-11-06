@@ -35,10 +35,10 @@
         display: block;
     };
         
-    #slider3 {
+    .speed-slider {
         display: inline;
         vertical-align: middle;
-        width: 100px;
+        width: 120px;
     }    
     
 }
@@ -48,10 +48,11 @@
 }
 
 .slider-origin {
-    height: 25px;
+    height: 24px;
     border-right: 1px solid grey;
     position: relative;
     left: 39px;
+    left: 44px;
     z-index: -50;
     display: inline-block;
     vertical-align: middle;

@@ -38,7 +38,7 @@ class Player{
 	    let source = opts.source;
 	    this.driver = new opts.driver(source);
 	    this.skipTime = 1.5;
-	    this.speedIncrement = 0.25;
+	    this.speedIncrement = 0.125;
 	    this.minSpeed = 0.5;
 	    this.maxSpeed = 2;
         if (opts.name) {

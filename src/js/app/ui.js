@@ -40,9 +40,9 @@ export function bindPlayerToUI(filename = '') {
     
     let changingSpeed = false;
     $('.speed-slider')
-        .attr('min',0.5)
-        .attr('max',2)
-        .attr('step',0.25)
+        .attr('min', player.minSpeed)
+        .attr('max', player.maxSpeed)
+        .attr('step', player.speedIncrement)
         .on('change', function() {
             player.setSpeed(this.valueAsNumber);
         });
