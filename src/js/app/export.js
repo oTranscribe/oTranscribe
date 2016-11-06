@@ -59,8 +59,18 @@ exportFormats.download.push({
     }
 });
 
+exportFormats.send.push({
+    name: 'Google Drive',
+    setup: function(cb) {
+        this.checkGoogleAuth = googleDriveSetup(cb);
+    },
+    fn: function(txt, name) {
+        this.checkGoogleAuth({text: txt, filename: name});
+    }
+})
+
 function generateButtons(fileName) {
-  
+    
     const downloadData = exportFormats.download.map(format => {
         const raw = document.querySelector('#textbox').innerHTML;
         const file = format.fn(raw);
@@ -71,7 +81,7 @@ function generateButtons(fileName) {
             href: href,
             fileName: fileName
         };
-    })
+    });    
   
     return Mustache.render(template, {
         downloads: downloadData
@@ -80,24 +90,41 @@ function generateButtons(fileName) {
 }
 
 export function exportSetup(){
-    const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
-    const checkGoogleAuth = googleDriveSetup(fileName);
-        
+            
     $('.sbutton.export').click(function() {
         // document.querySelector('.container').innerHTML = downloadButtons;
         var origin = $('#icon-exp').offset();
         var right = parseInt( $('body').width() - origin.left + 25 );
         var top = parseInt( origin.top ) - 50;
         
-        const exportPanelHTML = generateButtons(fileName);
+        const fileName = document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
+        const data ={
+            text: document.querySelector('#textbox').innerHTML,
+            filename: fileName
+        };
         
         $('.export-panel')
-            .html(exportPanelHTML)
+            .html(generateButtons(fileName))
+
+        exportFormats.send.forEach(format => {
+
+            if (format.ready) {
+                format.fn(data);
+            } else {
+                format.setup(() => {
+                    setTimeout(() => {
+                        format.fn(data)
+                        format.ready = true;
+                    }, 10);
+                });
+            }
+        });
+
+        $('.export-panel')
             .css({'right': right,'top': top})
             .addClass('active'); 
         
-        checkGoogleAuth();
-    })
+    });
 }
 
 function hideExportPanel(){

@@ -1,12 +1,14 @@
 const $ = require('jquery');
 
-export default function({filename}) {
+export default function(callbackFn) {
+    
+    let currentText = '';
+    let currentFilename = '';
     
     var gd = {
         CLIENT_ID : '219206830455.apps.googleusercontent.com',
         SCOPES : 'https://www.googleapis.com/auth/drive'
     }
-
 
     // Called during startup to prevent blocking
     var script = document.createElement("script");
@@ -24,12 +26,15 @@ export default function({filename}) {
     /**
      * Check if the current user has authorized the application.
      */
-    function checkAuth() {
+    function checkAuth({text, filename}) {
+        currentText = text;
+        currentFilename = filename;
         try {
             gapi.auth.authorize(
                 {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
                 handleAuthResult);
         } catch(e) {
+            // issue connecting to google drive
             $('.export-block-gd').css({
                 'opacity': 0.5,
                 'pointer-events': 'none'
@@ -43,10 +48,9 @@ export default function({filename}) {
      * @param {Object} authResult Authorization result.
      */
     function handleAuthResult(authResult) {
-        debugger;
       if (authResult && !authResult.error) {
         // Access token has been successfully retrieved, requests can be sent to the API.
-        gd.updateButton("Google Drive",true,"javascript:insertGoogleDriveFile();");
+        gd.updateButton("Google Drive",true);
       } else {
         // No access token could be retrieved, show the button to start the authorization flow.
         document.getElementById('x-gd-sign').onclick = function() {
@@ -55,9 +59,10 @@ export default function({filename}) {
                 gd.handleAuthResult);
         };
       }
+      
     }
 
-    gd.updateButton = function(status, active, link){
+    gd.updateButton = function(status, active){
         var exportBlockGd = $('.export-block-gd');
         exportBlockGd[0].innerHTML = status;
         if (active == true){
@@ -65,7 +70,8 @@ export default function({filename}) {
         } else if (active == false){
             exportBlockGd.removeClass('gd-authenticated');
         }
-        exportBlockGd[0].href = link;
+        exportBlockGd[0].removeEventListener('click', insertGoogleDriveFile);
+        exportBlockGd[0].addEventListener('click', insertGoogleDriveFile);
     }
 
     gd.button = function(){
@@ -84,7 +90,7 @@ export default function({filename}) {
     }
     
     const createBlob = function(){
-        var p = document.getElementById('textbox').innerHTML;
+        var p = currentText;
         var aFileParts = [p];
         var oBlob = new Blob(aFileParts, {type : 'text/html'}); // the blob
         return oBlob;
@@ -149,6 +155,7 @@ export default function({filename}) {
       }
     }
     
+    callbackFn();
     return checkAuth;
 }
 
