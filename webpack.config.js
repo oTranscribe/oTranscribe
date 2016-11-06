@@ -12,10 +12,6 @@ module.exports = {
     filename: 'bundle.js'   // Really, you want to upload index.htm and assets/bundle.js
   },
 
-  // This makes it easier to debug scripts by listing line number of whichever file
-  // threw the exception or console.log or whathaveyounot.
-  devtool: 'inline-source-map',
-
   module: {
     loaders: [
       {
