@@ -15,7 +15,7 @@ export default function( msg ) {
     },50);
     
     $('.close-message-panel').click(function(){
-        oT.message.close();
+        close();
     });
     
     function close() {
