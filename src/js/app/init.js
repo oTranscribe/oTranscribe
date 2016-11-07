@@ -23,7 +23,6 @@ export default function init(){
     activateTimestamps();
     exportSetup();
     importSetup();
-    console.log('yy');
 
     // this is necessary due to execCommand restrictions
     // see: http://stackoverflow.com/a/33321235
