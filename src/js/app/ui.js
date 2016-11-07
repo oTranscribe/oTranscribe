@@ -125,11 +125,7 @@ function oldSetup() {
             return false;
         });
     });
-        
-    $('#local-file-import').change(function() {
-        oT.import.localButtonReaction(this);
-    });        
-
+    
     $('.sbutton.backup').click(function(){
         oT.backup.openPanel();
     });
@@ -137,10 +133,6 @@ function oldSetup() {
     $('.backup-close').click(function(){
         oT.backup.closePanel();
     });
-        
-    $('.close-message-panel').click(function(){
-        oT.message.close();
-    })
     
 };
 

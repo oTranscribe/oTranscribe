@@ -1,18 +1,6 @@
-/******************************************
-               Text editor
-******************************************/
-//
-// oT.texteditor = {}
-//
-// oT.texteditor.clean = function( html ){
-//     var result = $.htmlClean(html, {
-//         format: false,
-//         allowedTags: ['p', 'div', 'strong', 'em', 'i', 'b', 'span', 'br'],
-//         allowedAttributes: [['class',['span']],['data-timestamp',['span']]],
-//         allowedClasses: ['timestamp']
-//     });
-//     return result;
-// }
+import { cleanHTML } from './clean-html';
+import { activateTimestamps } from './timestamps';
+const $ = require('jquery');
 
 function toggleAbout(){
     $('.help-title').removeClass('active');
@@ -20,15 +8,6 @@ function toggleAbout(){
     $('.title').toggleClass('active');
     $('.about').toggleClass('active');
 }
-
-// function toggleHelp(){
-//     $('.title').removeClass('active');
-//     $('.about').removeClass('active');
-//     $('.help-title').toggleClass('active');
-//     $('.help').toggleClass('active');
-// }
-
-const $ = require('jquery');
 
 function countWords(str){
     var trimmedStr = $.trim(str);
@@ -81,8 +60,29 @@ function initWatchFormatting(){
     }, 100);
 }
 
+function setEditorContents( dirtyText ) {
+    
+    const newText = cleanHTML(dirtyText);
+
+    var $textbox = $("#textbox");
+
+    $textbox.fadeOut(300,function(){
+        if (typeof newText === 'string') {
+            $textbox[0].innerHTML = newText;
+        } else {
+            textbox[0].innerHTML = '';
+            $textbox[0].appendChild(newText);    
+        }
+        activateTimestamps();
+        $('.textbox-container').scrollTop(0);
+        $(this).fadeIn(300);
+    });
+    
+}
+
 export {
     initWatchFormatting as watchFormatting,
     initWordCount as watchWordCount,
-    toggleAbout as toggleAbout
+    toggleAbout as toggleAbout,
+    setEditorContents as setEditorContents
 };
