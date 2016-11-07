@@ -2,21 +2,10 @@ const $ = require('jquery');
 const Mustache = require('mustache');
 const toMarkdown = require('to-markdown');
 const template = require('raw!../../html/export-panel.ms');
-const sanitizeHtml = require('sanitize-html');
 import googleDriveSetup from './export-formats/google-drive';
 import { getPlayer } from './player/player';
-
-function cleanHTML(dirty) {
-    return sanitizeHtml(dirty, {
-        allowedTags: [ 'b', 'i', 'em', 'strong', 'a', 'p', 'span' ],
-        transformTags: {
-            'div': sanitizeHtml.simpleTransform('p'),
-        },
-        allowedAttributes: {
-            'span': [ 'class', 'data-timestamp', 'contentEditable' ]
-        }
-    });
-};
+const sanitizeHtml = require('sanitize-html');
+import { cleanHTML } from './clean-html';
 
 function getTexteditorContents() {
     return document.querySelector('#textbox').innerHTML;

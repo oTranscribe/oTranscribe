@@ -1,3 +1,9 @@
+
+export default function() {
+    $('#local-file-import').change(reactToInput);        
+    
+}
+
 oT.import = {}
 
 oT.import.loadFile = function( file ){
@@ -14,7 +20,7 @@ oT.import.loadFile = function( file ){
 oT.import.replaceTranscriptTextWith = function( newText ){
     
     // TODO: CLEAN STRING
-    newText = oT.import.clean(newText);
+    newText = cleanHTML(newText);
     
     var $textbox = $("#textbox");
     
@@ -49,7 +55,7 @@ oT.import.remindOfMediaFile = function( filename, filesource, filetime ){
     }
 }
 
-oT.import.localButtonReaction = function( input ){
+function reactToInput( input ){
     var file = input.files[0];
     
     var reader = new FileReader();
@@ -62,11 +68,4 @@ oT.import.localButtonReaction = function( input ){
     input.value = '';
     
     
-}
-
-oT.import.clean = function(text){
-    
-    text = oT.texteditor.clean(text);
-    
-    return text;
 }

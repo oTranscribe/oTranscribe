@@ -125,11 +125,7 @@ function oldSetup() {
             return false;
         });
     });
-        
-    $('#local-file-import').change(function() {
-        oT.import.localButtonReaction(this);
-    });        
-
+    
     $('.sbutton.backup').click(function(){
         oT.backup.openPanel();
     });
