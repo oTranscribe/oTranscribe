@@ -14,7 +14,7 @@ compile_static:
 	mkdir ./dist
 
 	# compile l10n files
-	paste -sd'\n' src/l10n/*.ini > dist/data.ini
+	for f in src/l10n/*.ini; do (cat "$${f}"; echo) >> dist/data.ini; done
 	
 	# copy over static assets
 	cp -r src/img src/opensource.htm src/help.htm dist/
