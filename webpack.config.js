@@ -11,7 +11,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'   // Really, you want to upload index.htm and assets/bundle.js
   },
-
   module: {
     loaders: [
       {

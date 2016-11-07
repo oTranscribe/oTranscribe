@@ -1,11 +1,11 @@
-oT.message = {}
+const $ = require('jquery');
 
-oT.message.header = function(msg){
+export default function( msg ) {
     $('.message-panel .message-content').html( msg );
     var $panel = $('.message-panel');
     var $textbox = $('#textbox');
     $panel.removeClass('hidden');
-    oT.message.stickyWatch = setInterval(function(){
+    let stickyWatch = setInterval(function(){
         if ( $textbox.offset().top < 0 ) {
             $panel.css('margin-left', $panel.css('margin-left') );
             $panel.addClass('stuck');
@@ -13,10 +13,14 @@ oT.message.header = function(msg){
             $panel.removeClass('stuck');
         }
     },50);
-}
-
-oT.message.close = function(){
-    $('.message-panel').addClass('hidden');
-    clearInterval(oT.message.stickyWatch);
+    
+    $('.close-message-panel').click(function(){
+        oT.message.close();
+    });
+    
+    function close() {
+        $('.message-panel').addClass('hidden');
+        clearInterval(stickyWatch);
+    }  
 }
 

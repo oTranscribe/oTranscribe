@@ -1,68 +1,49 @@
+import showMessage from './message-panel';
+const $ = require('jquery');
+import {setEditorContents} from './texteditor';
 
 export default function() {
-    $('#local-file-import').change(reactToInput);        
-    
+    $('#local-file-import').change(reactToInput);
 }
 
-oT.import = {}
-
-oT.import.loadFile = function( file ){
-    
+function loadFile( fileRaw ){
     try {
-        file = JSON.parse(file);    
-        oT.import.replaceTranscriptTextWith(file.text);
-        oT.import.remindOfMediaFile(file.media, file['media-source'], file['media-time']);
+        const file = JSON.parse(fileRaw); 
+        setEditorContents(file.text);
+        remindOfMediaFile(file.media, file['media-source'], file['media-time']);
     } catch (e) {
-        alert('This is not a valid oTranscribe format (.otr) file.');
+        console.warn(e);
+        showMessage('This is not a valid oTranscribe format (.otr) file.');
     }
 }
 
-oT.import.replaceTranscriptTextWith = function( newText ){
-    
-    // TODO: CLEAN STRING
-    newText = cleanHTML(newText);
-    
-    var $textbox = $("#textbox");
-    
-    $textbox.fadeOut(300,function(){
-        if (typeof newText === 'string') {
-            $textbox[0].innerHTML = newText;
-        } else {
-            textbox[0].innerHTML = '';
-            $textbox[0].appendChild(newText);    
-        }
-        oT.timestamp.activate();
-        $('.textbox-container').scrollTop(0)
-        $(this).fadeIn(300);
-    });
-    
-}
 
-oT.import.remindOfMediaFile = function( filename, filesource, filetime ){
+function remindOfMediaFile( filename, filesource, filetime ){
     if (filename && filename !== '') {
-        // var lastfileText = document.webL10n.get('last-file');
+        var lastfileText = document.webL10n.get('last-file');
         var lastfileText = 'File last used with imported document:';
         var restoreText = 'Restore';
-        if ((filesource) && (oTplayer.parseYoutubeURL(filesource))) {
-            oT.message.header( lastfileText+' <a href="#" id="restore-media">'+filename+'</a>' );
-            $('#restore-media').click(function(){
-                oT.media.create({file: filesource, startpoint: filetime});
-                return false;
-            });
-        } else {
-            oT.message.header(lastfileText+' '+filename);
-        }
+        // if ((filesource) && (oTplayer.parseYoutubeURL(filesource))) {
+        //     showMessage( lastfileText+' <a href="#" id="restore-media">'+filename+'</a>' );
+        //     $('#restore-media').click(function(){
+        //         oT.media.create({file: filesource, startpoint: filetime});
+        //         return false;
+        //     });
+        // } else {
+            showMessage(lastfileText+' '+filename);
+        // }
     }
 }
 
-function reactToInput( input ){
+function reactToInput(){
+    let input = this;
     var file = input.files[0];
     
     var reader = new FileReader();
     reader.readAsText(file);
     reader.onload = function(e) { 
         var contents = e.target.result;
-        oT.import.loadFile( contents );
+        loadFile( contents );
     }
     
     input.value = '';

@@ -133,10 +133,6 @@ function oldSetup() {
     $('.backup-close').click(function(){
         oT.backup.closePanel();
     });
-        
-    $('.close-message-panel').click(function(){
-        oT.message.close();
-    })
     
 };
 

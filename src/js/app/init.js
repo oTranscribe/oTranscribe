@@ -13,6 +13,7 @@ import { bindPlayerToUI, keyboardShortcutSetup } from './ui';
 import { activateTimestamps, insertTimestamp } from './timestamps';
 import { initBackup } from './backup';
 import { exportSetup } from './export';
+import importSetup from './import';
 
 export default function init(){
     initBackup();
@@ -21,6 +22,8 @@ export default function init(){
     languageSetup();
     activateTimestamps();
     exportSetup();
+    importSetup();
+    console.log('yy');
 
     // this is necessary due to execCommand restrictions
     // see: http://stackoverflow.com/a/33321235
