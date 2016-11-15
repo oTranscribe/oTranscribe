@@ -1,16 +1,35 @@
+const $ = require('jquery');
 const localStorageManager = require('local-storage-manager');
+import showMessage from './message-panel';
+import {setEditorContents} from './texteditor';
+import { addKeyboardShortcut } from './ui';
+
+function getTexteditorContents() {
+    return document.querySelector('#textbox').innerHTML;
+}
 
 function init(){
     localStorageManager.onFull = function(){
         var backupClearMessage = document.webL10n.get('backup-clear');
-        // oT.message.header( backupClearMessage );
+        showMessage( backupClearMessage );
     }
-    // localStorageManager.onSaveFailure = warnAboutBackupFailure;
+    localStorageManager.onSaveFailure = warnAboutBackupFailure;
     migrateToLocalStorageManager();
     autosaveInit();
     setInterval(function(){
-        // oT.backup.save();
+        saveBackup();
     },300000 /* 5 minutes */);
+    
+    
+    $('.sbutton.backup').click(function(){
+        openPanel();
+    });
+        
+    $('.backup-close').click(function(){
+        closePanel();
+    });
+    addKeyboardShortcut('mod+s', () => saveBackup());
+    
 }
 
 // original autosave function
@@ -19,7 +38,7 @@ function autosaveInit(){
     
     // load existing autosave (if present)
     if ( localStorageManager.getItem("autosave")) {        
-       field.innerHTML = localStorageManager.getItem("autosave");
+       setEditorContents( localStorageManager.getItem("autosave") );
     }
     // autosave every second - but wait five seconds before kicking in
     setTimeout(function(){
@@ -31,7 +50,7 @@ function autosaveInit(){
             el.removeAttribute('data-l10n-id');
         });
         setInterval(function(){
-           localStorageManager.setItem("autosave", field.innerHTML);
+           localStorageManager.setItem("autosave", getTexteditorContents());
         }, 1000);
     }, 5000);
 }
@@ -56,53 +75,34 @@ function migrateToLocalStorageManager(){
     }
 }
 
-/*
-
-oT.backup = {};
-
-oT.backup.openPanel = function(){
-    oT.backup.populatePanel();
-    $('.backup-window').height( $('.textbox-container').height() * (3/5) );
-    $('.backup-panel').fadeIn('fast');
+let notYetWarned = true;
+function warnAboutBackupFailure(){
+    var backupWarningMessage = document.webL10n.get('backup-error');
+    if (notYetWarned === true) {
+        showMessage( backupWarningMessage );
+        notYetWarned = false;
+    }
 }
 
-oT.backup.closePanel = function(){
+function closePanel(){
     $('.backup-panel').fadeOut('fast',function(){
         $('.backup-window').empty();
         
     });
 }
 
-oT.backup.generateBlock = function(ref){
-    // create icon and 'restore' button
-    var obj = localStorageManager.getItemMetadata(ref);
-    var text = obj.value;
-    var timestamp = obj.timestamp;
-    var date = oT.backup.formatDate(timestamp);
-    
-    var block = document.createElement('div');
-    var doc = document.createElement('div');
-    var restoreButton = document.createElement('div');
-
-    block.className = 'backup-block';
-    doc.className = 'backup-doc';
-    restoreButton.className = 'backup-restore-button';
-
-    doc.innerHTML = text;
-    var restoreText = document.webL10n.get('restore-button');
-    restoreButton.innerHTML = date+' - <span onClick="oT.backup.restore('+timestamp+');">' +restoreText+ '</span>';
-    block.appendChild(doc);
-    block.appendChild(restoreButton);
-    
-    return block;
+function openPanel(){
+    populatePanel();
+    $('.backup-window').height( $('.textbox-container').height() * (3/5) );
+    $('.backup-panel').fadeIn('fast');
 }
 
-oT.backup.formatDate = function(timestamp){
+function formatDate(timestamp){
     var d = new Date( parseFloat(timestamp) );
     var day =  d.getDate() + '/' + (d.getMonth()+1);
     var now = new Date();
-    today = now.getDate() + '/' + (now.getMonth()+1);
-    yesterday = (now.getDate()-1) + '/' + (now.getMonth()+1);
+    const today = now.getDate() + '/' + (now.getMonth()+1);
+    const yesterday = (now.getDate()-1) + '/' + (now.getMonth()+1);
     if (day === today) {
         day = document.webL10n.get('today');
     } else if (day === yesterday) {
@@ -114,55 +114,11 @@ oT.backup.formatDate = function(timestamp){
     }
     time += d.getMinutes();
     
-    formattedDate = day + ' ' + time;
+    const formattedDate = day + ' ' + time;
     return formattedDate;
 }
 
-oT.backup.populatePanel = function(){
-    oT.backup.addDocsToPanel(0,8);
-    if (listFiles().length === 0) {
-        var noBackupsText = document.webL10n.get('no-backups');
-        $('.backup-window').append( '<div class="no-backups">'+noBackupsText+'</div>' );
-    }
-}
-
-oT.backup.addDocsToPanel = function(start,end){
-    $('.more-backups').remove();
-    var allDocs = listFiles();
-    docs = allDocs.slice(start,end);
-    for (var i = 0; i < docs.length; i++) {
-        $('.backup-window').append( oT.backup.generateBlock(docs[i]) );
-    }
-    if (allDocs[end]) {
-        var loadMoreText = document.webL10n.get('more-backups');
-        $('.backup-window').append( '<div class="more-backups" onclick="oT.backup.addDocsToPanel('+(end)+','+(end+8)+')" >'+loadMoreText+'</div>' );
-    }
-}
-
-oT.backup.save = function(){
-    // save current text to timestamped localStorageManager item
-    var text = document.getElementById("textbox");
-    var timestamp = new Date().getTime();
-    localStorageManager.setItem('oTranscribe-backup-'+timestamp, text.innerHTML);
-    // and bleep icon
-    $('.sbutton.backup').addClass('flash');
-    setTimeout(function(){
-        $('.sbutton.backup').removeClass('flash');
-    },1000);
-    // and add to tray
-    var newBlock = oT.backup.generateBlock('oTranscribe-backup-'+timestamp);
-    newBlock.className += ' new-block';
-    $('.backup-window').prepend( newBlock );
-    $( newBlock ).animate({
-        'opacity': 1,
-        'width': '25%'
-    },'slow',function(){
-        $( newBlock ).find('.backup-restore-button').fadeIn();
-    });
-    oT.backup.trimToOneHundred();
-}
-
-oT.backup.trimToOneHundred = function(){
+function trimBackupsToOneHundred(){
     var backups = listFiles();
     if (backups.length < 100) {
         return;
@@ -174,12 +130,67 @@ oT.backup.trimToOneHundred = function(){
     }
 }
 
-let notYetWarned = true;
-function warnAboutBackupFailure(){
-    var backupWarningMessage = document.webL10n.get('backup-error');
-    if (notYetWarned === true) {
-        oT.message.header( backupWarningMessage );
-        notYetWarned = false;
+
+function generateBlock(ref){
+    // create icon and 'restore' button
+    var obj = localStorageManager.getItemMetadata(ref);
+    var text = obj.value;
+    var timestamp = obj.timestamp;
+    var date = formatDate(timestamp);
+    
+    var block = document.createElement('div');
+    var doc = document.createElement('div');
+    var restoreButton = document.createElement('div');
+
+    block.className = 'backup-block';
+    doc.className = 'backup-doc';
+    restoreButton.className = 'backup-restore-button';
+
+    doc.innerHTML = text;
+    var restoreText = document.webL10n.get('restore-button');
+    restoreButton.innerHTML = `${date} - <span data-restore=${timestamp}>${restoreText}</span>`;
+    $(restoreButton).find('span[data-restore]').click(function() {
+        restoreBackup( this.dataset.restore );
+    });
+    
+    block.appendChild(doc);
+    block.appendChild(restoreButton);
+    
+    return block;
+}
+
+
+function populatePanel(){
+    addDocsToPanel(0,8);
+    if (listFiles().length === 0) {
+        var noBackupsText = document.webL10n.get('no-backups');
+        $('.backup-window').append( '<div class="no-backups">'+noBackupsText+'</div>' );
+    }
+}
+
+function addDocsToPanel(start,end){
+    $('.more-backups').remove();
+    var allDocs = listFiles();
+    const docs = allDocs.slice(start,end);
+    for (var i = 0; i < docs.length; i++) {
+        $('.backup-window').append( generateBlock(docs[i]) );
+    }
+    if (allDocs[end]) {
+        var loadMoreText = document.webL10n.get('more-backups');
+        const moreBackupsEl = $(`
+            <div class="more-backups"
+                data-start=${end} 
+                data-end=${end+8} 
+            >
+                ${loadMoreText}
+            </div>
+        `);
+        moreBackupsEl.click(function() {
+            const {start, end} = this.dataset;
+            addDocsToPanel(start, end);
+        });
+        
+        $('.backup-window').append( moreBackupsEl );
     }
 }
 
@@ -194,19 +205,44 @@ function listFiles(){
     return result.sort().reverse();
 }
 
-oT.backup.restore = function(timestamp){
-    oT.backup.save();
+
+
+function saveBackup(){
+    // save current text to timestamped localStorageManager item
+    var text = getTexteditorContents();
+    var timestamp = new Date().getTime();
+    localStorageManager.setItem('oTranscribe-backup-'+timestamp, text);
+    // and bleep icon
+    $('.sbutton.backup').addClass('flash');
+    setTimeout(function(){
+        $('.sbutton.backup').removeClass('flash');
+    },1000);
+    // and add to tray
+    var newBlock = generateBlock('oTranscribe-backup-'+timestamp);
+    newBlock.className += ' new-block';
+    $('.backup-window').prepend( newBlock );
+    $( newBlock ).animate({
+        'opacity': 1,
+        'width': '25%'
+    },'slow',function(){
+        $( newBlock ).find('.backup-restore-button').fadeIn();
+    });
+    trimBackupsToOneHundred();
+}
+
+
+
+function restoreBackup(timestamp){
+    saveBackup();
     var item = localStorageManager.getItem('oTranscribe-backup-'+timestamp);
     if ( item ) {
         var newText = item;
-        oT.import.replaceTranscriptTextWith(newText);
+        setEditorContents(newText);
     } else {
         var restoreErrorMessage = document.webL10n.get('restore-error');
-        oT.message.header( restoreErrorMessage );
+        showMessage( restoreErrorMessage );
     }
-    oT.backup.closePanel();
+    closePanel();
 }
-
-*/
 
 export { init as initBackup };

@@ -86,7 +86,7 @@ export function bindPlayerToUI(filename = '') {
     
 }
 
-function addKeyboardShortcut(key, fn) {
+export function addKeyboardShortcut(key, fn) {
     Mousetrap.bind(key, function(e) {
         if (e.preventDefault) {
             e.preventDefault();
@@ -106,35 +106,6 @@ export function keyboardShortcutSetup() {
     addKeyboardShortcut( 'mod+u', () => document.execCommand('underline',false,null)  );
     addKeyboardShortcut( 'mod+j', () => insertTimestamp()                             );
 }
-
-function oldSetup() {
-
-    var keyboardShortcuts = [
-        [ 'mod+s',       function(){  oT.backup.save();                              }]
-    ];
-    
-    $.each(keyboardShortcuts, function(i,m){
-        Mousetrap.bind(m[0], function(e) {
-            if (e.preventDefault) {
-                e.preventDefault();
-            } else {
-                // internet explorer
-                e.returnValue = false;
-            }
-            m[1]();
-            return false;
-        });
-    });
-    
-    $('.sbutton.backup').click(function(){
-        oT.backup.openPanel();
-    });
-        
-    $('.backup-close').click(function(){
-        oT.backup.closePanel();
-    });
-    
-};
 
 
 
