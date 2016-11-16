@@ -1,4 +1,5 @@
 import {HTML5_AUDIO} from './html5-audio';
+import YOUTUBE from './youtube';
 
 /*
 
@@ -148,7 +149,8 @@ class Player{
 };
 
 const playerDrivers = {
-    HTML5_AUDIO: HTML5_AUDIO
+    HTML5_AUDIO: HTML5_AUDIO,
+    YOUTUBE: YOUTUBE
 };
 
 let player = null;

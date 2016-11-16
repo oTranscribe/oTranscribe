@@ -16,7 +16,7 @@ export default function(opts) {
         },
         onURLSubmit: function(url){
             input.showURLInput();
-            opts.create(file);
+            opts.createFromURL(url);
             hide();
         },
         onURLError: function(error){

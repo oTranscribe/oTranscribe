@@ -39,13 +39,19 @@ export default function init(){
 // note: this function may run multiple times
 function onLocalized() {
     const resetInput = inputSetup({
-        create: function(file) {
+        create: file => {
 		    createPlayer({
 		        driver: playerDrivers.HTML5_AUDIO,
 		        source: window.URL.createObjectURL(file),
                 name: file.name
 		    });
             bindPlayerToUI(file.name);
+        },
+        createFromURL: url => {
+		    createPlayer({
+		        driver: playerDrivers.YOUTUBE,
+		        source: url
+		    });
         }
     });
     
