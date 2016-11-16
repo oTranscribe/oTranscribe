@@ -36,6 +36,9 @@ function activateTimestamps(){
 function onClick() {
     const player = getPlayer();
     var time = this.dataset.timestamp;
+    if (typeof time === 'string' && time.indexOf(':') > -1) {
+        time = splitString(time);
+    }
     if (player) {
         player.setTime( time );
     }    
@@ -50,11 +53,18 @@ window.ts = {
         const player = getPlayer();
         var time = this.dataset.timestamp;
         if (player && element.childNodes.length == 1) {
-            var a = hms.split(':');
-            var seconds = (+a[0]) * 60 + (+a[1]); 
+            const seconds = splitString(time);
             player.setTime( seconds );
         }
     }
+}
+
+function splitString(str) {
+    var a = str.split(':');
+    if (a.length === 3) {
+        return ((+a[0]) * 60 * 60) + ((+a[1]) * 60) + (+a[2]); 
+    }
+    return (+a[0]) * 60 + (+a[1]); 
 }
 
 export {activateTimestamps, insertTimestamp};

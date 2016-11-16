@@ -1,5 +1,7 @@
+const $ = require('jquery');
+
 export default class YOUTUBE {
-    constructor (source, callback){
+    constructor (source){
         
         this.element = document.createElement('div');
         this.element.setAttribute('id','oTplayerEl');
@@ -21,25 +23,25 @@ export default class YOUTUBE {
                 },
                 events: {
                     'onReady': onYTPlayerReady.bind(this),
-                    'onStateChange': updatePause
+                    'onStateChange': updatePause.bind(this)
                 }
             });
         
             function updatePause (ev){
                 var status = ev.data;
-                if (status === 2) {
-                    that.paused = true;
+                if (status === 1) {
+                    this.status = 'playing';
                 } else {
-                    that.paused = false;
+                    this.status = 'paused';
                 }
             }
             function onYTPlayerReady() {
                 // fix non-responsive keyboard shortcuts bug
-                $(this.buttons.speedSlider).val(0.5).change().val(1).change();
+                $('input.speed-slider').val(0.5).change().val(1).change();
     
                 // Some YouTube embeds only support normal speed
                 if (this._ytEl.getAvailablePlaybackRates()[0] === 1) {
-                    this.disableSpeedChange();
+                    $('.speed-box').html('This media only supports 1x playback rate. Sorry.');
                 }
     
                 this.duration = this._ytEl.getDuration();
@@ -49,6 +51,12 @@ export default class YOUTUBE {
                     this.play();
                     setTimeout(() => {
                         this.pause();
+                        
+                        this._isReady = true;
+                        window._ytEl = this._ytEl;
+
+                        
+                        
                     },500);
         
                 },1000);
@@ -70,7 +78,7 @@ export default class YOUTUBE {
             }
             window.onYouTubeIframeAPIReady = callback;
         }
-
+        
         
     }
     play(){
@@ -86,13 +94,13 @@ export default class YOUTUBE {
         this._ytEl.seekTo( time );
     }
     getStatus(){
-        // return this.status;
+        return this.status;
     }
     getLength(){
         return this.duration;
     }
     isReady(){
-        // return (!this.destroyed && (!isNaN(this.element.duration)) && (this.element.readyState === 4));
+        return this._isReady;
     }
     getSpeed(){
         if ('getPlaybackRate' in this._ytEl) {

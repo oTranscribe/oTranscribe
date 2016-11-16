@@ -25,7 +25,7 @@ methods & properties:
 */
 class Player{
 
-	constructor(opts){
+	constructor(opts, callback){
 		if (!opts) {
 	        throw('Player needs options');
 	    }
@@ -160,7 +160,10 @@ function getPlayer() {
 };
 
 function createPlayer(opts) {
-    player = new Player(opts);
+    return new Promise((res, rej) => {
+        opts.onReady = res;
+        player = new Player(opts);
+    });
 }
 
 export {createPlayer, getPlayer, playerDrivers};

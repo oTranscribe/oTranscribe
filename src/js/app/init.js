@@ -44,13 +44,16 @@ function onLocalized() {
 		        driver: playerDrivers.HTML5_AUDIO,
 		        source: window.URL.createObjectURL(file),
                 name: file.name
+		    }).then(() => {
+                bindPlayerToUI(file.name);
 		    });
-            bindPlayerToUI(file.name);
         },
         createFromURL: url => {
 		    createPlayer({
 		        driver: playerDrivers.YOUTUBE,
 		        source: url
+		    }).then(() => {
+                bindPlayerToUI();
 		    });
         }
     });
