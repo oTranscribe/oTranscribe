@@ -7,10 +7,17 @@ function getTime(){
     if (player) {
         time = player.getTime();
     }
-    const minutes = Math.floor(time / 60);
-    const seconds = ("0" + Math.floor( time - minutes * 60 ) ).slice(-2);
+    
+    const hours = Math.floor(time / 3600).toString();
+    const minutes = ("0" + Math.floor(time / 60) % 60).slice(-2);
+    const seconds = ("0" + Math.floor( time % 60 )).slice(-2);
+    let formatted = minutes+":"+seconds;
+    if (hours !== '0') {
+        formatted = hours + ":" + minutes + ":" + seconds;
+    }
+
     return {
-        formatted: (minutes+":"+seconds).replace(/\s/g,''),
+        formatted: formatted.replace(/\s/g,''),
         raw: time
     };
 };
@@ -37,24 +44,36 @@ function onClick() {
     const player = getPlayer();
     var time = this.dataset.timestamp;
     if (player) {
-        player.setTime( time );
+        if (time.indexOf(':') > -1) {
+            // backwards compatibility, as old timestamps have string rather than number
+            player.setTime(convertTimestampToSeconds(time));
+        } else {
+            player.setTime( time );
+        }
     }    
 }
 
 // backwards compatibility, as old timestamps use setFromTimestamp() and ts.setFrom()
 window.setFromTimestamp = function(clickts, element){
-    ts.setFrom(clickts, element);
+    window.ts.setFrom(clickts, element);
 }
 window.ts = {
     setFrom: function(clickts, element){
         const player = getPlayer();
         var time = this.dataset.timestamp;
         if (player && element.childNodes.length == 1) {
-            var a = hms.split(':');
-            var seconds = (+a[0]) * 60 + (+a[1]); 
-            player.setTime( seconds );
+            player.setTime( convertTimestampToSeconds(time) );
         }
     }
+}
+
+function convertTimestampToSeconds(hms) {
+    var a = hms.split(':');
+    console.log(a)
+    if (a.length === 3) {
+        return ((+a[0]) * 60 * 60) + (+a[1]) * 60 + (+a[2]);
+    }
+    return (+a[0]) * 60 + (+a[1]);
 }
 
 export {activateTimestamps, insertTimestamp};

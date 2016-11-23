@@ -71,7 +71,8 @@ export function bindPlayerToUI(filename = '') {
         media : document.querySelector('audio, video'),
         bar : playerHook,
         text : filename,                       
-        time : document.querySelector('#player-time')
+        time : document.querySelector('#player-time'),
+        hours: true
     });
     
     function playPause() {
