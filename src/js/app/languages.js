@@ -22,6 +22,7 @@ oT.lang.langs = {
     'fil': 'Filipino',
     'sv': 'Svenska',
 	'vi': 'Tiếng Việt',   // Vietnamese
+    'tr': 'Türkçe',       // Turkish
     'ru': 'Русский'       // Russian
 }
 

@@ -75,7 +75,8 @@ Translations have been provided by the following talented and generous volunteer
 *   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004
 
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
-*   Swedish: c3ons. 
+*   Swedish: c3ons.
+*   Turkish: Mehmet Derindere. 
 *   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 
