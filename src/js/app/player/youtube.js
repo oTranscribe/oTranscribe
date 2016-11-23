@@ -5,6 +5,7 @@ export default class YOUTUBE {
         
         this.element = document.createElement('div');
         this.element.setAttribute('id','oTplayerEl');
+        this.element.className = 'video-player';
         document.body.appendChild(this.element); 
         
         
@@ -45,7 +46,7 @@ export default class YOUTUBE {
                 }
     
                 this.duration = this._ytEl.getDuration();
-    
+                
                 setTimeout(() => {
                     // kickstart youtube
                     this.play();
@@ -77,8 +78,7 @@ export default class YOUTUBE {
                 callback();
             }
             window.onYouTubeIframeAPIReady = callback;
-        }
-        
+        }        
         
     }
     play(){

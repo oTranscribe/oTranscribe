@@ -62,6 +62,17 @@ class Player{
 	        	throw('Error with player driver');
 	        }
 	    }
+        
+        const setPlayerHeight = () => {
+            const videoEl = document.querySelector('.video-player');
+            if (videoEl) {
+                videoEl.style.height = `${videoEl.offsetWidth * (3 / 4)}px`;
+            }
+        }
+        setPlayerHeight();
+        setInterval(setPlayerHeight, 200);
+
+        
 
 	}
 
