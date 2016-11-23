@@ -138,7 +138,8 @@ export default class YOUTUBE {
         
     }
     destroy(){
-        // TK
+        $('#oTplayerEl').remove();
+        delete this.element; 
     }
 }
 

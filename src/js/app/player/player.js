@@ -148,7 +148,7 @@ class Player{
     }
 
     getTitle() {
-        return getName();
+        return this.getName();
     }
 
     destroy(){
