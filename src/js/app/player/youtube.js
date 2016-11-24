@@ -1,7 +1,7 @@
 const $ = require('jquery');
 
 export default class YOUTUBE {
-    constructor (source){
+    constructor (source, playPauseCallback){
         
         this.element = document.createElement('div');
         this.element.setAttribute('id','oTplayerEl');
@@ -24,17 +24,18 @@ export default class YOUTUBE {
                 },
                 events: {
                     'onReady': onYTPlayerReady.bind(this),
-                    'onStateChange': updatePause.bind(this)
+                    'onStateChange': onStateChange.bind(this)
                 }
             });
         
-            function updatePause (ev){
+            function onStateChange (ev){
                 var status = ev.data;
                 if (status === 1) {
                     this.status = 'playing';
                 } else {
                     this.status = 'paused';
                 }
+                playPauseCallback();
             }
             function onYTPlayerReady() {
                 // fix non-responsive keyboard shortcuts bug

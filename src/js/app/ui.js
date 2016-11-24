@@ -78,6 +78,16 @@ export function bindPlayerToUI(filename = '') {
     } else {
         document.querySelector('#player-time').style.display = 'none';
     }
+    
+    player.onPlayPause(status => {
+        console.log(status)
+        if (status === 'playing'){
+            $playPauseButton.addClass('playing');
+        } else {
+            $playPauseButton.removeClass('playing');
+        }
+    });
+    
     function playPause() {
         if (player.getStatus() !== 'playing'){
             player.play();

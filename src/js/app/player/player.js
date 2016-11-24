@@ -37,7 +37,11 @@ class Player{
 	    }
 
 	    let source = opts.source;
-	    this.driver = new opts.driver(source);
+	    this.driver = new opts.driver(source, () => {
+            if (this.onPlayPauseCallback) {
+    	        this.onPlayPauseCallback(this.getStatus());
+            }
+	    });
 	    this.skipTime = 1.5;
 	    this.speedIncrement = 0.125;
 	    this.minSpeed = 0.5;
@@ -138,6 +142,10 @@ class Player{
     
     onSpeedChange(callback) {
         this.onSpeedChangeCallback = callback;
+    }
+    
+    onPlayPause(callback) {
+        this.onPlayPauseCallback = callback;
     }
     
     getName() {
