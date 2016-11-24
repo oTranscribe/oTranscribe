@@ -1,4 +1,5 @@
-import {HTML5_AUDIO} from './html5-audio';
+import HTML5_AUDIO from './html5-audio';
+import HTML5_VIDEO from './html5-video';
 import YOUTUBE from './youtube';
 
 /*
@@ -168,8 +169,9 @@ class Player{
 };
 
 const playerDrivers = {
-    HTML5_AUDIO: HTML5_AUDIO,
-    YOUTUBE: YOUTUBE
+    HTML5_AUDIO,
+    HTML5_VIDEO,
+    YOUTUBE
 };
 
 let player = null;
@@ -185,4 +187,13 @@ function createPlayer(opts) {
     });
 }
 
-export {createPlayer, getPlayer, playerDrivers};
+function isVideoFormat(file) {
+    if ('type' in file) {
+        return file.type.indexOf('video') > -1;
+    }
+    var urlSplt = file.split('.');
+    var format = urlSplt[urlSplt.length-1];
+    return !!format.match(/mov|mp4|avi|webm/);    
+}
+
+export {createPlayer, getPlayer, playerDrivers, isVideoFormat};

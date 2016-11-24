@@ -8,7 +8,7 @@ import { watchFormatting, watchWordCount, toggleAbout } from './texteditor';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
-import { createPlayer, playerDrivers, getPlayer } from './player/player';
+import { createPlayer, playerDrivers, getPlayer, isVideoFormat } from './player/player';
 import { bindPlayerToUI, keyboardShortcutSetup } from './ui';
 import { activateTimestamps, insertTimestamp } from './timestamps';
 import { initBackup } from './backup';
@@ -40,8 +40,9 @@ export default function init(){
 function onLocalized() {
     const resetInput = inputSetup({
         create: file => {
+            const driver = isVideoFormat(file) ? playerDrivers.HTML5_VIDEO : playerDrivers.HTML5_AUDIO;
 		    createPlayer({
-		        driver: playerDrivers.HTML5_AUDIO,
+		        driver: driver,
 		        source: window.URL.createObjectURL(file),
                 name: file.name
 		    }).then(() => {

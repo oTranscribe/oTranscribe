@@ -1,8 +1,8 @@
-export default class HTML5_AUDIO {
+export default class HTML5_VIDEO {
     constructor(source) {
-        this.element = document.createElement( 'audio' );
+        this.element = document.createElement( 'video' );
         this.element.src = source;
-    	this.element.style.display = 'none';
+        this.element.className = 'video-player';
     	document.body.appendChild(this.element);
     }
     play() {
