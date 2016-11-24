@@ -67,12 +67,25 @@ export function bindPlayerToUI(filename = '') {
 
     const playerHook = document.querySelector('#player-hook');
     playerHook.innerHTML = '';
-    var progressBar = new Progressor({
-        media : document.querySelector('audio, video'),
-        bar : playerHook,
-        text : filename,                       
-        time : document.querySelector('#player-time'),
-        hours: true
+    if (document.querySelector('audio, video')) {
+        var progressBar = new Progressor({
+            media : document.querySelector('audio, video'),
+            bar : playerHook,
+            text : filename,                       
+            time : document.querySelector('#player-time'),
+            hours: true
+        });
+        document.querySelector('#player-time').style.display = 'block';
+    } else {
+        document.querySelector('#player-time').style.display = 'none';
+    }
+    
+    player.onPlayPause(status => {
+        if (status === 'playing'){
+            $playPauseButton.addClass('playing');
+        } else {
+            $playPauseButton.removeClass('playing');
+        }
     });
     
     function playPause() {

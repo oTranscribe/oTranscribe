@@ -1,4 +1,5 @@
 import {HTML5_AUDIO} from './html5-audio';
+import YOUTUBE from './youtube';
 
 /*
 
@@ -24,7 +25,7 @@ methods & properties:
 */
 class Player{
 
-	constructor(opts){
+	constructor(opts, callback){
 		if (!opts) {
 	        throw('Player needs options');
 	    }
@@ -36,7 +37,11 @@ class Player{
 	    }
 
 	    let source = opts.source;
-	    this.driver = new opts.driver(source);
+	    this.driver = new opts.driver(source, () => {
+            if (this.onPlayPauseCallback) {
+    	        this.onPlayPauseCallback(this.getStatus());
+            }
+	    });
 	    this.skipTime = 1.5;
 	    this.speedIncrement = 0.125;
 	    this.minSpeed = 0.5;
@@ -61,6 +66,17 @@ class Player{
 	        	throw('Error with player driver');
 	        }
 	    }
+        
+        const setPlayerHeight = () => {
+            const videoEl = document.querySelector('.video-player');
+            if (videoEl) {
+                videoEl.style.height = `${videoEl.offsetWidth * (3 / 4)}px`;
+            }
+        }
+        setPlayerHeight();
+        setInterval(setPlayerHeight, 200);
+
+        
 
 	}
 
@@ -128,6 +144,10 @@ class Player{
         this.onSpeedChangeCallback = callback;
     }
     
+    onPlayPause(callback) {
+        this.onPlayPauseCallback = callback;
+    }
+    
     getName() {
         if (this.driver.getName) {
             return this.driver.getName();;
@@ -136,7 +156,7 @@ class Player{
     }
 
     getTitle() {
-        return getName();
+        return this.getName();
     }
 
     destroy(){
@@ -148,7 +168,8 @@ class Player{
 };
 
 const playerDrivers = {
-    HTML5_AUDIO: HTML5_AUDIO
+    HTML5_AUDIO: HTML5_AUDIO,
+    YOUTUBE: YOUTUBE
 };
 
 let player = null;
@@ -158,7 +179,10 @@ function getPlayer() {
 };
 
 function createPlayer(opts) {
-    player = new Player(opts);
+    return new Promise((res, rej) => {
+        opts.onReady = res;
+        player = new Player(opts);
+    });
 }
 
 export {createPlayer, getPlayer, playerDrivers};

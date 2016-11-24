@@ -16,7 +16,7 @@ export default function(opts) {
         },
         onURLSubmit: function(url){
             input.showURLInput();
-            opts.create(file);
+            opts.createFromURL(url);
             hide();
         },
         onURLError: function(error){
@@ -97,6 +97,8 @@ function hide(){
     $('.input').removeClass('active');
     $('.sbutton.time').addClass('active');
     $('.text-panel').addClass('editing');
+    $('.ext-input-field').hide();
+    $('.file-input-outer').removeClass('ext-input-active');
 };
 
 

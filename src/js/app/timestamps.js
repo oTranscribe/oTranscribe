@@ -44,7 +44,7 @@ function onClick() {
     const player = getPlayer();
     var time = this.dataset.timestamp;
     if (player) {
-        if (time.indexOf(':') > -1) {
+        if (typeof time === 'string' && time.indexOf(':') > -1) {
             // backwards compatibility, as old timestamps have string rather than number
             player.setTime(convertTimestampToSeconds(time));
         } else {
@@ -69,7 +69,6 @@ window.ts = {
 
 function convertTimestampToSeconds(hms) {
     var a = hms.split(':');
-    console.log(a)
     if (a.length === 3) {
         return ((+a[0]) * 60 * 60) + (+a[1]) * 60 + (+a[2]);
     }

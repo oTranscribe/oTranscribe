@@ -81,11 +81,12 @@
     }
 }
 
-video#oTplayerEl, iframe#oTplayerEl {
+.video-player {
     position: absolute;
     top: 55px;
     left: 20px;
-    width: 200px;
+    width: calc((100% - 800px)/2);
+    min-width: 200px;
     box-shadow: 0px 0px 5px black;
     background: $dark;
 }
