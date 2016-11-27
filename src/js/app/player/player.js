@@ -97,6 +97,10 @@ class Player{
     setTime(time){
     	this.driver.setTime(time);
     }
+    
+    skipTo(time) {
+        this.setTime(time);
+    }
 
     skip(direction){
     	if (direction === 'forwards') {

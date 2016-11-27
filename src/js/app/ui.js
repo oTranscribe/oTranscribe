@@ -115,10 +115,15 @@ export function addKeyboardShortcut(key, fn) {
 }
 
 export function keyboardShortcutSetup() {
+    
     addKeyboardShortcut( 'mod+b', () => document.execCommand('bold',false,null)       );
     addKeyboardShortcut( 'mod+i', () => document.execCommand('italic',false,null)     );
     addKeyboardShortcut( 'mod+u', () => document.execCommand('underline',false,null)  );
     addKeyboardShortcut( 'mod+j', () => insertTimestamp()                             );
+    addKeyboardShortcut( 'mod+0', () => {
+        const player = getPlayer();
+        player.skipTo( 0 );
+    });
 }
 
 
