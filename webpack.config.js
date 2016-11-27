@@ -17,7 +17,7 @@ module.exports = {
         test: /\.js?$/, // Another convention is to use the .es6 filetype, but you then
                         // have to supply that explicitly in import statements, which isn't cool.
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           cacheDirectory: true,
           presets: ['es2015', 'stage-2']
@@ -33,7 +33,7 @@ module.exports = {
       // Extract css files
       {
           test: /\.scss$/,
-          loader: ExtractTextPlugin.extract(['css','sass'])
+          loader: ExtractTextPlugin.extract(['css-loader','sass-loader'])
           
       }
     ]
@@ -51,7 +51,7 @@ module.exports = {
           }
       ]),
       new HtmlWebpackPlugin({
-          template: 'html?interpolate&attrs=img:data-src!./src/index.htm'
+          template: 'html-loader?interpolate&attrs=img:data-src!./src/index.htm'
       })
   ]
 };
