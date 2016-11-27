@@ -21,7 +21,7 @@ credit              = Captained by
 choose-file         = Pick yer audio (or video) file, matey
 formats             = Yer browser can only stomach [xxx] audio files and [yyy] video files. You may need to <a href="http://media.io">convert your file</a>.
 format-warn         = Yer browser can't stomach these [file-format] files. Switch to a different browser or <a href="http://media.io">convert your file</a> to another format.
-wordcount           = sea slugs
+wordcount           = {{n}} sea slugs
 export              = Export
 export-download     = Capture yer transcript as...
 export-markdown     = Markdown (.md)

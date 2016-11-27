@@ -58,6 +58,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Chinese: baiqj, Cindy Ng, [Andy Pan](https://github.com/andy0130tw), [Cp0204](https://github.com/Cp0204) and [Robin Kwong](https://github.com/RobinKwong)
 *   Danish: [Christian Bruun](http://christianb.dk).
 *   Dutch: [Patrick Mackaaij](http://www.eenmanierom.nl) and Marjolein Quist.
+*   Filipino: [Patricia Albano](https://www.linkedin.com/in/patriciaclaudiaalbano).
 *   French: [Olivier Aubert](http://www.olivieraubert.net), [@goofy-bz](https://github.com/goofy-bz) and [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com).
 *   German: [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and Lisa Bernhardt.
 *   Indonesian: [Joy Tikoalu](mailto:joy.tikoalu@gmail.com).
@@ -68,8 +69,13 @@ Translations have been provided by the following talented and generous volunteer
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
 *   Brazilian Portuguese: Leonardo Barichello.
 *   Romanian: [Iain Apreotesei](https://github.com/ibriq) and [Catalina Albeanu](https://twitter.com/catalinacma)
+*   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004
+
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
+*   Swedish: c3ons.
+*   Turkish: Mehmet S. DERİNDERE. 
 *   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
+*   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
 

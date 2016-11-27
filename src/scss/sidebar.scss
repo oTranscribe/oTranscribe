@@ -4,8 +4,8 @@
 }
 
 @mixin transition {
-    -webkit-transition: opacity 0.2s, padding 1s;
-    transition: opacity 0.2s, padding 1s;
+    -webkit-transition: opacity 0.2s, color 0.2s, padding 1s;
+    transition: opacity 0.2s, color 0.2s, padding 1s;
 }
 
 
@@ -93,8 +93,11 @@
         font-size: 16px; 
         margin-top: 10px;
         .wc-text {
-            opacity: 0;
+            color: rgba(0,0,0,0);
             @include transition;
+            .word-count-number {
+                color: $dark;
+            }
         }
     }
 
@@ -105,7 +108,7 @@
     &:hover {
        opacity: 1;
        .wordcount .wc-text {
-           opacity: 1;
+           color: $dark;
        }
        .sbutton .label {
            opacity: 0.5;

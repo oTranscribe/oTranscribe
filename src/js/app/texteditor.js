@@ -21,14 +21,17 @@ function countTextbox(){
     var textboxElement = document.getElementById('textbox');
     var textboxText = textboxElement.innerText || textboxElement.textContent;
     var count = countWords(textboxText);
- 
-    document.getElementById('wc').innerHTML = count;
-    
+   
     var wordcountText = document.webL10n.get('wordcount', {n: count});
+    console.log(count, wordcountText)
+    wordcountText = wordcountText.replace(/(\d+)/, (n) => {
+        return `<span class="word-count-number">${n}</span>`;
+    })
     document.querySelector('.wc-text').innerHTML = wordcountText;
 }
 
 function initWordCount(){
+    countTextbox();
     setInterval(function(){
         countTextbox();
     }, 1000);
