@@ -237,7 +237,7 @@ function restoreBackup(timestamp){
     var item = localStorageManager.getItem('oTranscribe-backup-'+timestamp);
     if ( item ) {
         var newText = item;
-        setEditorContents(newText);
+        setEditorContents(newText, {transition: true});
     } else {
         var restoreErrorMessage = document.webL10n.get('restore-error');
         showMessage( restoreErrorMessage );

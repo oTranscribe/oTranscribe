@@ -17,7 +17,6 @@ import importSetup from './import';
 
 export default function init(){
     initBackup();
-    watchWordCount();
     watchFormatting();
     languageSetup();
     activateTimestamps();
@@ -30,7 +29,7 @@ export default function init(){
     
     keyboardShortcutSetup();
 
-    if ( localStorageManager.getItem("lastfile") ) {
+    if ( localStorageManager.getItem("oT-lastfile") ) {
         toggleAbout();
     }
     $('.title').mousedown(toggleAbout);
@@ -59,6 +58,8 @@ function onLocalized() {
         }
     });
     
+    watchWordCount();
+
     var startText = document.webL10n.get('start-ready');
     $('.start')
         .addClass('ready')

@@ -21,12 +21,11 @@ function countTextbox(){
     var textboxElement = document.getElementById('textbox');
     var textboxText = textboxElement.innerText || textboxElement.textContent;
     var count = countWords(textboxText);
-   
+      
     var wordcountText = document.webL10n.get('wordcount', {n: count});
-    console.log(count, wordcountText)
     wordcountText = wordcountText.replace(/(\d+)/, (n) => {
         return `<span class="word-count-number">${n}</span>`;
-    })
+    });
     document.querySelector('.wc-text').innerHTML = wordcountText;
 }
 
@@ -63,13 +62,13 @@ function initWatchFormatting(){
     }, 100);
 }
 
-function setEditorContents( dirtyText ) {
+function setEditorContents( dirtyText, opts = {} ) {
     
     const newText = cleanHTML(dirtyText);
 
     var $textbox = $("#textbox");
-
-    $textbox.fadeOut(300,function(){
+    
+    function replaceText() {
         if (typeof newText === 'string') {
             $textbox[0].innerHTML = newText;
         } else {
@@ -78,8 +77,16 @@ function setEditorContents( dirtyText ) {
         }
         activateTimestamps();
         $('.textbox-container').scrollTop(0);
-        $(this).fadeIn(300);
-    });
+    }
+    
+    if (opts.transition) {
+        $textbox.fadeOut(300,function(){
+            replaceText();
+            $(this).fadeIn(300);
+        });        
+    } else {
+        replaceText();
+    }
     
 }
 
