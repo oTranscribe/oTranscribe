@@ -1,7 +1,7 @@
 const $ = require('jquery');
 
 export default function(opts) {
-
+    
     var input = new oTinput({
         element: '.file-input-outer',
         onFileChange: function(file){
@@ -37,6 +37,12 @@ export default function(opts) {
         }
     });    
 
+    // this is a workaround for an iOS bug 
+    if (is_iOS()) {
+        document
+            .querySelector('.file-input-outer input[type="file"]')
+            .removeAttribute('accept');
+    }
     setFormatsMessage( oTinput.getSupportedFormats() );
     show();
     
@@ -45,6 +51,13 @@ export default function(opts) {
         show();
     }
 
+}
+
+function is_iOS() {
+    return (
+        window.navigator.userAgent.indexOf('iPad') > -1 ||
+        window.navigator.userAgent.indexOf('iPhone') > -1
+    );
 }
 
 function setFormatsMessage(formats){
