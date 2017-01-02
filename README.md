@@ -10,7 +10,6 @@
 
 ... and more!
 
-
 ### Download a copy
 
 Although a [web version](http://otranscribe.com/) is available, you can install oTranscribe anywhere by following these steps:
@@ -42,7 +41,7 @@ oTranscribe has its own file format (.otr), which is just a JSON file with the f
 
 ### Running tests
 
-While oTranscribe's components are thoroughly tested, the app itself has only limited tests.
+oTranscribe is not fully tested. There are only a small number of tests, for data migration.
 
 To setup, [install CasperJS](http://docs.casperjs.org/en/latest/installation.html).
 
@@ -69,8 +68,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
 *   Brazilian Portuguese: Leonardo Barichello.
 *   Romanian: [Iain Apreotesei](https://github.com/ibriq) and [Catalina Albeanu](https://twitter.com/catalinacma)
-*   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004
-
+*   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004)
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
 *   Swedish: c3ons.
 *   Turkish: Mehmet S. DERİNDERE. 
@@ -78,16 +76,3 @@ Translations have been provided by the following talented and generous volunteer
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
-
-### Libraries
-
-oTranscribe is built on the foundations of several awesome projects:
-
-- [jQuery](http://jquery.com)
-- ~~[AudioJS](http://kolber.github.io/audiojs/)~~ (replaced with [progressor.js](https://github.com/ejb/progressor.js))
-- [Mousetrap](http://craig.is/killing/mice)
-- [CDNJS](http://cdnjs.com/) for script hosting
-- [Font Awesome](http://fontawesome.io/)
-- [to-markdown](https://github.com/domchristie/to-markdown)
-- [jquery-clean](https://code.google.com/p/jquery-clean/)
-- [webL10n](https://github.com/fabi1cazenave/webL10n)
