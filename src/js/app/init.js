@@ -4,7 +4,7 @@
 
 const $ = require('jquery');
 
-import { watchFormatting, watchWordCount, toggleAbout } from './texteditor';
+import { watchFormatting, watchWordCount } from './texteditor';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
@@ -14,6 +14,7 @@ import { activateTimestamps, insertTimestamp } from './timestamps';
 import { initBackup } from './backup';
 import { exportSetup } from './export';
 import importSetup from './import';
+import viewController from './view-controller';
 
 export default function init(){
     initBackup();
@@ -29,10 +30,17 @@ export default function init(){
     
     keyboardShortcutSetup();
 
+    viewController.set('about');
     if ( localStorageManager.getItem("oT-lastfile") ) {
-        toggleAbout();
+        viewController.set('editor');
     }
-    $('.title').mousedown(toggleAbout);
+    $('.title').mousedown(() => {
+        if (viewController.is('about')) {
+            viewController.set('editor');
+        } else {
+            viewController.set('about');
+        }
+    });
 }
 
 // note: this function may run multiple times
@@ -64,7 +72,9 @@ function onLocalized() {
     $('.start')
         .addClass('ready')
         .off()
-        .click(toggleAbout);
+        .click(() => {
+            viewController.set('editor');
+        });
     
     $('.reset').off().on('click', () => {
         const player = getPlayer();

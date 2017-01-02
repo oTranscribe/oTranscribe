@@ -2,7 +2,7 @@
     @include noselect(text);
     color: $dark;
         
-    background: rgb(241, 241, 241);
+    background: $grey;
     z-index: 200;
     position: relative;
     padding: 40px 0;

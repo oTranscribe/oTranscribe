@@ -2,13 +2,6 @@ import { cleanHTML } from './clean-html';
 import { activateTimestamps } from './timestamps';
 const $ = require('jquery');
 
-function toggleAbout(){
-    $('.help-title').removeClass('active');
-    $('.help').removeClass('active');
-    $('.title').toggleClass('active');
-    $('.about').toggleClass('active');
-}
-
 function countWords(str){
     var trimmedStr = $.trim(str);
     if (trimmedStr){
@@ -93,6 +86,5 @@ function setEditorContents( dirtyText, opts = {} ) {
 export {
     initWatchFormatting as watchFormatting,
     initWordCount as watchWordCount,
-    toggleAbout as toggleAbout,
     setEditorContents as setEditorContents
 };

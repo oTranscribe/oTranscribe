@@ -2,6 +2,7 @@
 
 $accent: rgb(52, 130, 177);
 $dark: hsl(0,0,15);
+$grey: #f1f1f1;
 
 @mixin button{
     color: white;
@@ -32,6 +33,7 @@ body {
     @include noselect(none);
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     height: 100%;
+    background: $grey;
 }
 
 #extra-ui-text {
