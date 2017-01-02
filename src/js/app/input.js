@@ -44,6 +44,7 @@ export default function(opts) {
             .removeAttribute('accept');
     }
     setFormatsMessage( oTinput.getSupportedFormats() );
+    loadPreviousFileDetails();
     show();
     
     return function reset() {
