@@ -7,6 +7,7 @@ const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
 import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
+import timeSelectionModal from './time-selection-modal';
 
 export function bindPlayerToUI(filename = '') {
     
@@ -37,6 +38,9 @@ export function bindPlayerToUI(filename = '') {
     
     $playPauseButton.click(playPause);
     addKeyboardShortcut('escape', playPause)
+    
+    addKeyboardShortcut(['mod+k'], timeSelectionModal.toggle);
+    $('#player-time').off().click(timeSelectionModal.toggle);
     
     let changingSpeed = false;
     $('.speed-slider')
@@ -125,6 +129,4 @@ export function keyboardShortcutSetup() {
         player.skipTo( 0 );
     });
 }
-
-
 
