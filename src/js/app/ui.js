@@ -40,7 +40,7 @@ export function bindPlayerToUI(filename = '') {
     addKeyboardShortcut('escape', playPause)
     
     addKeyboardShortcut(['mod+k'], timeSelectionModal.toggle);
-    $('#player-time').off().click(timeSelectionModal.toggle);
+    $('.player-time').off().click(timeSelectionModal.toggle);
     
     let changingSpeed = false;
     $('.speed-slider')
@@ -76,12 +76,12 @@ export function bindPlayerToUI(filename = '') {
             media : document.querySelector('audio, video'),
             bar : playerHook,
             text : filename,                       
-            time : document.querySelector('#player-time'),
+            time : document.querySelector('.player-time'),
             hours: true
         });
-        document.querySelector('#player-time').style.display = 'block';
+        document.querySelector('.player-time').style.display = 'block';
     } else {
-        document.querySelector('#player-time').style.display = 'none';
+        document.querySelector('.player-time').style.display = 'none';
     }
     
     player.onPlayPause(status => {
