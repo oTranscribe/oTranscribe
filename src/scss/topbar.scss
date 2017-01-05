@@ -27,6 +27,11 @@
     background: $dark;
     color: white;
 
+    i {
+        font-size: 0.90em;
+    }
+
+
     &:hover {
         background-color: lighten($dark, 10%);
         cursor: pointer;
@@ -62,4 +67,11 @@
     i {
         font-size: 0.90em;
     }
+}
+
+.settings-button {
+    @include title-button;    
+    border-left: 1px solid lighten($dark, 10%);
+    border-right: 1px solid lighten($dark, 10%);
+    align-self: flex-end;
 }

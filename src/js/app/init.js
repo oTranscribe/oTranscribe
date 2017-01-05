@@ -41,6 +41,13 @@ export default function init(){
             viewController.set('about');
         }
     });
+    $('.settings-button').mousedown(() => {
+        if (viewController.is('settings')) {
+            viewController.set('editor');
+        } else {
+            viewController.set('settings');
+        }
+    });
 }
 
 // note: this function may run multiple times

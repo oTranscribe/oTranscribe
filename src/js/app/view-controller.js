@@ -9,12 +9,16 @@ const views = {
     },
     editor: () => {
         $('.textbox-container').style.display = 'block';
+    },
+    settings: () => {
+        $('.settings-button').classList.add('active');
     }
 }
 
 const hideAllViews = () => {
     $('.title').classList.remove('active');
     $('.about').classList.remove('active');
+    $('.settings-button').classList.remove('active');
     $('.textbox-container').style.display = 'none';
 }
 
