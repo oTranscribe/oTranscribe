@@ -85,12 +85,20 @@ function generateButtons(filename) {
         const file = format.fn(clean);
         const blob = new Blob([file], {type: 'data:text/plain'});
         const href = window.URL.createObjectURL(blob);
+        
         return {
             format: format,
+            file: file,
             href: href,
             filename: getFilename()
         };
     });    
+
+    if (checkDownloadAttrSupport() === false) {
+        downloadData.forEach(format => {
+            format.href = convertToBase64(format.file);
+        });
+    }    
   
     return Mustache.render(template, {
         downloads: downloadData
@@ -129,7 +137,7 @@ export function exportSetup(){
         };
         
         $('.export-panel')
-            .html(generateButtons(filename))
+            .html(generateButtons(filename));
 
         exportFormats.send.forEach(format => {
 
@@ -154,4 +162,13 @@ export function exportSetup(){
 
 function hideExportPanel(){
     $('.export-panel').removeClass('active');
+}
+
+function checkDownloadAttrSupport() {
+    var a = document.createElement('a');
+    return (typeof a.download != "undefined");
+}
+
+function convertToBase64(str) {
+    return "data:application/octet-stream;base64," + btoa(str);
 }
