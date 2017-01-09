@@ -111,11 +111,16 @@
     flex: 1;
     -webkit-flex: 1;
     min-width: 100px;
+    > span {
+        position: relative;
+        z-index: 200;
+    }
 }
 
 .progressor-progress {
     background: white;
     background: grey;
+    z-index: 100 !important;
 }
 
 .media-title {
