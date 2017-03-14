@@ -1,6 +1,9 @@
 {
   "name": "oTranscribe",
-  "version": "0.1.0",
+  "version": "1.0.1",
+  "scripts": {
+      "postinstall": "cd ./node_modules/jakecache/ && npm install && node ./scripts/build.js && cd ../.."
+  },
   "devDependencies": {
     "babel-core": "^6.7.7",
     "babel-eslint": "^4.1.3",
@@ -30,7 +33,7 @@
     "webpack-dev-server": "^2.0.0-beta"
   },
   "dependencies": {
-    "jakecache": "^1.1.0",
+    "jakecache": "https://github.com/kenchris/jakecache/archive/v1.1.1.tar.gz",
     "jquery": "^3.1.0",
     "local-storage-manager": "git://github.com/ejb/localStorageManager.git",
     "mousetrap": "^1.6.0",
