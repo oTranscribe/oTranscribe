@@ -62,23 +62,6 @@ function initWatchFormatting(){
     }, 100);
 }
 
-function initAutoscroll() {
-  var isScrolledToBottom = false;
-
-  var container = document.querySelector('.textbox-container');
-  var textbox = document.querySelector('#textbox');
-
-  container.addEventListener('scroll', function() {
-    isScrolledToBottom = container.scrollHeight - window.innerHeight <= container.scrollTop;
-  });
-
-  textbox.addEventListener('input', function() {
-    if(isScrolledToBottom) {
-      container.scrollTop = container.scrollHeight;
-    }
-  });
-}
-
 function setEditorContents( dirtyText, opts = {} ) {
     
     const newText = cleanHTML(dirtyText);
@@ -104,7 +87,26 @@ function setEditorContents( dirtyText, opts = {} ) {
     } else {
         replaceText();
     }
-    
+
+}
+
+function initAutoscroll() {
+  var isScrolledToBottom = false;
+
+  var container = document.querySelector('.textbox-container');
+  var textbox = document.querySelector('#textbox');
+
+  // update isScrolledToBottom variable on the scroll event
+  container.addEventListener('scroll', function() {
+    isScrolledToBottom = container.scrollHeight - window.innerHeight <= container.scrollTop;
+  });
+
+  // scroll to bottom on the input event, if isScrolledToBottom is true
+  textbox.addEventListener('input', function() {
+    if(isScrolledToBottom) {
+      container.scrollTop = container.scrollHeight;
+    }
+  });
 }
 
 export {
