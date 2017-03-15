@@ -4,7 +4,7 @@
 
 const $ = require('jquery');
 
-import { watchFormatting, watchWordCount, toggleAbout } from './texteditor';
+import { watchFormatting, watchWordCount, toggleAbout, initAutoscroll } from './texteditor';
 import inputSetup from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
@@ -22,6 +22,7 @@ export default function init(){
     activateTimestamps();
     exportSetup();
     importSetup();
+    initAutoscroll();
 
     // this is necessary due to execCommand restrictions
     // see: http://stackoverflow.com/a/33321235
