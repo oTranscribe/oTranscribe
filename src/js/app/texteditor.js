@@ -62,6 +62,23 @@ function initWatchFormatting(){
     }, 100);
 }
 
+function initAutoscroll() {
+  var isScrolledToBottom = false;
+
+  var container = document.querySelector('.textbox-container');
+  var textbox = document.querySelector('#textbox');
+
+  container.addEventListener('scroll', function() {
+    isScrolledToBottom = container.scrollHeight - window.innerHeight <= container.scrollTop;
+  });
+
+  textbox.addEventListener('input', function() {
+    if(isScrolledToBottom) {
+      container.scrollTop = container.scrollHeight;
+    }
+  });
+}
+
 function setEditorContents( dirtyText, opts = {} ) {
     
     const newText = cleanHTML(dirtyText);
@@ -94,5 +111,6 @@ export {
     initWatchFormatting as watchFormatting,
     initWordCount as watchWordCount,
     toggleAbout as toggleAbout,
-    setEditorContents as setEditorContents
+    setEditorContents as setEditorContents,
+    initAutoscroll as initAutoscroll
 };
