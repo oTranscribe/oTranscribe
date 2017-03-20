@@ -14,6 +14,7 @@ export default class HTML5_VIDEO {
         this.status = 'paused';
     }
     getTime() {
+        console.log('this.element.currentTime', this.element.currentTime);
         return this.element.currentTime;
     }
     setTime(time) {
