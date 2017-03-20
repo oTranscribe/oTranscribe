@@ -117,25 +117,25 @@ export default class YOUTUBE {
     }
     getName() {
         
-        oTplayer.prototype._setYoutubeTitle = function(id){
-            var url = 'http://gdata.youtube.com/feeds/api/videos/'+id+'?v=2&alt=json-in-script&callback=?';
-            $.ajax({
-               type: 'GET',
-                url: url,
-                async: false,
-                jsonpCallback: 'jsonCallback',
-                contentType: "application/json",
-                dataType: 'jsonp',
-                success: function(d) {
-                    var title = '[YouTube] '+d.entry.title.$t;
-                    this.title = title;
-                    $('#player-hook').html(title).addClass('media-title');
-                },
-                error: function(e){
-                    console.log(e);
-                }
-            });
-        };
+        // oTplayer.prototype._setYoutubeTitle = function(id){
+        //     var url = 'http://gdata.youtube.com/feeds/api/videos/'+id+'?v=2&alt=json-in-script&callback=?';
+        //     $.ajax({
+        //        type: 'GET',
+        //         url: url,
+        //         async: false,
+        //         jsonpCallback: 'jsonCallback',
+        //         contentType: "application/json",
+        //         dataType: 'jsonp',
+        //         success: function(d) {
+        //             var title = '[YouTube] '+d.entry.title.$t;
+        //             this.title = title;
+        //             $('#player-hook').html(title).addClass('media-title');
+        //         },
+        //         error: function(e){
+        //             console.log(e);
+        //         }
+        //     });
+        // };
         
     }
     destroy(){
