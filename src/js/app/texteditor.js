@@ -87,12 +87,32 @@ function setEditorContents( dirtyText, opts = {} ) {
     } else {
         replaceText();
     }
-    
+
+}
+
+function initAutoscroll() {
+  var isScrolledToBottom = false;
+
+  var container = document.querySelector('.textbox-container');
+  var textbox = document.querySelector('#textbox');
+
+  // update isScrolledToBottom variable on the scroll event
+  container.addEventListener('scroll', function() {
+    isScrolledToBottom = container.scrollHeight - window.innerHeight <= container.scrollTop;
+  });
+
+  // scroll to bottom on the input event, if isScrolledToBottom is true
+  textbox.addEventListener('input', function() {
+    if(isScrolledToBottom) {
+      container.scrollTop = container.scrollHeight;
+    }
+  });
 }
 
 export {
     initWatchFormatting as watchFormatting,
     initWordCount as watchWordCount,
     toggleAbout as toggleAbout,
-    setEditorContents as setEditorContents
+    setEditorContents as setEditorContents,
+    initAutoscroll as initAutoscroll
 };
