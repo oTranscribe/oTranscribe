@@ -1,6 +1,6 @@
 {
   "name": "oTranscribe",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "scripts": {
       "postinstall": "cd ./node_modules/jakecache/ && npm install && node ./scripts/build.js && cd ../.."
   },

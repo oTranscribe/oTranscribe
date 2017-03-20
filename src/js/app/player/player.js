@@ -103,7 +103,6 @@ class Player{
     }
 
     skip(direction){
-        console.log('time1', this.getTime(), this.getTime() - this.skipTime);
         let expectedTime = this.getTime();
     	if (direction === 'forwards') {
             expectedTime += this.skipTime;
@@ -119,8 +118,6 @@ class Player{
             console.error('Skipped too far back');
             setTimeout(() => this.setTime(expectedTime), 50);
         }
-        console.log('time2', this.getTime());
-        setTimeout(() => console.log('time3', this.getTime()), 50);
     }
 
     getStatus(){
