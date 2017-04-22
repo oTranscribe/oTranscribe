@@ -3,6 +3,7 @@
 ******************************************/
 
 const $ = require('jquery');
+let otrQueryParams = {};
 
 import { watchFormatting, watchWordCount, toggleAbout, initAutoscroll } from './texteditor';
 import inputSetup from './input';
@@ -30,10 +31,43 @@ export default function init(){
     
     keyboardShortcutSetup();
 
-    if ( localStorageManager.getItem("oT-lastfile") ) {
-        toggleAbout();
+    // Gather query parameters into an object
+    otrQueryParams = location.search
+    .slice(1)
+    .split('&')
+    .reduce((acc,value)=>{ 
+        var params = value.split("="); return acc[params[0]]=params[1],acc; 
+    },{});
+
+    if ( otrQueryParams['v'] ){
+
+        $('.start').removeClass('ready');
+        createPlayer({
+            driver: playerDrivers.YOUTUBE,
+            source: "https://www.youtube.com/watch?v=" + otrQueryParams.v
+        }).then(() => {
+
+            toggleAbout();
+            $('.topbar').removeClass('inputting');
+            $('.input').removeClass('active');
+            $('.sbutton.time').addClass('active');
+            $('.text-panel').addClass('editing');
+            $('.ext-input-field').hide();
+            $('.file-input-outer').removeClass('ext-input-active');
+            bindPlayerToUI();
+
+        });
+
+    } else {
+
+        if ( localStorageManager.getItem("oT-lastfile") ) {
+            toggleAbout();
+        }
+        
     }
+
     $('.title').mousedown(toggleAbout);
+
 }
 
 // note: this function may run multiple times
@@ -63,7 +97,8 @@ function onLocalized() {
 
     var startText = document.webL10n.get('start-ready');
     $('.start')
-        .addClass('ready')
+        // .addClass('ready')
+        .toggleClass('ready', !otrQueryParams.v)    // Show 'Loading...' text if a video is to be automatically initialized
         .off()
         .click(toggleAbout);
     
