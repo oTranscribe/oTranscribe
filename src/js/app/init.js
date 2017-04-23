@@ -6,7 +6,7 @@ const $ = require('jquery');
 let otrQueryParams = {};
 
 import { watchFormatting, watchWordCount, toggleAbout, initAutoscroll } from './texteditor';
-import inputSetup from './input';
+import { inputSetup, getQueryParams, hide as inputHide } from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
 import { createPlayer, playerDrivers, getPlayer, isVideoFormat } from './player/player';
@@ -32,12 +32,7 @@ export default function init(){
     keyboardShortcutSetup();
 
     // Gather query parameters into an object
-    otrQueryParams = location.search
-    .slice(1)
-    .split('&')
-    .reduce((acc,value)=>{ 
-        var params = value.split("="); return acc[params[0]]=params[1],acc; 
-    },{});
+    otrQueryParams = getQueryParams();
 
     if ( otrQueryParams['v'] ){
 
@@ -46,16 +41,9 @@ export default function init(){
             driver: playerDrivers.YOUTUBE,
             source: "https://www.youtube.com/watch?v=" + otrQueryParams.v
         }).then(() => {
-
             toggleAbout();
-            $('.topbar').removeClass('inputting');
-            $('.input').removeClass('active');
-            $('.sbutton.time').addClass('active');
-            $('.text-panel').addClass('editing');
-            $('.ext-input-field').hide();
-            $('.file-input-outer').removeClass('ext-input-active');
+            inputHide();
             bindPlayerToUI();
-
         });
 
     } else {
