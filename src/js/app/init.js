@@ -34,6 +34,7 @@ export default function init(){
     // Gather query parameters into an object
     otrQueryParams = getQueryParams();
 
+    // If the ?v=<VIDEO_ID> parameter is found in the URL, auto load YouTube video
     if ( otrQueryParams['v'] ){
 
         $('.start').removeClass('ready');
