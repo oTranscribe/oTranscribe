@@ -11,7 +11,7 @@ import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
 import { createPlayer, playerDrivers, getPlayer, isVideoFormat } from './player/player';
 import { bindPlayerToUI, keyboardShortcutSetup } from './ui';
-import { activateTimestamps, insertTimestamp } from './timestamps';
+import { activateTimestamps, insertTimestamp, convertTimestampToSeconds } from './timestamps';
 import { initBackup } from './backup';
 import { exportSetup } from './export';
 import importSetup from './import';
@@ -41,10 +41,18 @@ export default function init(){
         createPlayer({
             driver: playerDrivers.YOUTUBE,
             source: "https://www.youtube.com/watch?v=" + otrQueryParams.v
-        }).then(() => {
-            toggleAbout();
+        }).then((player) => {
             inputHide();
+            toggleAbout();
             bindPlayerToUI();
+            let timestamp = otrQueryParams['t']; 
+            if ( timestamp ){
+                // Is the timestamp in HH:MM::SS format?
+                if ( ~timestamp.indexOf(":") ){
+                    timestamp = convertTimestampToSeconds(timestamp);
+                } 
+                player.driver._ytEl.seekTo(timestamp);
+            }
         });
 
     } else {
