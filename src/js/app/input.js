@@ -110,9 +110,9 @@ export function getQueryParams(){
     return location.search
         .slice(1)
         .split('&')
-        .reduce((acc,value)=>{ 
+        .reduce((acc,curr)=>{ 
 
-            let params = value.split("="); acc[params[0]]=params[1]; return acc; 
+            let [ key, value ] = curr.split("="); acc[key]=value; return acc; 
 
         }, {});    
 
