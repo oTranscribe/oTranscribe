@@ -37,8 +37,13 @@ function autosaveInit(){
     var field = document.querySelector("#textbox");
     
     // load existing autosave (if present)
-    if ( localStorageManager.getItem("autosave")) {        
-       setEditorContents( localStorageManager.getItem("autosave") );
+    try {
+        const autosaveContents = localStorageManager.getItem("autosave");
+        if (autosaveContents) {        
+           setEditorContents( localStorageManager.getItem("autosave") );
+        }
+    } catch (e) {
+        // don't load autosave, as it's corrupted
     }
     // autosave every second - but wait five seconds before kicking in
     setTimeout(function(){
@@ -173,7 +178,11 @@ function addDocsToPanel(start,end){
     var allDocs = listFiles();
     const docs = allDocs.slice(start,end);
     for (var i = 0; i < docs.length; i++) {
-        $('.backup-window').append( generateBlock(docs[i]) );
+        try {
+            $('.backup-window').append( generateBlock(docs[i]) );
+        } catch (e) {
+            // problem with that backup; ignore
+        }
     }
     if (allDocs[end]) {
         var loadMoreText = document.webL10n.get('more-backups');
@@ -196,7 +205,15 @@ function addDocsToPanel(start,end){
 
 function listFiles(){
     var result = [];
-    var ls = localStorageManager.getArray();
+    var ls = [];
+    try {
+        ls = localStorageManager.getArray();
+    } catch (e) {
+        console.error(e);
+        console.error('Problem listing files from localStorage.');
+        showMessage('Error listing files from localStorage. Manually clearing localStorage data may fix this. <a href="./help#why_is_otranscribe_is_no_longer_saving_backups">Instructions here</a>.');
+        throw(e);
+    }
     for (var i = 0; i < ls.length; i++) {
         if (ls[i].key.indexOf('oTranscribe-backup') > -1) {
             result.push( ls[i].key );
@@ -234,12 +251,16 @@ function saveBackup(){
 
 function restoreBackup(timestamp){
     saveBackup();
-    var item = localStorageManager.getItem('oTranscribe-backup-'+timestamp);
-    if ( item ) {
-        var newText = item;
-        setEditorContents(newText, {transition: true});
-    } else {
-        var restoreErrorMessage = document.webL10n.get('restore-error');
+    const restoreErrorMessage = document.webL10n.get('restore-error');
+    try {
+        var item = localStorageManager.getItem('oTranscribe-backup-'+timestamp);
+        if ( item ) {
+            var newText = item;
+            setEditorContents(newText, {transition: true});
+        } else {
+            showMessage( restoreErrorMessage );
+        }
+    } catch (e) {
         showMessage( restoreErrorMessage );
     }
     closePanel();

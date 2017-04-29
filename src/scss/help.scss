@@ -21,14 +21,27 @@
     h2 {
         font-size: 1.4em;
         margin-top: 1.8em;
+        position: relative;
         small {
             font-size: 0.8em;
             font-weight: normal;
         }
-        a {
-            color: $accent;
+        &:hover {
+            .permalink {
+                display: inline-block;
+            }
+        }
+        .permalink {
+            display: none;
+            margin-left: 0.25em;
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.5;
+            &:hover {
+                opacity: 1;
+            }
             &:visited {
-                color: $accent;
+                color: inherit;
             }
             
         }

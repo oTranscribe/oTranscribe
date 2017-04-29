@@ -57,9 +57,10 @@ class Player{
 	        checkIfReady();
 	    };
 
+        let _player = this;
 	    function checkIfReady(callback){
 	        if (driver.isReady()) {
-	            opts.onReady();
+	            opts.onReady(_player);
 	        } else if (attempts < 20000) {
 	            setTimeout(checkIfReady,10);
 				attempts++;
@@ -95,7 +96,7 @@ class Player{
     }
 
     setTime(time){
-    	this.driver.setTime(time);
+        this.driver.setTime(time);
     }
     
     skipTo(time) {
@@ -103,12 +104,20 @@ class Player{
     }
 
     skip(direction){
+        let expectedTime = this.getTime();
     	if (direction === 'forwards') {
-            this.driver.setTime( this.getTime() + this.skipTime );
+            expectedTime += this.skipTime;
         } else if ((direction === 'backwards') || direction === 'back') {
-            this.driver.setTime( this.getTime() - this.skipTime );
+            expectedTime -= this.skipTime;
         } else {
             throw ('Skip requires a direction: forwards or backwards')
+        }
+        this.setTime(expectedTime);
+        
+        // compensate for weird video setTime bug
+        if ((expectedTime > 1) && (this.getTime() === 0)) {
+            console.error('Skipped too far back');
+            setTimeout(() => this.setTime(expectedTime), 50);
         }
     }
 
@@ -199,5 +208,18 @@ function isVideoFormat(file) {
     var format = urlSplt[urlSplt.length-1];
     return !!format.match(/mov|mp4|avi|webm/);    
 }
+
+// https://remysharp.com/2010/07/21/throttling-function-calls
+function debounce(fn, delay) {
+  var timer = null;
+  return function () {
+    var context = this, args = arguments;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      fn.apply(context, args);
+    }, delay);
+  };
+}
+
 
 export {createPlayer, getPlayer, playerDrivers, isVideoFormat};

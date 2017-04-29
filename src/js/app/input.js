@@ -1,6 +1,6 @@
 const $ = require('jquery');
 
-export default function(opts) {
+export function inputSetup(opts) {
     
     var input = new oTinput({
         element: '.file-input-outer',
@@ -105,8 +105,20 @@ function show(){
     
 }
 
+export function getQueryParams(){
 
-function hide(){
+    return location.search
+        .slice(1)
+        .split('&')
+        .reduce((acc,curr)=>{ 
+
+            let [ key, value ] = curr.split("="); acc[key]=value; return acc; 
+
+        }, {});    
+
+}
+
+export function hide(){
     $('.topbar').removeClass('inputting');
     $('.input').removeClass('active');
     $('.sbutton.time').addClass('active');

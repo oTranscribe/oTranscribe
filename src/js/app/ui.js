@@ -12,31 +12,31 @@ import timeSelectionModal from './time-selection-modal';
 export function bindPlayerToUI(filename = '') {
     
     const player = getPlayer();
-    
+
     const $playPauseButton = $('.play-pause');
     
     var skippingButtonInterval;
     addKeyboardShortcut(['f1','mod+1'], player.skip.bind(player, 'backwards'));
     addKeyboardShortcut(['f2','mod+2'], player.skip.bind(player, 'forwards'));
     
-    $('.skip-backwards').mousedown(function(){
+    $('.skip-backwards').off().mousedown(function(){
         player.skip('backwards');
-        skippingButtonInterval = setInterval(function(){
+        skippingButtonInterval = setInterval(() => {
             player.skip('backwards');
         },100);
     }).mouseup(function(){
         clearInterval(skippingButtonInterval);
     });
-    $('.skip-forwards').mousedown(function(){
+    $('.skip-forwards').off().mousedown(function(){
         player.skip('forwards');    
-        skippingButtonInterval = setInterval(function(){
+        skippingButtonInterval = setInterval(() => {
             player.skip('forwards');
         },100);
     }).mouseup(function(){
         clearInterval(skippingButtonInterval);
     });
     
-    $playPauseButton.click(playPause);
+    $playPauseButton.off().click(playPause);
     addKeyboardShortcut('escape', playPause)
     
     addKeyboardShortcut(['mod+k'], timeSelectionModal.toggle);
@@ -47,6 +47,7 @@ export function bindPlayerToUI(filename = '') {
         .attr('min', player.minSpeed)
         .attr('max', player.maxSpeed)
         .attr('step', player.speedIncrement)
+        .off()
         .on('change', function() {
             player.setSpeed(this.valueAsNumber);
         });
@@ -63,7 +64,7 @@ export function bindPlayerToUI(filename = '') {
     });
 
     // make speed box sticky if button is clicked
-    $( ".speed" ).mousedown(function() {
+    $( ".speed" ).off().mousedown(function() {
         if ($('.speed-box').not(':hover').length) {
             $(this).toggleClass('fixed');
         }    
@@ -105,6 +106,7 @@ export function bindPlayerToUI(filename = '') {
 }
 
 export function addKeyboardShortcut(key, fn) {
+    Mousetrap.unbind(key);
     Mousetrap.bind(key, function(e) {
         if (e.preventDefault) {
             e.preventDefault();
