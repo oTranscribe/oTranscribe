@@ -3,14 +3,15 @@
 ******************************************/
 
 const $ = require('jquery');
+let otrQueryParams = {};
 
 import { watchFormatting, watchWordCount, toggleAbout, initAutoscroll } from './texteditor';
-import inputSetup from './input';
+import { inputSetup, getQueryParams, hide as inputHide } from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
 import { createPlayer, playerDrivers, getPlayer, isVideoFormat } from './player/player';
 import { bindPlayerToUI, keyboardShortcutSetup } from './ui';
-import { activateTimestamps, insertTimestamp } from './timestamps';
+import { activateTimestamps, insertTimestamp, convertTimestampToSeconds } from './timestamps';
 import { initBackup } from './backup';
 import { exportSetup } from './export';
 import importSetup from './import';
@@ -30,10 +31,40 @@ export default function init(){
     
     keyboardShortcutSetup();
 
-    if ( localStorageManager.getItem("oT-lastfile") ) {
-        toggleAbout();
+    // Gather query parameters into an object
+    otrQueryParams = getQueryParams();
+
+    // If the ?v=<VIDEO_ID> parameter is found in the URL, auto load YouTube video
+    if ( otrQueryParams['v'] ){
+
+        $('.start').removeClass('ready');
+        createPlayer({
+            driver: playerDrivers.YOUTUBE,
+            source: "https://www.youtube.com/watch?v=" + otrQueryParams.v
+        }).then((player) => {
+            inputHide();
+            toggleAbout();
+            bindPlayerToUI();
+            let timestamp = otrQueryParams['t']; 
+            if ( timestamp ){
+                // Is the timestamp in HH:MM::SS format?
+                if ( ~timestamp.indexOf(":") ){
+                    timestamp = convertTimestampToSeconds(timestamp);
+                } 
+                player.driver._ytEl.seekTo(timestamp);
+            }
+        });
+
+    } else {
+
+        if ( localStorageManager.getItem("oT-lastfile") ) {
+            toggleAbout();
+        }
+        
     }
+
     $('.title').mousedown(toggleAbout);
+
 }
 
 // note: this function may run multiple times
@@ -63,7 +94,8 @@ function onLocalized() {
 
     var startText = document.webL10n.get('start-ready');
     $('.start')
-        .addClass('ready')
+        // .addClass('ready')
+        .toggleClass('ready', !otrQueryParams.v)    // Show 'Loading...' text if a video is to be automatically initialized
         .off()
         .click(toggleAbout);
     

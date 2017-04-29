@@ -75,4 +75,4 @@ function convertTimestampToSeconds(hms) {
     return (+a[0]) * 60 + (+a[1]);
 }
 
-export {activateTimestamps, insertTimestamp};
+export {activateTimestamps, insertTimestamp, convertTimestampToSeconds};
