@@ -23,6 +23,11 @@ const shortcuts = {
     returnToStart: ['mod+0']
 };
 
+export const getShortcuts = () => JSON.parse(JSON.stringify(shortcuts));
+export const setShortcut = (name, values) => {
+    shortcuts[name] = values;
+}
+
 export function bindPlayerToUI(filename = '') {
     
     const player = getPlayer();

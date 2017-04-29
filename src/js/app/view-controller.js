@@ -1,3 +1,5 @@
+import {getShortcuts} from './ui';
+
 let currentView = 'about';
 
 const $ = (sel) => document.querySelector(sel);
@@ -12,6 +14,11 @@ const views = {
     },
     settings: () => {
         $('.settings-button').classList.add('active');
+        const shortcuts = getShortcuts();
+        const shortcutList = Object.keys(getShortcuts()).map(k => (
+            `<li>${k}: ${shortcuts[k]}</li>`
+        ));
+        $('.keyboard-shortcut-list').innerHTML = `<ul>${shortcutList.join('')}</ul>`;
     }
 }
 
