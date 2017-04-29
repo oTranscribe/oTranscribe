@@ -146,6 +146,16 @@
 
 </div>
 
+<script type="text/javascript">
+function makeLinkable(el) {
+    el.innerHTML += '<a class="permalink" href="#' + el.id + '">#</a>';
+}
+var headers = document.querySelectorAll('h2');
+for (var i = 0; i < headers.length; i++) {
+    makeLinkable(headers[i]);
+}
+</script>
+
 </body>
 
 </html>
