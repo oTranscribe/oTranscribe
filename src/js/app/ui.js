@@ -9,6 +9,20 @@ import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
 import timeSelectionModal from './time-selection-modal';
 
+const shortcuts = {
+    backwards: ['f1','mod+1'],
+    forwards: ['f2','mod+2'],
+    playPause: ['escape'],
+    timeSelection: ['mod+k'],
+    speedDown: ['f3','mod+3'],
+    speedUp: ['f4','mod+4'],
+    bold: ['mod+b'],
+    italic: ['mod+i'],
+    underline: ['mod+u'],
+    addTimestamp: ['mod+j'],
+    returnToStart: ['mod+0']
+};
+
 export function bindPlayerToUI(filename = '') {
     
     const player = getPlayer();
@@ -16,8 +30,8 @@ export function bindPlayerToUI(filename = '') {
     const $playPauseButton = $('.play-pause');
     
     var skippingButtonInterval;
-    addKeyboardShortcut(['f1','mod+1'], player.skip.bind(player, 'backwards'));
-    addKeyboardShortcut(['f2','mod+2'], player.skip.bind(player, 'forwards'));
+    addKeyboardShortcut(shortcuts.backwards, player.skip.bind(player, 'backwards'));
+    addKeyboardShortcut(shortcuts.forwards, player.skip.bind(player, 'forwards'));
     
     $('.skip-backwards').off().mousedown(function(){
         player.skip('backwards');
@@ -37,9 +51,9 @@ export function bindPlayerToUI(filename = '') {
     });
     
     $playPauseButton.off().click(playPause);
-    addKeyboardShortcut('escape', playPause)
+    addKeyboardShortcut(shortcuts.playPause, playPause)
     
-    addKeyboardShortcut(['mod+k'], timeSelectionModal.toggle);
+    addKeyboardShortcut(shortcuts.timeSelection, timeSelectionModal.toggle);
     $('.player-time').off().click(timeSelectionModal.toggle);
     
     let changingSpeed = false;
@@ -56,10 +70,10 @@ export function bindPlayerToUI(filename = '') {
         $('.speed-slider').val( speed );            
     });
 
-    addKeyboardShortcut(['f3','mod+3'], () => {
+    addKeyboardShortcut(shortcuts.speedDown, () => {
         player.speed('down');
     });
-    addKeyboardShortcut(['f4','mod+4'], () => {
+    addKeyboardShortcut(shortcuts.speedUp, () => {
         player.speed('up');
     });
 
@@ -122,11 +136,11 @@ export function addKeyboardShortcut(key, fn) {
 
 export function keyboardShortcutSetup() {
     
-    addKeyboardShortcut( 'mod+b', () => document.execCommand('bold',false,null)       );
-    addKeyboardShortcut( 'mod+i', () => document.execCommand('italic',false,null)     );
-    addKeyboardShortcut( 'mod+u', () => document.execCommand('underline',false,null)  );
-    addKeyboardShortcut( 'mod+j', () => insertTimestamp()                             );
-    addKeyboardShortcut( 'mod+0', () => {
+    addKeyboardShortcut( shortcuts.bold,      () => document.execCommand('bold',false,null)       );
+    addKeyboardShortcut( shortcuts.italic,    () => document.execCommand('italic',false,null)     );
+    addKeyboardShortcut( shortcuts.underline, () => document.execCommand('underline',false,null)  );
+    addKeyboardShortcut( shortcuts.addTimestamp, () => insertTimestamp()                             );
+    addKeyboardShortcut( shortcuts.returnToStart, () => {
         const player = getPlayer();
         player.skipTo( 0 );
     });
