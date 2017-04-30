@@ -14,6 +14,9 @@
     }
     .reset-button {
         @include button;
+        display: inline-block;
+        padding: 8px 10px;
+        margin: 10px 0;
     }
 }
 
@@ -44,16 +47,23 @@
     }
     .remove-combo {
         font-size:8px;
-        background: white;
-        color: black;
+        color: $grey;
         border-radius: 100%;
-        width: 12px;
-        height: 12px;
         display: inline-block;
         line-height: 0;
         vertical-align: top;
         cursor: pointer;
         margin-left: 4px;
+        text-align: center;
+        padding: 3px 4px;
+        vertical-align: middle;
+        margin-bottom: 2px;
+        border-radius: 1px;
+        opacity: 0.75;
+        &:hover {
+            background: $grey;
+            color: $dark;
+        }
     }
     .add-combo {
         cursor: pointer;

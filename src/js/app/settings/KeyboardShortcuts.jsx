@@ -22,7 +22,9 @@ class Shortcut extends Component {
         const combos = keyCombos.map((combo, i) => (
             <span className="key-combo">
                 {combo}
-                <span className="remove-combo" onClick={removeCombo.bind(this, keyFn, i)}>x</span>
+                <span className="remove-combo" onClick={removeCombo.bind(this, keyFn, i)}>
+                    <i class="fa fa-times"></i>
+                </span>
             </span>
         ));
         let addText = '+';
@@ -54,8 +56,9 @@ export default function KeyboardShortcutPanel(props) {
     ));
     return (
         <div>
+            <h3>Keyboard shortcuts</h3>
             <ul className="keyboard-shortcuts">{shortcutList}</ul>
-            <div className="reset-button" onClick={props.reset}>Restore defaults</div>
+            <div className="reset-button" onClick={props.reset}>Restore default keyboard shortcuts</div>
         </div>
     );
 }
