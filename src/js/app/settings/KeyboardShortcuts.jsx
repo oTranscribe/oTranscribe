@@ -17,8 +17,15 @@ class Shortcut extends Component {
                 });
             });
         };
-        const combos = keyCombos.map(combo => (
-            <span className="key-combo">{combo}</span>
+        const removeCombo = function(keyFn, index) {
+            keyCombos.splice(index, 1)
+            onChange(keyFn, keyCombos);
+        };
+        const combos = keyCombos.map((combo, i) => (
+            <span className="key-combo">
+                {combo}
+                <span className="remove-combo" onClick={removeCombo.bind(this, keyFn, i)}>x</span>
+            </span>
         ));
         let addText = '+';
         if (this.state.listening) {

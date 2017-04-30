@@ -39,6 +39,19 @@
         background: $dark;
         color: white;
     }
+    .remove-combo {
+        font-size:8px;
+        background: white;
+        color: black;
+        border-radius: 100%;
+        width: 12px;
+        height: 12px;
+        display: inline-block;
+        line-height: 0;
+        vertical-align: top;
+        cursor: pointer;
+        margin-left: 4px;
+    }
     .add-combo {
         cursor: pointer;
         background: $grey;
