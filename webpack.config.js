@@ -14,8 +14,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js?$/, // Another convention is to use the .es6 filetype, but you then
-                        // have to supply that explicitly in import statements, which isn't cool.
+        test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
         query: {
@@ -36,6 +35,7 @@ module.exports = {
           loader: ExtractTextPlugin.extract(['css-loader','sass-loader'])
           
       }
+      
     ]
   },
   // Use the plugin to specify the resulting filename (and add needed behavior to the compiler)

@@ -13,3 +13,45 @@
         margin-bottom: 20px;
     }
 }
+
+.keyboard-shortcuts {
+    li {
+        line-height: 3em;
+        display: flex;
+    }
+    .shortcut-name {
+        width: 20%;
+        min-width: 200px;
+    }
+    .shortcut-combos {
+
+    } 
+    .key-combo, .add-combo {
+        cursor: default;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 2px;
+        padding: 0px 4px;
+        margin-right: 5px;
+        line-height: 21px;
+        background: $dark;
+        color: white;
+    }
+    .add-combo {
+        cursor: pointer;
+        background: $grey;
+        color: black;
+        &:hover {
+            background: $dark;
+            color: white;
+        }
+        &.listening {
+            cursor: default;
+            background: $grey;
+            color: black;
+            pointer-events: none;
+        }
+    }
+}
