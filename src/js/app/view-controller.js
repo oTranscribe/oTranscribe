@@ -1,4 +1,4 @@
-import showSettings from './settings/showSettings.jsx';
+import {showSettings} from './settings/settings.jsx';
 const $ = (sel) => document.querySelector(sel);
 
 let currentView = 'about';

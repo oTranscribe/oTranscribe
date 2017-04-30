@@ -8,28 +8,12 @@ const Progressor = require('progressor.js');
 import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
 import timeSelectionModal from './time-selection-modal';
-
-const shortcuts = {
-    backwards: ['f1','mod+1'],
-    forwards: ['f2','mod+2'],
-    playPause: ['escape'],
-    timeSelection: ['mod+k'],
-    speedDown: ['f3','mod+3'],
-    speedUp: ['f4','mod+4'],
-    bold: ['mod+b'],
-    italic: ['mod+i'],
-    underline: ['mod+u'],
-    addTimestamp: ['mod+j'],
-    returnToStart: ['mod+0']
-};
-
-export const getShortcuts = () => JSON.parse(JSON.stringify(shortcuts));
-export const setShortcut = (name, values) => {
-    shortcuts[name] = values;
-}
+import { getSettings } from './settings/settings.jsx';
 
 export function bindPlayerToUI(filename = '') {
     
+    const shortcuts = getSettings().keyboardShortcuts.shortcuts;
+
     const player = getPlayer();
 
     const $playPauseButton = $('.play-pause');
@@ -140,6 +124,8 @@ export function addKeyboardShortcut(key, fn) {
 }
 
 export function keyboardShortcutSetup() {
+
+    const shortcuts = getSettings().keyboardShortcuts.shortcuts;
     
     addKeyboardShortcut( shortcuts.bold,      () => document.execCommand('bold',false,null)       );
     addKeyboardShortcut( shortcuts.italic,    () => document.execCommand('italic',false,null)     );

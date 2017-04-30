@@ -12,6 +12,9 @@
         font-weight: 300;
         margin-bottom: 20px;
     }
+    .reset-button {
+        @include button;
+    }
 }
 
 .keyboard-shortcuts {

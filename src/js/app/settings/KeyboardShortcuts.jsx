@@ -1,6 +1,4 @@
 import { h, render, Component } from 'preact';
-
-import {getShortcuts, setShortcut} from '../ui';
 import keycode from 'keycode';
 
 class Shortcut extends Component {
@@ -46,29 +44,20 @@ class Shortcut extends Component {
     }
 }
 
-export default class KeyboardShortcutPanel extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            shortcuts: getShortcuts()
-        }
+export default function KeyboardShortcutPanel(props) {
+    const onChange = function(keyFn, keyCombos) {
+        props.settings.shortcuts[keyFn] = keyCombos;
+        props.onChange(props.settings);
     }
-    render() {
-        const onChange = function(keyFn, keyCombos) {
-            setShortcut(keyFn, keyCombos);
-            console.log(getShortcuts())
-            this.setState({
-                shortcuts: getShortcuts()
-            });
-        }
-        const shortcuts = this.state.shortcuts;
-        const shortcutList = Object.keys(shortcuts).map(k => (
-            <Shortcut keyFn={k} keyCombos={shortcuts[k]} onChange={onChange.bind(this)} />
-        ));
-        return (
+    const shortcutList = Object.keys(props.settings.shortcuts).map(k => (
+        <Shortcut keyFn={k} keyCombos={props.settings.shortcuts[k]} onChange={onChange} />
+    ));
+    return (
+        <div>
             <ul className="keyboard-shortcuts">{shortcutList}</ul>
-        );
-    }
+            <div className="reset-button" onClick={props.reset}>Restore defaults</div>
+        </div>
+    );
 }
 
 const listen = (cb) => {
