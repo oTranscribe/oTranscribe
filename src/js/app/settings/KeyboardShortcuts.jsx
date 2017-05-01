@@ -9,12 +9,19 @@ class Shortcut extends Component {
                 listening: true
             });
             listen(newKeyCombo => {
-                onChange(keyFn, [].concat(keyCombos, newKeyCombo));
+                if (this.state.listening === true) {
+                    onChange(keyFn, [].concat(keyCombos, newKeyCombo));
+                }
                 this.setState({
                     listening: false
                 });
             });
         };
+        const cancelListen = function() {
+            this.setState({
+                listening: false
+            });
+        }
         const removeCombo = function(keyFn, index) {
             keyCombos.splice(index, 1)
             onChange(keyFn, keyCombos);
@@ -27,16 +34,21 @@ class Shortcut extends Component {
                 </span>
             </span>
         ));
-        let addText = '+';
         if (this.state.listening) {
-            addText = 'Listening...'
+            combos.push((
+                <span className='listening-combo'>
+                    Listening for new shortcut...
+                    <span onClick={cancelListen.bind(this)}>cancel</span>
+                </span>
+            ));
+        } else {
+            combos.push((
+                <span
+                    className={`add-combo`}
+                    onClick={listenForShortcut.bind(this, keyFn)}
+                >+</span>
+            ));
         }
-        combos.push((
-            <span
-                className={`add-combo ${this.state.listening ? 'listening' : ''}`}
-                onClick={listenForShortcut.bind(this, keyFn)}
-            >{addText}</span>
-        ));
         return (
             <li>
                 <div class="shortcut-name">{keyFn}</div>

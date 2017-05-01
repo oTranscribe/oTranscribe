@@ -66,18 +66,24 @@
         }
     }
     .add-combo {
-        cursor: pointer;
+        @include button;
+        border: none;
+        border-radius: 2px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    .listening-combo {
+        cursor: default;
         background: $grey;
         color: black;
-        &:hover {
-            background: $dark;
-            color: white;
-        }
-        &.listening {
-            cursor: default;
-            background: $grey;
-            color: black;
-            pointer-events: none;
-        }
+        font-size: 14px;
+        margin-left: 4px;
+        > span {
+            @include button;
+            border: none;
+            border-radius: 2px;
+            padding: 3px 4px;
+            margin-left: 5px;
+        }        
     }
 }

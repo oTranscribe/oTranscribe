@@ -3,6 +3,8 @@
 $accent: rgb(52, 130, 177);
 $dark: hsl(0,0,15);
 $grey: #f1f1f1;
+$accentLight: lighten($accent, 10%);
+$accentGradient: linear-gradient( 0deg, lighten($accent, 0%) 5%, lighten($accent, 10%) 100% );
 
 @mixin button{
     color: white;
@@ -12,9 +14,7 @@ $grey: #f1f1f1;
     cursor: pointer;
     
     &:hover, &.hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($accent, 10%)), color-stop(1, lighten($accent, 5%)) );
-        background:-moz-linear-gradient( center top, lighten($accent, 10%) 5%, lighten($accent, 10%) 100% );
-    	background-color:#58AFDB;
+        background: $accentLight;
     }   
     
 }
