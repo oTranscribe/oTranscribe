@@ -15,6 +15,9 @@ export function bindPlayerToUI(filename = '') {
     const shortcuts = getSettings().keyboardShortcuts.shortcuts;
 
     const player = getPlayer();
+    if (!player) {
+        return;
+    }
 
     const $playPauseButton = $('.play-pause');
     

@@ -1,5 +1,6 @@
 import { h, render, Component } from 'preact';
 import KeyboardShortcuts from './KeyboardShortcuts.jsx';
+import { bindPlayerToUI } from '../ui';
 const localStorageManager = require('local-storage-manager');
 
 const defaultSettings = {};
@@ -28,6 +29,15 @@ export function getSettings() {
     return settings;
 }
 
+const cleanup = {};
+cleanup.keyboardShortcuts = (state, prevState) => {
+    bindPlayerToUI();
+    // TODO: check if any keyboard shortcuts are no longer present in current state
+    const shortcuts = state.keyboardShortcuts.shortcuts;
+    const prevShortcuts = prevState.keyboardShortcuts.shortcuts;
+    console.log(shortcuts, prevShortcuts)
+}
+
 class Settings extends Component {
     constructor(props) {
         super(props);
@@ -35,15 +45,15 @@ class Settings extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         localStorageManager.setItem('oTranscribe-settings', this.state);
+        cleanup.keyboardShortcuts(this.state, prevState);
     }
     render() {
         const update = function(key, value) {
             this.setState({
-                [key]: value
+                [key]: Object.assign({}, value)
             });
         }
         const reset = function(key) {
-            console.log(key, defaultSettings[key])
             this.setState({
                 [key]: defaultSettings[key]
             });
