@@ -5,17 +5,17 @@ const localStorageManager = require('local-storage-manager');
 const defaultSettings = {};
 defaultSettings.keyboardShortcuts = {
     shortcuts: {
+        playPause: ['escape'],
         backwards: ['f1','mod+1'],
         forwards: ['f2','mod+2'],
-        playPause: ['escape'],
+        returnToStart: ['mod+0'],
         timeSelection: ['mod+k'],
         speedDown: ['f3','mod+3'],
         speedUp: ['f4','mod+4'],
+        addTimestamp: ['mod+j'],
         bold: ['mod+b'],
         italic: ['mod+i'],
-        underline: ['mod+u'],
-        addTimestamp: ['mod+j'],
-        returnToStart: ['mod+0']
+        underline: ['mod+u']
     }
 }
 

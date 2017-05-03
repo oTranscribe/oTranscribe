@@ -37,8 +37,10 @@ class Shortcut extends Component {
         if (this.state.listening) {
             combos.push((
                 <span className='listening-combo'>
-                    Listening for new shortcut...
-                    <span onClick={cancelListen.bind(this)}>cancel</span>
+                    {document.webL10n.get('listening')}
+                    <span onClick={cancelListen.bind(this)}>
+                        {document.webL10n.get('cancel')}
+                    </span>
                 </span>
             ));
         } else {
@@ -51,7 +53,7 @@ class Shortcut extends Component {
         }
         return (
             <li>
-                <div class="shortcut-name">{keyFn}</div>
+                <div class="shortcut-name">{document.webL10n.get(keyFn)}</div>
                 <div class="shortcut-combos">{combos}</div>
             </li>
         );
@@ -68,9 +70,11 @@ export default function KeyboardShortcutPanel(props) {
     ));
     return (
         <div>
-            <h3>Keyboard shortcuts</h3>
+            <h3>{document.webL10n.get('keyboard-shortcuts')}</h3>
             <ul className="keyboard-shortcuts">{shortcutList}</ul>
-            <div className="reset-button" onClick={props.reset}>Restore default keyboard shortcuts</div>
+            <div className="reset-button" onClick={props.reset}>
+                {document.webL10n.get('restore-shortcuts')}
+            </div>
         </div>
     );
 }

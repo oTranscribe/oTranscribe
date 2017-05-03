@@ -13,6 +13,7 @@ const views = {
     },
     settings: () => {
         $('.settings-button').classList.add('active');
+        $('.settings-panel').classList.add('active');
         $('.settings-panel').innerHTML = '';
         showSettings($('.settings-panel'));
     }
@@ -22,6 +23,7 @@ const hideAllViews = () => {
     $('.title').classList.remove('active');
     $('.about').classList.remove('active');
     $('.settings-button').classList.remove('active');
+    $('.settings-panel').classList.remove('active');
     $('.textbox-container').style.display = 'none';
 }
 

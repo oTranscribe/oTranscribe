@@ -1,6 +1,10 @@
 .settings-panel {
     max-width: 800px;
     margin: 30px auto;
+    display: none;
+    &.active {
+        display: block;
+    }
     h2 {
         font-size: 32px;
         font-weight: 300;
