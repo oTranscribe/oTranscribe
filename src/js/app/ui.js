@@ -99,6 +99,8 @@ export function bindPlayerToUI(filename = '') {
         }
     });
     
+    setKeyboardShortcutsinUI();
+    
     function playPause() {
         if (player.getStatus() !== 'playing'){
             player.play();
@@ -138,5 +140,33 @@ export function keyboardShortcutSetup() {
         const player = getPlayer();
         player.skipTo( 0 );
     });
+    setKeyboardShortcutsinUI();
 }
 
+export const correctModKey = (binding) => {
+    const isMac = window.navigator.platform.indexOf('Mac') > -1;
+    const modKey = isMac? '⌘' : 'Ctrl';
+    return binding.replace(/mod/g, modKey);
+}
+
+export const getFormattedShortcutFor = (shortcut, shortcuts) => {
+    if (!shortcuts) {
+        shortcuts = getSettings().keyboardShortcuts.shortcuts;
+    }
+    if ((shortcut in shortcuts) && shortcuts[shortcut].length > 0) {
+        let text = shortcuts[shortcut][0];
+        if (text === 'escape') {
+            text = 'esc';
+        }
+        return correctModKey(text);
+    }
+    return '';
+}
+
+function setKeyboardShortcutsinUI() {
+    const shortcuts = getSettings().keyboardShortcuts.shortcuts;
+    $('[data-shortcut]').each(function() {
+        const shortcut = $(this).attr('data-shortcut');
+        $(this).text(getFormattedShortcutFor(shortcut, shortcuts));
+    });
+}

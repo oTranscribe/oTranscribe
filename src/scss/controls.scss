@@ -50,13 +50,15 @@
 }
 
 
-.button:after {
+.button .topbar-button-shortcut {
     opacity: 0;
     padding-top: 2em;
     color: #000;
     font-size: 9px;
     cusor: default;
     display: block;
+    pointer-events: none;
+    text-transform: uppercase;
     
 	-webkit-transition: opacity 0.25s;
 	-moz-transition: opacity 0.25s;
@@ -64,21 +66,9 @@
     
 }
 
-.topbar:hover .button:after {
+.topbar:hover .button .topbar-button-shortcut {
 //    display: block;
     opacity: 1;
-}
-
-.button {
-    &.play-pause:after {
-      content: 'ESC';
-    }
-    &.skip-backwards:after {
-      content: 'F1';
-    }
-    &.skip-forwards:after {
-      content: 'F2';
-    }
 }
 
 .video-player {

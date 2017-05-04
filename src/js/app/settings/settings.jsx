@@ -1,6 +1,6 @@
 import { h, render, Component } from 'preact';
 import KeyboardShortcuts from './KeyboardShortcuts.jsx';
-import { bindPlayerToUI } from '../ui';
+import { bindPlayerToUI, keyboardShortcutSetup } from '../ui';
 const localStorageManager = require('local-storage-manager');
 
 const defaultSettings = {};
@@ -32,6 +32,7 @@ export function getSettings() {
 const cleanup = {};
 cleanup.keyboardShortcuts = (state, prevState) => {
     bindPlayerToUI();
+    keyboardShortcutSetup();
     // TODO: check if any keyboard shortcuts are no longer present in current state
     const shortcuts = state.keyboardShortcuts.shortcuts;
     const prevShortcuts = prevState.keyboardShortcuts.shortcuts;

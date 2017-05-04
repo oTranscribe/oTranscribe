@@ -1,5 +1,6 @@
 import { h, render, Component } from 'preact';
 import keycode from 'keycode';
+import { correctModKey } from '../ui';
 
 class Shortcut extends Component {
     render() {
@@ -28,7 +29,7 @@ class Shortcut extends Component {
         };
         const combos = keyCombos.map((combo, i) => (
             <span className="key-combo">
-                {combo}
+                {correctModKey(combo)}
                 <span className="remove-combo" onClick={removeCombo.bind(this, keyFn, i)}>
                     <i class="fa fa-times"></i>
                 </span>
