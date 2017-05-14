@@ -25,7 +25,7 @@ exportFormats.download.push({
     extension: 'md',
     fn: (txt) => {
         const fullyClean = sanitizeHtml(txt, {
-            allowedTags: [ 'p', 'em', 'strong', 'i' ]
+            allowedTags: [ 'p', 'em', 'strong', 'i', 'b', 'br' ]
         });
         const md = toMarkdown( fullyClean );
         return md.replace(/\t/gm,"");           
