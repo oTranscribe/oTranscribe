@@ -22,14 +22,40 @@ function getTime(){
     };
 };
 
+// http://stackoverflow.com/a/25943182
+function insertHTML(newElement) {
+    var sel, range;
+    if (window.getSelection && (sel = window.getSelection()).rangeCount) {
+        range = sel.getRangeAt(0);
+        range.collapse(true);
+        range.insertNode(newElement);
+
+        // Move the caret immediately after the inserted span
+        range.setStartAfter(newElement);
+        range.collapse(true);
+        sel.removeAllRanges();
+        sel.addRange(range);
+    }
+}
+
+
 function insertTimestamp(){
     var time = getTime();
     if (time) {
-        document.execCommand('insertHTML',false,
-        `<span class="timestamp" contenteditable="false" data-timestamp="${time.raw}" >${time.formatted}</span>&nbsp;`
-        );
+        const space = document.createTextNode("\u00A0");
+        insertHTML(createTimestampEl(time));
+        insertHTML(space);
         activateTimestamps();
     }
+}
+
+function createTimestampEl(time) {
+    const timestamp = document.createElement('span');
+    timestamp.innerText = time.formatted;
+    timestamp.className = 'timestamp';
+    timestamp.setAttribute('contenteditable', 'false');
+    timestamp.setAttribute('data-timestamp', time.raw);
+    return timestamp;
 }
 
 function activateTimestamps(){
