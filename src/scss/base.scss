@@ -2,6 +2,9 @@
 
 $accent: rgb(52, 130, 177);
 $dark: hsl(0,0,15);
+$grey: #f1f1f1;
+$accentLight: lighten($accent, 10%);
+$accentGradient: linear-gradient( 0deg, lighten($accent, 0%) 5%, lighten($accent, 10%) 100% );
 
 @mixin button{
     color: white;
@@ -11,9 +14,7 @@ $dark: hsl(0,0,15);
     cursor: pointer;
     
     &:hover, &.hover {
-        background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, lighten($accent, 10%)), color-stop(1, lighten($accent, 5%)) );
-        background:-moz-linear-gradient( center top, lighten($accent, 10%) 5%, lighten($accent, 10%) 100% );
-    	background-color:#58AFDB;
+        background: $accentLight;
     }   
     
 }
@@ -32,10 +33,11 @@ body {
     @include noselect(none);
     font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
     height: 100%;
+    background: $grey;
 }
 
 #extra-ui-text {
     display: none;
 }
 
-@import "input", "about", "help", "controls", "topbar", "languages", "speedbox", "audiojs", "textbox", "message-panel", "sidebar", "export", "backup", "font-awesome-fallback";
+@import "input", "about", "help", "controls", "topbar", "languages", "speedbox", "audiojs", "textbox", "message-panel", "sidebar", "export", "backup", "settings", "font-awesome-fallback";

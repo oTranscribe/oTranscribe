@@ -7,16 +7,23 @@ const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
 import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
+import timeSelectionModal from './time-selection-modal';
+import { getSettings } from './settings/settings.jsx';
 
 export function bindPlayerToUI(filename = '') {
     
+    const shortcuts = getSettings().keyboardShortcuts.shortcuts;
+
     const player = getPlayer();
+    if (!player) {
+        return;
+    }
 
     const $playPauseButton = $('.play-pause');
     
     var skippingButtonInterval;
-    addKeyboardShortcut(['f1','mod+1'], player.skip.bind(player, 'backwards'));
-    addKeyboardShortcut(['f2','mod+2'], player.skip.bind(player, 'forwards'));
+    addKeyboardShortcut(shortcuts.backwards, player.skip.bind(player, 'backwards'));
+    addKeyboardShortcut(shortcuts.forwards, player.skip.bind(player, 'forwards'));
     
     $('.skip-backwards').off().mousedown(function(){
         player.skip('backwards');
@@ -36,7 +43,10 @@ export function bindPlayerToUI(filename = '') {
     });
     
     $playPauseButton.off().click(playPause);
-    addKeyboardShortcut('escape', playPause)
+    addKeyboardShortcut(shortcuts.playPause, playPause)
+    
+    addKeyboardShortcut(shortcuts.timeSelection, timeSelectionModal.toggle);
+    $('.player-time').off().click(timeSelectionModal.toggle);
     
     let changingSpeed = false;
     $('.speed-slider')
@@ -52,10 +62,10 @@ export function bindPlayerToUI(filename = '') {
         $('.speed-slider').val( speed );            
     });
 
-    addKeyboardShortcut(['f3','mod+3'], () => {
+    addKeyboardShortcut(shortcuts.speedDown, () => {
         player.speed('down');
     });
-    addKeyboardShortcut(['f4','mod+4'], () => {
+    addKeyboardShortcut(shortcuts.speedUp, () => {
         player.speed('up');
     });
 
@@ -73,12 +83,12 @@ export function bindPlayerToUI(filename = '') {
             media : document.querySelector('audio, video'),
             bar : playerHook,
             text : filename,                       
-            time : document.querySelector('#player-time'),
+            time : document.querySelector('.player-time'),
             hours: true
         });
-        document.querySelector('#player-time').style.display = 'block';
+        document.querySelector('.player-time').style.display = 'block';
     } else {
-        document.querySelector('#player-time').style.display = 'none';
+        document.querySelector('.player-time').style.display = 'none';
     }
     
     player.onPlayPause(status => {
@@ -88,6 +98,8 @@ export function bindPlayerToUI(filename = '') {
             $playPauseButton.removeClass('playing');
         }
     });
+    
+    setKeyboardShortcutsinUI();
     
     function playPause() {
         if (player.getStatus() !== 'playing'){
@@ -117,16 +129,44 @@ export function addKeyboardShortcut(key, fn) {
 }
 
 export function keyboardShortcutSetup() {
+
+    const shortcuts = getSettings().keyboardShortcuts.shortcuts;
     
-    addKeyboardShortcut( 'mod+b', () => document.execCommand('bold',false,null)       );
-    addKeyboardShortcut( 'mod+i', () => document.execCommand('italic',false,null)     );
-    addKeyboardShortcut( 'mod+u', () => document.execCommand('underline',false,null)  );
-    addKeyboardShortcut( 'mod+j', () => insertTimestamp()                             );
-    addKeyboardShortcut( 'mod+0', () => {
+    addKeyboardShortcut( shortcuts.bold,      () => document.execCommand('bold',false,null)       );
+    addKeyboardShortcut( shortcuts.italic,    () => document.execCommand('italic',false,null)     );
+    addKeyboardShortcut( shortcuts.underline, () => document.execCommand('underline',false,null)  );
+    addKeyboardShortcut( shortcuts.addTimestamp, () => insertTimestamp()                             );
+    addKeyboardShortcut( shortcuts.returnToStart, () => {
         const player = getPlayer();
         player.skipTo( 0 );
     });
+    setKeyboardShortcutsinUI();
 }
 
+export const correctModKey = (binding) => {
+    const isMac = window.navigator.platform.indexOf('Mac') > -1;
+    const modKey = isMac? '⌘' : 'Ctrl';
+    return binding.replace(/mod/g, modKey);
+}
 
+export const getFormattedShortcutFor = (shortcut, shortcuts) => {
+    if (!shortcuts) {
+        shortcuts = getSettings().keyboardShortcuts.shortcuts;
+    }
+    if ((shortcut in shortcuts) && shortcuts[shortcut].length > 0) {
+        let text = shortcuts[shortcut][0];
+        if (text === 'escape') {
+            text = 'esc';
+        }
+        return correctModKey(text);
+    }
+    return '';
+}
 
+function setKeyboardShortcutsinUI() {
+    const shortcuts = getSettings().keyboardShortcuts.shortcuts;
+    $('[data-shortcut]').each(function() {
+        const shortcut = $(this).attr('data-shortcut');
+        $(this).text(getFormattedShortcutFor(shortcut, shortcuts));
+    });
+}

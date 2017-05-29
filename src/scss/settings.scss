@@ -1,0 +1,97 @@
+.settings-panel {
+    max-width: 800px;
+    margin: 30px auto;
+    display: none;
+    &.active {
+        display: block;
+    }
+    h2 {
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-size: 24px;
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    .reset-button {
+        @include button;
+        display: inline-block;
+        padding: 8px 10px;
+        margin: 10px 0;
+    }
+}
+
+.keyboard-shortcuts {
+    li {
+        line-height: 3em;
+        display: flex;
+        padding: 0 1em;
+        &:nth-child(2n - 1) {
+            background: white;
+        }
+    }
+    .shortcut-name {
+        width: 20%;
+        min-width: 200px;
+    }
+    .shortcut-combos {
+
+    } 
+    .key-combo, .add-combo {
+        cursor: default;
+        display: inline-block;
+        white-space: nowrap;
+        font-size: 14px;
+        border: 1px solid black;
+        border-radius: 2px;
+        padding: 0px 4px;
+        margin-right: 5px;
+        line-height: 21px;
+        background: $dark;
+        color: white;
+    }
+    .remove-combo {
+        font-size:8px;
+        color: $grey;
+        border-radius: 100%;
+        display: inline-block;
+        line-height: 0;
+        vertical-align: top;
+        cursor: pointer;
+        margin-left: 4px;
+        text-align: center;
+        padding: 3px 4px;
+        vertical-align: middle;
+        margin-bottom: 2px;
+        border-radius: 1px;
+        opacity: 0.75;
+        &:hover {
+            background: $grey;
+            color: $dark;
+        }
+    }
+    .add-combo {
+        @include button;
+        border: none;
+        border-radius: 2px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+    }
+    .listening-combo {
+        cursor: default;
+        background: $grey;
+        color: black;
+        font-size: 14px;
+        margin-left: 4px;
+        > span {
+            @include button;
+            border: none;
+            border-radius: 2px;
+            padding: 3px 4px;
+            margin-left: 5px;
+        }        
+    }
+}

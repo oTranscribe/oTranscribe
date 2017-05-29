@@ -8,7 +8,7 @@
         display: inline-block;
         vertical-align: top;
         height: 36px;
-        width: 36px;
+        min-width: 36px;
         text-align: center;
         border-right: 1px solid lighten($dark, 10%);
         background: $dark;
@@ -50,13 +50,15 @@
 }
 
 
-.button:after {
+.button .topbar-button-shortcut {
     opacity: 0;
     padding-top: 2em;
     color: #000;
     font-size: 9px;
     cusor: default;
     display: block;
+    pointer-events: none;
+    text-transform: uppercase;
     
 	-webkit-transition: opacity 0.25s;
 	-moz-transition: opacity 0.25s;
@@ -64,21 +66,9 @@
     
 }
 
-.topbar:hover .button:after {
+.topbar:hover .button .topbar-button-shortcut {
 //    display: block;
     opacity: 1;
-}
-
-.button {
-    &.play-pause:after {
-      content: 'ESC';
-    }
-    &.skip-backwards:after {
-      content: 'F1';
-    }
-    &.skip-forwards:after {
-      content: 'F2';
-    }
 }
 
 .video-player {
@@ -132,15 +122,39 @@
     border-right: 1px solid lighten($dark, 10%);
 }
 
-#player-time {
+.player-time {
     @include noselect(text);
     display: inline-block;
     font-size: 13px;
-    padding: 11px 0;
     border-left: 1px solid lighten($dark, 10%);
     border-right: 1px solid lighten($dark, 10%);
-    vertical-align: top;
-    text-align: right;
-    padding-left: 8px;
-    padding-right: 14px;
+    padding: 11px 10px 9px 10px !important;
+}
+
+.time-selection {
+    position: fixed;
+    top: 20px;
+    z-index: 50;
+    top: 200px;
+    background: $dark;
+    padding: 7px;
+    color: white;
+    top: 25px;
+    box-shadow: 0px 0px 5px black;
+    right: 160px;
+    border: 1px solid #404040;
+    
+    display: none;
+    
+    &.active {
+        display: block;
+    }
+    input {
+        width: 60px;
+        font-size: 16px;
+        text-align: center;
+    }
+    span {
+        padding: 0 7px;
+    }
 }

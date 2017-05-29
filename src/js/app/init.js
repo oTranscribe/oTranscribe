@@ -5,7 +5,7 @@
 const $ = require('jquery');
 let otrQueryParams = {};
 
-import { watchFormatting, watchWordCount, toggleAbout, initAutoscroll } from './texteditor';
+import { watchFormatting, watchWordCount, initAutoscroll } from './texteditor';
 import { inputSetup, getQueryParams, hide as inputHide } from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
@@ -15,6 +15,7 @@ import { activateTimestamps, insertTimestamp, convertTimestampToSeconds } from '
 import { initBackup } from './backup';
 import { exportSetup } from './export';
 import importSetup from './import';
+import viewController from './view-controller';
 
 export default function init(){
     initBackup();
@@ -31,19 +32,20 @@ export default function init(){
     
     keyboardShortcutSetup();
 
+    viewController.set('about');
+
     // Gather query parameters into an object
     otrQueryParams = getQueryParams();
 
     // If the ?v=<VIDEO_ID> parameter is found in the URL, auto load YouTube video
     if ( otrQueryParams['v'] ){
-
         $('.start').removeClass('ready');
         createPlayer({
             driver: playerDrivers.YOUTUBE,
             source: "https://www.youtube.com/watch?v=" + otrQueryParams.v
         }).then((player) => {
             inputHide();
-            toggleAbout();
+            viewController.set('editor');
             bindPlayerToUI();
             let timestamp = otrQueryParams['t']; 
             if ( timestamp ){
@@ -58,12 +60,25 @@ export default function init(){
     } else {
 
         if ( localStorageManager.getItem("oT-lastfile") ) {
-            toggleAbout();
+            viewController.set('editor');
         }
         
     }
 
-    $('.title').mousedown(toggleAbout);
+    $('.title').mousedown(() => {
+        if (viewController.is('about')) {
+            viewController.set('editor');
+        } else {
+            viewController.set('about');
+        }
+    });
+    $('.settings-button').mousedown(() => {
+        if (viewController.is('settings')) {
+            viewController.set('editor');
+        } else {
+            viewController.set('settings');
+        }
+    });
 
 }
 
@@ -97,7 +112,9 @@ function onLocalized() {
         // .addClass('ready')
         .toggleClass('ready', !otrQueryParams.v)    // Show 'Loading...' text if a video is to be automatically initialized
         .off()
-        .click(toggleAbout);
+        .click(() => {
+            viewController.set('editor');
+        });
     
     $('.reset').off().on('click', () => {
         const player = getPlayer();

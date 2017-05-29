@@ -1,27 +1,48 @@
-<div class="topbar inputting"><!--
-    --><div class="title active">oTranscribe</div><!--
-    --><div class="controls">
-           <div class="button play-pause"><i class="fa fa-play"></i><i class="fa fa-pause"></i></div><!--
-        --><div class="button skip-backwards"><i class="fa fa-backward"></i></div><!--
-        --><div class="button skip-forwards"><i class="fa fa-forward"></i></div><!--
-        --><div class="button speed"><i class="fa fa-dashboard"></i> <span data-l10n-id="speed">speed</span>
+<div class="topbar inputting">
+    <div class="title active">oTranscribe</div>
+    <div class="controls">
+        <div class="button play-pause">
+            <i class="fa fa-play"></i><i class="fa fa-pause"></i>
+            <div class="topbar-button-shortcut" data-shortcut="playPause"></div>
+        </div>
+        <div class="button skip-backwards">
+            <i class="fa fa-backward"></i>
+            <div class="topbar-button-shortcut" data-shortcut="backwards"></div>
+        </div>
+        <div class="button skip-forwards">
+            <i class="fa fa-forward"></i>
+            <div class="topbar-button-shortcut" data-shortcut="forwards"></div>
+        </div>
+        <div class="button speed"><i class="fa fa-dashboard"></i> <span data-l10n-id="speed">speed</span>
         		<div class="speed-box">
-                    F3 <i class="slider-origin"></i><input class="speed-slider" type ="range" min ="0.5" max="2.0" step ="0.25" value ="1"/> F4
+                    <span data-shortcut="speedDown"></span>
+                    <i class="slider-origin"></i>
+                    <input class="speed-slider" type ="range" min ="0.5" max="2.0" step ="0.25" value ="1"/>
+                    <span data-shortcut="speedUp"></span>
         		</div>
-            </div><!--
-        --><div id="player-hook"></div><!--
-        --><div id="player-time"></div><!--
-        --><div class="button reset"><i class="fa fa-refresh"></i></div><!--
-    --></div><!--
-    --><a href="help" target="_blank" data-l10n-id="help" class="help-title">Help</a><!--
-    --><div target="_blank" class="language-title">
-            <i class="fa fa-globe"></i> <span id="curr-lang"></span>
-        </div><!--
---></div>
+            </div>
+        <div id="player-hook"></div>
+        <div class="button player-time"></div>
+        <div class="time-selection">
+            <label>
+                <span data-l10n-id="jump-to-time">Jump to time:</span>
+                <input type="text" value="0:00" class="mousetrap" />
+            </label>
+        </div>
+        <div class="button reset"><i class="fa fa-refresh"></i></div>
+    </div>
+    <a href="help" target="_blank" data-l10n-id="help" class="help-title">Help</a>
+    <div class="language-title">
+        <i class="fa fa-globe"></i> <span id="curr-lang"></span>
+    </div>
+    <div class="settings-button">
+        <i class="fa fa-cog" aria-hidden="true"></i>
+    </div>
+</div>
             
             
 <div class="language-picker">
     <div class="container">
-        <!-- language buttons injected here -->
+         language buttons injected here 
     </div>
 </div>            

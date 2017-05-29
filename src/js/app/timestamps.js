@@ -7,7 +7,14 @@ function getTime(){
     if (player) {
         time = player.getTime();
     }
-    
+
+    return {
+        formatted: formatMilliseconds(time),
+        raw: time
+    };
+};
+
+function formatMilliseconds(time) {
     const hours = Math.floor(time / 3600).toString();
     const minutes = ("0" + Math.floor(time / 60) % 60).slice(-2);
     const seconds = ("0" + Math.floor( time % 60 )).slice(-2);
@@ -15,12 +22,9 @@ function getTime(){
     if (hours !== '0') {
         formatted = hours + ":" + minutes + ":" + seconds;
     }
-
-    return {
-        formatted: formatted.replace(/\s/g,''),
-        raw: time
-    };
-};
+    formatted = formatted.replace(/\s/g,'');
+    return formatted;
+}
 
 // http://stackoverflow.com/a/25943182
 function insertHTML(newElement) {
@@ -101,4 +105,4 @@ function convertTimestampToSeconds(hms) {
     return (+a[0]) * 60 + (+a[1]);
 }
 
-export {activateTimestamps, insertTimestamp, convertTimestampToSeconds};
+export {activateTimestamps, insertTimestamp, convertTimestampToSeconds, formatMilliseconds};
