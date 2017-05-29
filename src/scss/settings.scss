@@ -28,6 +28,10 @@
     li {
         line-height: 3em;
         display: flex;
+        padding: 0 1em;
+        &:nth-child(2n - 1) {
+            background: white;
+        }
     }
     .shortcut-name {
         width: 20%;
