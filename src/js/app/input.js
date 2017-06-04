@@ -112,7 +112,9 @@ export function getQueryParams(){
         .split('&')
         .reduce((acc,curr)=>{ 
 
-            let [ key, value ] = curr.split("="); acc[key]=value; return acc; 
+            let [ key, value ] = curr.split("=");
+            acc[key] = encodeURIComponent(value);
+            return acc; 
 
         }, {});    
 
