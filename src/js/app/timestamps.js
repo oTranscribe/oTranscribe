@@ -18,12 +18,19 @@ function formatMilliseconds(time) {
     const hours = Math.floor(time / 3600).toString();
     const minutes = ("0" + Math.floor(time / 60) % 60).slice(-2);
     const seconds = ("0" + Math.floor( time % 60 )).slice(-2);
-    let formatted = minutes+":"+seconds;
+    const milliseconds = ("00" + Math.floor(getMilliSeconds(time))).slice(-3);
+    let formatted = minutes + ":" + seconds + "-" + milliseconds;
     if (hours !== '0') {
-        formatted = hours + ":" + minutes + ":" + seconds;
+        formatted = hours + ":" + formatted;
     }
     formatted = formatted.replace(/\s/g,'');
     return formatted;
+}
+
+// https://stackoverflow.com/a/16787062/3892957
+function getMilliSeconds(num)
+{
+    return (num % 1) * 1000;
 }
 
 // http://stackoverflow.com/a/25943182
@@ -80,7 +87,7 @@ function onClick() {
         } else {
             player.setTime( time );
         }
-    }    
+    }
 }
 
 // backwards compatibility, as old timestamps use setFromTimestamp() and ts.setFrom()
