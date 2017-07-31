@@ -1,6 +1,6 @@
 import {getPlayer} from './player/player';
 
-function getTime(){
+function getTime(formatInMilliseconds){
     // get timestamp
     const player = getPlayer();
     let time = 0;
@@ -9,17 +9,20 @@ function getTime(){
     }
 
     return {
-        formatted: formatMilliseconds(time),
+        formatted: formatMilliseconds(time, formatInMilliseconds),
         raw: time
     };
 };
 
-function formatMilliseconds(time) {
+function formatMilliseconds(time, formatInMilliseconds) {
     const hours = Math.floor(time / 3600).toString();
     const minutes = ("0" + Math.floor(time / 60) % 60).slice(-2);
     const seconds = ("0" + Math.floor( time % 60 )).slice(-2);
-    const milliseconds = ("00" + Math.floor(getMilliSeconds(time))).slice(-3);
-    let formatted = minutes + ":" + seconds + "-" + milliseconds;
+    let formatted = minutes + ":" + seconds;
+    if (typeof formatInMilliseconds !== "undefined" && formatInMilliseconds) {
+        const milliseconds = ("00" + Math.floor(getMilliSeconds(time))).slice(-3);
+        formatted = formatted + "-" + milliseconds;
+    }
     if (hours !== '0') {
         formatted = hours + ":" + formatted;
     }
@@ -50,8 +53,8 @@ function insertHTML(newElement) {
 }
 
 
-function insertTimestamp(){
-    var time = getTime();
+function insertTimestamp(formatInMilliseconds){
+    var time = getTime(formatInMilliseconds);
     if (time) {
         const space = document.createTextNode("\u00A0");
         insertHTML(createTimestampEl(time));
