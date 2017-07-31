@@ -2,23 +2,7 @@ import { h, render, Component } from 'preact';
 import KeyboardShortcuts from './KeyboardShortcuts.jsx';
 import { bindPlayerToUI, keyboardShortcutSetup } from '../ui';
 const localStorageManager = require('local-storage-manager');
-
-const defaultSettings = {};
-defaultSettings.keyboardShortcuts = {
-    shortcuts: {
-        playPause: ['escape'],
-        backwards: ['f1','mod+1'],
-        forwards: ['f2','mod+2'],
-        returnToStart: ['mod+0'],
-        timeSelection: ['mod+k'],
-        speedDown: ['f3','mod+3'],
-        speedUp: ['f4','mod+4'],
-        addTimestamp: ['mod+j'],
-        bold: ['mod+b'],
-        italic: ['mod+i'],
-        underline: ['mod+u']
-    }
-}
+import defaultSettings from './defaults.json';
 
 export function getSettings() {
     const savedSettings = localStorageManager.getItem('oTranscribe-settings');
@@ -29,14 +13,13 @@ export function getSettings() {
     return settings;
 }
 
-const cleanup = {};
-cleanup.keyboardShortcuts = (state, prevState) => {
+const refreshApp = {};
+refreshApp.keyboardShortcuts = (state, prevState) => {
     bindPlayerToUI();
     keyboardShortcutSetup();
     // TODO: check if any keyboard shortcuts are no longer present in current state
     const shortcuts = state.keyboardShortcuts.shortcuts;
     const prevShortcuts = prevState.keyboardShortcuts.shortcuts;
-    console.log(shortcuts, prevShortcuts)
 }
 
 class Settings extends Component {
@@ -46,7 +29,7 @@ class Settings extends Component {
     }
     componentDidUpdate(prevProps, prevState) {
         localStorageManager.setItem('oTranscribe-settings', this.state);
-        cleanup.keyboardShortcuts(this.state, prevState);
+        refreshApp.keyboardShortcuts(this.state, prevState);
     }
     render() {
         const update = function(key, value) {

@@ -27,7 +27,7 @@ const show = () => {
     }
 
     function onTimeSelectionModalSubmit(ev) {
-        if (event.keyCode === 13) { // return key
+        if (ev.keyCode === 13) { // return key
             const time = $(this).val();
             if (time.indexOf(':') > -1) {
                 player.setTime(convertTimestampToSeconds(time));
