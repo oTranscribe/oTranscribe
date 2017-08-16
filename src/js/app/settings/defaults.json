@@ -15,6 +15,7 @@
             "markRedundant": ["mod+a"],
             "markSegmentBegin": ["mod+q"],
             "markSegmentEnd": ["mod+e"],
+            "moveToSegmentStart": ["mod+m"],
             "bold": ["mod+b"],
             "italic": ["mod+i"],
             "underline": ["mod+u"]

@@ -7,7 +7,7 @@ const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
 import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
-import { insertSegment, insertRating, insertDescription, markRedundant, markTimestamp } from './annotations';
+import { insertSegment, insertRating, insertDescription, markRedundant, markTimestamp, skipToSegmentStart } from './annotations';
 import timeSelectionModal from './time-selection-modal';
 import { getSettings } from './settings/settings.jsx';
 
@@ -143,6 +143,7 @@ export function keyboardShortcutSetup() {
     addKeyboardShortcut( shortcuts.markRedundant, () => markRedundant()                           );
     addKeyboardShortcut( shortcuts.markSegmentBegin, () => markTimestamp("begin")                 );
     addKeyboardShortcut( shortcuts.markSegmentEnd, () => markTimestamp("end")                     );
+    addKeyboardShortcut( shortcuts.moveToSegmentStart, () => skipToSegmentStart()                 );
     addKeyboardShortcut( shortcuts.returnToStart, () => {
         const player = getPlayer();
         player.skipTo( 0 );

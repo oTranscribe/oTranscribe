@@ -1,4 +1,7 @@
 import {getTime} from './timestamps'
+import {getPlayer} from './player/player'
+
+var segmentStartTime = -1;
 
 function insertSegment() {
     var node = getSelectedImmediateChildNode();
@@ -25,8 +28,18 @@ function markRedundant() {
 };
 
 function markTimestamp(markString) {
+    if(markString == "begin") {
+        segmentStartTime = getTime().raw
+    }
     var timestampNode = getTimestampElement(markString);
     insertInSegment(timestampNode);
+};
+
+function skipToSegmentStart() {
+    if(segmentStartTime != -1) {
+        var player = getPlayer();
+        player.skipTo(segmentStartTime);
+    }
 };
 
 function insertInSegment(segmentNode) {
@@ -102,4 +115,4 @@ function getTimestampElement(markString) {
     return timestamp;
 };
 
-export {insertSegment, insertRating, insertDescription, markRedundant, markTimestamp};
+export {insertSegment, insertRating, insertDescription, markRedundant, markTimestamp, skipToSegmentStart};
