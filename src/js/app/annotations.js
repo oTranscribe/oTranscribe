@@ -70,7 +70,6 @@ function getSelectedImmediateChildNode() {
     var sel, node = null;
     if (window.getSelection && (sel = window.getSelection()).rangeCount) {
         node = sel.anchorNode;
-        console.log(node);
         // If textbox div has no children create a dummy child
         if(node && node.id && node.id == "textbox") {
             var dummyChild = document.createElement('p');
