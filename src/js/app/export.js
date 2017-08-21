@@ -12,8 +12,9 @@ function getTexteditorContents() {
 }
 
 function getFilename() {
-    return document.webL10n.get('file-name') + " " + (new Date()).toUTCString();
-}
+    var fileName = localStorageManager.getItem('oT-lastfile') + "_" + (new Date()).toUTCString();
+    return fileName.trim().replace('"', "").replace(/\s+/g, "_");
+};
 
 let exportFormats = {
     download: [],
@@ -28,7 +29,7 @@ exportFormats.download.push({
             allowedTags: [ 'p', 'em', 'strong', 'i', 'b', 'br' ]
         });
         const md = toMarkdown( fullyClean );
-        return md.replace(/\t/gm,"");           
+        return md.replace(/\t/gm,"");
     }
 });
 
@@ -40,7 +41,7 @@ exportFormats.download.push({
             allowedTags: [ 'p' ]
         });
         const md = toMarkdown( fullyClean );
-        return md.replace(/\t/gm,"");           
+        return md.replace(/\t/gm,"");
     }
 });
 
@@ -79,35 +80,35 @@ exportFormats.send.push({
 })
 
 function generateButtons(filename) {
-    
+
     const downloadData = exportFormats.download.map(format => {
         const clean = cleanHTML( getTexteditorContents() );
         const file = format.fn(clean);
         const blob = new Blob([file], {type: 'data:text/plain'});
         const href = window.URL.createObjectURL(blob);
-        
+
         return {
             format: format,
             file: file,
             href: href,
             filename: getFilename()
         };
-    });    
+    });
 
     if (checkDownloadAttrSupport() === false) {
         downloadData.forEach(format => {
             format.href = convertToBase64(format.file);
         });
-    }    
-  
+    }
+
     return Mustache.render(template, {
         downloads: downloadData
     });
-    
+
 }
 
 export function exportSetup(){
-    
+
     $('.textbox-container').click(function(e) {
         if(
             $(e.target).is('#icon-exp') ||
@@ -118,24 +119,24 @@ export function exportSetup(){
             return;
         }
         hideExportPanel();
-    });    
-    
+    });
+
     $(".export-panel").click(function(e) {
          e.stopPropagation();
     });
-    
+
     $('.sbutton.export').click(function() {
         // document.querySelector('.container').innerHTML = downloadButtons;
         var origin = $('#icon-exp').offset();
         var right = parseInt( $('body').width() - origin.left + 25 );
         var top = parseInt( origin.top ) - 50;
-        
+
         const filename = getFilename();
         const data = {
             text: document.querySelector('#textbox').innerHTML,
             filename: filename
         };
-        
+
         $('.export-panel')
             .html(generateButtons(filename));
 
@@ -155,8 +156,8 @@ export function exportSetup(){
 
         $('.export-panel')
             .css({'right': right,'top': top})
-            .addClass('active'); 
-        
+            .addClass('active');
+
     });
 }
 
