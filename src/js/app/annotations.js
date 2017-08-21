@@ -14,17 +14,17 @@ function insertSegment() {
 
 function insertRating() {
     var ratingNode = getRatingElement();
-    insertInSegment(ratingNode);
+    insertInSegment(ratingNode, 1);
 };
 
 function insertDescription() {
     var descripNode = getDescriptionElement();
-    insertInSegment(descripNode);
+    insertInSegment(descripNode, 2);
 };
 
 function markRedundant() {
     var redundantNode = getRedundantElement();
-    insertInSegment(redundantNode);
+    insertInSegment(redundantNode, 0);
 };
 
 function markTimestamp(markString) {
@@ -32,7 +32,7 @@ function markTimestamp(markString) {
         segmentStartTime = getTime().raw
     }
     var timestampNode = getTimestampElement(markString);
-    insertInSegment(timestampNode);
+    insertInSegment(timestampNode, 0);
 };
 
 function skipToSegmentStart() {
@@ -42,14 +42,15 @@ function skipToSegmentStart() {
     }
 };
 
-function insertInSegment(segmentNode) {
+function insertInSegment(segmentNode, cursorOffset) {
     var node = getSelectedImmediateChildNode();
     if(node && node.id == "segment") {
         var childNodes = node.childNodes;
         // Remove <p><br></p> node
         if(!childNodes[1].id) node.replaceChild(segmentNode, childNodes[1]);
         insertAfter(childNodes[childNodes.length - 2], segmentNode);
-        setCursor(segmentNode, 1);
+        var segmentText = segmentNode.childNodes[0];
+        setCursor(segmentText, segmentText.length - cursorOffset);
     }
 };
 
@@ -96,21 +97,21 @@ function getSegmentElement() {
 function getRatingElement() {
     const rating = document.createElement('p');
     rating.setAttribute('id', 'rating');
-    rating.innerHTML = '&nbsp&nbsp&nbsp&nbsp"rating":&nbsp';
+    rating.innerHTML = '&nbsp&nbsp&nbsp&nbsp"rating":&nbsp,';
     return rating;
 };
 
 function getDescriptionElement() {
     const description = document.createElement('p');
     description.setAttribute('id', 'description');
-    description.innerHTML = '&nbsp&nbsp&nbsp&nbsp"description":&nbsp';
+    description.innerHTML = '&nbsp&nbsp&nbsp&nbsp"description":&nbsp"",';
     return description;
 };
 
 function getRedundantElement() {
     const redundant = document.createElement('p');
     redundant.setAttribute('id', 'redundant');
-    redundant.innerHTML = '&nbsp&nbsp&nbsp&nbsp"redundant": true';
+    redundant.innerHTML = '&nbsp&nbsp&nbsp&nbsp"redundant": true,';
     return redundant;
 };
 
@@ -118,7 +119,7 @@ function getTimestampElement(markString) {
     const timestamp = document.createElement('p');
     timestamp.setAttribute('id', 'timestamp');
     var time = getTime();
-    timestamp.innerHTML = '&nbsp&nbsp&nbsp&nbsp"' + markString + '": "' + time.formatted + '"';
+    timestamp.innerHTML = '&nbsp&nbsp&nbsp&nbsp"' + markString + '": "' + time.formatted + '",';
     return timestamp;
 };
 
