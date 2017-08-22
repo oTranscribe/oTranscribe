@@ -45,7 +45,8 @@
     "progressor.js": "https://github.com/ejb/progressor.js.git",
     "sanitize-html": "^1.13.0",
     "to-markdown": "^3.0.3",
-    "webl10n": "^1.0.0"
+    "webl10n": "^1.0.0",
+    "json-lint": "^0.1.0"
   },
   "engines": {
     "node": ">=v6.0 <7"

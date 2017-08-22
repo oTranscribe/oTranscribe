@@ -123,4 +123,110 @@ function getTimestampElement(markString) {
     return timestamp;
 };
 
-export {insertSegment, insertRating, insertDescription, markRedundant, markTimestamp, skipToSegmentStart};
+function isValidRating(rating) {
+    return (rating == -2 || rating == -1 || rating == 1 || rating == 2 || rating == 3);
+};
+
+function splitTimestamp(timestamp) {
+    var timestampSplit = timestamp.split(":");
+    return {
+        hours: parseInt(timestampSplit[0]),
+        minutes: parseInt(timestampSplit[1]),
+        seconds: parseInt(timestampSplit[2])
+    }
+};
+
+function isValidTimestamp(timestamp) {
+    return /^\d{1,2}:[0-5][0-9]:[0-5][0-9]$/.test(timestamp);
+};
+
+
+function isValidBeginEnd(begin, end) {
+    if(!(isValidTimestamp(begin) && isValidTimestamp(end))) {
+        return false;
+    }
+    var beginParts = splitTimestamp(begin);
+    var endParts = splitTimestamp(end);
+
+    if(endParts.hours < beginParts.hours) {
+        return false;
+    } else if(endParts.hours > beginParts.hours) {
+        return true;
+    }
+
+    if(endParts.minutes < beginParts.minutes) {
+        return false;
+    } else if(endParts.minutes > beginParts.minutes) {
+        return true;
+    }
+
+    if(endParts.seconds <= beginParts.seconds) {
+        return false;
+    }
+
+    return true;
+};
+
+function parseJSON(JSONString) {
+    var JSONObj;
+    var returnObj = {status: true, error: "", obj: null};
+    try {
+        JSONObj = JSON.parse(JSONString);
+    } catch(err) {
+        returnObj.status = false;
+        returnObj.error = "Invalid JSON.";
+        return returnObj;
+    }
+
+    var errorString = "Invalid Segment.\n";
+    try {
+        for(var i = 0; i < JSONObj.length; i++) {
+            var segment = JSONObj[i];
+            if(!("begin" in segment)) {
+                errorString += "'begin' key not found in: \n";
+                throw segment;
+            }
+            if(!("end" in segment)) {
+                errorString += "'end' key not found in: \n";
+                throw segment;
+            }
+            if(!("rating" in segment)) {
+                errorString += "'rating' key not found in: \n";
+                throw segment;
+            }
+            if(!("description" in segment)) {
+                errorString += "'description' key not found in: \n";
+                throw segment;
+            }
+
+            if(!isValidBeginEnd(segment.begin, segment.end)) {
+                errorString += "Invalid 'begin' or 'end' value in: \n";
+                throw segment;
+            }
+
+            if(!isValidRating(segment.rating)) {
+                errorString += "Invalid 'rating' value in: \n";
+                throw segment;
+            }
+
+            if(typeof segment.description != "string") {
+                errorString += "Invalid 'description' value in: \n";
+                throw segment;
+            }
+
+            if("redundant" in segment && segment.redundant != true) {
+                errorString += "Invalid 'redundant' value in: \n";
+                throw segment;
+            }
+        }
+    } catch(segment) {
+        returnObj.status = false;
+        var segmentString = JSON.stringify(segment).replace(/,/g, ",\n");
+        returnObj.error = errorString + segmentString;
+    }
+
+    returnObj.obj = JSONObj;
+    return returnObj;
+};
+
+export {insertSegment, insertRating, insertDescription, markRedundant, markTimestamp, skipToSegmentStart, parseJSON};
