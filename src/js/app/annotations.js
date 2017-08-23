@@ -110,8 +110,8 @@ function getDescriptionElement() {
 
 function getRedundantElement() {
     const redundant = document.createElement('p');
-    redundant.setAttribute('id', 'redundant');
-    redundant.innerHTML = '&nbsp&nbsp&nbsp&nbsp"redundant": true,';
+    redundant.setAttribute('id', 'repetitive');
+    redundant.innerHTML = '&nbsp&nbsp&nbsp&nbsp"repetitive": true,';
     return redundant;
 };
 
@@ -214,8 +214,8 @@ function parseJSON(JSONString) {
                 throw segment;
             }
 
-            if("redundant" in segment && segment.redundant != true) {
-                errorString += "Invalid 'redundant' value in: \n";
+            if("repetitive" in segment && segment.repetitive != true) {
+                errorString += "Invalid 'repetitive' value in: \n";
                 throw segment;
             }
         }
