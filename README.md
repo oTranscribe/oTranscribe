@@ -27,6 +27,7 @@ The `src` folder in this repository only includes the "raw" JavaScript and CSS. 
 - Install [Node.js and NPM](https://nodejs.org).
 - Run `npm install` to install dependencies
 - Run `make build_prod` to compile the `dist` folder
+- cd dist/ and run ./start_server.sh to run a local test server
 
 For a sourcemap and 'watch-for-changes', run `make build_dev`.
 
@@ -71,7 +72,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004)
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
 *   Swedish: c3ons.
-*   Turkish: Mehmet S. DERİNDERE. 
+*   Turkish: Mehmet S. DERİNDERE.
 *   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 

@@ -9,6 +9,13 @@
             "speedDown": ["f3","mod+3"],
             "speedUp": ["f4","mod+4"],
             "addTimestamp": ["mod+j"],
+            "addSegment": ["mod+s"],
+            "addRating": ["mod+r"],
+            "addDescription": ["mod+d"],
+            "markRedundant": ["mod+a"],
+            "markSegmentBegin": ["mod+f"],
+            "markSegmentEnd": ["mod+g"],
+            "moveToSegmentStart": ["mod+m"],
             "bold": ["mod+b"],
             "italic": ["mod+i"],
             "underline": ["mod+u"]
