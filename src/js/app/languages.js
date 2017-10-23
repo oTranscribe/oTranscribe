@@ -8,7 +8,7 @@ var languages = {
     'nl': 'Nederlands',
     'pl': 'Polski',
     'zh-hant': '繁體中文',  // Traditional Chinese
-    'zh-hans': '简体中文',  // Simplified Chinese 
+    'zh-hans': '简体中文',  // Simplified Chinese
     'ja': '日本語',         // Japanese
     'pt': 'Português',
     'ptbr': 'Português do Brasil',
@@ -23,7 +23,8 @@ var languages = {
     'sv': 'Svenska',
 	'vi': 'Tiếng Việt',   // Vietnamese
     'tr': 'Türkçe',       // Turkish
-    'ru': 'Русский'       // Russian
+    'ru': 'Русский',       // Russian
+    'el': 'Ελληνικά'       // Russian
 };
 
 function setLang(lang){
@@ -59,22 +60,22 @@ function addMarkup(){
             var fullName = languages[code];
             return '<div class="language-button" data-language="'+code+'">'+fullName+'</div>';
         });
-    
+
     $('.language-picker .container').html( buttons.join(' ') );
-    
+
     $('.language-button').click(function(){
-       setLang( $(this).data('language') ); 
+       setLang( $(this).data('language') );
     });
-    
+
     $('#curr-lang').text( languages[document.webL10n.getLanguage()] );
-    
+
     $('.language-title').mousedown(function(){
         $('.language-picker').toggleClass('active');
         $('.language-title').toggleClass('active');
     });
-        
-    
-    
+
+
+
 }
 
 export default bide;
