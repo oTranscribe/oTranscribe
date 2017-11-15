@@ -74,5 +74,6 @@ Translations have been provided by the following talented and generous volunteer
 *   Turkish: Mehmet S. DERİNDERE. 
 *   Ukrainian: [Myroslav Opyr](https://github.com/myroslav)
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
+*   Greek: [Konstantinos Alexiou](http://konalexiou.net)
 
 More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).

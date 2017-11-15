@@ -24,7 +24,7 @@ var languages = {
 	'vi': 'Tiếng Việt',   // Vietnamese
     'tr': 'Türkçe',       // Turkish
     'ru': 'Русский',       // Russian
-    'el': 'Ελληνικά'       // Russian
+    'el': 'Ελληνικά'       // Greek
 };
 
 function setLang(lang){
