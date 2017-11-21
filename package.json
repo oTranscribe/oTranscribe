@@ -2,7 +2,7 @@
   "name": "oTranscribe",
   "version": "1.1.0",
   "scripts": {
-    "postinstall": "cd ./node_modules/jakecache/ && npm install && node ./scripts/build.js && cd ../.."
+    "postinstall": ""
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
