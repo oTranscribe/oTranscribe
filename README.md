@@ -66,7 +66,7 @@ Translations have been provided by the following talented and generous volunteer
 *   Norwegian: [Hallvar Hauge Johnsen](http://www.hyggelaget.no/)
 *   Polish: Emil Maruszczak and Piotr Tarasewicz.
 *   Portuguese: [enVide neFelibata](http://www.envidenefelibata.com).
-*   Brazilian Portuguese: Leonardo Barichello.
+*   Brazilian Portuguese: Leonardo Barichello and [Carlos Eduardo Pinheiro Rocha](https://www.linkedin.com/in/carlos-eduardo-pinheiro-rocha-1756395b/).
 *   Romanian: [Iain Apreotesei](https://github.com/ibriq) and [Catalina Albeanu](https://twitter.com/catalinacma)
 *   Russian: [Pavel Osminin](http://www.proz.com/profile/1783004)
 *   Spanish: [Cristian Duque](https://github.com/crskkk), [Dr J Rogel-Salazar](http://quantumtunnel.wordpress.com) and [Adrián Blanco](https://twitter.com/AdrianBlancoR).
