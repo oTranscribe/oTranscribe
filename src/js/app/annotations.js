@@ -124,7 +124,7 @@ function getTimestampElement(markString) {
 };
 
 function isValidRating(rating) {
-    return (rating == -2 || rating == -1 || rating == 1 || rating == 2 || rating == 3);
+    return (rating == -2 || rating == -1 || rating == 0 || rating == 1 || rating == 2 || rating == 3);
 };
 
 function splitTimestamp(timestamp) {
