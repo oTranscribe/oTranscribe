@@ -20,9 +20,9 @@
         <p>No, it doesn’t. oTranscribe is designed to make the manual task of transcribing audio a little less painful.</p>
 
         <h2 id="something_changed">Something used to work, but now it’s broken!</h2>
-        
+
         <p>A big update in January 2017 may have broken existing functionality. If something has stopped working for you, please temporarily switch to <a href="http://otranscribe.com/classic/">oTranscribe Classic</a> and let me know of the problem by tweeting at <a href="http://twitter.com/oTranscribe">@oTranscribe</a>.</p>
-        
+
         <h2 id="my_audio_file_doesn8217t_work">My audio file doesn&#8217;t work!</h2>
 
         <p>Try the following steps:</p>
@@ -38,26 +38,26 @@
         <p>oTranscribe is designed in a way that your data (both the audio file and the written transcript) <em>never</em> leaves your local computer. The transcript is not kept on a remote server or &#8220;in the cloud&#8221;, but is instead in the browser&#8217;s <em>localStorage</em>. The downside is that it is not possible to access your saved transcripts from another computer.</p>
 
     <p>oTranscribe's automatic backup system saves the current transcript every five minutes. Click on the <i class="fa fa-history"></i> button to view backups and restore an old copy of your transcript. Exactly 100 copies are retained; once the 100 backup limit is reached, oTranscribe will erase older copies.</p>
-    
+
     <p>oTranscribe is not a permanent document store, as browser storage is notoriously unreliable (even with this backup system). Please make sure to export your work regularly to prevent loss of data.</p>
 
     <h2 id="my_transcript_disappeared_can_i_get_it_back">My transcript has disappeared, can I get it back?</h2>
 
     <p>The short answer is: unfortunately, no.</p>
-    
+
     <p>The long answer is: oTranscribe sometimes loses work for a multitude of reasons (including the user clearing their cache or localStorage becoming full). If your work is not present in the history panel, it's gone for good. Please make sure to export your work regularly, especially when using oTranscribe for an extended period of time.</p>
-    
+
     <h2 id="why_is_otranscribe_is_no_longer_saving_backups">Why is oTranscribe is no longer saving backups?</h2>
-        
+
     <p>This can sometimes happen when the browser's local storage is full. If you clear the existing stored documents, it should begin saving again. Note that this may affect locally-stored data belonging to other apps and sites.</p>
-    
+
     <ul>
     <li><strong> Google Chrome</strong>: Go to “Clear Browsing Data” in Chrome’s "More tools" menu and check “Hosted app data” only. Then press "Clear browsing data".</li>
     <li><strong>Firefox</strong>: Open <a href="about:preferences#privacy">preferences</a> and go to "privacy". Click on "clear your recent history" and check "cookies" only. Then click "clear now".</li>
     <li><strong>Safari</strong>: Open Safari preferences and go to the "Privacy" tab. Click on the small "Details..." button. Search for oTranscribe, then click on the oTranscribe row and click "Remove".</li>
     <li>Alternatively, if you know how to access the browser console, you can run <strong>localStorage.clear();</strong> on otranscribe.com.</li>
     </ul>
-    
+
     <h2 id="what_keyboard_shortcuts_are_there">What keyboard shortcuts are there?</h2>
 
     <h3 id="audio_playback">Audio playback</h3>
@@ -83,7 +83,7 @@
     </ul>
 
     <p>Note: On OS X, use Cmd instead of Ctrl.</p>
-    
+
     <h2 id="custom_keyboard_shortcuts">How can I set custom keyboard shortcuts?</h2>
 
     <p>Open settings (<i class="fa fa-cog" aria-hidden="true"></i>) to access custom keyboard shortcuts. To add a new shortcut, click the blue “+” next to the name of the function you want to add a keyboard shortcut for, and then press a key combination. To remove a shortcut, click the <i class="fa fa-times"></i> next to the shortcut you want to remove. Note that you may need to refresh the page to clear the old shortcuts.</p>
@@ -97,10 +97,10 @@
     <p>Pressing <strong>Ctrl+J</strong> (<strong>Cmd+J</strong> on OS X) will insert the audio file&#8217;s current time into the document. This timestamp is hyperlinked and will skip to the specific time in the audio file.</p>
 
     <h2 id="can_i_use_otranscribe_offline">Can I use oTranscribe offline?</h2>
-    
+
     <p>Yes! oTranscribe.com will automatically save an offline copy of itself in your browser's <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Using_the_application_cache">HTML5 Application Cache</a> when you load up the page for the first time. To use the offline version, simply go to oTranscribe.com without an internet connection. It's that simple.</p>
     <p>Note that buttons will look different when offline and some features like YouTube support and Google Drive export will not work.</p>
-            
+
     <h2 id="why_cant_i_change_the_speed_of_a_youtube_video">Why can't I change the speed of a YouTube video?</h2>
 
     <p>Some YouTube videos simply don't support it. This isn't something oTranscribe has any control over, unfortunately.</p>
@@ -109,16 +109,16 @@
     <h2 id="how_do_i_import_and_export_my_transcript">How do I import and export my transcript?</h2>
 
     <p>oTranscribe can only import one type of file, the .OTR oTranscribe file format. This format preserves the clickable time stamps.</p>
-    
+
     <p>Open the export panel by clicking on the <i class="fa fa-share-square-o"></i> button. You can export .OTR files, along with plain text (.txt) and Markdown (.md) files.</p>
 
 
     <h2 id="can_i_automatically_open_a_youtube_video_based_on_a_query_parameter">Can I automatically open a YouTube video based on a query parameter?</h2>
 
     <p>Yes! Thanks to contributor <a href="https://github.com/kostasx">Kostas Minaidis</a>, it’s possible to have oTranscribe automatically open a video on load. To do so, you'll need to append a query parameter (v=YOUTUBE_ID) to oTranscribe.com. Like so:</p>
-    
-    <p><a href="http://otranscribe.com/?v=VrMHA3yX_QI">http://otranscribe.com/?v=VrMHA3yX_QI</a></p>    
-    
+
+    <p><a href="http://otranscribe.com/?v=VrMHA3yX_QI">http://otranscribe.com/?v=VrMHA3yX_QI</a></p>
+
     <p>You an also open a video at a specific timeframe using a second query parameter (t=SECONDS or t=HH:MM:SS).</p>
 
     <p>Automatic loading of a video on a specific point in time using seconds notation: <a href="http://otranscribe.com/?v=VrMHA3yX_QI&t=506">http://otranscribe.com/?v=VrMHA3yX_QI&t=506</a></p>
@@ -128,20 +128,16 @@
 
     <h2 id="who_made_otranscribe">Who made oTranscribe?</h2>
 
-    <p>Elliot Bentley (that&#8217;s me) created oTranscribe, and is currently the sole developer. If you&#8217;re interested, Journalism.co.uk did <a href="http://www.journalism.co.uk/news/journalist-creates-web-app-for-audio-transcription/s2/a555258/">a neat article on oTranscribe&#8217;s origins</a>. </p>
+    <p>Elliot Bentley originally created oTranscribe. If you&#8217;re interested, Journalism.co.uk did <a href="http://www.journalism.co.uk/news/journalist-creates-web-app-for-audio-transcription/s2/a555258/">a neat article on oTranscribe&#8217;s origins</a>. In 2018, <a href="https://www.muckrock.com/news/archives/2018/aug/06/otranscribe-joining-muckrock-and-documentcloud/">he handed over the site to the MuckRock Foundation</a>, a non-profit that <a href="https://www.muckrock.com/about/">runs a variety of open source services dedicated to journalism and transparency</a>.</p>
     <p>Translations have been provided by over a dozen <a href="https://github.com/otranscribe/otranscribe/#translations">talented and generous volunteers</a>.</p>
-    
+
     <h2 id="">Can I help translate oTranscribe?</h2>
-    
+
     <p>Yes! <a href="https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe">Find out more about providing translations here</a>.</p>
 
-    <h2 id="my_question_isn8217t_answered_here">My question isn&#8217;t answered here.</h2>
+    <h2 id="how_can_i_contact_the_person_who_made_this">My question isn&#8217;t answered here. How can I contact oTranscribe?</h2>
 
-    <p>Try posting your question in the <a href="https://community.otranscribe.com/c/help">oTranscribe Community forums</a>.</p>
-
-    <h2 id="how_can_i_contact_the_person_who_made_this">How can I contact the person who made this?</h2>
-
-    <p>You can contact me (Elliot Bentley) directly by tweeting at <a href="http://twitter.com/oTranscribe">@oTranscribe</a> or <a href="mailto:otranscribe@elliotbentley.com">emailing me</a>. I try to respond as soon as possible - but please note that this is a hobby, not my job. I no longer check these accounts frequently and you may have more luck in the <a href="https://community.otranscribe.com/c/help">oTranscribe Community forums</a>.</p>
+    <p>You can contact support directly by <a href="mailto:otranscribe@muckrock.zohodesk.com">emailing otranscribe@muckrock.zohodesk.com</a> or tweeting at <a href="http://twitter.com/oTranscribe">@oTranscribe</a>. We try to respond as soon as possible, but it can take us a few days to go through all the emails receive and respond.</p>
 
 </div>
 
