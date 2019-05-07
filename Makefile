@@ -17,10 +17,12 @@ compile_static:
 	for f in src/l10n/*.ini; do (cat "$${f}"; echo) >> dist/data.ini; done
 	
 	# copy over static assets
-	cp -r src/img src/opensource.htm src/help.htm dist/
+	cp -r src/img src/opensource.htm src/help.htm src/privacy.htm dist/
 	cp ./node_modules/jakecache/dist/jakecache.js ./node_modules/jakecache/dist/jakecache-sw.js dist/
 	mkdir dist/help
 	mv dist/help.htm dist/help/index.html	
+	mkdir dist/privacy
+	mv dist/privacy.htm dist/privacy/index.html
 
 build_prod:
 	$(MAKE) compile_static
