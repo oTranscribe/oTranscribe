@@ -2,6 +2,9 @@
   "name": "oTranscribe",
   "version": "1.1.0",
   "scripts": {
+    "start": "hs dist",
+    "build": "make build_prod",
+    "dev": "make build_dev",
     "postinstall": ""
   },
   "devDependencies": {
