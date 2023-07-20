@@ -10,6 +10,10 @@
 
 ... and more!
 
+### Support this tool
+
+oTranscribe was [built by Elliot Bentley](https://www.muckrock.com/news/archives/2018/aug/06/otranscribe-joining-muckrock-and-documentcloud/) and is hosted and maintained by [MuckRock Foundation](https://www.muckrock.com/). Your donations help us keep oTranscribe up and running. Consider making a [donation today](https://www.muckrock.com/donate/)!
+
 ### Download a copy
 
 Although a [web version](http://otranscribe.com/) is available, you can install oTranscribe anywhere by following these steps:
@@ -76,4 +80,4 @@ Translations have been provided by the following talented and generous volunteer
 *   Vietnamese: [Trần Ngọc Quân](https://github.com/vnwildman)
 *   Greek: [Konstantinos Alexiou](http://konalexiou.net)
 
-More about translating oTranscribe [here](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
+More about translating oTranscribe [on our wiki](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
