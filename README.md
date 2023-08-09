@@ -81,3 +81,4 @@ Translations have been provided by the following talented and generous volunteer
 *   Greek: [Konstantinos Alexiou](http://konalexiou.net)
 
 More about translating oTranscribe [on our wiki](https://github.com/oTranscribe/oTranscribe/wiki/Help-translate-oTranscribe).
+
