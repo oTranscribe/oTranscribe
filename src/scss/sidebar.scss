@@ -10,24 +10,24 @@
 
 
 .text-panel {
-    
+
     position: fixed;
     top: 100px;
     left: calc( 50% + 350px);
     width: 200px;
     padding-left: 20px;
     text-align: left;
-    
+
     padding-top: 200px;
     -webkit-transition: padding 1s;
     transition: padding 1s;
-        
+
     &.editing {
         padding-top: 0px;
     }
-    
+
     .sbutton {
-        
+
         // reset button style
         display: block;
         background: inherit;
@@ -37,7 +37,7 @@
         outline: none;
 
         @include sidebar-block;
-        
+
         &.time {
             display: none;
             height: 0;
@@ -46,7 +46,7 @@
                 height: auto;
             }
         }
-        
+
         &.backup.flash i {
             -webkit-animation: save-flash 1s;
             animation: save-flash 1s;
@@ -62,21 +62,21 @@
             padding: 3px;
             border: 1px solid #CCC;
             border-radius: 2px;
-            
+
             &:hover {
               border-color: #AAA;
-              cursor: pointer;   
+              cursor: pointer;
             }
-            
+
             &:active {
                 box-shadow: 0 0 3px grey inset;
             }
-            
+
             &.active {
                 color: $accent;
             }
         }
-        
+
         .label {
             text-transform: uppercase;
             font-size: 10px;
@@ -90,7 +90,7 @@
     .wordcount {
         @include noselect(text);
         @include sidebar-block;
-        font-size: 16px; 
+        font-size: 16px;
         margin-top: 10px;
         .wc-text {
             color: rgba(0,0,0,0);
@@ -101,13 +101,37 @@
         }
     }
 
+    .charcount {
+        @include noselect(text);
+        @include sidebar-block;
+        font-size: 16px;
+        margin-top: 10px;
+        .cc-text {
+            color: rgba(0,0,0,0);
+            @include transition;
+            .char-count-number {
+                color: $dark;
+            }
+        }
+    }
+
 
     opacity: 0.3;
     @include transition;
-    
+
     &:hover {
        opacity: 1;
        .wordcount .wc-text {
+           color: $dark;
+       }
+       .sbutton .label {
+           opacity: 0.5;
+       }
+    }
+
+    &:hover {
+       opacity: 1;
+       .charcount .cc-text {
            color: $dark;
        }
        .sbutton .label {
@@ -119,7 +143,7 @@
 
 .import-file-wrapper {
     @include custom-file-selector;
-    
+
 }
 
 
@@ -134,4 +158,3 @@
   15%  { color: $accent;     }
   100% { color: $dark;       }
 }
-
