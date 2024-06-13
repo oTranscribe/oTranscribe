@@ -1,15 +1,15 @@
 <div class="textbox-container">
     <div class="input active">
-        <div class="file-input-outer"></div>    
+        <div class="file-input-outer"></div>
         <div id="lastfile"></div>
         <div id="formats"></div>
     </div>
-    
+
     <div class="message-panel hidden">
             <div class="close-message-panel"><i class="fa fa-times"></i></div>
             <div class="message-content"></div>
     </div>
-    
+
     <div id="textbox"  class="mousetrap" contenteditable="true">
         <p data-l10n-id="d-txt1">Enter your transcript here...</p>
         <p>&nbsp;</p>
@@ -19,7 +19,7 @@
         <p data-l10n-id="d-txt3">- <em>Ctrl+I</em> adds <em>italic</em> formatting and <b>Ctrl+B</b> adds <b>bold</b> formatting.</p>
         <p data-l10n-id="d-txt4">- Press ESC to play/pause, and Ctrl+J to insert the current timestamp.<p>
     </div>
-    
+
     <div class="text-panel">
         <button class="sbutton bold" onclick="document.execCommand('bold',false,null);">
             <i class="fa fa-bold" id="icon-b"></i><span class="label" data-shortcut="bold">ctrl+b</span>
@@ -31,7 +31,10 @@
             <i class="fa fa-clock-o"></i><span class="label" data-shortcut="addTimestamp">ctrl+j</span>
         </button>
         <div class="wordcount">
-            <span class="wc-text">words</span>        
+            <span class="wc-text">words</span>
+        </div>
+        <div class="charcount">
+            <span class="cc-text">characters</span>
         </div>
         <button class="sbutton backup">
             <i class="fa fa-history"></i><span class="label" data-l10n-id="history-button">history</span>
@@ -44,11 +47,11 @@
         </div>
         <button class="sbutton export">
             <i class="fa fa-share-square-o" id="icon-exp"></i><span class="label" data-l10n-id="export">Export</span>
-            
+
         </button>
-                
-                
-        
+
+
+
     </div>
     <div class="export-panel">
         <div class="export-title" data-l10n-id="export-download">Download transcript as...</div>
@@ -61,7 +64,7 @@
             <div class="sign-in" data-l10n-id="sign-in" id="x-gd-sign">Sign in</div>
         </a>
     </div>
-    
+
     <div class="backup-panel">
         <div class="backup-description">
             <div class="backup-close"><i class="fa fa-times"></i></div>
