@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "jakecache": "git+https://github.com/kenchris/jakecache.git",
-    "jquery": "^3.1.0",
+    "jquery": "^3.5.0",
     "keycode": "^2.1.8",
     "local-storage-manager": "git://github.com/ejb/localStorageManager.git",
     "mousetrap": "^1.6.0",
