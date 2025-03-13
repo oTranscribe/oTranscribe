@@ -1,9 +1,9 @@
 {
-    "presets": [
-      ["es2015", { "loose":true }],
-      "stage-2"
-    ],
+  "presets": [
+    ["@babel/preset-env", { "loose": true }]
+  ],
   "plugins": [
-    ["transform-react-jsx", { "pragma":"h" }]
+    "@babel/plugin-transform-react-jsx",
+    "@babel/plugin-proposal-class-properties"
   ]
 }
