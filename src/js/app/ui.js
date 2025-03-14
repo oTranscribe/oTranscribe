@@ -7,11 +7,12 @@ const Mousetrap = require('mousetrap');
 const Progressor = require('progressor.js');
 import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
+import { insertTimestampMilliseconds } from './timestamps';
 import timeSelectionModal from './time-selection-modal';
 import { getSettings } from './settings/settings.jsx';
 
 export function bindPlayerToUI(filename = '') {
-    
+
     const shortcuts = getSettings().keyboardShortcuts.shortcuts;
 
     const player = getPlayer();
@@ -20,11 +21,11 @@ export function bindPlayerToUI(filename = '') {
     }
 
     const $playPauseButton = $('.play-pause');
-    
+
     var skippingButtonInterval;
     addKeyboardShortcut(shortcuts.backwards, player.skip.bind(player, 'backwards'));
     addKeyboardShortcut(shortcuts.forwards, player.skip.bind(player, 'forwards'));
-    
+
     $('.skip-backwards').off().mousedown(function(){
         player.skip('backwards');
         skippingButtonInterval = setInterval(() => {
@@ -34,20 +35,20 @@ export function bindPlayerToUI(filename = '') {
         clearInterval(skippingButtonInterval);
     });
     $('.skip-forwards').off().mousedown(function(){
-        player.skip('forwards');    
+        player.skip('forwards');
         skippingButtonInterval = setInterval(() => {
             player.skip('forwards');
         },100);
     }).mouseup(function(){
         clearInterval(skippingButtonInterval);
     });
-    
+
     $playPauseButton.off().click(playPause);
     addKeyboardShortcut(shortcuts.playPause, playPause)
-    
+
     addKeyboardShortcut(shortcuts.timeSelection, timeSelectionModal.toggle);
     $('.player-time').off().click(timeSelectionModal.toggle);
-    
+
     let changingSpeed = false;
     $('.speed-slider')
         .attr('min', player.minSpeed)
@@ -59,7 +60,7 @@ export function bindPlayerToUI(filename = '') {
         });
 
     player.onSpeedChange((speed) => {
-        $('.speed-slider').val( speed );            
+        $('.speed-slider').val( speed );
     });
 
     addKeyboardShortcut(shortcuts.speedDown, () => {
@@ -73,7 +74,7 @@ export function bindPlayerToUI(filename = '') {
     $( ".speed" ).off().mousedown(function() {
         if ($('.speed-box').not(':hover').length) {
             $(this).toggleClass('fixed');
-        }    
+        }
     });
 
     const playerHook = document.querySelector('#player-hook');
@@ -82,7 +83,7 @@ export function bindPlayerToUI(filename = '') {
         var progressBar = new Progressor({
             media : document.querySelector('audio, video'),
             bar : playerHook,
-            text : filename,                       
+            text : filename,
             time : document.querySelector('.player-time'),
             hours: true
         });
@@ -90,7 +91,7 @@ export function bindPlayerToUI(filename = '') {
     } else {
         document.querySelector('.player-time').style.display = 'none';
     }
-    
+
     player.onPlayPause(status => {
         if (status === 'playing'){
             $playPauseButton.addClass('playing');
@@ -98,9 +99,9 @@ export function bindPlayerToUI(filename = '') {
             $playPauseButton.removeClass('playing');
         }
     });
-    
+
     setKeyboardShortcutsinUI();
-    
+
     function playPause() {
         if (player.getStatus() !== 'playing'){
             player.play();
@@ -110,7 +111,7 @@ export function bindPlayerToUI(filename = '') {
             $playPauseButton.removeClass('playing');
         }
     };
-    
+
 }
 
 export function addKeyboardShortcut(key, fn) {
@@ -125,17 +126,18 @@ export function addKeyboardShortcut(key, fn) {
         fn();
         return false;
     });
-    
+
 }
 
 export function keyboardShortcutSetup() {
 
     const shortcuts = getSettings().keyboardShortcuts.shortcuts;
-    
+
     addKeyboardShortcut( shortcuts.bold,      () => document.execCommand('bold',false,null)       );
     addKeyboardShortcut( shortcuts.italic,    () => document.execCommand('italic',false,null)     );
     addKeyboardShortcut( shortcuts.underline, () => document.execCommand('underline',false,null)  );
-    addKeyboardShortcut( shortcuts.addTimestamp, () => insertTimestamp()                             );
+    addKeyboardShortcut( shortcuts.addTimestamp, () => insertTimestamp(false)                     );
+    addKeyboardShortcut( shortcuts.addTimestampMilliseconds, () => insertTimestamp(true)          );
     addKeyboardShortcut( shortcuts.returnToStart, () => {
         const player = getPlayer();
         player.skipTo( 0 );
