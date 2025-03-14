@@ -42,7 +42,7 @@
     "preact": "^8.1.0",
     "progressor": "git://github.com/ejb/progressor.js.git",
     "progressor.js": "git://github.com/ejb/progressor.js.git",
-    "sanitize-html": "^1.13.0",
+    "sanitize-html": "^2.3.2",
     "to-markdown": "^3.0.3",
     "webl10n": "^1.0.0"
   },
