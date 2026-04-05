@@ -1,33 +1,21 @@
 <!DOCTYPE html>
-<html manifest="manifest.appcache">
+<html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>oTranscribe</title>
-
-    ${require('!raw-loader!./html/meta-tags.htm')}
-
-	<link rel="stylesheet" href="style.css">
+    <%= require('html-loader?{"sources":false,"esModule":false}!./html/meta-tags.htm') %>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="prefetch" type="application/l10n" href="data.ini" />
 </head>
-
 <body>
     
     <script type="text/javascript" src="l10n.js"></script>
-    <script src="./jakecache.js" type="text/javascript" charset="utf-8"></script>
-
-    ${require('!raw-loader!./html/topbar.htm')}
-
-    ${require('!raw-loader!./html/about.htm')}
-
-    ${require('!raw-loader!./html/textbox.htm')}
-
-    ${require('!raw-loader!./html/settings.htm')}
-
+    <%= require('html-loader?{"sources":false,"esModule":false}!./html/topbar.htm') %>
+    <%= require('html-loader?{"sources":false,"esModule":false}!./html/about.htm') %>
+    <%= require('html-loader?{"sources":false,"esModule":false}!./html/textbox.htm') %>
+    <%= require('html-loader?{"sources":false,"esModule":false}!./html/settings.htm') %>
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
     
-    ${require('!raw-loader!./html/google-analytics.htm')}
-
+    <%= require('html-loader?{"sources":false,"esModule":false}!./html/google-analytics.htm') %>
 </body>
-
 </html>

@@ -37,6 +37,8 @@ function watchFormatting(){
     var i = document.queryCommandState("italic");
     var ii = document.getElementById("icon-i");
     
+    if (!bi || !ii) return;
+    
     if (b === true){
         bi.className = "fa fa-bold active"
     } else {

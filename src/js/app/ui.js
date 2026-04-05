@@ -4,7 +4,7 @@
 
 const $ = require('jquery');
 const Mousetrap = require('mousetrap');
-const Progressor = require('progressor.js');
+const Progressor = require('progressor');
 import { getPlayer } from './player/player';
 import { insertTimestamp } from './timestamps';
 import timeSelectionModal from './time-selection-modal';
