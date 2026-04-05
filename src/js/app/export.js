@@ -1,7 +1,8 @@
 const $ = require('jquery');
 const Mustache = require('mustache');
 const TurndownService = require('turndown');
-const toMarkdown = new TurndownService().turndown.bind(new TurndownService());
+const turndownService = new (TurndownService.default || TurndownService)();
+const toMarkdown = (html) => turndownService.turndown(html);
 const template = require('../../html/export-panel.ms');
 import googleDriveSetup from './export-formats/google-drive';
 import { getPlayer } from './player/player';
