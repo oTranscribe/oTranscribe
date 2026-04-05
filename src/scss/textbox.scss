@@ -1,3 +1,4 @@
+@use "sass:color";
 #textbox {
     @include noselect(text);
     resize: none;
@@ -37,11 +38,11 @@
         padding: 0 3px;
         margin: 0 3px;
         &:hover {
-            background: lighten($accent, 50%);
+            background: color.adjust($accent, $lightness: 50%);
             cursor: pointer;
         }
         &:active {
-            background: lighten($accent, 40%);
+            background: color.adjust($accent, $lightness: 40%);
         };
     }
 }

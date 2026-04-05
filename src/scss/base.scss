@@ -1,10 +1,11 @@
+@use "sass:color";
 @import "reset";
 
 $accent: rgb(52, 130, 177);
 $dark: hsl(0, 0%, 15%);
 $grey: #f1f1f1;
-$accentLight: lighten($accent, 10%);
-$accentGradient: linear-gradient( 0deg, lighten($accent, 0%) 5%, lighten($accent, 10%) 100% );
+$accentLight: color.adjust($accent, $lightness: 10%);
+$accentGradient: linear-gradient( 0deg, color.adjust($accent, $lightness: 0%) 5%, color.adjust($accent, $lightness: 10%) 100% );
 
 @mixin button{
     color: white;
