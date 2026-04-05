@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "variables" as *;
 .backup-panel {
     position: fixed;
     width: 100%;

@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "variables" as *;
 #textbox {
     @include noselect(text);
     resize: none;

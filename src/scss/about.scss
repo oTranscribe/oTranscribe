@@ -1,28 +1,5 @@
 @use "sass:color";
-@mixin page {
-    @include noselect(text);
-    color: $dark;
-        
-    background: $grey;
-    z-index: 200;
-    position: relative;
-    padding: 40px 0;
-
-    margin-bottom: -100%; // pushes editing area up
-    
-    display: none;
-    &.active {
-        display: block;
-    }
-    
-    .container {
-        width: 850px;
-        margin: 0 auto;
-    }
-    
-
-}
-
+@use "variables" as *;
 .about {
         
     @include page;    
