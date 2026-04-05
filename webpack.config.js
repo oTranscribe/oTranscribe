@@ -3,7 +3,7 @@ var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var WorkboxPlugin = require('workbox-webpack-plugin');
-module.exports = {
+module.exports = (env, argv) => ({
   entry: {
     app: ['./src/index.js']
   },
@@ -55,15 +55,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.htm'
     }),
-    new WorkboxPlugin.GenerateSW({
-      clientsClaim: true,
-      skipWaiting: true,
-      runtimeCaching: [
-        {
-          urlPattern: /\.(png|jpg|gif|svg|ini|html)$/,
-          handler: 'CacheFirst'
-        }
-      ]
-    })
+    ...(argv.mode === 'production' ? [
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
+        runtimeCaching: [
+          {
+            urlPattern: /\.(png|jpg|gif|svg|ini|html)$/,
+            handler: 'CacheFirst'
+          }
+        ]
+      })
+    ] : [])
   ]
-};
+});
