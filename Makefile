@@ -19,10 +19,5 @@ compile_static:
 
 build_prod:
 	$(MAKE) compile_static
-
-	# manifest
-	cp -r src/manifest.appcache dist/
-	echo "# Updated $(shell date +%x_%H:%M:%S:%N)" >> dist/manifest.appcache
-	
 	# run webpack
 	./node_modules/webpack-cli/bin/cli.js --mode production
