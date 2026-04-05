@@ -28,13 +28,14 @@ Please note that, in Chrome, local copies oTranscribe may not run correctly due 
 
 The `src` folder in this repository only includes the "raw" JavaScript and CSS. To compile the production-ready files:
 
-- Install [Node.js and NPM](https://nodejs.org). 
-Requires Node v22+ and npm v10+.
+- Install [Node.js and NPM](https://nodejs.org). Requires Node v22+ and npm v10+.
 - Run `npm install` to install dependencies
 - Run `make build_prod` to compile the `dist` folder
+- Run `npx serve dist/` to serve the production build locally (includes Workbox service worker for offline caching support)
 
-For a sourcemap and 'watch-for-changes', run `make build_dev`. This will run a locally built server at 
-http://localhost:8080/
+For development with live reload, run `make build_dev`. This will start a local dev server at `http://localhost:8080/`
+
+**Note:** The Workbox service worker is only included in production builds.
 
 Verified to work on npm == 11.12.1 & node == v23.7.0
 
