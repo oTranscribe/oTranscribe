@@ -9,9 +9,9 @@
     "@babel/preset-env": "^7.26.9",
     "babel-loader": "^8.4.1",
     "chai": "^3.5.0",
-    "copy-webpack-plugin": "^11.0.0",
+    "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^6.10.0",
-    "eslint": "^1.7.3",
+    "eslint": "^10.2.0",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.6.0",
     "karma": "^6.4.4",
@@ -21,12 +21,12 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^5.0.0",
     "mini-css-extract-plugin": "^2.8.0",
-    "mocha": "^2.4.5",
+    "mocha": "^11.7.5",
     "sass": "^1.77.0",
     "sass-loader": "^13.3.0",
     "webpack": "^5.90.0",
     "webpack-cli": "^5.1.0",
-    "webpack-dev-server": "^4.15.0",
+    "webpack-dev-server": "^5.2.3",
     "workbox-webpack-plugin": "^7.4.0"
   },
   "dependencies": {
@@ -37,8 +37,8 @@
     "mustache": "^2.2.1",
     "preact": "^8.1.0",
     "progressor": "git+https://github.com/ejb/progressor.js.git",
-    "sanitize-html": "^1.13.0",
-    "to-markdown": "^3.0.3",
+    "sanitize-html": "^2.17.2",
+    "turndown": "^7.2.4",
     "webl10n": "^1.0.0"
   }
 }
