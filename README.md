@@ -28,16 +28,16 @@ Please note that, in Chrome, local copies oTranscribe may not run correctly due 
 
 The `src` folder in this repository only includes the "raw" JavaScript and CSS. To compile the production-ready files:
 
-- Install [Node.js and NPM](https://nodejs.org). Requires Node v22+ and npm v10+.
+- Install [Node.js and NPM](https://nodejs.org). Requires Node v24+ and npm v10+. Verified to work on npm == 11.12.1 & node == v24.14.1
 - Run `npm install` to install dependencies
-- Run `make build_prod` to compile the `dist` folder
-- Run `npx serve dist/` to serve the production build locally (includes Workbox service worker for offline caching support)
+- Run `npm run build` to compile the `dist` folder.
 
-For development with live reload, run `make build_dev`. This will start a local dev server at `http://localhost:8080/`
+### Running oTranscribe 
+- Run `npm run serve` to serve the production build locally (includes Workbox service worker for offline caching support)
+- Run `npm run dev` if you are looking to run the dev server locally with watch-for-changes enabled. This will start a local dev server at `http://localhost:8080/` and will update as you make changes. 
 
-**Note:** The Workbox service worker is only included in production builds.
+**Note:** The Workbox service worker is only included in production builds, thus offline caching support isn't enabled in the dev server. 
 
-Verified to work on npm == 11.12.1 & node == v24.14.1
 
 ### OTR file format
 
@@ -47,16 +47,6 @@ oTranscribe has its own file format (.otr), which is just a JSON file with the f
 - **media**: If available, the name of the last media used
 - **media-source**: If available, a link to the last media used
 - **media-time**: If available, the playtime of the last media used
-
-### Running tests
-
-oTranscribe is not fully tested. There are only a small number of tests, for data migration.
-
-To setup, [install CasperJS](http://docs.casperjs.org/en/latest/installation.html).
-
-Then run a server at the root directory of this repository at `http://localhost:8000`, and on the command line run:
-
-    casperjs test tests/
 
 ### Translations
 
