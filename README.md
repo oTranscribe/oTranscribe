@@ -37,7 +37,7 @@ For development with live reload, run `make build_dev`. This will start a local 
 
 **Note:** The Workbox service worker is only included in production builds.
 
-Verified to work on npm == 11.12.1 & node == v23.7.0
+Verified to work on npm == 11.12.1 & node == v24.14.1
 
 ### OTR file format
 
