@@ -1,6 +1,6 @@
 build_dev:
 	$(MAKE) compile_static
-	./node_modules/webpack-dev-server/bin/webpack-dev-server.js --mode development --static dist/
+	npx webpack-dev-server --mode development --static dist/
 
 compile_static:
 	# clear out existing dist folder
@@ -20,4 +20,4 @@ compile_static:
 build_prod:
 	$(MAKE) compile_static
 	# run webpack
-	./node_modules/webpack-cli/bin/cli.js --mode production
+	npx webpack --mode production
