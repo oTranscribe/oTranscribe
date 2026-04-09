@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "variables" as *;
 
 /* custom player */
 
@@ -15,7 +17,7 @@
     }
     
     .time {
-        border-color: lighten($dark, 10%);
+        border-color: color.adjust($dark, $lightness: 10%);
     }
     
     .scrubber {
@@ -30,7 +32,7 @@
 
 
 .scrubber .loaded {
-    background: lighten($dark, 15%);
+    background: color.adjust($dark, $lightness: 15%);
     color: lightgrey;
     padding: 1px 2px;
     text-align: center;

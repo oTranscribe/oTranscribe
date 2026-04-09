@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "variables" as *;
 .separate-page {
         
 
@@ -67,7 +69,7 @@
     a {
         color: $accent;
         &:visited {
-            color: darken($accent, 30%);
+            color: color.adjust($accent, $lightness: -30%);
         }
     }
     

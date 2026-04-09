@@ -1,3 +1,5 @@
+@use "sass:color";
+@use "variables" as *;
 .backup-panel {
     position: fixed;
     width: 100%;
@@ -34,7 +36,7 @@
     }
     
     .backup-window {
-        background: lighten($dark,10%);
+        background: color.adjust($dark, $lightness: 10%);
         height: 300px;
         width: 800px;
         margin: 0 auto;

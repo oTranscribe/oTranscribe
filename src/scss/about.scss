@@ -1,27 +1,5 @@
-@mixin page {
-    @include noselect(text);
-    color: $dark;
-        
-    background: $grey;
-    z-index: 200;
-    position: relative;
-    padding: 40px 0;
-
-    margin-bottom: -100%; // pushes editing area up
-    
-    display: none;
-    &.active {
-        display: block;
-    }
-    
-    .container {
-        width: 850px;
-        margin: 0 auto;
-    }
-    
-
-}
-
+@use "sass:color";
+@use "variables" as *;
 .about {
         
     @include page;    
@@ -109,7 +87,7 @@
             margin-right: 10px;
             
             &:hover{
-                background: darken(#777, 10%);
+                background: color.adjust(#777, $lightness: -10%);
             };
         }
         p {
@@ -136,7 +114,7 @@
             cursor: pointer;
             background: $accent;
             &:hover {
-                background: darken($accent, 10%);
+                background: color.adjust($accent, $lightness: -10%);
             }
             .start-loading { display: none; }
             .start-ready { display: inline; }             

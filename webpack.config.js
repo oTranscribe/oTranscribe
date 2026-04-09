@@ -1,57 +1,71 @@
 var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
-module.exports = {
+var WorkboxPlugin = require('workbox-webpack-plugin');
+module.exports = (env, argv) => ({
   entry: {
-    app: ['./src/index.js'] // This is the main file that gets loaded first; the "bootstrap", if you will.
+    app: ['./src/index.js']
   },
-  output: { // Transpiled and bundled output gets put in `build/bundle.js`.
+  output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'   // Really, you want to upload index.htm and assets/bundle.js
+    filename: 'bundle.js',
+    clean: false
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          cacheDirectory: true,
-          presets: ['@babel/preset-env']
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          }
         }
-          
       },
-      // This nifty bit of magic right here allows us to load entire JSON files
-      // synchronously using `require`, just like in NodeJS.
       {
-        test: /\.json$/,
-        loader: 'json-loader'
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              api: 'modern'
+            }
+          }
+        ]
       },
-      // Extract css files
       {
-          test: /\.scss$/,
-          loader: ExtractTextPlugin.extract(['css-loader','sass-loader'])
-          
+        test: /\.ms$/,
+        type: 'asset/source'
       }
-      
     ]
   },
-  // Use the plugin to specify the resulting filename (and add needed behavior to the compiler)
   plugins: [
-      new ExtractTextPlugin("style.css"),
-      new CopyWebpackPlugin([
-          // {
-          //     from: './src/html/',
-          //     to: './'
-          // }
+    new MiniCssExtractPlugin({
+      filename: 'style.css'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: './node_modules/webl10n/l10n.js' }
+      ]
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/index.htm'
+    }),
+    ...(argv.mode === 'production' ? [
+      new WorkboxPlugin.GenerateSW({
+        clientsClaim: true,
+        skipWaiting: true,
+        runtimeCaching: [
           {
-              from: './node_modules/webl10n/l10n.js'
+            urlPattern: /\.(png|jpg|gif|svg|ini|html)$/,
+            handler: 'CacheFirst'
           }
-      ]),
-      new HtmlWebpackPlugin({
-          template: 'html-loader?interpolate&attrs=img:data-src!./src/index.htm'
+        ]
       })
+    ] : [])
   ]
-};
+});
