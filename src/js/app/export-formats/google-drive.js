@@ -30,7 +30,7 @@ export default function(callbackFn) {
         currentText = text;
         currentFilename = filename;
         try {
-            gapi.auth.authorize(
+            gapi.auth2.authorize(
                 {'client_id': gd.CLIENT_ID, 'scope': gd.SCOPES, 'immediate': true},
                 handleAuthResult);
         } catch(e) {

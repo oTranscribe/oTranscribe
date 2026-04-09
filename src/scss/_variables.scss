@@ -1,0 +1,58 @@
+@use "sass:color";
+
+$accent: rgb(52, 130, 177);
+$dark: hsl(0, 0%, 15%);
+$grey: #f1f1f1;
+$accentLight: color.adjust($accent, $lightness: 10%);
+$accentGradient: linear-gradient( 0deg, color.adjust($accent, $lightness: 0%) 5%, color.adjust($accent, $lightness: 10%) 100% );
+
+@mixin button {
+    color: white;
+    text-align: center;
+    background-color: $accent;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover, &.hover {
+        background: $accentLight;
+    }
+}
+
+@mixin noselect($val) {
+    -webkit-touch-callout: $val;
+    -webkit-user-select: $val;
+    -khtml-user-select: $val;
+    -moz-user-select: $val;
+    -ms-user-select: $val;
+    user-select: $val;
+}
+
+@mixin page {
+    @include noselect(text);
+    color: $dark;
+    background: $grey;
+    z-index: 200;
+    position: relative;
+    padding: 40px 0;
+    margin-bottom: -100%;
+    display: none;
+    &.active {
+        display: block;
+    }
+    .container {
+        width: 850px;
+        margin: 0 auto;
+    }
+}
+
+@mixin custom-file-selector {
+    position: relative;
+    overflow: hidden;
+    & > input[type="file"] {
+      font-size: 200px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+      cursor: pointer;
+    }
+}

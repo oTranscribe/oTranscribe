@@ -1,33 +1,21 @@
-@import "reset";
-
-$accent: rgb(52, 130, 177);
-$dark: hsl(0,0,15);
-$grey: #f1f1f1;
-$accentLight: lighten($accent, 10%);
-$accentGradient: linear-gradient( 0deg, lighten($accent, 0%) 5%, lighten($accent, 10%) 100% );
-
-@mixin button{
-    color: white;
-    text-align: center;
-    background-color:$accent;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    &:hover, &.hover {
-        background: $accentLight;
-    }   
-    
-}
-
-@mixin noselect($val) {
-    -webkit-touch-callout: $val;
-    -webkit-user-select: $val;
-    -khtml-user-select: $val;
-    -moz-user-select: $val;
-    -ms-user-select: $val;
-    user-select: $val;
-}
-
+@use "sass:color";
+@use "variables" as *;
+@forward "reset";
+@forward "input";
+@forward "about";
+@forward "help";
+@forward "controls";
+@forward "topbar";
+@forward "languages";
+@forward "speedbox";
+@forward "audiojs";
+@forward "textbox";
+@forward "message-panel";
+@forward "sidebar";
+@forward "export";
+@forward "backup";
+@forward "settings";
+@forward "font-awesome-fallback";
 
 body {
     @include noselect(none);
@@ -35,9 +23,6 @@ body {
     height: 100%;
     background: $grey;
 }
-
 #extra-ui-text {
     display: none;
 }
-
-@import "input", "about", "help", "controls", "topbar", "languages", "speedbox", "audiojs", "textbox", "message-panel", "sidebar", "export", "backup", "settings", "font-awesome-fallback";
