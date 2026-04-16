@@ -42,7 +42,7 @@
     "mustache": "^2.2.1",
     "preact": "^8.1.0",
     "progressor": "git+https://github.com/ejb/progressor.js.git",
-    "sanitize-html": "^2.17.2",
+    "sanitize-html": "^2.17.3",
     "turndown": "^7.2.4",
     "webl10n": "^1.0.0"
   }
