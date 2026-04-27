@@ -9,6 +9,7 @@
             "speedDown": ["f3","mod+3"],
             "speedUp": ["f4","mod+4"],
             "addTimestamp": ["mod+j"],
+            "addTimestampMilliseconds": ["mod+ctrl+j"],
             "bold": ["mod+b"],
             "italic": ["mod+i"],
             "underline": ["mod+u"]
