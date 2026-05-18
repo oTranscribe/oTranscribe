@@ -26,6 +26,9 @@ class Shortcut extends Component {
         const removeCombo = function(keyFn, index) {
             keyCombos.splice(index, 1)
             onChange(keyFn, keyCombos);
+            this.setState({
+                listening: false
+            });
         };
         const combos = keyCombos.map((combo, i) => (
             <span className="key-combo">
@@ -45,12 +48,18 @@ class Shortcut extends Component {
                 </span>
             ));
         } else {
-            combos.push((
-                <span
-                    className={`add-combo`}
-                    onClick={listenForShortcut.bind(this, keyFn)}
-                >+</span>
-            ));
+            if (this.state.listening == undefined) {
+              combos.push((
+                  <span
+                      className={`add-combo`}
+                      onClick={listenForShortcut.bind(this, keyFn)}
+                  >+</span>
+              ));
+            } else {
+              this.setState({
+                  listening: undefined
+              });
+            }
         }
         return (
             <li>
