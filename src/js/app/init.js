@@ -5,7 +5,7 @@
 const $ = require('jquery');
 let otrQueryParams = {};
 
-import { watchFormatting, watchWordCount, initAutoscroll } from './texteditor';
+import { watchFormatting, watchCounts, initAutoscroll } from './texteditor';
 import { inputSetup, getQueryParams, hide as inputHide } from './input';
 import oldBrowserCheck from './old-browsers';
 import languageSetup from './languages';
@@ -29,7 +29,7 @@ export default function init(){
     // this is necessary due to execCommand restrictions
     // see: http://stackoverflow.com/a/33321235
     window.insertTimestamp = insertTimestamp;
-    
+
     keyboardShortcutSetup();
 
     viewController.set('about');
@@ -47,12 +47,12 @@ export default function init(){
             inputHide();
             viewController.set('editor');
             bindPlayerToUI();
-            let timestamp = otrQueryParams['t']; 
+            let timestamp = otrQueryParams['t'];
             if ( timestamp ){
                 // Is the timestamp in HH:MM::SS format?
                 if ( ~timestamp.indexOf(":") ){
                     timestamp = convertTimestampToSeconds(timestamp);
-                } 
+                }
                 player.driver._ytEl.seekTo(timestamp);
             }
         });
@@ -62,7 +62,7 @@ export default function init(){
         if ( localStorageManager.getItem("oT-lastfile") ) {
             viewController.set('editor');
         }
-        
+
     }
 
     $('.title').mousedown(() => {
@@ -104,8 +104,8 @@ function onLocalized() {
 		    });
         }
     });
-    
-    watchWordCount();
+
+    watchCounts();
 
     var startText = document.webL10n.get('start-ready');
     $('.start')
@@ -115,7 +115,7 @@ function onLocalized() {
         .click(() => {
             viewController.set('editor');
         });
-    
+
     $('.reset').off().on('click', () => {
         const player = getPlayer();
         resetInput();
@@ -123,7 +123,7 @@ function onLocalized() {
             player.destroy();
         }
     });
-    
+
     oldBrowserCheck();
     // oT.input.loadPreviousFileDetails();
 }
@@ -135,5 +135,3 @@ $(window).resize(function() {
         document.getElementById('media').style.width = oT.media.videoWidth();
     }
 });
-
-
