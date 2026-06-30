@@ -9,7 +9,7 @@
     "test": "echo \"No tests configured\" && exit 1"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.10",
+    "@babel/core": "^7.29.6",
     "@babel/plugin-transform-react-jsx": "^7.25.9",
     "@babel/preset-env": "^7.26.9",
     "babel-loader": "^8.4.1",
