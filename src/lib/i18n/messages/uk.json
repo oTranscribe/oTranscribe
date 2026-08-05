@@ -1,0 +1,201 @@
+{
+  "code": "uk",
+  "messages": {
+    "help": {
+      "value": "Допомога",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Безкоштовне веб рішення яке позбавить болю при розшифорвуванні записаних інтерв'ю.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Завантаження...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Почати розшифровування",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe працює тільки на настільних комп'ютерах.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Не виглядає на те, що ваш переглядач підтримує деякі необхідні можливості HTML5 необхідні для правильної роботи oTranscribe. Перемкніться на сучасний web переглядач.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Без перемикань</strong> між Quicktime та Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Пауза, і перемотки назад та вперед</strong> не забираючи руки з клавіатури.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Інтерактивні мітки часу</strong> щоб переміщатися по розшифровці.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Автоматично записується</strong> до сховища вашого переглядача кожної секунди.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Приватно</strong> - ваш аудіо файл та розшифровка ніколи не покидає Вашого комп'ютера.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Експортуйте</strong> в Markdown, прості текстові файли та Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Підтримка Відео файлів</strong> з вбудованим програвачем.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Відкритий код</a></strong> під ліцензією MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "В пресі:",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Підписка @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Автор -",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "швидкість",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Виберіть аудіо (чи відео) файл",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Останній файл:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Ваш переглядач підтримує наступні аудіо файли: [xxx] та наступні відео файли: [yyy]. Можливо вам потрібно <a href=\"http://media.io\">перетворити ваш файл</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Ваш переглядах не підтримує файли формату [file-format]. Перемкніться на інший переглядач чи <a href=\"http://media.io\">перетворіть ваш файл</a> в інший формат.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} слова",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Експорт",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Заватажити розшифровку як...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Звичайний текст (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Надіслати розшифровку до...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Ввійти",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Надсилаю до Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Відкрити в Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Розшифровку експортовано",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Введіть вау розшифровку тут...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Підказки:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> додає <em>курсив</em> а <b>Ctrl+B</b> додає <b>жирне</b> форматування.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Натисніть ESC щоб програвати, чи ставити на паузу, та Ctrl+J, щов вставити поточну часову мітку.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "формат oTranscribe",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "чи відео YouTube",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Введіть посилання на відео YouTube:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Введіть дійсне посилання YouTube. Наприклад: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "історія",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "імпорт",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Історія розшифровок",
+      "isHtml": false
+    },
+    "history-instrux": {
+      "value": "Копія вашої роботи записується кожні 5 хв. Резервні копії не зберігаються дуже довго. Натискайте Ctrl+S щоб записати в будь-який момент.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Сьогодні",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Вчора",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "відновити",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Не знайдено резервних копій.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Завантажити старіші резервні копії",
+      "isHtml": false
+    }
+  }
+}

@@ -1,0 +1,281 @@
+{
+  "code": "el",
+  "messages": {
+    "help": {
+      "value": "Βοήθεια",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Ένα δωρεάν δικτυακό εργαλείο για να διευκολύνει την απομαγνητοφώνιση συνεντεύξεων.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Φόρτωση...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Έναρξη απομαγνητοφώνισης",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "Το oTranscribe δουλεύει μόνο σε υπολογιστές γραφείου.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Ο φυλλομετρητής σας δεν υποστηρίζει καποιες δυνατότητες της HTML5 που είναι απαραίτητες για να εκτελεστεί σωστά το oTranscribe. Χρησιμοποιήστε έναν πιο μοντέρνο φυλλομετρητή.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Δεν χρειάζεται να εναλλάσετε παράθυρα</strong> μεταξύ Quicktime και Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Παύση, επιστροφή και γρήγορη προώθηση </ strong> χωρίς να παίρνετε τα χέρια σας από το πληκτρολόγιο",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Διαδραστικές χρονικές επισημάνσεις</strong> για να μπορείτε να περιηγείστε στην απομαγνητοφώνηση σας.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Αυτόματη αποθήκευση</strong> στον αποθηκευτικό χώρο του φυλλομετρητή σας κάθε δευτερόλεπτο.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Ιδιωτικό</ strong> - το αρχείο ήχου και η μεταγραφή σας δεν αφήνουν ποτέ τον υπολογιστή σας.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Εξαγωγή</strong> σε Markdown, απλό κείμενο και Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Υποστήριξη αρχείων βίντεο</strong> με ενσωματωμένο πρόγραμμα αναπαραγωγής.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Ανοικτό λογισμικό</a></strong> κάτω από την άδεια MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Όπως εμφανίστηκε σε",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Ακολουθήστε @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Δημιουργία",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "ταχύτητα",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Επιλογή αρχείου ήχου (ή βίντεο)",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Τελευταίο αρχείο:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Ο φυλλομετρητής σας υποστηρίζει αρχεία ήχου [xxx] και αρχεία βίντεο [yyy]. Ίσως χρειάζεται να <a href=\"http://media.io\">μετατρέψετε το αρχείο σας</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Ο φυλλομετρητής σας δεν υποστηρίζει αρχεία [file-format]. Αλλάξτε φυλλομετρητή ή <a href=\"http://media.io\">μετατρέψετε το αρχείο σας</a> σε άλλη μορφή.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} λέξεις",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Εξαγωγή",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Αποθήκευση απομαγνητοφώνησης ως...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Αρχείο κειμένου (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Αποστολή απομαγνητοφώνησης σε...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Είσοδος",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Αποστολή σε Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Άνοιγμα σε Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Εγινε εξαγωγή της απομαγνητοφώνησης",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Πληκτρολογήστε την απομαγνητοφώνηση σας εδώ...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Γρήγορες συμβουλές:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> προσθέτει <em>πλάγια (italic)</em> μορφοποίηση και <b>Ctrl+B</b> προσθέτει <b>έντονη (bold)</b> μορφοποίηση.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Πατήστε ESC για αναπαραγωγή/παύση, και Ctrl+J για να εισάγετε την τρέχουσα χρονική επισήμανση.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "μορφή oTranscribe",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "ή βίντεο YouTube",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Πληκτρολογήστε τη διεύθυνση του YouTube βίντεο:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Παρακαλώ πληκτρολογήστε έγκυρη διεύθυνση YouTube. Για παράδειγμα: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "ιστορικό",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "εισαγωγή",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Ιστορικό απομαγνητοφώνησης",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "Ένα αντίγραφό της δουλειάς σας αποθηκεύεται κάθε πέντε λεπτά. Μόνο 100 αντίγραφα ασφαλείας διατηρούνται. Πατήστε Ctrl+S για να αποθηκεύσεται οποιαδήποτε στιγμή.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Σήμερα",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Χθες",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "επαναφορά",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Δεν βρέθηκαν αντίγραφα ασφαλείας.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Παλαιότερα αντίγραφα ασφαλείας",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Ο τοπικός χώρος αποθήκευσης του φυλλομετρητή σας ήταν πλήρης, επομένως ορισμένα παλαιότερα αντίγραφα ασφαλείας έχουν διαγραφεί.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "Το oTranscribe αντιμετώπισε πρόβλημα κατά την αποθήκευση. Βεβαιωθείτε ότι έχετε δημιουργήσει αντίγραφα ασφαλείας χειροκίνητα.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Το αντίγραφο ασφαλείας δεν ήταν δυνατό να αποκατασταθεί.",
+      "isHtml": false
+    },
+    "jump-to-time": {
+      "value": "Μετάβαση στο χρόνο:",
+      "isHtml": false
+    },
+    "settings": {
+      "value": "Ρυθμίσεις",
+      "isHtml": false
+    },
+    "keyboard-shortcuts": {
+      "value": "Συντομεύσεις πληκτρολογίου",
+      "isHtml": false
+    },
+    "listening": {
+      "value": "Αναμονή για νέα συντόμευση...",
+      "isHtml": false
+    },
+    "cancel": {
+      "value": "ακύρωση",
+      "isHtml": false
+    },
+    "restore-shortcuts": {
+      "value": "Επαναφορά προεπιλεγμένων συντομεύσεων",
+      "isHtml": false
+    },
+    "backwards": {
+      "value": "Παράλειψη προς τα πίσω",
+      "isHtml": false
+    },
+    "forwards": {
+      "value": "Παράλειψη προς τα εμπρός",
+      "isHtml": false
+    },
+    "playPause": {
+      "value": "Αναπαραγωγή/παύση",
+      "isHtml": false
+    },
+    "timeSelection": {
+      "value": "Μετάβαση στο χρόνο",
+      "isHtml": false
+    },
+    "speedDown": {
+      "value": "Μείωση ταχύτητας",
+      "isHtml": false
+    },
+    "speedUp": {
+      "value": "Αύξηση ταχύτητας",
+      "isHtml": false
+    },
+    "bold": {
+      "value": "Έντονο κείμενο (Bold)",
+      "isHtml": false
+    },
+    "italic": {
+      "value": "Πλάγιο κείμενο (Italic)",
+      "isHtml": false
+    },
+    "underline": {
+      "value": "Υπογραμμισμένο κείμενο",
+      "isHtml": false
+    },
+    "addTimestamp": {
+      "value": "Προσθήκη χρονικής επισήμανσης",
+      "isHtml": false
+    },
+    "returnToStart": {
+      "value": "Επαναφορά στην έναρξη",
+      "isHtml": false
+    }
+  }
+}

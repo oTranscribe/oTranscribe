@@ -1,0 +1,213 @@
+{
+  "code": "nb",
+  "messages": {
+    "help": {
+      "value": "Hjelp",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "En gratis web-app som gjør det enklere å transkribere intervjuer fra lydopptak.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Laster...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Start transkripsjon",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "Fungerer ikke for mobile plattformer.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Det virker ikke som at nettleseren din støtter enkelte HTML5-funksjoner som er nødvendig for at oTranscribe skal fungere ordentlig. Vennligst bytt til en moderne nettleser.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Ikke noe mer bytting mellom Quicktime og Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "Stopp, spol tlbake- og fremover uten å løfte hendene fra tastaturet.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "Interaktive tidskoder for å lett kunne navigere gjennom transkripsjonen din.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "Lagrer automatisk til nettleserdata hvert sekund.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "Privat - lydfilen og transkripsjonen forlater aldri datamaskinen.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "Eksporter til Markdown, ren tekst og Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "Integrert videoavspiller.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "Åpen kildekode under MIT-lisensen.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Som vist hos",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Følg @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Utviklet av",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Velg lyd eller videofil",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Nettleseren din støtter [xxx] lydfiler og [yyy] videofiler. Det er mulig at du må konvertere filene dine.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Nettleseren din støtter ikke  [files-format] filer. Bytt til en annen nettleser eller konverter filene dine til et annet format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} ord",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Eksporter",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Last ned transkripsjon som...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Ren tekst(.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Send transkripsjon til...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Logg inn",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Sender til Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Åpne i Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Trankripsjon eksportert",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "hastighet",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Siste fil:",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Skriv inn transkripsjonen din her...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Kjapt tips:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- Ctrl+I gir kursiv skrift og Ctrl+B gir fet skrift.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Trykk ESC for å spille/pause og Ctrl+J for å sette inn nåværende tidskode.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe format",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "eller YouTube video",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Skriv inn YouTube-link",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Vennligst skriv inn en gyldig YouTube-link. Som for eksempel: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "historikk",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "import",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Transkripsjonhistorikk",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "En kopi av arbeidet blir lagret hvert femte minutt. Kun 100 sikkerhetskopier blir beholdt. Trykk Ctrl-S for å lagre når som helst.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "I dag",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "I går",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "Gjenopprett",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Ingen sikkerhetskopier ble funnet.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Load older backups Last inn eldre sikkerhetskopier.",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Nettleserdataen din var full, så eldre oTranscribe-kopier har blitt slettet.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "Det oppstå et problem når oTranscribe skulle lagre. Sørg for at du får lagret manuelt.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Sikkerhetskopien kunne ikke gjenopprettes.",
+      "isHtml": false
+    }
+  }
+}

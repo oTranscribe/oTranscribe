@@ -1,0 +1,213 @@
+{
+  "code": "ru",
+  "messages": {
+    "help": {
+      "value": "Справка",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Бесплатное веб-приложение для облегчения расшифровки аудиозаписей интервью.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Загрузка...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Начать расшифровку",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe работает только на настольных компьютерах.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Ваш браузер не поддерживает некоторые возможности HTML5, необходимые для корректной работы oTranscribe. Используйте современную версию браузера для настольных компьютеров.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Больше не нужно переключаться между Quicktime и Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "Приостановка, перемотка назад и вперед без отрыва от клавиатуры.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "Интерактивные временные метки для быстрого перехода по расшифровке.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "Постоянное автоматическое сохранение в локальном хранилище браузера.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "Конфиденциально — аудиофайл и его расшифровка всегда находятся на вашем компьютере.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "Экспорт в Markdown, обычный текст и Google Документы.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "Поддержка видеофайлов во встроенном видеопроигрывателе.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "Открытый исходный код по лицензии MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "oTranscribe в СМИ",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Следить за @oTranscribe (на английском)",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Автор",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Выберите аудио (или видео) файл",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Ваш браузер поддерживает [xxx] аудиофайлы и [yyy] видеофайлы. Возможно вам потребуется конвертировать файлы.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Ваш браузер не поддерживает [file-format] файлы. Используйте другой браузер или конвертируйте файл в другой формат...",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "слов: {{n}}",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Экспорт",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Скачать расшифровку как...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Обычный текст (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Отправить расшифровку...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Войти",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Отправка на Диск...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Открыть на Диске",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Расшифровка сохранена",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "скорость",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Последний файл:",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Введите текст расшифровки...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Краткие советы:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- Чтобы выделить текст курсивом, нажмите клавиши Ctrl+I. Для полужирного начертания нажмите клавиши Ctrl+B.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Нажмите ESC для воспроизведение и остановки, нажмите клавиши Ctrl+J для вставки текущей временной метки.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "формат oTranscribe",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "или YouTube видео",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Введите URL-адрес YouTube видео",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Введите допустимый URL-адрес YouTube Например: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "история",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "импорт",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "История Transcript",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "Сохранение вашей работы происходит раз в пять минут. Сохраняются только 100 резервных копий. Чтобы сохранить свою работу в любое время, нажмите клавиши Ctrl+S",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Сегодня",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Вчера",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "восстановить",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Резервных копий не найдено.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Загрузить старые резервные копии",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Локальное хранилище вашего браузера было переполнено, поэтому некоторые старые резервные копии oTranscribe были удалены.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "Произошла ошибка при сохранении. Создайте резервную копию вручную.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Невозможно восстановить резервную копию.",
+      "isHtml": false
+    }
+  }
+}

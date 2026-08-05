@@ -1,0 +1,149 @@
+{
+  "code": "ca",
+  "messages": {
+    "help": {
+      "value": "Ajuda",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Una aplicació web gratuïta per a transcriure entrevistes enregistrades.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "S'està carregant...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Comença la transcripció",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe només funciona en ordinadors d'escriptori.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Sembla que el vostre navegador no suporta algunes característiques d'HTML5 necessàries per fer anar l'oTranscribe correctament. Heu de fer servir un navegador web actualitzat.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>No canvieu més</strong> entre el Quicktime i el Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pauseu, aneu enrere i avanceu</strong> sense treure les mans del teclat.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Segells de temps interactius</strong> per a navegar pels fitxers de transcripció.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Desat automàtic</strong> cada segon a la memòria d'emmagatzematge del navegador.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Privadesa</strong> - els fitxers d'àudio i transcripció no abandonen mai el vostre navegador.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Exportació</strong> a Markdown, text pla i Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Suport de fitxers de vídeo</strong> amb reproductor integrat.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Codi obert</a></strong> sota els termes de la llicència MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "En parlen a",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Seguiu-nos a @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Creat per",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "velocitat",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Trieu un fitxer d'àudio o vídeo",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Últim fitxer:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "El navegador suporta el format d'àudiò [xxx] i el format de vídeo [yyy]. Potser heu de <a href=\"http://media.io\">convertir el fitxer</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "El navegador no suporta els fitxers [file-format]. Canvieu a un altre navegador o <a href=\"http://media.io\">convertiu el fitxer</a> a un altre format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} paraules",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exporta",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Baixa la transcripció com a...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Text pla (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Envia la transcripció a...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Inicia sessió",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "S'està enviant al Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Obre al Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "S'ha exportat la transcripció",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Escriviu la transcripció aquí...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Consells ràpids:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> afegeix format en <em>cursives</em> i <b>Ctrl+B</b> afegeix format en <b>negreta</b>.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Premeu ESC per reproduir o pausar, i Ctrl+J per inserir el segell de temps actual.",
+      "isHtml": true
+    }
+  }
+}

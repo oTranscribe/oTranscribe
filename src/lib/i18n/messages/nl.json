@@ -1,0 +1,149 @@
+{
+  "code": "nl",
+  "messages": {
+    "help": {
+      "value": "Help",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Een gratis webapp die de pijn van het transcriberen van opgenomen interviews wegneemt.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Laden...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Begin met transcriberen",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe werkt alleen op desktopcomputers.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Het lijkt erop dat je browser sommige voor oTranscribe benodigde HTML5-functies niet ondersteunt. Installeer een moderne webbrowser.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Nooit meer schakelen tussen Quicktime en Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "Pauzeren, terugspoelen en versneld afspelen zonder je handen van het toetsenbord te halen.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "Interactieve tijdstempels waarmee je door je transcript kunt bladeren.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "Iedere seconde automatisch opgeslagen in je browser.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "Privé - je audiobestand en het transcript blijven altijd op je eigen computer.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "Exporteren naar Markdown, platte tekst en Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "Ondersteuning voor videobestanden met geïntegreerde speler.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "Open source onder de MIT-licentie.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Zoals gezien op",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Volg @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Ontwikkeld door",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "snelheid",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Kies audio- of videobestand",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Laatste bestand:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Je browser ondersteunt [xxx] audiobestanden en [yyy] videobestanden. Misschien moet je je bestand converteren.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Je browser lijkt [file-format]-bestanden niet te ondersteunen. Schakel over naar een andere browser of converteer je bestand naar een ander formaat..",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} woorden",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exporteren",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Transcript downloaden als...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Platte tekst (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Transcript versturen naar...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Inloggen",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Versturen naar Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Openen in Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transcript geëxporteerd",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Typ je transcriptie hier...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Snelle tips:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> maakt <em>cursief</em> op en <b>Ctrl+B</b> maakt <b>vet</b> op.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Klik ESC voor afspelen/pauze, en Ctrl+J om het huidige tijdsstempel in te voegen.",
+      "isHtml": true
+    }
+  }
+}

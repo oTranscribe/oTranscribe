@@ -1,0 +1,149 @@
+{
+  "code": "fr",
+  "messages": {
+    "help": {
+      "value": "Aide",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Une application web libre pour faciliter la transcription d'enregistrements audio et vidéo.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Chargement…",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Démarrer la transcription",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe fonctionne seulement sur les ordinateurs de bureau.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Votre navigateur ne permet pas d'utiliser certaines fonctionnalités HTML5 nécessaires au bon fonctionnement de oTranscribe. Veuillez utiliser un navigateur moderne.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Plus de bascules</strong> entre Quicktime et Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pause, retour et avance rapide</strong> sans retirer vos mains du clavier.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Minutage interactif</strong> pour naviguer dans votre transcription.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Sauvegarde automatique</strong> dans l'espace de stockage de votre navigateur chaque seconde.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Privé</strong> - Vos fichiers audio et transcriptions ne quittent jamais votre ordinateur.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Export</strong> vers Markdown (.md), texte brut (.txt) et Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Lecture des fichiers vidéos</strong> avec le lecteur intégré.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Open source</a></strong> sous licence MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "On en parle dans",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Suivez @oTranscribe (en Anglais)",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Créé par",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "Vitesse",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Choisissez le fichier audio (ou vidéo)",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Dernier fichier:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Votre navigateur peut lire les fichiers audio [xxx] et vidéo [yyy]. Vous devrez peut-être <a href=\"http://media.io\">convertir votre fichier</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Votre navigateur ne peut pas lire les fichiers [file-format]. Utilisez un autre navigateur ou <a href=\"http://media.io\">convertissez votre fichier</a> dans un autre format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} mots",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exporter",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Télécharger la transcription comme...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Texte brut (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Envoyer la transcription vers...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Login",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Envoi à Google Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Ouvrir dans Google Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transcription exportée",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Entrez votre transcription ici....",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Conseils rapides:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> met en <em>italique</em> et <b>Ctrl+B</b> met en <b>gras</b>.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Appuyez sur ESC pour jouer/mettre en pause, et Ctrl+J pour insérer le minutage actuel.",
+      "isHtml": true
+    }
+  }
+}

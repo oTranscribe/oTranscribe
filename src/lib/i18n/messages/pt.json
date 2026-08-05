@@ -1,0 +1,149 @@
+{
+  "code": "pt",
+  "messages": {
+    "help": {
+      "value": "Ajuda",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Uma aplicação de internet gratuita que elimina a dor de transcrever entrevistas gravadas.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "A Iniciar...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Iniciar transcrição",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "O oTranscribe funciona apenas em computadores.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "O seu navegador aparenta não suportar algumas funções HTML5 necessárias para que o oTranscribe funcione corretamente. Por favor mude para um navegador mais recente.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Deixe de saltar</strong> entre Quicktime e Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Parar, retroceder e avançar</strong> sem remover as suas mãos do teclado.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Selos temporais interativos</strong> para navegar através da sua transcrição.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Salvo automaticamente</strong> para o armazenamento do seu navegador a cada segundo.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Privado</strong> - o seu ficheiro áudio e a sua transcrição nunca saem do seu computador.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Exporte</strong> para Markdown, texto simples e Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Suporta ficheiros de vídeo</strong> com visualizador integrado.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Abrir código fonte</a></strong> sob a licença MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Como publicitado em",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Siga @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Criado por",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "velocidade",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Selecione ficheiro áudio (ou vídeo)",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Último ficheiro:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "O seu navegador suporta [xxx] ficheiros áudio e [yyy] ficheiros vídeo. Poderá precisar de <a href=\"http://media.io\">converter o seu ficheiro</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "O seu navegador não suporta ficheiros [file-format]. Mude para um navegador diferente ou <a href=\"http://media.io\">converta o seu ficheiro</a> para outro formato.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} palavras",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exportar",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Descarregar transcrição como...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Texto simples (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Enviar transcrição para...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Entrar",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "A enviar para a Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Abrir na Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transcrição exportada",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Introduza a sua transcrição aqui...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Dicas rápidas:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> formata em <em>itálico</em> e <b>Ctrl+B</b> formata em <b>negrito</b>.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Pressione ESC para iniciar/parar, e Ctrl+J para inserir o selo temporal atual.",
+      "isHtml": true
+    }
+  }
+}

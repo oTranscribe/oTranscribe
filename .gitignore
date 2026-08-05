@@ -1,6 +1,30 @@
-dist
 node_modules/
-publish.sh
-todo.md
-bower_components/
 .DS_Store
+
+# SvelteKit
+.svelte-kit/
+build/
+.vercel/
+.netlify/
+.output/
+
+# Vite
+dist/
+
+# Test artifacts
+playwright-report/
+test-results/
+coverage/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Editors
+.idea/
+.vscode/
+
+# Legacy build outputs (kept in legacy/)
+legacy/node_modules/
+legacy/dist/

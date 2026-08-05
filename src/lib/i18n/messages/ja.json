@@ -1,0 +1,149 @@
+{
+  "code": "ja",
+  "messages": {
+    "help": {
+      "value": "ヘルプ",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "音声を書き起こすときの辛さを解消してくれる、無料の Web アプリです。",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "読み込み中",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "文字起こしを始める",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe はモバイル端末では使えません。",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "お使いのブラウザは oTranscribe の動作に必要な HTML5 の機能をサポートしていないようです。最新のブラウザでお試しください。",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Quicktime と Word を<strong>行き来する必要なし</strong>。",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>一時停止、巻き戻し、早送り</strong> はキーボードショートカットで。",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>タイムスタンプ機能</strong> を使えばクリックひとつで音声を頭出しできます。",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "毎秒、ブラウザの保存領域に<strong>自動保存</strong>されます。",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>プレイベート</strong> - 音声ファイルや文字起こしの内容は全てPC内に保持されます。",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "Markdown、テキスト形式、Google Docs へ<strong>エクスポートできます</strong>。",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "内蔵プレイヤーを用いて<strong>動画も再生できます</strong>。",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "MITライセンスで<strong><a href=\"opensource\">オープンソース</a></strong>。",
+      "isHtml": true
+    },
+    "press": {
+      "value": "メディア掲載",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "@oTranscribe をフォロー",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "開発者",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "再生速度",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "音声(動画)ファイルを開く",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "前回のファイル：",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "お使いのブラウザは [xxx] 形式の音声と [yyy] 形式の動画を扱えます。<a href=\"http://media.io\">ファイル形式の変換</a>が必要な場合があります。",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "お使いのブラウザは [file-format] ファイルを扱えません。他のブラウザを使うか、<a href=\"http://media.io\">ファイル形式を変換</a>してください。",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} 単語数",
+      "isHtml": false
+    },
+    "export": {
+      "value": "エクスポート",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "文字起こしのダウンロード：",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "テキスト形式 (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "文字起こしの送信：",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "サインイン",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Google Drive に送信中",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Google Drive で開く",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "文字起こしのエクスポート完了",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "文字起こしはここに入力してください",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "賢い使い方：",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> で <em>イタリック</em>、<b>Ctrl+B</b> で <b>太字</b> に文字を修飾できます。",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- ESC で再生/一時停止の切り替え、Ctrl+J でタイムスタンプを挿入できます。",
+      "isHtml": true
+    }
+  }
+}

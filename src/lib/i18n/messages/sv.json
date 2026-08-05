@@ -1,0 +1,213 @@
+{
+  "code": "sv",
+  "messages": {
+    "help": {
+      "value": "Hjälp",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "En kostnadsfri webbapp för enklare transkribering av inspelade intervjuer.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Laddar...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Börja transkribera",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe fungerar endast på fullvärdiga datorer.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Din webbläsare verkar inte stödja vissa HTML5 funktioner som behövs för att oTranscribe ska fungera korrekt. Vänligen byta till en modern webbläsare.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Inget mer växlande</strong> mellan Quicktime och Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pausa, spola och ändra hastigheten</strong> utan att lämna tangentbordet.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Interaktiva tidsstämplar</strong> för att navigera genom din transkribering.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Sparar automatiskt</strong> till din webbläsare varje sekund.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Privat</strong> - din ljudfil och transkribering lämnar aldrig din dator.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Exportera</strong> till Markdown, råtext och Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Stöd för video filer</strong> med integrerad spelare.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Open source</a></strong> under MIT licensen.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Känt från",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Följ @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Skapad av",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "uppspelningshastighet",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Välj ljud- (eller video) fil",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Senast använd fil:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Din webbläsare stödjer [xxx] ljudfiler och [yyy] videofiler. Du kan behöva <a href=\"http://media.io\">konvertera din fil</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Din webbläsare stöder inte [fil-format] filer. Byt till en annan webbläsare eller <a href=\"http://media.io\">konvertera filen</a> till ett annat format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "ord",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exportera",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Ladda ner transkribering som…",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Råtext (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Skicka transkribering till...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Logga in",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Skickar till Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Öppna i Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transkribering exporterad",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Skriv din transkribering här...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Snabbtips:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> växlar till <em>kursiv</em> stil och <b>Ctrl+B</b> växlar till <b>fet</b> stil.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Tryck ESC för uppspelning/paus, och Ctrl+J för att lägga till aktuell tidsstämpel.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe format",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "eller YouTube video",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Ange YouTube video URL:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Vänligen ange giltig YouTube URL. Till exampel: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "historik",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "importera",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Transkriberings historik",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "En kopia av ditt arbete sparas var femte minut. Säkerhetskopior sparas inte särskilt länge. Tryck Ctrl+S för att spara när som helst.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Idag",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Igår",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "återställ",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Inga säkerhetskopior funna.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Ladda äldre säkerhetskopior",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Ditt lokala webbläsarlagringsutrymme var fullt, så några äldre oTranscribe säkerhetskopior har rensats.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "oTrancribe har stött på ett problem under nedsparandet. Vänligen säkerhetskopiera ditt arbete manuellt.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Säkerhetskopian kunde inte återställas.",
+      "isHtml": false
+    }
+  }
+}

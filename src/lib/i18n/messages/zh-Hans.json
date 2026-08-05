@@ -1,0 +1,213 @@
+{
+  "code": "zh-Hans",
+  "messages": {
+    "help": {
+      "value": "帮助",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "一个免费的工具，帮您摆脱听写录音稿的痛苦！",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "加载中...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "开始听写输入",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe 只能在桌面电脑上使用。",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "您的浏览器不支持 oTranscribe 所需的 HTML5 功能，请您更新为现代浏览器。",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>无需来回切换</strong>您的播放器和编辑器。",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>暂停、倒带、快进</strong>均使用键盘操作即可。",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>时间标记交互</strong>，帮助您精确定位到稿件字句。",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>自动保存</strong>，稿件每秒自动保存到您的浏览器。",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>隐私保护</strong>，您的音频文件和稿件不会上传到服务器。",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>支持输出多种格式</strong>，可选 Markdown、纯文本、或 Google Docs。",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>支持视频文件</strong>，视频可于集成播放器中播放。",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">开放源码</a></strong>，基于 MIT 许可证。",
+      "isHtml": true
+    },
+    "press": {
+      "value": "以下媒体报道推荐",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "关注 @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "开发者",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "速度",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "选择音频或视频文件",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "上次打开文件：",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "您的浏览器支持 [xxx] 格式的音频文件和 [yyy] 格式视频文件，如果您的文件格式不在这其中，也许您需要<a href=\"http://media.io\">转换格式</a>。",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "您的浏览器不支持 [file-format] 格式的文件，请更换浏览器或<a href=\"http://media.io\">转换格式</a>。",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} 字",
+      "isHtml": false
+    },
+    "export": {
+      "value": "导出",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "导出格式为...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "纯文本 (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "发送稿件到...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "登录",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "发送到 Google Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "在 Google Drive 中打开",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "稿件导出于",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "在这里输入您的稿件...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "使用窍门:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- 按 <em>Ctrl+I</em> 设置<em>斜体</em>；按 <b>Ctrl+B</b> 设置<b>粗体</b>。",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- 按 ESC 播放或暂停，按 Ctrl+J 插入时间标记。",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe 格式",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "或 YouTube 视频",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "输入 YouTube 视频链接:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "请输入有效的 YouTube 视频链接。例如: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "历史",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "导入",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "稿件历史",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "每5分钟自动备份一次，最多可保存100份备份。按 Ctrl+S 可以随时手动保存。",
+      "isHtml": false
+    },
+    "today": {
+      "value": "今天",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "昨天",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "恢复",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "没有找到备份。",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "加载更多备份。",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "您的浏览器本地储存已满，所以一些旧的备份已被删除。",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "oTranscribe 保存时出现一些故障，请您务必手动备份您的稿件。",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "无法恢复备份。",
+      "isHtml": false
+    }
+  }
+}

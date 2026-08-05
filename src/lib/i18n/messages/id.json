@@ -1,0 +1,201 @@
+{
+  "code": "id",
+  "messages": {
+    "help": {
+      "value": "Bantuan",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Aplikasi web gratis yang memudahkan transkripsi rekaman wawancara.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Memuat...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Mulai transkripsi",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe hanya bisa dipakai di komputer desktop.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Browser Anda sepertinya tidak sesuai dengan beberapa fitur HTML5 yang diperlukan agar oTranscribe berfungsi dengan benar. Coba ganti dengan browser desktop yang modern.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Tidak perlu lagi berpindah-pindah antara Quicktime dan Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "Pause, rewind dan fast-forward tanpa mengangkat tangan Anda dari keyboard.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "Tanda waktu interaktif untuk menavigasi transkrip Anda.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "Setiap detik secara otomatis disimpan di penyimpanan browser Anda.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "Pribadi - dokumen audio dan transkrip Anda tidak pernah meninggalkan komputer Anda.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "Ekspor ke Markdown, teks dan Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "Bisa untuk video dengan player yang terintegrasi.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "Open source di bawah lisensi MIT",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Seperti ditulis di",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Follow @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Diciptakan oleh",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "kecepatan",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Pilih dokumen audio (atau video)",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Dokumen terakhir:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Browser Anda mendukung dokumen audio [xxx] dan dokumen video [yyy]. Anda mungkin perlu mengkonversi dokumen Anda.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Browser Anda tidak mendukung dokumen [file-format]. Ganti dengan browser berbeda atau konversi dokumen Anda ke format lain...",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} kata",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Ekspor",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Unduh transkrip dalam bentuk...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Teks (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Kirim transkrip ke...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Masuk",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Dikirim ke Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Buka di Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transkrip diekspor",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Masukkan transkrip Anda di sini...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Tips singkat:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- Ctrl+I untuk format cetak miring dan Ctrl+B untuk format cetak tebal",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Tekan ESC untuk play/pause, dan Ctrl+J untuk menyisipkan tanda waktu.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "format oTranscribe",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "atau video YouTube",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Masukkan URL video YouTube",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Tolong masukkan URL YouTube yang benar. Misalnya: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "riwayat",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "impor",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Riwayat transkip",
+      "isHtml": false
+    },
+    "history-instrux": {
+      "value": "Salinan pekerjaan anda disimpan setiap lima menit. Salinan tidak disimpan dalam waktu lama. Tekan Ctrl+S untuk menyimpan kapan pun.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Hari ini",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Kemarin",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "pulihkan",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Tidak ditemukan salinan.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Muat salinan yang sebelumnya",
+      "isHtml": false
+    }
+  }
+}

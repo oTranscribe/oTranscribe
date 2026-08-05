@@ -1,0 +1,165 @@
+{
+  "code": "pl",
+  "messages": {
+    "help": {
+      "value": "Pomoc",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Darmowa aplikacja internetowa ułatwiająca transkrypcję nagranych rozmów.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Ładowanie...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Zacznij transkrybować",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe działa tylko na komputerach stacjonarnych.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Wygląda na to, że twoja przeglądarka nie wspiera niektórych funkcji HTML5 wymaganych do uruchomienia oTranscribe. Prosimy o przejście na nowocześniejszą przeglądarkę.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Koniec z ciągłym przełączaniem</strong> między Wordem a Quicktimem.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Zatrzymuj i przewijaj do przodu lub do tyłu</strong> bez odrywania rąk od klawiatury.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Interaktywne znaczniki czasu</strong> ułatwiające poruszanie się po transkcypji.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Automatyczne zapisywanie</strong> co sekundę w pamięci przeglądarki.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Poufność danych</strong> - pliki audio i transkrypcje nigdy nie opuszczają Twojego komputera.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Eksport</strong> do Markdown, zwykłego tekstu i Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Zintegrowany odtwarzacz</strong> plików wideo.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Otwarte oprogramowanie</a></strong> na licencji MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Napisali o nas",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Obserwuj @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Autor:",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "tempo",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Wybierz plik audio (lub wideo)",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Ostatni plik:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Twoja przeglądarka obsługuje następujące formaty audio: [xxx] oraz wideo: [xxx]. Konieczna może być <a href=\"http://media.io\">konwersja pliku</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Twoja przeglądarka nie obsługuje plików w formacie [file-format]. Zmień przeglądarkę lub <a href=\"http://media.io\">przekonwertuj plik</a>.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{[ plural(n) ]}",
+      "isHtml": false
+    },
+    "wordcount[one]": {
+      "value": "{{n}} słowo",
+      "isHtml": false
+    },
+    "wordcount[few]": {
+      "value": "{{n}} słowa",
+      "isHtml": false
+    },
+    "wordcount[many]": {
+      "value": "{{n}} słów",
+      "isHtml": false
+    },
+    "wordcount[other]": {
+      "value": "{{n}} słów",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Eksportuj",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Zapisz transkrypcję jako...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Zwykły tekst (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Wyślij transkrypcję do...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Zaloguj się",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Wysyłanie na Google Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Otwórz w Google Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transkrypcja wyeksportowana dnia",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Tutaj wpisz swoją transkrypcję...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Wskazówki:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> włącza <em>kursywę</em>, natomiast </b>Ctrl+B</b> włącza <b>pogrubienie</b>.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- ESC odtwarza lub zatrzymuje plik, a Ctrl+J wstawia aktualny znacznik czasu.",
+      "isHtml": true
+    }
+  }
+}

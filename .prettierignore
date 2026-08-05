@@ -1,0 +1,18 @@
+build/
+.svelte-kit/
+dist/
+legacy/
+node_modules/
+playwright-report/
+test-results/
+package-lock.json
+pnpm-lock.yaml
+
+# Hand-authored docs — don't reflow
+SPEC.md
+PLAN.md
+README.md
+LICENSE
+
+# Tool-managed
+.claude/

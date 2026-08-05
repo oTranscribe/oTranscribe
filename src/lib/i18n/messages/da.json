@@ -1,0 +1,201 @@
+{
+  "code": "da",
+  "messages": {
+    "help": {
+      "value": "Hjælp",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Gratis web app, som gør det lidt nemmere at transskribere et optaget interview.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Loader...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Begynd at skrive",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe virker kun på desktop. Ingen tablets eller mobile enheder, desværre.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Din browser understøtter ikke alle HTML5 features, som er nødvendige for at køre oTranscribe. Opdater til en moderne browser og prøv igen.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Slut med at skifte</strong> mellem Quicktime og Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pause, spol og ændr hastigheden</strong> uden at fjerne hænderne fra tastaturet.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Interaktive tidsstempler</strong>, så du nemt kan navigere rundt i dit tekst og lyd.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Gemmer automatisk</strong> din tekst i browseren hvert sekund.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Respekterer privatlivet</strong> - din lyd og tekst forlader aldrig din computer.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Eksportér</strong> som Markdown, råtekst eller Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Understøtter video</strong> med integreret afspiller.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Open source</a></strong> under MIT licensen.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Som set hos",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Følg @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Skabt af",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "hastighed",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Vælg lyd (eller video) fil",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Seneste fil:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Din browser understøtter [xxx] lydfiler og [yyy] videofiler. Du skal måske <a href=\"http://media.io\">konvertere din fil</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Din browser understøtter ikke [file-format] filer. Prøv en anden browser eller <a href=\"http://media.io\">konverter din fil</a> til et andet format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} ord",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Eksportér",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Download teksten som...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Råtekst (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Send tekst til...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Log på",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Sender til Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Åben i Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Teksten er eksporteret",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Skriv din tekst her...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Nyttige tips:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> tilføjer <em>kursiv</em> tekst, mens <b>Ctrl+B</b> tilføjer <b>fed</b> tekst.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Tryk ESC for at afspille/pause og Ctrl+J for at indsætte et tidsstempel.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe format",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "eller YouTube video",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Indtast YouTube video URL:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Indtast en gyldig YouTube URL. Eksempelvis: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "historie",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "importer",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Transcript historie",
+      "isHtml": false
+    },
+    "history-instrux": {
+      "value": "En kopi af dit arbejde bliver gemt hvert femte minut. Backup er ikke gemt for altid. Tryk Ctrl+S for at gemme.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "I dag",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "I går",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "gendan",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Ingen backup fundet.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Hent tidligere backup",
+      "isHtml": false
+    }
+  }
+}

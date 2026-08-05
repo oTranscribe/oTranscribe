@@ -1,0 +1,281 @@
+{
+  "code": "en",
+  "messages": {
+    "help": {
+      "value": "Help",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "A free web app to take the pain out of transcribing recorded interviews.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Loading...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Start transcribing",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe works on desktop computers only.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Your browser does not appear to support some HTML5 features necessary for oTranscribe to run correctly. Please switch to a modern desktop browser.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>No more switching</strong> between Quicktime and Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pause, rewind and fast-forward</strong> without taking your hands off the keyboard.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Interactive timestamps</strong> to navigate through your transcript with.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Automatically saved</strong> to your browser's storage every second.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Private</strong> - your audio file and transcript never leave your computer.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Export</strong> to Markdown, plain text and Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Video file support</strong> with integrated player.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Open source</a></strong> under the MIT license.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "As featured on",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Follow @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Created by",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "speed",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Choose audio (or video) file",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Last file:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Your browser supports [xxx] audio files and [yyy] video files. You may need to <a href=\"http://media.io\">convert your file</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Your browser does not support [file-format] files. Switch to a different browser or <a href=\"http://media.io\">convert your file</a> to another format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} words",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Export",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Download transcript as...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Plain text (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Send transcript to...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Sign in",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Sending to Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Open in Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transcript exported",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Enter your transcript here...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Quick tips:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> adds <em>italic</em> formatting and <b>Ctrl+B</b> adds <b>bold</b> formatting.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Press ESC to play/pause, and Ctrl+J to insert the current timestamp.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe format",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "or YouTube video",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Enter YouTube video URL:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Please enter a valid YouTube URL. For example: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "history",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "import",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Transcript history",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "A copy of your work is saved every five minutes. Only 100 backups are retained. Press Ctrl+S to save at any time.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Today",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Yesterday",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "restore",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "No backups found.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Load older backups",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Your browser local storage was full, so some older oTranscribe backups have been cleared.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "oTranscribe encountered a problem while saving. Please make sure to back up your work manually.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "The backup could not be restored.",
+      "isHtml": false
+    },
+    "jump-to-time": {
+      "value": "Jump to time:",
+      "isHtml": false
+    },
+    "settings": {
+      "value": "Settings",
+      "isHtml": false
+    },
+    "keyboard-shortcuts": {
+      "value": "Keyboard shortcuts",
+      "isHtml": false
+    },
+    "listening": {
+      "value": "Listening for new shortcut...",
+      "isHtml": false
+    },
+    "cancel": {
+      "value": "cancel",
+      "isHtml": false
+    },
+    "restore-shortcuts": {
+      "value": "Restore default keyboard shortcuts",
+      "isHtml": false
+    },
+    "backwards": {
+      "value": "Skip backwards",
+      "isHtml": false
+    },
+    "forwards": {
+      "value": "Skip forwards",
+      "isHtml": false
+    },
+    "playPause": {
+      "value": "Play/pause",
+      "isHtml": false
+    },
+    "timeSelection": {
+      "value": "Jump to time",
+      "isHtml": false
+    },
+    "speedDown": {
+      "value": "Speed down",
+      "isHtml": false
+    },
+    "speedUp": {
+      "value": "Speed up",
+      "isHtml": false
+    },
+    "bold": {
+      "value": "Bold text",
+      "isHtml": false
+    },
+    "italic": {
+      "value": "Italic text",
+      "isHtml": false
+    },
+    "underline": {
+      "value": "Underline text",
+      "isHtml": false
+    },
+    "addTimestamp": {
+      "value": "Insert timestamp",
+      "isHtml": false
+    },
+    "returnToStart": {
+      "value": "Rewind to start",
+      "isHtml": false
+    }
+  }
+}

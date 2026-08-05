@@ -1,0 +1,213 @@
+{
+  "code": "vi",
+  "messages": {
+    "help": {
+      "value": "Trợ giúp",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Một ứng dụng web miễn phí để ghi chép lại các bài phỏng vấn đã ghi âm.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Đang tải...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Bắt đầu việc chép lại",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe chỉ làm việc trên môi trường máy tính để bàn mà thôi.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Trình duyệt của bạn dường như không hỗ trợ một số tính năng HTML5 thiết yếu để cho oTranscribe có thể chạy một cách đúng đắn. Hãy chuyển sang dùng trình duyệt hiện đại hơn.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Không cần hoán chuyển</strong> giữa Quicktime và Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Tạm dừng, tua và chuyển-tiếp-nhanh</strong> mà không cần đưa bàn tay của bạn khỏi bàn phím.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Đánh dấu thời gian tương tác</strong> để dùng nó điều hướng toàn bộ bản chép lại của bạn.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Lưu tự động</strong> vào phần kho lưu trữ của trình duyệt của bạn mỗi giây.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Riêng tư</strong> - tập tin âm thanh và bản chép lại không bao giờ rời khỏi máy tính của bạn.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Xuất</strong> sang Markdown, văn bản thường và Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Hỗ trợ các tập tin phim</strong> với bộ phát tích hợp.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Nguồn mở</a></strong> dưới giấy phép MIT.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Được đánh giá cao bởi",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Theo dõi @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Được tạo bởi",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "tốc độ",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Chọn tập tin âm thanh (hay phim)",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Tập tin dùng lần cuối:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Trình duyệt của bạn hỗ trợ các tập tin âm thanh [xxx] và phim [yyy]. Có lẽ bạn cần <a href=\"http://media.io\">chuyển đổi tập tin của bạn</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Trình duyệt của bạn không hỗ trợ các tập tin [file-format]. Hãy chuyển sang dùng trình duyệt khác hoặc <a href=\"http://media.io\">chuyển đổi tập tin của bạn</a> sang định dạng khác.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} từ",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Xuất ra",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Tải bản chép lại về ở dạng...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Văn bản thường (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Gửi bản chép lại đến...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Đăng nhập",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Gửi đến Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Mở trong Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Bản ghi lại xuất vào",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Nhập phần chép lại của bạn tại đây...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Mẹo nhỏ:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> thêm ở dạng chữ <em>nghiêng</em> và <b>Ctrl+B</b> ở dạng chữ <b>đậm</b>.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Nhấn phím ESC để phát/dừng, và Ctrl+J để chèn thời gian hiện tại.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "Định dạng oTranscribe",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "hay phim YouTube",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Nhập vào địa chỉ URL của YouTube:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Vui lòng nhập vào địa chỉ URL của YouTube. Ví dụ như là: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "lịch sử",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "nhập vào",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Lịch sử các bản chép lại",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "Công việc của bạn sẽ được sao lưu lại năm phút một lần. Chỉ giữ lại 100 bản sao. Nhấn Ctrl+S để lưu bất kỳ lúc nào bạn muốn.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Hôm nay",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Hôm qua",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "phục hồi lại",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Không tìm thấy bản sao dự phòng nào.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Tải bản sao dự phòng cũ hơn",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Phần lưu trữ của trình duyệt của bạn đã bị đầy, so vậy các bản sao lưu dự phòng oTranscribe quá cũ hơn sẽ bị xóa bỏ.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "oTranscribe gặp lỗi khi đang ghi dữ liệu lại. Vui lòng chắc chắn rằng bạn đã sao lưu lại công việc của mình bằng tay.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Không thể phục hồi lại bản sao dự phòng.",
+      "isHtml": false
+    }
+  }
+}

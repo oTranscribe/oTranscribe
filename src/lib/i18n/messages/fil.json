@@ -1,0 +1,213 @@
+{
+  "code": "fil",
+  "messages": {
+    "help": {
+      "value": "Tulong",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Ang libreng web app na nagtatanggal ng hirap sa pagtatranscribe ng mga nakarecord na interview.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Nagloload…",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Simulan magtranscribe",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "Ang oTranscribe ay gumagana lang sa desktop computers.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Mukhang ang iyong browser ay hindi sinusuportahan ang ibang katangian ng HTML5 na kinakailangan ng oTranscribe upang gumana ng tama. Lumipat sa mas makabagong desktop browser.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Hindi na kailangan pang magpalipat lipat sa Quicktime at Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "I-pause, i-rewind, at i-fast-forward nang hindi tinatanggal ang iyong mga kamay sa keyboard.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "Mayroong interactive timestamps upang makapagnavigate sa iyong transcript.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "Awtomatikong naisesave sa storage ng iyong browser kada segundo.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "Pribado - ang iyong audio file at transcript ay hindi lalabas sa iyong computer.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "I-export sa Markdown, plain text, at Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "May integrated player na sumusuporta sa video files.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "Buksan ang source sa ilalim ng MIT license.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Naitampok sa",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "I-follow @oTranscribe",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Likha ni",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Pumili ng audio (o video) file",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Ang iyong browser ay sinusuportahan ang [xxx] audio files at [yyy] video files. Maaaring kailanganin mong i-convert ang iyong file.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Ang iyong browser ay hindi sinusuportahan ang [file-format] files. Lumipat sa ibang browser o iconvert ang iyong file sa ibang format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}}\tna salita",
+      "isHtml": false
+    },
+    "export": {
+      "value": "I-export",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "I-download ang transcript bilang…",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Plain text",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Ipadala ang transcript sa…",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Magsign in",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Ipinapadala sa Drive…",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Buksan sa Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Ang transcript ay na-export na noong",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "bilis",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Huling file:",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Ilagay ang iyong transcript dito…",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Quick tips:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "\"Ctrl + I  para sa italic na ayos at",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "Pindutin ang ESC para i-play/i-pause, Ctrl +J para ilagay ang kasalukuyang timestamp.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe format",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "o Youtube video",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "Ilagay ang Youtube video URL:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Maglagay ng balidong Youtube URL. Halimbawa: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "kasaysayan",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "mag-import",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Kasaysayan ng transcript",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "Ang kopya ng iyong gawa ay naisesave kada limang minuto. 100 na backup lamang ang naiiwan. Pindutin ang Ctrl+S upang magsave anumang oras.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Ngayon",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Kahapon",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "ibalik",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Walang backup na nakita.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "I-load ang mga lumang backup.",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Ang local storage ng iyong browser ay puno kaya ang mga lumang backup ng oTranscribe ay binura na.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "Ang oTranscribe ay naka-engkwentro ng problema habang nagsesave. Siguraduhing magbackup ng iyong gawa ng mano-mano.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Ang backup ay hindi maibalik.",
+      "isHtml": false
+    }
+  }
+}

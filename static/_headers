@@ -1,0 +1,6 @@
+# Netlify / Cloudflare Pages `_headers` file. Copied verbatim into build/ by SvelteKit's
+# static adapter. Required for cross-origin isolation (SharedArrayBuffer, threaded WASM).
+# See SPEC §7.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp

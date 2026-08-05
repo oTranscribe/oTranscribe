@@ -1,0 +1,153 @@
+{
+  "code": "es",
+  "messages": {
+    "help": {
+      "value": "Ayuda",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Aplicación gratuita que facilita transcribir entrevistas grabadas.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Iniciando. Espera unos instantes...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Comienza tu transcripción aquí",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe sólo funciona en ordenadores.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Tu navegador no es compatible con algunas características de HTML5 necesarias para que oTranscribe funcione correctamente. Por favor, prueba con otro navegador.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>No más enredos</strong> con Quicktime y Word.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pausa, rebobina o adelanta</strong> tu grabación sin alejarte del teclado.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Etiquetas interactivas de tiempo </strong> para navegar por tu transcripción.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Guarda tu trabajo automáticamente</strong> cada segundo en el almacenamiento de tu navegador.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Privacidad</strong>: tus grabaciones y documentos no salen de tu ordenador.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Exporta tu trabajo</strong> a Markdown (.md), texto plano (.txt) y Google Drive.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong>Vídeo compatible</strong> con el reproductor HTML5 integrado.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Aplicación de código abierto</a></strong> (en inglés) bajo licencia <a href=\"http://es.wikipedia.org/wiki/MIT_License\">MIT</a>.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "oTranscribe ha sido mencionado en estos medios",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Sigue a @oTranscribe (en inglés).",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Creado por",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "Velocidad",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Carga un archivo de audio o vídeo",
+      "isHtml": false
+    },
+    "yt-input": {
+      "value": "o un vídeo de Youtube",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Último archivo:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Tu navegador es compatible con archivos de audio en formato [xxx] o de video en formato [yyy]. Tal vez necesites <a href=\"http://media.io/es\">convertir tu archivo</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Tu navegador no es compatible con archivos en formato [file-format]. Intenta con otro navegador o <a href=\"http://media.io/es\">convierte tu archivo</a> en otro formato.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} palabras",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exportar",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Descargar transcripción como...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Texto plano (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Enviar transcripción a...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Ingresa",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Enviando a Google Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Abrir en Google Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Transcripción exportada.",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Ingresa tu transcripción aquí...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Consejos rápidos::",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> añade <em>italicas</em> y <b>Ctrl+B</b> añade <b>negritas</b>.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Presiona ESC para reproducir/pausar, y Ctrl+J para insertar la etiqueta de tiempo actual.",
+      "isHtml": true
+    }
+  }
+}

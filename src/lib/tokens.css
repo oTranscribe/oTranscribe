@@ -1,0 +1,35 @@
+/*
+ * Design tokens extracted from v1 SCSS (see legacy/src/scss/).
+ * v2 is a rebuild, not a rebrand — the visual identity carries forward.
+ */
+
+:root {
+  /* Palette (v1 base.scss, minus a slight accent darkening for WCAG AA text-on-white
+     contrast; v1's #3482b1 is 4.22:1 vs. the required 4.5:1) */
+  --color-accent: #2e75a2;
+  --color-accent-light: #4a90bd;
+  --color-accent-tint: #e0ebf4;
+  --color-accent-legacy: rgb(52, 130, 177);
+  --color-dark: hsl(0, 0%, 15%);
+  --color-dark-hover: hsl(0, 0%, 25%);
+  --color-grey: #f1f1f1;
+  --color-textbox-bg: #eee;
+  --color-surface: #ffffff;
+  --color-text: hsl(0, 0%, 15%);
+  --color-text-muted: #666;
+
+  /* Typography (v1 base.scss / textbox.scss) */
+  --font-body: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+  --font-body-transcript: 'iA Writer Duospace', 'Courier Prime', 'Monaco', monospace;
+  --font-size-transcript: 15px;
+  --font-line-transcript: 20px;
+
+  /* Elevation (v1 textbox.scss / topbar.scss) */
+  --shadow-panel: 0 0 10px #ccc;
+  --shadow-topbar: 0 0 10px #666;
+
+  /* Structure */
+  --radius-panel: 5px;
+  --radius-chip: 5px;
+  --height-topbar: 36px;
+}

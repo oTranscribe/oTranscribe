@@ -1,0 +1,213 @@
+{
+  "code": "tr",
+  "messages": {
+    "help": {
+      "value": "Yardım",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Kayıtlı röportajlarınızı deşifre etmek için çektiğiniz zahmeti kaldıran, ücretsiz bir web uygulaması.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Yükleniyor...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Deşifreye başlayın",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe sadece masaüstü bilgisayarlarda çalışır.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Browser'ınız, oTranscribe'ın doğru çalışması için gerekli olan bazı HTML5 özelliklerini desteklemiyor. Lütfen modern bir masaüstü browser'a geçin.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "Video oynatıcı ile Word arasında <strong>bir ona bir buna geçip durmak yok</strong> .",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "Elinizi klavyeden kaldırmadan <strong>durdurun, geri alın, ileri alın</strong> .",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>İnteraktif zaman kaydı</strong> ile metin üzerinden ses kaydında gezinebilirsiniz.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "Her saniye browser'ınıza ayrılan diske <strong>otomatik olarak yedeklenir</strong>.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Gizliliğinize riayet eder </strong>, ses dosyanız asla bilgisayarınızdan başka bir yere aktarılmaz.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "Markdown, düz metin yahut Google Dökümanı olarak <strong>dışa aktarın</strong>.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "Entegre oynatıcı ile <strong>video dosyalarınızı da destekler</strong>.",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "MIT lisansı ile <strong><a href=\"opensource\">açık kaynak kodludur</a></strong>.",
+      "isHtml": true
+    },
+    "press": {
+      "value": "Hakkımızda basında çıkan haberler",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "@oTranscribe'ı twitterda takip et",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Hazırlayan",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "hız",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Ses (veya video) dosyası seçin",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Son açılan dosya:",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Browser'ınız [xxx] ses dosyalarını ve [yyy] video dosyalarını destekliyor. Dosyanızı <a href=\"http://media.io\">dönüştürmeniz</a> gerekibilir.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Browser'ınız [file-format] dosyalarını desteklemiyor. Başka bir browser'a geçin veya  dosyayı <a href=\"http://media.io\">başka bir formata dönüştürün</a>.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} kelime",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Dışa Aktar",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Metni farklı kaydet",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Düz Metin (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Metni gönder...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Giriş Yap",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Sürücüye gönderiliyor...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Sürücüde aç",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Metin dışa aktarıldı",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Metninizi buraya yazın...",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "İpuçları:",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em>  metni <em>italik</em> yapar, <b>Ctrl+B</b> metni <b>koyu</b> yapar.",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "- Oynatmak/durdurmak için ESC'ye basın, şu anki zaman kaydı girmek için Ctrl+J'ye basın.",
+      "isHtml": true
+    },
+    "export-otr": {
+      "value": "oTranscribe formatı",
+      "isHtml": false
+    },
+    "choose-youtube": {
+      "value": "YouTube videosu seçin",
+      "isHtml": false
+    },
+    "youtube-instrux": {
+      "value": "YouTube videosunun adresini girin:",
+      "isHtml": false
+    },
+    "youtube-error": {
+      "value": "Lütfen geçerli bir YouTube adresi girin. Örneğin: https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "isHtml": false
+    },
+    "history-button": {
+      "value": "geçmiş",
+      "isHtml": false
+    },
+    "import-button": {
+      "value": "içe aktar",
+      "isHtml": false
+    },
+    "history-title": {
+      "value": "Deşifre geçmişi",
+      "isHtml": false
+    },
+    "history-instrux-v2": {
+      "value": "Her beş dakikada bir, çalışmanızın bir kopyası kaydedilmektedir. Toplamda yalnız 100 yedek tutulmaktadır. Kaydetmek istediğinizde Ctrl+S ye basın.",
+      "isHtml": false
+    },
+    "today": {
+      "value": "Bugün",
+      "isHtml": false
+    },
+    "yesterday": {
+      "value": "Dün",
+      "isHtml": false
+    },
+    "restore-button": {
+      "value": "geri yükle",
+      "isHtml": false
+    },
+    "no-backups": {
+      "value": "Yedek bulunamadı.",
+      "isHtml": false
+    },
+    "more-backups": {
+      "value": "Daha eski bir yedeği yükle",
+      "isHtml": false
+    },
+    "backup-clear": {
+      "value": "Browserınızın yerel depolama alanı dolu, bu yüzden bazı eski oTranscribe yedekleri silindi.",
+      "isHtml": false
+    },
+    "backup-error": {
+      "value": "oTranscribe kaydederken bir problemle karşılaştı. Lütfen çalışmanızı kendiniz elle yedekleyin.",
+      "isHtml": false
+    },
+    "restore-error": {
+      "value": "Yedek geri yüklenemedi.",
+      "isHtml": false
+    }
+  }
+}

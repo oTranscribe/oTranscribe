@@ -1,0 +1,149 @@
+{
+  "code": "de",
+  "messages": {
+    "help": {
+      "value": "Hilfe",
+      "isHtml": false
+    },
+    "lead": {
+      "value": "Eine kostenlose App zum einfachen Übertragen von Interviews.",
+      "isHtml": false
+    },
+    "start-loading": {
+      "value": "Lädt...",
+      "isHtml": false
+    },
+    "start-ready": {
+      "value": "Beginnen Sie die Übertragung",
+      "isHtml": false
+    },
+    "mobile-warning": {
+      "value": "oTranscribe funktioniert nur auf Desktop-Computern.",
+      "isHtml": false
+    },
+    "old-browser-warning": {
+      "value": "Ihr Browser kann einige HTML5-Funktionen nicht unterstützen. Sie sind notwendig für die korrekte Ausführung von oTranscribe. Bitte aktualisieren Sie Ihren Browser.",
+      "isHtml": false
+    },
+    "promo-1": {
+      "value": "<strong>Kein Umschalten</strong> zwischen Quicktime und Word mehr nötig.",
+      "isHtml": true
+    },
+    "promo-2": {
+      "value": "<strong>Pausieren, Vor- und Rückspulen</strong> ohne die Hände von der Tastatur zu nehmen.",
+      "isHtml": true
+    },
+    "promo-3": {
+      "value": "<strong>Interaktive Zeitstempel</strong> zum Navigieren Ihrer Übertragungen.",
+      "isHtml": true
+    },
+    "promo-4": {
+      "value": "<strong>Automatische Speicherung</strong> auf Ihrem Browserspeicher.",
+      "isHtml": true
+    },
+    "promo-5": {
+      "value": "<strong>Privatsphäre</strong> - Ihre Audiodateien und Übertragungen bleiben auf Ihrem Computer.",
+      "isHtml": true
+    },
+    "promo-6": {
+      "value": "<strong>Exportieren</strong> Sie Ihre Arbeit in Markdown (.md), Klartext (.txt) und Google Docs.",
+      "isHtml": true
+    },
+    "promo-7": {
+      "value": "<strong> Unterstützt Video-Dateien </strong> mit integrierten Player",
+      "isHtml": true
+    },
+    "promo-8": {
+      "value": "<strong><a href=\"opensource\">Open Source Software</a></strong> unter MIT Lizenz (auf Englisch).",
+      "isHtml": true
+    },
+    "press": {
+      "value": "oTranscribe wurde in folgenden Publikationen erwähnt:",
+      "isHtml": false
+    },
+    "twitter": {
+      "value": "Folgen Sie @oTranscribe  auf Twitter (auf Englisch)",
+      "isHtml": false
+    },
+    "credit": {
+      "value": "Erstellt von",
+      "isHtml": false
+    },
+    "speed": {
+      "value": "Geschwindigkeit",
+      "isHtml": false
+    },
+    "choose-file": {
+      "value": "Wählen Sie eine Audio- oder Video-Datei.",
+      "isHtml": false
+    },
+    "last-file": {
+      "value": "Zuletzt verwendet",
+      "isHtml": false
+    },
+    "formats": {
+      "value": "Ihr Browser unterstützt [xxx] Audio-Dateien und [yyy] Video-Dateien. Möglicherweise müssen Sie <a href=\"http://media.io\"> Ihre Datei konvertieren</a>.",
+      "isHtml": false
+    },
+    "format-warn": {
+      "value": "Ihr Browser unterstützt leider keine [file-format]-Dateien. Bitte benutzen Sie einen anderen Browser oder <a href=\"http://media.io\"> konvertieren Sie Ihre Datei</a> in ein anderes Format.",
+      "isHtml": false
+    },
+    "wordcount": {
+      "value": "{{n}} Wörter zählen",
+      "isHtml": false
+    },
+    "export": {
+      "value": "Exportieren",
+      "isHtml": false
+    },
+    "export-download": {
+      "value": "Übertragung herunterladen als...",
+      "isHtml": false
+    },
+    "export-markdown": {
+      "value": "Markdown (.md)",
+      "isHtml": false
+    },
+    "export-text": {
+      "value": "Klartext (.txt)",
+      "isHtml": false
+    },
+    "export-send": {
+      "value": "Übertragung senden an...",
+      "isHtml": false
+    },
+    "sign-in": {
+      "value": "Anmelden",
+      "isHtml": false
+    },
+    "send-drive": {
+      "value": "Senden an Google Drive...",
+      "isHtml": false
+    },
+    "open-drive": {
+      "value": "Öffnen in Google Drive",
+      "isHtml": false
+    },
+    "file-name": {
+      "value": "Übertragung exportiert",
+      "isHtml": false
+    },
+    "d-txt1": {
+      "value": "Tippen Sie hier Ihre Übertragung ein",
+      "isHtml": true
+    },
+    "d-txt2": {
+      "value": "Einige Tipps",
+      "isHtml": true
+    },
+    "d-txt3": {
+      "value": "- <em>Ctrl+I</em> wechselt zu <em>Kursivschrift</em> und <b>Ctrl+B</b> wechselt zu <b>Fettschrift</b>",
+      "isHtml": true
+    },
+    "d-txt4": {
+      "value": "Drücken Sie ESC zum Abspielen/Pausieren der Datei, und Ctrl+J um den aktuellen Zeitstempel einzufügen.",
+      "isHtml": true
+    }
+  }
+}
